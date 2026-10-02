@@ -219,8 +219,18 @@ export async function postApi(endpoint, body) {
     }
 
     if (endpoint === '/chat') {
-      const userText = body?.message || body?.query || 'Gia Lai'
-      const reply = `Chào bạn! Tôi là trợ lý ảo Đồ thị Tri thức Du lịch Gia Lai. Hệ thống đã đồng bộ 30 điểm đến chính thống, 4 danh mục di sản và thắng cảnh, cùng danh sách đặc sản ẩm thực (Phở hai tô, Bò một nắng, Gà nướng cơm lam). Đối với câu hỏi về "${userText}", bạn có thể tra cứu chi tiết tại trang Khám phá, Lên lộ trình hoặc Bản đồ du lịch!`
+      const userText = (body?.message || body?.query || '').trim().toLowerCase()
+      const greetings = ['hi', 'hello', 'chào', 'xin chào', 'alo', 'ơi', 'hey', 'hai', 'helo']
+      let reply = ''
+      if (greetings.includes(userText) || userText.length <= 4) {
+        reply = 'Dạ xin chào bạn! 👋 Tôi là Trợ lý Du lịch Thông minh Gia Lai. Tôi có thể hỗ trợ bạn tìm kiếm điểm tham quan danh thắng, món ăn đặc sản, khách sạn homestay hay lên lộ trình du lịch tối ưu. Hôm nay bạn cần tôi hỗ trợ thông tin gì ạ? 😊'
+      } else if (userText.includes('ăn') || userText.includes('món') || userText.includes('đặc sản')) {
+        reply = '🍲 **Đặc sản Gia Lai nhất định phải thử:**\n\n1. **Phở Khô Gia Lai (Phở Hai Tô)**: Món ăn biểu tượng với tô bánh phở trụng riêng và tô súp ngọt xương thơm lừng.\n2. **Gà nướng sa lửa & Cơm lam**: Thịt gà đồi ướp lá rừng nướng than hồng chấm muối é ớt hiểm.\n3. **Bò một nắng muối kiến vàng Krông Pa**: Bò cỏ phơi nắng nướng chấm muối trứng kiến chua cay lạ miệng.\n4. **Bún mắm cua (Bún cua thối)**: Nét ẩm thực bản địa độc đáo phố núi Pleiku.'
+      } else if (userText.includes('khách sạn') || userText.includes('homestay') || userText.includes('nghỉ') || userText.includes('ở')) {
+        reply = '🏨 **Gợi ý nơi lưu trú tốt nhất tại Gia Lai:**\n\n• **HAGL Hotel Pleiku (4 sao)**: Trung tâm TP. Pleiku, view toàn cảnh phố núi, hồ bơi và buffet sáng.\n• **Boston Hotel Pleiku (3 sao)**: Gần sân bay, phòng ốc hiện đại, giá hợp lý.\n• **Tiên Sơn Homestay**: Gần Biển Hồ, view hồ xanh mát yên bình.\n• **XOM Homestay & Coffee**: View đồi chè Biển Hồ thơ mộng.'
+      } else {
+        reply = `Dạ chào bạn! Đối với câu hỏi về "${body?.message || 'du lịch Gia Lai'}", hệ thống Đồ thị Tri thức đã cập nhật 40 điểm đến, ẩm thực và lưu trú chính thống. Bạn có thể tra cứu chi tiết tại trang Khám phá, Bản đồ du lịch hoặc Lên lộ trình nhé!`
+      }
       return {
         answer: reply,
         reply: reply,

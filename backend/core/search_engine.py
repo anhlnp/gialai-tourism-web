@@ -37,7 +37,7 @@ def cosine_similarity(vec_a: List[float], vec_b: List[float]) -> float:
 def get_local_locations() -> List[Dict[str, Any]]:
     """Đọc dữ liệu điểm đến chuẩn hóa Gia Lai từ thư mục data/."""
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    data_path = os.path.join(current_dir, "..", "..", "..", "data", "locations.json")
+    data_path = os.path.join(current_dir, "..", "data", "locations.json")
     if os.path.exists(data_path):
         with open(data_path, "r", encoding="utf-8") as f:
             return json.load(f)
@@ -46,7 +46,7 @@ def get_local_locations() -> List[Dict[str, Any]]:
 def get_local_categories() -> Dict[str, str]:
     """Lấy ánh xạ categoryId -> tên danh mục."""
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    cat_path = os.path.join(current_dir, "..", "..", "..", "data", "categories.json")
+    cat_path = os.path.join(current_dir, "..", "data", "categories.json")
     if os.path.exists(cat_path):
         with open(cat_path, "r", encoding="utf-8") as f:
             cats = json.load(f)
@@ -56,7 +56,7 @@ def get_local_categories() -> Dict[str, str]:
 def get_local_districts() -> Dict[str, str]:
     """Lấy ánh xạ districtId -> tên huyện/thị/thành phố."""
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    dist_path = os.path.join(current_dir, "..", "..", "..", "data", "districts.json")
+    dist_path = os.path.join(current_dir, "..", "data", "districts.json")
     if os.path.exists(dist_path):
         with open(dist_path, "r", encoding="utf-8") as f:
             dists = json.load(f)
@@ -248,7 +248,7 @@ def get_location_enrichment(location_id: str) -> Dict[str, Any]:
     - Điểm vui chơi giải trí (:Entertainment)
     """
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    base_data = os.path.join(current_dir, "..", "..", "..", "data")
+    base_data = os.path.join(current_dir, "..", "data")
 
     # Đọc các file thông tin bổ sung
     events_file = os.path.join(base_data, "events.json")

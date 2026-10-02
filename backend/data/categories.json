@@ -1,0 +1,26 @@
+[
+  {
+    "categoryId": "CAT_GL_NATURE",
+    "name": "Điểm du lịch sinh thái, danh lam thắng cảnh tự nhiên",
+    "description": "Hồ miệng núi lửa cổ, thác nước nguyên sinh, đồi chè, rừng thông và các vườn quốc gia bảo tồn thiên nhiên",
+    "icon": "Trees"
+  },
+  {
+    "categoryId": "CAT_GL_HISTORY",
+    "name": "Di tích Lịch sử - Văn hóa - Khảo cổ",
+    "description": "Hệ thống di tích lịch sử cách mạng, di chỉ khảo cổ học đồ đá cũ và căn cứ khởi nghĩa Tây Sơn Thượng Đạo",
+    "icon": "Landmark"
+  },
+  {
+    "categoryId": "CAT_GL_CULTURE",
+    "name": "Văn hóa Dân tộc, Làng nghề & Lễ hội truyền thống",
+    "description": "Không gian văn hóa cồng chiêng Jrai/Bahnar, làng nghề dệt thổ cẩm, kiến trúc nhà rông và chùa tháp cổ",
+    "icon": "Users"
+  },
+  {
+    "categoryId": "CAT_GL_PARK",
+    "name": "Công viên & Không gian cảnh quan công cộng",
+    "description": "Quảng trường văn hóa, công viên sinh thái đô thị và các không gian cảnh quan sinh hoạt cộng đồng",
+    "icon": "Sun"
+  }
+]

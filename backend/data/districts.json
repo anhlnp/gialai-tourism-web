@@ -1,0 +1,68 @@
+[
+  {
+    "districtId": "D_PLEIKU",
+    "name": "Thành phố Pleiku",
+    "regionType": "Đô thị Trung tâm",
+    "description": "Đô thị trung tâm cao nguyên Gia Lai, phố núi sương mù với Biển Hồ T'Nưng và Quảng trường Đại Đoàn Kết"
+  },
+  {
+    "districtId": "D_CHUPAH",
+    "name": "Huyện Chư Păh",
+    "regionType": "Cao nguyên Núi lửa",
+    "description": "Thiên đường sinh thái núi lửa Chư Đang Ya, Biển Hồ chè, đỉnh Chư Nâm và hàng thông trăm tuổi"
+  },
+  {
+    "districtId": "D_CHUSE",
+    "name": "Huyện Chư Sê",
+    "regionType": "Vùng đất Bazan",
+    "description": "Thủ phủ hồ tiêu Gia Lai với danh thắng Thác Phú Cường kỳ vĩ trên nền dung nham bazan cổ"
+  },
+  {
+    "districtId": "D_DAKDOA",
+    "name": "Huyện Đắk Đoa",
+    "regionType": "Thảo nguyên Thông",
+    "description": "Vùng thảo nguyên đồi cỏ hồng đuôi chồn và rừng thông Glar bonsai"
+  },
+  {
+    "districtId": "D_KBANG",
+    "name": "Huyện K'Bang",
+    "regionType": "Rừng Nguyên sinh",
+    "description": "Thủ phủ du lịch sinh thái rừng nguyên sinh, thác K50 Kon Chư Răng và Làng kháng chiến Stơr"
+  },
+  {
+    "districtId": "D_MANGYANG",
+    "name": "Huyện Mang Yang",
+    "regionType": "Cổng trời Tây Nguyên",
+    "description": "Vùng đèo Mang Yang lịch sử và Vườn Quốc gia Kon Ka Kinh"
+  },
+  {
+    "districtId": "D_ANKHE",
+    "name": "Thị xã An Khê",
+    "regionType": "Thung lũng Di sản",
+    "description": "Cái nôi lịch sử phong trào Tây Sơn Thượng Đạo và Di tích khảo cổ sơ kỳ Đá cũ Rộc Tưng - Gò Đá"
+  },
+  {
+    "districtId": "D_IAGRAI",
+    "name": "Huyện Ia Grai",
+    "regionType": "Hồ thủy điện & Nương rẫy",
+    "description": "Vùng lòng hồ thủy điện Sê San, bến thuyền độc mộc và rừng cao su bạt ngàn"
+  },
+  {
+    "districtId": "D_CHUPRONG",
+    "name": "Huyện Chư Prông",
+    "regionType": "Cao nguyên Nam Gia Lai",
+    "description": "Vùng biên cương với thắng cảnh thác Bàu Cạn và di tích lịch sử Thung lũng Ia Drăng"
+  },
+  {
+    "districtId": "D_DUCCO",
+    "name": "Huyện Đức Cơ",
+    "regionType": "Cửa khẩu Quốc tế",
+    "description": "Vùng cửa khẩu quốc tế Lệ Thanh và thắng cảnh thác nước Ia Krel hoang sơ"
+  },
+  {
+    "districtId": "D_KRONPA",
+    "name": "Huyện Krông Pa",
+    "regionType": "Thung lũng Nắng",
+    "description": "Vùng hạ lưu sông Ba trù phú với đặc sản bò một nắng và di tích tháp Bang Keng"
+  }
+]

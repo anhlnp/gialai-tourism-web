@@ -1,0 +1,62 @@
+[
+  {
+    "dishId": "DISH_PHOKHO",
+    "name": "Phở Khô Hai Tô Gia Lai",
+    "priceRange": "40.000đ - 65.000đ / tô",
+    "tasteType": "Đặc sản Truyền thống",
+    "mealTime": "Sáng, Tối",
+    "recommendedPlaces": "Phở Hồng (22 Nguyễn Văn Trỗi, Pleiku), Phở Ngọc Sơn (15 Nguyễn Thái Học, Pleiku), Phở Nữ (50 Nguyễn Du)",
+    "imageUrl": "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=800",
+    "description": "Món ăn danh bất hư truyền của Gia Lai: một tô sợi phở trụng trộn sốt tương nâu ngọt đậm đà kèm thịt bằm, một tô nước dùng xương bò thơm ngát hành hoa."
+  },
+  {
+    "dishId": "DISH_GANUONG_COMLAM",
+    "name": "Gà Nướng Sa Lửa & Cơm Lam Ống Tre",
+    "priceRange": "220.000đ - 300.000đ / con",
+    "tasteType": "Ẩm thực Núi rừng",
+    "mealTime": "Trưa, Tối",
+    "recommendedPlaces": "Quán Gà nướng Bazan (Đường Ký Con, Biển Hồ), Quán PleiTieng (Gần Hàng thông trăm tuổi, Chư Păh), Gà nướng Tiên Sơn",
+    "imageUrl": "https://media.mia.vn/uploads/blog-du-lich/ga-nuong-com-lam-pleiku-01-1658488920.jpg",
+    "description": "Gà thả đồi ướp lá rừng kẹp thanh tre nướng sa lửa than hồng rực rỡ, thịt săn ngọt thơm ăn cùng cơm nếp nương nướng trong ống tre dẻo bùi."
+  },
+  {
+    "dishId": "DISH_BOMOTNANG",
+    "name": "Bò Một Nắng Krông Pa Chấm Muối Kiến Vàng",
+    "priceRange": "550.000đ - 650.000đ / kg",
+    "tasteType": "Quà tặng Đặc sản",
+    "mealTime": "Ăn chơi, Nhậu",
+    "recommendedPlaces": "Bò một nắng Hảo Mập (Thị trấn Phú Túc, Krông Pa), Cửa hàng OCOP Pleiku (Quảng trường Đại Đoàn Kết)",
+    "imageUrl": "https://images.unsplash.com/photo-1544025162-d76694265947?w=800",
+    "description": "Thịt bò thưng mềm ngọt phơi đúng một mạt nắng gắt Krông Pa, nướng sơ trên than hồng rồi chấm muối làm từ ổ kiến vàng chua cay ngất ngây."
+  },
+  {
+    "dishId": "DISH_BUNCUATHOI",
+    "name": "Bún Mắm Cua (Bún Cua Thối Pleiku)",
+    "priceRange": "20.000đ - 35.000đ / tô",
+    "tasteType": "Đặc sản Độc lạ",
+    "mealTime": "Chiều, Tối",
+    "recommendedPlaces": "Bún cua Chi (Chợ Nhỏ Pleiku, đường Phùng Hưng), Bún mắm cua Cô Chi (87 Phan Đình Phùng)",
+    "imageUrl": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800",
+    "description": "Món ăn kén người nhưng gây nghiện tột bậc của phố núi: cua đồng ủ lên men chua nồng, chan nước dùng đậm vị ăn kèm da heo chiên giòn rụm và măng chua le."
+  },
+  {
+    "dishId": "DISH_CAFE_PLEIKU",
+    "name": "Cà Phê Nguyên Chất Pleiku",
+    "priceRange": "25.000đ - 55.000đ / ly",
+    "tasteType": "Văn hóa Thức uống",
+    "mealTime": "Cả ngày",
+    "recommendedPlaces": "Cà phê Thu Hà (9 Nguyễn Thái Học), Classic Coffee (32 Phan Đình Phùng), Cuội Cafe (Đường Nguyễn Đình Chiểu)",
+    "imageUrl": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800",
+    "description": "Ly cà phê đen sánh nâu cánh gián pha phin từ hạt Robusta trồng trên đất bazan núi lửa nồng nàn thơm quyến rũ, nét văn hóa thưởng thức bất hủ của người Pleiku."
+  },
+  {
+    "dishId": "DISH_RUOUCAN",
+    "name": "Rượu Cần Men Lá Rừng Bahnar / Jrai",
+    "priceRange": "150.000đ - 250.000đ / chóe",
+    "tasteType": "Nghi lễ Bản địa",
+    "mealTime": "Tối, Lễ hội",
+    "recommendedPlaces": "Làng văn hóa Plei Ốp, Làng Mơ Hra Đắk Đoa, Hợp tác xã dệt thổ cẩm & rượu cần K'Bang",
+    "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800",
+    "description": "Rượu ủ từ nếp cẩm và men lá cây rừng tự nhiên, uống bằng cần tre vít cong, vị ngọt ấm nồng gắn kết tình cảm anh em du khách."
+  }
+]

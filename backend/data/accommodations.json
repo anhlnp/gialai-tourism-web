@@ -1,0 +1,74 @@
+[
+  {
+    "accId": "STAY_HAGL",
+    "name": "Khách sạn Hoàng Anh Gia Lai (HAGL Hotel)",
+    "stayType": "Khách sạn 4 sao",
+    "pricePerNight": "1.200.000đ - 2.500.000đ",
+    "address": "01 đường Phù Đổng, TP. Pleiku, Gia Lai",
+    "districtId": "D_PLEIKU",
+    "ratingAvg": 4.8,
+    "phone": "0269 3718 100",
+    "imageUrl": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800",
+    "description": "Khách sạn cao cấp trung tâm thành phố Pleiku, đầy đủ tiện ích hồ bơi, nhà hàng buffet và view ngắm toàn cảnh phố núi sương mù."
+  },
+  {
+    "accId": "STAY_BOSTON",
+    "name": "Boston Hotel Pleiku",
+    "stayType": "Khách sạn 3 sao",
+    "pricePerNight": "650.000đ - 1.100.000đ",
+    "address": "212 đường Sư Vạn Hạnh, Phường Hội Thương, TP. Pleiku, Gia Lai",
+    "districtId": "D_PLEIKU",
+    "ratingAvg": 4.7,
+    "phone": "0269 3822 888",
+    "imageUrl": "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800",
+    "description": "Khách sạn phong cách boutique hiện đại, phòng ốc trang nhã, vị trí đắc địa gần chợ đêm và Quảng trường Đại Đoàn Kết."
+  },
+  {
+    "accId": "STAY_TREXANH",
+    "name": "Khách sạn Tre Xanh Plaza",
+    "stayType": "Khách sạn 3 sao",
+    "pricePerNight": "500.000đ - 900.000đ",
+    "address": "18 đường Lê Lai, Phường Tây Sơn, TP. Pleiku, Gia Lai",
+    "districtId": "D_PLEIKU",
+    "ratingAvg": 4.5,
+    "phone": "0269 3715 787",
+    "imageUrl": "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800",
+    "description": "Khách sạn lâu năm uy tín tại trung tâm Pleiku, giá cả hợp lý, khuôn viên rộng rãi có bãi đỗ xe du lịch lớn."
+  },
+  {
+    "accId": "STAY_TIENSON",
+    "name": "Tiên Sơn Homestay Biển Hồ",
+    "stayType": "Homestay",
+    "pricePerNight": "350.000đ - 700.000đ",
+    "address": "Xã Tân Sơn, TP. Pleiku (Gần Biển Hồ T'Nưng)",
+    "districtId": "D_PLEIKU",
+    "ratingAvg": 4.9,
+    "phone": "0983 456 789",
+    "imageUrl": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800",
+    "description": "Homestay nhà gỗ mộc mạc nép mình dưới rặng thông nhìn ra hồ nước Ea Nueng, không gian trong lành cực chill cho cặp đôi và nhóm bạn trẻ."
+  },
+  {
+    "accId": "STAY_XOM",
+    "name": "Xóm Organic Farmstay Chư Păh",
+    "stayType": "Farmstay Sinh thái",
+    "pricePerNight": "450.000đ - 850.000đ",
+    "address": "Thôn Tiên Sơn 1, Xã Nghĩa Hưng, Huyện Chư Păh, Gia Lai",
+    "districtId": "D_CHUPAH",
+    "ratingAvg": 4.8,
+    "phone": "0912 345 678",
+    "imageUrl": "https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=800",
+    "description": "Khu nghỉ dưỡng sinh thái nông trại hữu cơ giữa đồi chè cổ và hướng nhìn trọn vẹn đỉnh núi lửa Chư Đang Ya kỳ vĩ."
+  },
+  {
+    "accId": "STAY_KBANG_ECO",
+    "name": "Kbang Eco Homestay & Trekking Base",
+    "stayType": "Homestay",
+    "pricePerNight": "300.000đ - 600.000đ",
+    "address": "Thị trấn Kbang, Huyện K'Bang, Gia Lai",
+    "districtId": "D_KBANG",
+    "ratingAvg": 4.8,
+    "phone": "0977 123 456",
+    "imageUrl": "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800",
+    "description": "Trạm dừng chân lý tưởng của du khách trước chuyến hành trình trekking xuyên rừng già chinh phục thác K50 Kon Chư Răng."
+  }
+]

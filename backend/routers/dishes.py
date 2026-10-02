@@ -1,4 +1,4 @@
-﻿"""
+"""
 Dishes Router — Ẩm thực đặc sản Gia Lai (Thông tin bổ sung).
 """
 import os
@@ -33,14 +33,24 @@ def list_dishes(
         OPTIONAL MATCH (loc)-[:LOCATED_IN]->(d:District)
         {where}
         RETURN dish.dishId AS id, dish.name AS name, dish.description AS description,
-               dish.imageUrl AS imageUrl, dish.priceRange AS budget,
-               dish.mealTime AS mealTime,
+               dish.imageUrl AS imageUrl, dish.imageUrls AS imageUrls,
+               dish.priceRange AS budget, dish.priceMin AS priceMin, dish.priceMax AS priceMax,
+               dish.mealTime AS mealTime, dish.tasteType AS tasteType,
+               dish.suggestedEateries AS suggestedEateries,
                collect(DISTINCT d.name)[0..3] AS regions
         ORDER BY dish.name
         LIMIT $limit
         """
         res = run_query(cypher, params)
         if res:
+            for r in res:
+                if not r.get("budget") and (r.get("priceMin") or r.get("priceMax")):
+                    try:
+                        r["budget"] = f"{int(r['priceMin']):,}đ - {int(r['priceMax']):,}đ"
+                    except Exception:
+                        pass
+                if not r.get("imageUrls") and r.get("imageUrl"):
+                    r["imageUrls"] = [r["imageUrl"]]
             return res
     except Exception:
         pass
@@ -55,13 +65,18 @@ def list_dishes(
                 dishes = [d for d in dishes if search.lower() in d["name"].lower() or search.lower() in d.get("description", "").lower()]
             return [
                 {
-                    "id": d["dishId"],
+                    "id": d.get("id") or d.get("dishId"),
                     "name": d["name"],
-                    "description": d["description"],
-                    "imageUrl": d["imageUrl"],
-                    "budget": d.get("priceRange", ""),
+                    "description": d.get("description", ""),
+                    "imageUrl": d.get("imageUrl", ""),
+                    "imageUrls": d.get("imageUrls") or ([d["imageUrl"]] if d.get("imageUrl") else []),
+                    "budget": d.get("budget") or d.get("priceRange", ""),
+                    "priceMin": d.get("priceMin"),
+                    "priceMax": d.get("priceMax"),
                     "mealTime": d.get("mealTime", ""),
-                    "regions": ["Pleiku", "Chư Păh"]
+                    "tasteType": d.get("tasteType", ""),
+                    "suggestedEateries": d.get("suggestedEateries", []),
+                    "regions": [d.get("region", "Gia Lai")]
                 }
                 for d in dishes[:limit]
             ]

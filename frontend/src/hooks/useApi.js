@@ -128,10 +128,27 @@ export function resolveFallback(endpoint, params = {}) {
   }
 
   if (cleanEndpoint === '/dishes') {
+    const s = qParams.get('search')?.toLowerCase()
+    if (s) {
+      return MOCK_DISHES.filter(d => 
+        (d.name && d.name.toLowerCase().includes(s)) || 
+        (d.description && d.description.toLowerCase().includes(s)) ||
+        (d.suggestedEateries && d.suggestedEateries.some(e => e.toLowerCase().includes(s)))
+      )
+    }
     return MOCK_DISHES
   }
 
   if (cleanEndpoint === '/accommodations') {
+    const s = qParams.get('search')?.toLowerCase()
+    if (s) {
+      return MOCK_STAYS.filter(st => 
+        (st.name && st.name.toLowerCase().includes(s)) || 
+        (st.description && st.description.toLowerCase().includes(s)) ||
+        (st.address && st.address.toLowerCase().includes(s)) ||
+        (st.stayType && st.stayType.toLowerCase().includes(s))
+      )
+    }
     return MOCK_STAYS
   }
 

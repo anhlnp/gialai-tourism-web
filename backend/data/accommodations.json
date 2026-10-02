@@ -1,74 +1,464 @@
 [
   {
-    "accId": "STAY_HAGL",
-    "name": "Khách sạn Hoàng Anh Gia Lai (HAGL Hotel)",
-    "stayType": "Khách sạn 4 sao",
-    "pricePerNight": "1.200.000đ - 2.500.000đ",
-    "address": "01 đường Phù Đổng, TP. Pleiku, Gia Lai",
+    "id": "ACC_XOM_PLEIKU",
+    "accId": "ACC_XOM_PLEIKU",
+    "name": "Xóm Homestay Pleiku (View Thung lũng & Rừng thông)",
     "districtId": "D_PLEIKU",
-    "ratingAvg": 4.8,
-    "phone": "0269 3718 100",
-    "imageUrl": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800",
-    "description": "Khách sạn cao cấp trung tâm thành phố Pleiku, đầy đủ tiện ích hồ bơi, nhà hàng buffet và view ngắm toàn cảnh phố núi sương mù."
-  },
-  {
-    "accId": "STAY_BOSTON",
-    "name": "Boston Hotel Pleiku",
-    "stayType": "Khách sạn 3 sao",
-    "pricePerNight": "650.000đ - 1.100.000đ",
-    "address": "212 đường Sư Vạn Hạnh, Phường Hội Thương, TP. Pleiku, Gia Lai",
-    "districtId": "D_PLEIKU",
-    "ratingAvg": 4.7,
-    "phone": "0269 3822 888",
-    "imageUrl": "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800",
-    "description": "Khách sạn phong cách boutique hiện đại, phòng ốc trang nhã, vị trí đắc địa gần chợ đêm và Quảng trường Đại Đoàn Kết."
-  },
-  {
-    "accId": "STAY_TREXANH",
-    "name": "Khách sạn Tre Xanh Plaza",
-    "stayType": "Khách sạn 3 sao",
-    "pricePerNight": "500.000đ - 900.000đ",
-    "address": "18 đường Lê Lai, Phường Tây Sơn, TP. Pleiku, Gia Lai",
-    "districtId": "D_PLEIKU",
-    "ratingAvg": 4.5,
-    "phone": "0269 3715 787",
-    "imageUrl": "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800",
-    "description": "Khách sạn lâu năm uy tín tại trung tâm Pleiku, giá cả hợp lý, khuôn viên rộng rãi có bãi đỗ xe du lịch lớn."
-  },
-  {
-    "accId": "STAY_TIENSON",
-    "name": "Tiên Sơn Homestay Biển Hồ",
     "stayType": "Homestay",
-    "pricePerNight": "350.000đ - 700.000đ",
-    "address": "Xã Tân Sơn, TP. Pleiku (Gần Biển Hồ T'Nưng)",
-    "districtId": "D_PLEIKU",
+    "pricePerNight": "450,000đ / đêm",
+    "budget": "450,000đ / đêm",
+    "address": "Thôn 1, xã Biển Hồ, TP. Pleiku, Gia Lai",
     "ratingAvg": 4.9,
-    "phone": "0983 456 789",
-    "imageUrl": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800",
-    "description": "Homestay nhà gỗ mộc mạc nép mình dưới rặng thông nhìn ra hồ nước Ea Nueng, không gian trong lành cực chill cho cặp đôi và nhóm bạn trẻ."
+    "suitableFor": [
+      "Cặp đôi",
+      "Nhóm bạn trẻ",
+      "Người yêu thiên nhiên"
+    ],
+    "imageUrl": "https://2trip.vn/wp-content/uploads/2023/07/homestay-pleiku-gia-lai-3-750x563.jpg",
+    "imageUrls": [
+      "https://2trip.vn/wp-content/uploads/2023/07/homestay-pleiku-gia-lai-3-750x563.jpg",
+      "https://dulichgialaitour.com/wp-content/uploads/2025/10/paksong-homestay-gia-lai.png",
+      "https://mia.vn/media/uploads/blog-du-lich/homestay-gia-lai-xom-house-bien-ho-1708100140.jpg"
+    ],
+    "description": "Homestay nhà gỗ mộc mạc bên sườn đồi, săn mây thung lũng thông reo và ngắm hoàng hôn Pleiku cực chill."
   },
   {
-    "accId": "STAY_XOM",
-    "name": "Xóm Organic Farmstay Chư Păh",
-    "stayType": "Farmstay Sinh thái",
-    "pricePerNight": "450.000đ - 850.000đ",
-    "address": "Thôn Tiên Sơn 1, Xã Nghĩa Hưng, Huyện Chư Păh, Gia Lai",
-    "districtId": "D_CHUPAH",
+    "id": "ACC_PLEIKU_HOTEL",
+    "accId": "ACC_PLEIKU_HOTEL",
+    "name": "Pleiku Grand Hotel (Khách sạn 4 sao Trung tâm)",
+    "districtId": "D_PLEIKU",
+    "stayType": "Khách sạn 4 sao",
+    "pricePerNight": "950,000đ / đêm",
+    "budget": "950,000đ / đêm",
+    "address": "124 Lê Lợi, phường Hoa Lư, TP. Pleiku, Gia Lai",
+    "ratingAvg": 4.7,
+    "suitableFor": [
+      "Gia đình",
+      "Doanh nhân",
+      "Khách đoàn"
+    ],
+    "imageUrl": "https://image.vietgoing.com/hotel/04/21/large/vietgoing_nds2306082394.webp",
+    "imageUrls": [
+      "https://image.vietgoing.com/hotel/04/21/large/vietgoing_nds2306082394.webp",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2d/93/25/f3/caption.jpg?w=1400&h=1400&s=1",
+      "https://media-cdn.tripadvisor.com/media/photo-s/2d/9c/36/ff/caption.jpg"
+    ],
+    "description": "Khách sạn cao cấp tiện nghi giữa trung tâm Pleiku, gần quảng trường Đại Đoàn Kết và phố đi bộ đêm."
+  },
+  {
+    "id": "ACC_MUONGTHANH_GL",
+    "accId": "ACC_MUONGTHANH_GL",
+    "name": "Khách sạn Mường Thanh Grand Gia Lai",
+    "districtId": "D_PLEIKU",
+    "stayType": "Khách sạn 4 sao",
+    "pricePerNight": "1,100,000đ / đêm",
+    "budget": "1,100,000đ / đêm",
+    "address": "02 Lê Duẩn, phường Tây Sơn, TP. Pleiku, Gia Lai",
     "ratingAvg": 4.8,
-    "phone": "0912 345 678",
-    "imageUrl": "https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=800",
-    "description": "Khu nghỉ dưỡng sinh thái nông trại hữu cơ giữa đồi chè cổ và hướng nhìn trọn vẹn đỉnh núi lửa Chư Đang Ya kỳ vĩ."
+    "suitableFor": [
+      "Doanh nhân",
+      "Gia đình",
+      "Đoàn hội nghị"
+    ],
+    "imageUrl": "https://booking.muongthanh.com/images/hotels/hotels/original/muong-thanh-grand-gia-lai_1726647663.jpg",
+    "imageUrls": [
+      "https://booking.muongthanh.com/images/hotels/hotels/original/muong-thanh-grand-gia-lai_1726647663.jpg",
+      "https://www.cotrang.org/public/images/tin_dang/5/116_khach-san-muong-thanh-grand-gia-lai-pk-06.jpg",
+      "https://ongvove.com/uploads/0005/5428/2025/05/30/khach-san-muong-thanh-grand-gia-lai2.jpg",
+      "https://booking.muongthanh.com/images/news/2024/10/original/muong-thanh-grand-gia-lai_1727856512.jpg"
+    ],
+    "description": "Khách sạn 4 sao chuẩn quốc tế với hồ bơi ngoài trời, spa cao cấp và tầm nhìn ôm trọn quảng trường trung tâm."
   },
   {
-    "accId": "STAY_KBANG_ECO",
-    "name": "Kbang Eco Homestay & Trekking Base",
+    "id": "ACC_BOSTON_GL",
+    "accId": "ACC_BOSTON_GL",
+    "name": "Khách sạn Boston Hotel Pleiku",
+    "districtId": "D_PLEIKU",
+    "stayType": "Khách sạn 3 sao",
+    "pricePerNight": "650,000đ / đêm",
+    "budget": "650,000đ / đêm",
+    "address": "212 Phù Đổng, TP. Pleiku, Gia Lai",
+    "ratingAvg": 4.6,
+    "suitableFor": [
+      "Nhóm bạn",
+      "Cặp đôi",
+      "Khách công tác"
+    ],
+    "imageUrl": "https://alltop.vn/backend/media/images/posts/692/Boston_Hotel_Gia_Lai-238282.jpg",
+    "imageUrls": [
+      "https://alltop.vn/backend/media/images/posts/692/Boston_Hotel_Gia_Lai-238282.jpg",
+      "https://www.cotrang.org/public/images/tin_dang/5/283_khach-san-pleiku-nguyen-tat-thanh-pleiku-gia-lai-pk-01.jpg",
+      "https://cdn2.vietnambooking.com/wp-content/uploads/hotel_pro/hotel_350143/19dc84ec12fbca3a331f3b3709fe5300.jpg",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/9d/62/6c/boston-hotel.jpg?w=900&h=-1&s=1"
+    ],
+    "description": "Khách sạn phong cách hiện đại trẻ trung, phòng ốc sạch sẽ, tiện nghi và giá cả hợp lý ngay trung tâm."
+  },
+  {
+    "id": "ACC_NHACUANEP_GL",
+    "accId": "ACC_NHACUANEP_GL",
+    "name": "Homestay Nhà Của Nếp Pleiku",
+    "districtId": "D_PLEIKU",
     "stayType": "Homestay",
-    "pricePerNight": "300.000đ - 600.000đ",
-    "address": "Thị trấn Kbang, Huyện K'Bang, Gia Lai",
-    "districtId": "D_KBANG",
+    "pricePerNight": "400,000đ / đêm",
+    "budget": "400,000đ / đêm",
+    "address": "Hẻm 48 Nguyễn Viết Xuân, TP. Pleiku, Gia Lai",
+    "ratingAvg": 4.9,
+    "suitableFor": [
+      "Cặp đôi",
+      "Bạn trẻ mê check-in"
+    ],
+    "imageUrl": "https://gialai.info/wp-content/uploads/2023/06/review-booking-phong-homestay-nha-cua-nep-pleiku-gia-lai-2.jpg",
+    "imageUrls": [
+      "https://gialai.info/wp-content/uploads/2023/06/review-booking-phong-homestay-nha-cua-nep-pleiku-gia-lai-2.jpg",
+      "https://gialai.info/wp-content/uploads/2023/06/review-booking-phong-homestay-nha-cua-nep-pleiku-gia-lai-4.jpg",
+      "https://static2.abay.vn/Images/2024/10/25/nha-cua-nep-1-min.jpg",
+      "https://gialai.info/wp-content/uploads/2023/06/khach-checkin-nha-cua-nep-2.jpg"
+    ],
+    "description": "Không gian mộc mạc làm từ tre nứa mang đậm hồn cốt Tây Nguyên ấm áp và thân thiện."
+  },
+  {
+    "id": "ACC_JRAI_HOME",
+    "accId": "ACC_JRAI_HOME",
+    "name": "J'rai Homestay & Coffee Pleiku",
+    "districtId": "D_PLEIKU",
+    "stayType": "Homestay",
+    "pricePerNight": "420,000đ / đêm",
+    "budget": "420,000đ / đêm",
+    "address": "Phường Hội Phú, TP. Pleiku, Gia Lai",
+    "ratingAvg": 4.7,
+    "suitableFor": [
+      "Cặp đôi",
+      "Nhóm bạn trẻ"
+    ],
+    "imageUrl": "https://alltop.vn/backend/media/images/posts/1268/Jrai_Homestay-65074.jpg",
+    "imageUrls": [
+      "https://alltop.vn/backend/media/images/posts/1268/Jrai_Homestay-65074.jpg",
+      "https://alltop.vn/backend/media/images/posts/1268/Jrai_Homestay-65073.jpg",
+      "https://toplist.vn/images/800px/jrai-homestay-pleiku-1061743.jpg",
+      "https://2trip.vn/wp-content/uploads/2023/07/homestay-pleiku-gia-lai-3.jpg"
+    ],
+    "description": "Sự kết hợp giữa phòng ngủ vintage ấm cúng và quán cà phê rang xay nguyên chất đậm chất phố núi."
+  },
+  {
+    "id": "ACC_CHUPAH_FARM",
+    "accId": "ACC_CHUPAH_FARM",
+    "name": "Tiên Sơn Farmstay & Camp Chư Păh",
+    "districtId": "D_CHUPAH",
+    "stayType": "Homestay / Camping",
+    "pricePerNight": "500,000đ / đêm",
+    "budget": "500,000đ / đêm",
+    "address": "Xã Tân Sơn, huyện Chư Păh, Gia Lai",
     "ratingAvg": 4.8,
-    "phone": "0977 123 456",
-    "imageUrl": "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800",
-    "description": "Trạm dừng chân lý tưởng của du khách trước chuyến hành trình trekking xuyên rừng già chinh phục thác K50 Kon Chư Răng."
+    "suitableFor": [
+      "Nhóm bạn",
+      "Phượt thủ",
+      "Gia đình"
+    ],
+    "imageUrl": "https://mia.vn/media/uploads/blog-du-lich/homestay-gia-lai-tien-son-1708100154.jpg",
+    "imageUrls": [
+      "https://mia.vn/media/uploads/blog-du-lich/homestay-gia-lai-tien-son-1708100154.jpg",
+      "https://nongthon.vietnamtourism.gov.vn/wp-content/uploads/2024/02/1602.Gia-Lai-1.jpg",
+      "https://toplist.vn/images/800px/paksong-farmstay-gia-lai-1061702.jpg"
+    ],
+    "description": "Khu lều trại glamping giữa đồi chè và chân núi lửa Chư Đang Ya, ngắm dải ngân hà về đêm cực kỳ ấn tượng."
+  },
+  {
+    "id": "ACC_PAKSONG_FARM",
+    "accId": "ACC_PAKSONG_FARM",
+    "name": "Paksong Farmstay Gia Lai",
+    "districtId": "D_CHUPAH",
+    "stayType": "Farmstay sinh thái",
+    "pricePerNight": "600,000đ / đêm",
+    "budget": "600,000đ / đêm",
+    "address": "Xã Nghĩa Hưng, huyện Chư Păh, Gia Lai",
+    "ratingAvg": 4.8,
+    "suitableFor": [
+      "Gia đình",
+      "Nhóm bạn",
+      "Người yêu nông nghiệp sạch"
+    ],
+    "imageUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/505650364.jpg?k=719bca3b66bbcb464e4011a3208545f44755514f26566c9110dd9f7d27895aa4&o=",
+    "imageUrls": [
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/505650364.jpg?k=719bca3b66bbcb464e4011a3208545f44755514f26566c9110dd9f7d27895aa4&o=",
+      "https://toplist.vn/images/800px/paksong-farmstay-gia-lai-1061701.jpg",
+      "https://sb.ecobnb.net/app/uploads/sites/3/2026/03/Ecolodge-Paksong-Farmstay.png",
+      "https://toplist.vn/images/800px/paksong-farmstay-gia-lai-1061702.jpg"
+    ],
+    "description": "Khu nghỉ dưỡng nông trại xanh mát bên đồi chè cổ thụ, trải nghiệm hái chè và thưởng thức ẩm thực hữu cơ."
+  },
+  {
+    "id": "ACC_SAIGON_ANKHE",
+    "accId": "ACC_SAIGON_ANKHE",
+    "name": "Khách sạn Sài Gòn - Ban Mê An Khê",
+    "districtId": "D_ANKHE",
+    "stayType": "Khách sạn 3 sao",
+    "pricePerNight": "550,000đ / đêm",
+    "budget": "550,000đ / đêm",
+    "address": "Đường Quang Trung, thị xã An Khê, Gia Lai",
+    "ratingAvg": 4.5,
+    "suitableFor": [
+      "Khách đi đường liên tuyến",
+      "Công tác"
+    ],
+    "imageUrl": "https://disaigon.com/wp-content/uploads/2023/05/9999.jpg",
+    "imageUrls": [
+      "https://disaigon.com/wp-content/uploads/2023/05/9999.jpg",
+      "https://ticotravel.com.vn/wp-content/uploads/2022/03/Sai-Gon-Ban-Me-Hotel-1.jpg",
+      "https://du-lich.chudu24.com/f/m/1704/26/4-3.jpg",
+      "https://eholiday.vn/wp-content/uploads/2024/11/Khach-san-Sai-Gon-Ban-Me-1.jpg"
+    ],
+    "description": "Điểm dừng chân lý tưởng trên trục QL19 trước khi vượt đèo An Khê xuống duyên hải."
+  },
+  {
+    "id": "ACC_HOANGYEN_TS",
+    "accId": "ACC_HOANGYEN_TS",
+    "name": "Khách sạn Hoàng Yến Tây Sơn",
+    "districtId": "D_TAYSON",
+    "stayType": "Khách sạn 3 sao",
+    "pricePerNight": "600,000đ / đêm",
+    "budget": "600,000đ / đêm",
+    "address": "Thị trấn Phú Phong, huyện Tây Sơn",
+    "ratingAvg": 4.6,
+    "suitableFor": [
+      "Gia đình",
+      "Đoàn tham quan di tích"
+    ],
+    "imageUrl": "https://gotour.com.vn/wp-content/uploads/2020/11/View-Bien-Khach-San-Hoang-Yen-Quy-Nhon-1.png",
+    "imageUrls": [
+      "https://gotour.com.vn/wp-content/uploads/2020/11/View-Bien-Khach-San-Hoang-Yen-Quy-Nhon-1.png",
+      "https://www.vietnambooking.com/wp-content/uploads/2019/01/khach-san-binh-dinh-hoang-yen-3-quy-nhon-1.jpg",
+      "http://booking24h.vn/image/catalog/khach-san/hoang-yen/Hoang-yen.jpg",
+      "https://gotour.com.vn/wp-content/uploads/2020/11/View-Khach-San-Hoang-Yen-Quy-Nhon-1.jpg"
+    ],
+    "description": "Khách sạn trung tâm thị trấn Phú Phong, chỉ cách bảo tàng Quang Trung 5 phút đi bộ."
+  },
+  {
+    "id": "ACC_MOC_NHONLY",
+    "accId": "ACC_MOC_NHONLY",
+    "name": "Mộc Homestay Nhơn Lý (View Làng chài & Eo Gió)",
+    "districtId": "D_NHONLY",
+    "stayType": "Homestay",
+    "pricePerNight": "550,000đ / đêm",
+    "budget": "550,000đ / đêm",
+    "address": "Xã Nhơn Lý, TP. Quy Nhơn",
+    "ratingAvg": 4.8,
+    "suitableFor": [
+      "Cặp đôi",
+      "Nhóm bạn trẻ"
+    ],
+    "imageUrl": "https://halotravel.vn/wp-content/uploads/2021/02/moc-homestay-quy-nhon-1024x768.jpg",
+    "imageUrls": [
+      "https://halotravel.vn/wp-content/uploads/2021/02/moc-homestay-quy-nhon-1024x768.jpg",
+      "https://2trip.vn/wp-content/uploads/2020/08/Moc-homestay-nhon-Ly-750x563.jpg",
+      "https://2trip.vn/wp-content/uploads/2023/05/moc-homestay-quy-nhon_25.jpg"
+    ],
+    "description": "Homestay phong cách mộc mạc sát biển làng chài Nhơn Lý, ngắm hoàng hôn Eo Gió tuyệt đẹp chỉ 3 phút đi bộ."
+  },
+  {
+    "id": "ACC_LABEACH_NHONLY",
+    "accId": "ACC_LABEACH_NHONLY",
+    "name": "La Beach House Nhơn Lý (Cổ tích ven biển)",
+    "districtId": "D_NHONLY",
+    "stayType": "Homestay",
+    "pricePerNight": "600,000đ / đêm",
+    "budget": "600,000đ / đêm",
+    "address": "Dốc làng chài Lý Lương, xã Nhơn Lý, Quy Nhơn",
+    "ratingAvg": 4.9,
+    "suitableFor": [
+      "Cặp đôi",
+      "Check-in sống ảo",
+      "Nhóm bạn"
+    ],
+    "imageUrl": "https://vietnamreviewer.com/wp-content/uploads/2023/09/La-Beach-House-Nhon-Ly-Quy-Nhon.jpg",
+    "imageUrls": [
+      "https://vietnamreviewer.com/wp-content/uploads/2023/09/La-Beach-House-Nhon-Ly-Quy-Nhon.jpg",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/22/18/15/nhoen-ly-beach.jpg?w=900&h=500&s=1",
+      "https://quynhontourist.vn/wp-content/uploads/2018/08/la-beach-house-quy-nhon-homestay-quy-nhon-quynhontourist6.jpg"
+    ],
+    "description": "Khu nhà rực rỡ sắc màu phong cách Địa Trung Hải nhìn thẳng ra vịnh biển xanh mát, điểm check-in viral trên TikTok."
+  },
+  {
+    "id": "ACC_KYCO_PENINSULA",
+    "accId": "ACC_KYCO_PENINSULA",
+    "name": "Kỳ Co Peninsula Resort",
+    "districtId": "D_NHONLY",
+    "stayType": "Resort ven biển",
+    "pricePerNight": "1,600,000đ / đêm",
+    "budget": "1,600,000đ / đêm",
+    "address": "Khu du lịch Kỳ Co, xã Nhơn Lý, TP. Quy Nhơn",
+    "ratingAvg": 4.8,
+    "suitableFor": [
+      "Cặp đôi",
+      "Gia đình"
+    ],
+    "imageUrl": "http://www.beach-on-map.com/img/37/vietnam-quy-nhon-life-s-a-beach-orig.jpg",
+    "imageUrls": [
+      "http://www.beach-on-map.com/img/37/vietnam-quy-nhon-life-s-a-beach-orig.jpg",
+      "https://datviettour.com.vn/uploads/images/tin-tuc-SEO/mien-trung/quy-nhon/danh-thang/Lifes-A-Beach-Quy-Nhon-1.jpg",
+      "https://statics.vinpearl.com/bai-xep-beach-3_1688315197.jpg",
+      "https://www.rustycompass.com/uploads/destinations/lifes-a-beach-backpackers-bai-xep-quy-nhon-0817-0002_15028535254.jpg"
+    ],
+    "description": "Bungalow sát vách núi biển Kỳ Co, mở cửa sổ đón gió trùng khơi và ngắm bình minh trên biển sớm nhất Quy Nhơn."
+  },
+  {
+    "id": "ACC_FLC_RESORT",
+    "accId": "ACC_FLC_RESORT",
+    "name": "FLC Luxury Resort Quy Nhơn (Quần thể Nghỉ dưỡng 5 sao)",
+    "districtId": "D_NHONLY",
+    "stayType": "Resort nghỉ dưỡng 5 sao",
+    "pricePerNight": "2,800,000đ / đêm",
+    "budget": "2,800,000đ / đêm",
+    "address": "Khu 4, bãi biển Nhơn Lý - Cát Tiến",
+    "ratingAvg": 4.9,
+    "suitableFor": [
+      "Gia đình",
+      "Cặp đôi nghỉ dưỡng cao cấp"
+    ],
+    "imageUrl": "https://vietgroupco.com/wp-content/uploads/z2119065044301_fa28b45950b489235def9e9d94fb9f2e.jpg",
+    "imageUrls": [
+      "https://vietgroupco.com/wp-content/uploads/z2119065044301_fa28b45950b489235def9e9d94fb9f2e.jpg",
+      "https://owa.bestprice.vn/images/articles/uploads/review-kinh-nghiem-nghi-duong-sieu-sang-chanh-tai-flc-luxury-hotel-resort-quy-nhon-5e9ec5a6d1913.jpg",
+      "https://gotour.com.vn/wp-content/uploads/2023/10/Canh-quan-ban-dem-tai-FLC-Luxury-Hotel-Resort-Quy-Nhon.jpeg"
+    ],
+    "description": "Quần thể villa và resort ven biển 5 sao đẳng cấp quốc tế ôm trọn biển Nhơn Lý xanh ngọc bích và sân golf 36 hố."
+  },
+  {
+    "id": "ACC_ANYA_QN",
+    "accId": "ACC_ANYA_QN",
+    "name": "Anya Premier Hotel Quy Nhơn (Khách sạn biển 4 sao)",
+    "districtId": "D_QNY",
+    "stayType": "Khách sạn 4 sao",
+    "pricePerNight": "1,200,000đ / đêm",
+    "budget": "1,200,000đ / đêm",
+    "address": "44 An Dương Vương, phường Nguyễn Văn Cừ, Quy Nhơn",
+    "ratingAvg": 4.7,
+    "suitableFor": [
+      "Gia đình",
+      "Cặp đôi",
+      "Nhóm bạn"
+    ],
+    "imageUrl": "https://quynhonbooking.vn/wp-content/uploads/2022/10/Anya-Premier-Hotel-Quy-Nhon.jpg",
+    "imageUrls": [
+      "https://quynhonbooking.vn/wp-content/uploads/2022/10/Anya-Premier-Hotel-Quy-Nhon.jpg",
+      "https://quynhonbooking.vn/wp-content/uploads/2022/10/Anya-Premier-Hotel-Quy-Nhon-2.jpg",
+      "https://mia.vn/media/uploads/blog-du-lich/anya-premier-hotel-quy-nhon-1-1679399915.jpg"
+    ],
+    "description": "Khách sạn cao cấp đối diện bãi biển Quy Nhơn, tiện lợi tắm biển và thưởng thức phố ẩm thực đêm Ngô Văn Sở."
+  },
+  {
+    "id": "ACC_FLEURDELYS_QN",
+    "accId": "ACC_FLEURDELYS_QN",
+    "name": "Khách sạn Fleur De Lys Hotel Quy Nhơn",
+    "districtId": "D_QNY",
+    "stayType": "Khách sạn 4 sao cao cấp",
+    "pricePerNight": "1,400,000đ / đêm",
+    "budget": "1,400,000đ / đêm",
+    "address": "16 Nguyễn Huệ, phường Lê Lợi, TP. Quy Nhơn",
+    "ratingAvg": 4.9,
+    "suitableFor": [
+      "Cặp đôi",
+      "Doanh nhân",
+      "Gia đình"
+    ],
+    "imageUrl": "https://eholiday.vn/wp-content/uploads/2024/05/Khach-san-Fleur-De-Lys-Quy-Nhon-13.jpg",
+    "imageUrls": [
+      "https://eholiday.vn/wp-content/uploads/2024/05/Khach-san-Fleur-De-Lys-Quy-Nhon-13.jpg",
+      "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/20044387-2d46e8d32e7ea5cacf81c7befce472b7.jpeg?_src=imagekit&tr=dpr-3",
+      "https://eholiday.vn/wp-content/uploads/2022/04/Khach-san-Fleur-De-Lys-Hotel-Quy-Nhon.jpg?v=1685334099",
+      "https://quynhonhotel.com/wp-content/uploads/2021/05/buoi-toi-khach-san-muong-thanh-quy-nhon-khach-san-4-sao-sat-bien-quy-nhon-quynhonhotel.jpg"
+    ],
+    "description": "Khách sạn 4 sao sang trọng view trực diện vịnh biển Quy Nhơn, phong cách thanh lịch châu Âu hiện đại."
+  },
+  {
+    "id": "ACC_SEAGULL_QN",
+    "accId": "ACC_SEAGULL_QN",
+    "name": "Khách sạn Hải Âu Quy Nhơn (Seagull Hotel)",
+    "districtId": "D_QNY",
+    "stayType": "Khách sạn 4 sao",
+    "pricePerNight": "950,000đ / đêm",
+    "budget": "950,000đ / đêm",
+    "address": "489 An Dương Vương, TP. Quy Nhơn",
+    "ratingAvg": 4.6,
+    "suitableFor": [
+      "Gia đình",
+      "Đoàn du lịch"
+    ],
+    "imageUrl": "https://2trip.vn/wp-content/uploads/2020/08/seagull-hotel-quy-nhon.jpg",
+    "imageUrls": [
+      "https://2trip.vn/wp-content/uploads/2020/08/seagull-hotel-quy-nhon.jpg",
+      "https://khamphaquynhon.vn/wp-content/uploads/2026/01/danh-gia-seagull-hotel-494.jpg",
+      "https://eholiday.vn/wp-content/uploads/2024/04/Khach-san-Hai-Au-Quy-Nhon.jpg",
+      "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/09/khach-san-hai-au-quy-nhon-1.jpg"
+    ],
+    "description": "Khách sạn ven biển lâu đời có ban công ngắm trọn bình minh biển Quy Nhơn và bãi tắm cát vàng."
+  },
+  {
+    "id": "ACC_MIRABAIXEP",
+    "accId": "ACC_MIRABAIXEP",
+    "name": "Mira Bãi Xếp Homestay Quy Nhơn (Hidden Jewel)",
+    "districtId": "D_QNY",
+    "stayType": "Homestay ven biển",
+    "pricePerNight": "650,000đ / đêm",
+    "budget": "650,000đ / đêm",
+    "address": "Làng chài Bãi Xếp, phường Ghềnh Ráng, Quy Nhơn",
+    "ratingAvg": 4.9,
+    "suitableFor": [
+      "Cặp đôi",
+      "Người yêu biển yên tĩnh"
+    ],
+    "imageUrl": "https://ohdidi.vn/uploads/static/HOMES/binh-dinh/mira-bai-xep-home/mira-bai-xep-06.jpg",
+    "imageUrls": [
+      "https://ohdidi.vn/uploads/static/HOMES/binh-dinh/mira-bai-xep-home/mira-bai-xep-06.jpg",
+      "https://kenhhomestay.com/wp-content/uploads/2019/11/Mira-BÃ£i-Xáº¿p-2.jpg",
+      "https://kenhhomestay.com/wp-content/uploads/2019/11/mirra-bai-xep-12-min.jpg",
+      "https://kenhhomestay.com/wp-content/uploads/2019/11/mirra-bai-xep-11-min.jpg"
+    ],
+    "description": "Homestay thiết kế gỗ kính mở độc đáo view vách đá và biển ngọc Bãi Xếp, điểm check-in yêu thích của giới trẻ."
+  },
+  {
+    "id": "ACC_CASAMARINA",
+    "accId": "ACC_CASAMARINA",
+    "name": "Casa Marina Resort Quy Nhơn",
+    "districtId": "D_QNY",
+    "stayType": "Resort 4 sao",
+    "pricePerNight": "1,900,000đ / đêm",
+    "budget": "1,900,000đ / đêm",
+    "address": "Quốc lộ 1D, khu phố 1, Bãi Xếp, Ghềnh Ráng, Quy Nhơn",
+    "ratingAvg": 4.8,
+    "suitableFor": [
+      "Gia đình",
+      "Cặp đôi trăng mật"
+    ],
+    "imageUrl": "https://cdn3.ivivu.com/2023/06/casa-marina-quy-nhon-ivivu-1.jpg",
+    "imageUrls": [
+      "https://cdn3.ivivu.com/2023/06/casa-marina-quy-nhon-ivivu-1.jpg",
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/219494123.jpg?k=8221aed5c060c10b688e26af721eecd5398a1689db8a1a3bfa0feb9778023e78&o=",
+      "https://storage1.vietnam-real.estate/static/p/ofcfq4vf8o/pp9lzt9bju0v/Casa-Marina-Resort-2.jpg",
+      "https://eholiday.vn/wp-content/uploads/2024/03/Casa-Marina-Resort-Quy-Nhon-12.jpg"
+    ],
+    "description": "Resort ẩn mình trong vịnh biển Quy Hòa thanh bình với hồ bơi vô cực lọc bằng ozone và hàng dừa rợp bóng."
+  },
+  {
+    "id": "ACC_LIFEBEACH",
+    "accId": "ACC_LIFEBEACH",
+    "name": "Life's A Beach Homestay Bãi Xếp",
+    "districtId": "D_QNY",
+    "stayType": "Homestay phong cách Tây",
+    "pricePerNight": "500,000đ / đêm",
+    "budget": "500,000đ / đêm",
+    "address": "Tổ 2, khu vực 1, Bãi Xếp, Ghềnh Ráng, Quy Nhơn",
+    "ratingAvg": 4.8,
+    "suitableFor": [
+      "Khách Tây balo",
+      "Nhóm bạn trẻ"
+    ],
+    "imageUrl": "http://www.beach-on-map.com/img/37/vietnam-quy-nhon-life-s-a-beach-orig.jpg",
+    "imageUrls": [
+      "http://www.beach-on-map.com/img/37/vietnam-quy-nhon-life-s-a-beach-orig.jpg",
+      "https://datviettour.com.vn/uploads/images/tin-tuc-SEO/mien-trung/quy-nhon/danh-thang/Lifes-A-Beach-Quy-Nhon-1.jpg",
+      "https://statics.vinpearl.com/bai-xep-beach-3_1688315197.jpg",
+      "https://www.rustycompass.com/uploads/destinations/lifes-a-beach-backpackers-bai-xep-quy-nhon-0817-0002_15028535254.jpg"
+    ],
+    "description": "Homestay do hai chàng trai người Anh sáng lập, không gian mộc mạc sát biển với bar bia thủ công cực chill."
   }
 ]

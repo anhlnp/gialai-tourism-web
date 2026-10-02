@@ -1,4 +1,4 @@
-﻿"""
+"""
 Accommodations Router — Cơ sở lưu trú Gia Lai (Thông tin bổ sung).
 """
 import os
@@ -33,13 +33,21 @@ def list_accommodations(
         OPTIONAL MATCH (loc)-[:LOCATED_IN]->(d:District)
         {where}
         RETURN acc.accId AS id, acc.name AS name, acc.description AS description,
-               acc.imageUrl AS imageUrl, acc.pricePerNight AS budget,
+               acc.imageUrl AS imageUrl, acc.imageUrls AS imageUrls,
+               acc.pricePerNight AS budget, acc.stayType AS stayType,
+               acc.address AS address, acc.ratingAvg AS ratingAvg,
+               acc.suitableFor AS suitableFor,
                collect(DISTINCT d.name)[0..3] AS regions
         ORDER BY acc.name
         LIMIT $limit
         """
         res = run_query(cypher, params)
         if res:
+            for r in res:
+                if not r.get("imageUrls") and r.get("imageUrl"):
+                    r["imageUrls"] = [r["imageUrl"]]
+                if isinstance(r.get("budget"), (int, float)):
+                    r["budget"] = f"{int(r['budget']):,}đ / đêm"
             return res
     except Exception:
         pass
@@ -54,11 +62,16 @@ def list_accommodations(
                 stays = [s for s in stays if search.lower() in s["name"].lower() or search.lower() in s.get("description", "").lower()]
             return [
                 {
-                    "id": s["accId"],
+                    "id": s.get("id") or s.get("accId"),
                     "name": s["name"],
-                    "description": s["description"],
-                    "imageUrl": s["imageUrl"],
-                    "budget": s.get("pricePerNight", ""),
+                    "description": s.get("description", ""),
+                    "imageUrl": s.get("imageUrl", ""),
+                    "imageUrls": s.get("imageUrls") or ([s["imageUrl"]] if s.get("imageUrl") else []),
+                    "budget": s.get("budget") or s.get("pricePerNight", ""),
+                    "stayType": s.get("stayType", "Khách sạn"),
+                    "address": s.get("address", ""),
+                    "ratingAvg": s.get("ratingAvg", 4.7),
+                    "suitableFor": s.get("suitableFor", []),
                     "regions": ["TP. Pleiku", "Chư Păh"]
                 }
                 for s in stays[:limit]

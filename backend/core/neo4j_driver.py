@@ -11,7 +11,7 @@ load_dotenv()
 _URI = os.getenv("NEO4J_URI", "neo4j+ssc://localhost:7687")
 _USER = os.getenv("NEO4J_USERNAME", "neo4j")
 _PASS = os.getenv("NEO4J_PASSWORD", "")
-_DB = os.getenv("NEO4J_DATABASE", "neo4j")
+_DB = os.getenv("NEO4J_DATABASE", "4da2f4d9")
 
 _driver = None
 

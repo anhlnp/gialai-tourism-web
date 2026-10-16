@@ -6,42 +6,52 @@
 /* ── Google Font ── */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-/* ── Design Tokens (Light Mode Default) ── */
+/* ── Design Tokens (Google Stitch: Gia Lai Explorer Editorial Theme) ── */
 :root {
-  --color-primary: #059669;
-  --color-primary-light: #10b981;
-  --color-primary-dark: #047857;
+  --color-primary: #246b4a;         /* Forest Green - Màu xanh đại ngàn */
+  --color-primary-dark: #194e36;    /* Deep Forest */
+  --color-primary-light: #eaf2ec;   /* Sage Light */
+  --color-primary-soft: #f2f7f3;
 
-  --color-bg: #f8fafc;
-  --color-bg-2: #ffffff;
-  --color-bg-3: #f1f5f9;
+  --color-terracotta: #c26d38;      /* Terracotta / Đất đỏ Bazan */
+  --color-terracotta-soft: #faf1eb;
+
+  --color-bg: #fafaf7;              /* Canvas: Warm Editorial Paper */
+  --color-bg-2: #ffffff;            /* Pure Surface */
+  --color-bg-3: #f2f7f3;            /* Sage Tint */
   --color-surface: #ffffff;
-  --color-surface-hover: #f8fafc;
+  --color-surface-hover: #f5f8f5;
 
-  --color-text: #0f172a;
-  --color-text-2: #475569;
-  --color-text-3: #94a3b8;
+  --color-text: #1a1d1a;            /* Charcoal Pine */
+  --color-text-2: #404942;
+  --color-text-3: #6e756f;          /* Muted Gray-Green */
 
-  --color-border: #e2e8f0;
-  --color-border-light: #f1f5f9;
+  --color-border: #e8ebe5;          /* Hairline Stone 1px */
+  --color-border-light: #f0f2ed;
 
-  --color-region-mountain: #16a34a;
-  --color-region-transition: #ca8a04;
-  --color-region-sea: #2563eb;
+  --color-region-mountain: #246b4a;
+  --color-region-transition: #c26d38;
+  --color-region-sea: #1f6e8c;
 
-  --color-accent-rose: #e11d48;
-  --color-accent-amber: #d97706;
+  --color-accent-rose: #d32f2f;
+  --color-accent-amber: #c26d38;
 
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
   --radius-xl: 24px;
+  --radius-pill: 9999px;
+
+  --font-editorial: 'Newsreader', Georgia, serif;
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
 
   --glass: blur(16px) saturate(1.5);
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-  --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
-  --shadow-lg: 0 10px 32px rgba(0,0,0,0.1);
-  --shadow-glow: 0 4px 20px rgba(5, 150, 105, 0.12);
+  --shadow-xs: 0 1px 2px rgba(26, 29, 26, 0.04);
+  --shadow-sm: 0 2px 6px -1px rgba(26, 29, 26, 0.05);
+  --shadow-md: 0 8px 24px -4px rgba(26, 29, 26, 0.06);
+  --shadow-lg: 0 12px 32px -4px rgba(26, 29, 26, 0.08);
+  --shadow-glow: 0 4px 20px rgba(36, 107, 74, 0.15);
 
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-fast: 0.15s ease;
@@ -85,12 +95,33 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-body);
   background: var(--color-bg);
   color: var(--color-text);
   line-height: 1.6;
   min-height: 100vh;
   overflow-x: hidden;
+  padding-bottom: 76px; /* Space for Mobile Bottom Navigation */
+}
+
+/* ── Typography Classes (Google Stitch) ── */
+.font-editorial {
+  font-family: var(--font-editorial);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.editorial-italic {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-primary);
 }
 
 a {
@@ -840,3 +871,224 @@ a:hover {
     display: none;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   STITCH COMPONENT DESIGN SYSTEM (5-Tab Bar, Editorial Cards, etc.)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Mobile & Desktop Bottom 5-Tab Bar ── */
+.stitch-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 68px;
+  background: rgba(250, 250, 247, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 1000;
+  padding: 0 12px;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  box-shadow: 0 -4px 16px rgba(26, 29, 26, 0.03);
+}
+
+.stitch-tab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--color-text-3);
+  font-size: 11px;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  gap: 3px;
+  position: relative;
+}
+
+.stitch-tab-item:hover {
+  color: var(--color-primary);
+}
+
+.stitch-tab-item.active {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.stitch-tab-item.active .tab-icon-wrap {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  border-radius: var(--radius-pill);
+  padding: 3px 14px;
+}
+
+.stitch-tab-item .tab-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  padding: 3px 8px;
+}
+
+/* ── Editorial Pull Quote & Fact Strip ── */
+.editorial-quote {
+  background: var(--color-bg-3);
+  border-left: 3px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin: 16px 0;
+  position: relative;
+}
+
+.fact-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 14px 18px;
+  margin: 18px 0;
+  box-shadow: var(--shadow-xs);
+}
+
+.fact-strip-col {
+  flex: 1;
+  text-align: left;
+}
+
+.fact-strip-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--color-border);
+  margin: 0 16px;
+}
+
+.fact-strip-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-3);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.fact-strip-val {
+  font-family: var(--font-display);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.fact-strip-sub {
+  font-size: 11px;
+  color: var(--color-text-3);
+}
+
+/* ── Knowledge Badges ── */
+.knowledge-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.knowledge-badge.terracotta {
+  background: var(--color-terracotta-soft);
+  color: var(--color-terracotta);
+}
+
+/* ── Filter Chips ── */
+.filter-chips-row {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 0 12px 0;
+  scrollbar-width: none;
+}
+.filter-chips-row::-webkit-scrollbar {
+  display: none;
+}
+
+.chip-pill {
+  white-space: nowrap;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 12.5px;
+  font-weight: 500;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-2);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.chip-pill:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.chip-pill.active {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* ── Empty State ── */
+.empty-state-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 48px 24px;
+  text-align: center;
+  max-width: 480px;
+  margin: 40px auto;
+  box-shadow: var(--shadow-sm);
+}
+
+.empty-state-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px auto;
+}
+
+/* ── Offline Banner ── */
+.offline-banner {
+  background: #fef2f2;
+  border-bottom: 1px solid #fee2e2;
+  color: #991b1b;
+  padding: 8px 16px;
+  font-size: 12.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 500;
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+}
+

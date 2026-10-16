@@ -44,6 +44,7 @@ from routers.accommodations import router as accommodations_router
 from routers.planner import router as planner_router
 from routers.chat import router as chat_router
 from routers.search import router as search_router
+from routers.events import router as events_router
 
 app.include_router(locations_router)
 app.include_router(dishes_router)
@@ -51,6 +52,7 @@ app.include_router(accommodations_router)
 app.include_router(planner_router)
 app.include_router(chat_router)
 app.include_router(search_router)
+app.include_router(events_router)
 
 
 @app.get("/api/stats")

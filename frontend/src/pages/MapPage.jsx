@@ -1,8 +1,11 @@
-import { useState, useMemo, useRef, useEffect } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
 import L from 'leaflet'
-import { Search, Navigation, Compass, Layers, Star, MapPin, X, ExternalLink, Ticket, Clock } from 'lucide-react'
+import { 
+  Search, Navigation, Compass, Layers, Star, MapPin, X, 
+  ExternalLink, Ticket, Clock, Info, ChevronRight, LocateFixed, Plus, Minus
+} from 'lucide-react'
 import { useApi } from '../hooks/useApi'
 
 // Helper component to control map programmatic movement
@@ -16,7 +19,7 @@ function MapController({ targetPos, targetZoom }) {
   return null
 }
 
-// Map Tile Layers (Free, Fast, No API Key required, Google Maps & OSM)
+// Map Tile Layers
 const MAP_LAYERS = {
   streets: {
     name: 'Đường phố',
@@ -44,22 +47,24 @@ const MAP_LAYERS = {
   }
 }
 
-// Generate stylish SVG map pin based on category
+// Haversine distance calculator in KM
+function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
+  if (!lat1 || !lon1 || !lat2 || !lon2) return null
+  const R = 6371 // Radius of the earth in km
+  const dLat = (lat2 - lat1) * (Math.PI / 180)
+  const dLon = (lon2 - lon1) * (Math.PI / 180)
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(lat1 * (Math.PI / 180)) * Math.cos(lat2 * (Math.PI / 180)) *
+    Math.sin(dLon / 2) * Math.sin(dLon / 2)
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
+  return (R * c).toFixed(1)
+}
+
+// Stitch Forest Green Custom Map Pin
 function createCustomPin(category = '', isSelected = false) {
-  let pinColor = '#10b981' // Green default
-  const cat = (category || '').toLowerCase()
-
-  if (cat.includes('biển') || cat.includes('đảo') || cat.includes('hồ')) {
-    pinColor = '#0284c7' // Blue
-  } else if (cat.includes('văn hóa') || cat.includes('làng') || cat.includes('lễ hội')) {
-    pinColor = '#f59e0b' // Amber
-  } else if (cat.includes('tâm linh') || cat.includes('chùa') || cat.includes('nhà thờ') || cat.includes('di tích')) {
-    pinColor = '#e11d48' // Rose/Red
-  } else if (cat.includes('thác') || cat.includes('núi') || cat.includes('rừng')) {
-    pinColor = '#059669' // Emerald
-  }
-
-  const size = isSelected ? 42 : 34
+  const pinColor = isSelected ? '#C26D38' : '#246B4A'
+  const size = isSelected ? 40 : 32
   const scale = isSelected ? 'scale(1.2)' : 'scale(1)'
 
   const html = `
@@ -74,7 +79,7 @@ function createCustomPin(category = '', isSelected = false) {
       align-items: center;
       justify-content: center;
     ">
-      <svg width="${size}" height="${size}" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter: drop-shadow(0 4px 6px rgba(0,0,0,0.35));">
+      <svg width="${size}" height="${size}" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));">
         <path d="M18 3C11.3726 3 6 8.37258 6 15C6 23.25 18 33 18 33C18 33 30 23.25 30 15C30 8.37258 24.6274 3 18 3Z" fill="${pinColor}" stroke="#ffffff" stroke-width="2"/>
         <circle cx="18" cy="15" r="5" fill="#ffffff"/>
       </svg>
@@ -107,13 +112,13 @@ export default function MapPage() {
     return locations?.filter(l => l.lat && l.lng) || []
   }, [locations])
 
-  // Extract distinct categories
+  // Categories
   const categories = useMemo(() => {
     const cats = new Set(validLocations.map(l => l.category).filter(Boolean))
     return ['ALL', ...Array.from(cats)]
   }, [validLocations])
 
-  // Filtered locations by search query and category
+  // Filtered locations
   const filteredLocations = useMemo(() => {
     return validLocations.filter(loc => {
       const matchCat = selectedCategory === 'ALL' || loc.category === selectedCategory
@@ -124,13 +129,13 @@ export default function MapPage() {
     })
   }, [validLocations, selectedCategory, searchQuery])
 
-  // Navigate to location on map
+  // Select location on map
   const handleSelectLocation = (loc) => {
     setSelectedLoc(loc)
     setFlyTarget({ pos: [loc.lat, loc.lng], zoom: 15 })
   }
 
-  // Geolocation button
+  // Geolocation
   const handleGetLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -148,90 +153,47 @@ export default function MapPage() {
     }
   }
 
-  // Reset to full Gia Lai view
+  // Reset view to Gia Lai province
   const handleResetView = () => {
     setSelectedLoc(null)
     setFlyTarget({ pos: defaultCenter, zoom: 9 })
   }
 
   return (
-    <div className="map-page" style={{ position: 'relative', width: '100%', height: 'calc(100vh - 72px)', overflow: 'hidden' }}>
-      
-      {/* ── Search & Filter Floating Panel ── */}
-      <div style={{
-        position: 'absolute',
-        top: 16,
-        left: 16,
-        zIndex: 1000,
-        width: 'calc(100% - 32px)',
-        maxWidth: 420,
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 8,
-        pointerEvents: 'auto'
-      }}>
-        {/* Search Input Box */}
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          background: 'var(--color-bg-card, #ffffff)',
-          borderRadius: 12,
-          padding: '8px 14px',
-          boxShadow: '0 4px 20px rgba(0,0,0,0.15)',
-          border: '1px solid var(--color-border, rgba(0,0,0,0.1))',
-          gap: 10
-        }}>
-          <Search size={18} style={{ color: 'var(--color-text-2, #64748b)' }} />
+    <div className="relative w-full h-[calc(100vh-68px)] overflow-hidden bg-[#FAFAF7]">
+      {/* ── Top Floating Search & Filter Pill Bar (Stitch Frosted Glass) ── */}
+      <div className="absolute top-3 left-3 right-3 sm:left-4 sm:right-auto sm:w-[420px] z-[1000] flex flex-col gap-2 pointer-events-auto">
+        {/* Search Pill */}
+        <div className="h-12 rounded-full backdrop-blur-md bg-white/95 px-4 flex items-center gap-2.5 border border-[#E8EBE5] shadow-md focus-within:border-[#246B4A]/50 focus-within:ring-2 focus-within:ring-[#246B4A]/10 transition-all">
+          <Search size={18} className="text-[#246B4A] shrink-0" />
           <input
             type="text"
-            placeholder="Tìm kiếm điểm du lịch, huyện, thắng cảnh..."
+            placeholder="Tìm danh lam, thác nước, di tích trên bản đồ..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            style={{
-              flex: 1,
-              border: 'none',
-              outline: 'none',
-              background: 'transparent',
-              fontSize: '0.95rem',
-              color: 'var(--color-text, #1e293b)'
-            }}
+            className="flex-1 bg-transparent border-none text-xs sm:text-sm text-[#1A1D1A] placeholder:text-[#8A948C] focus:outline-none"
           />
           {searchQuery && (
             <button
               onClick={() => setSearchQuery('')}
-              style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: '#64748b', padding: 2 }}
+              className="text-[#8A948C] hover:text-[#1A1D1A] p-1"
             >
               <X size={16} />
             </button>
           )}
         </div>
 
-        {/* Category Filter Chips */}
-        <div style={{
-          display: 'flex',
-          gap: 6,
-          overflowX: 'auto',
-          paddingBottom: 4,
-          scrollbarWidth: 'none',
-          WebkitOverflowScrolling: 'touch'
-        }}>
-          {categories.slice(0, 8).map(cat => (
+        {/* Category Horizontal Filter Chips */}
+        <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5">
+          {categories.slice(0, 7).map(cat => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              style={{
-                whiteSpace: 'nowrap',
-                padding: '6px 14px',
-                borderRadius: 9999,
-                fontSize: '0.8rem',
-                fontWeight: 600,
-                border: 'none',
-                cursor: 'pointer',
-                transition: 'all 0.2s ease',
-                background: selectedCategory === cat ? 'var(--color-primary, #059669)' : 'var(--color-bg-card, #ffffff)',
-                color: selectedCategory === cat ? '#ffffff' : 'var(--color-text, #334155)',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.12)'
-              }}
+              className={`shrink-0 px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-md shadow-xs active:scale-95 transition-all ${
+                selectedCategory === cat
+                  ? 'bg-[#246B4A] text-white border border-[#246B4A]'
+                  : 'bg-white/90 border border-[#E8EBE5] text-[#5A635B] hover:bg-white'
+              }`}
             >
               {cat === 'ALL' ? 'Tất cả' : cat}
             </button>
@@ -240,49 +202,26 @@ export default function MapPage() {
 
         {/* Search Results Dropdown List if typing */}
         {searchQuery.trim() && (
-          <div style={{
-            background: 'var(--color-bg-card, #ffffff)',
-            borderRadius: 12,
-            boxShadow: '0 8px 24px rgba(0,0,0,0.2)',
-            maxHeight: 280,
-            overflowY: 'auto',
-            border: '1px solid var(--color-border, rgba(0,0,0,0.1))',
-            display: 'flex',
-            flexDirection: 'column'
-          }}>
+          <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-xl max-h-64 overflow-y-auto border border-[#E8EBE5] flex flex-col">
             {filteredLocations.length === 0 ? (
-              <div style={{ padding: 16, fontSize: '0.9rem', color: '#64748b', textAlign: 'center' }}>
-                Không tìm thấy địa điểm phù hợp
+              <div className="p-4 text-xs text-[#8A948C] text-center">
+                Không tìm thấy điểm đến nào phù hợp
               </div>
             ) : (
-              filteredLocations.slice(0, 10).map(loc => (
+              filteredLocations.slice(0, 8).map(loc => (
                 <div
                   key={loc.id}
                   onClick={() => {
                     handleSelectLocation(loc)
                     setSearchQuery('')
                   }}
-                  style={{
-                    padding: '10px 14px',
-                    borderBottom: '1px solid var(--color-border, rgba(0,0,0,0.06))',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 10,
-                    transition: 'background 0.15s ease'
-                  }}
-                  onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(5, 150, 105, 0.08)'}
-                  onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
+                  className="px-4 py-2.5 hover:bg-[#F2FCF2] cursor-pointer flex items-center justify-between border-b border-[#E8EBE5]/60 last:border-b-0 transition-colors"
                 >
-                  <MapPin size={16} style={{ color: 'var(--color-primary, #059669)', flexShrink: 0 }} />
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ fontWeight: 600, fontSize: '0.9rem', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                      {loc.name}
-                    </div>
-                    <div style={{ fontSize: '0.78rem', color: 'var(--color-text-2, #64748b)' }}>
-                      {loc.district} {loc.category ? `• ${loc.category}` : ''}
-                    </div>
+                  <div>
+                    <h4 className="text-xs font-bold text-[#1A1D1A]">{loc.name}</h4>
+                    <span className="text-[11px] text-[#5A635B]">{loc.district || loc.address || 'Gia Lai'}</span>
                   </div>
+                  <ChevronRight size={14} className="text-[#8A948C]" />
                 </div>
               ))
             )}
@@ -290,57 +229,20 @@ export default function MapPage() {
         )}
       </div>
 
-      {/* ── Layer Switcher & Quick Map Actions (Top Right) ── */}
-      <div style={{
-        position: 'absolute',
-        top: 16,
-        right: 16,
-        zIndex: 1000,
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 8,
-        alignItems: 'flex-end'
-      }}>
-        {/* Layer Switcher Toggle Button */}
-        <div style={{ position: 'relative' }}>
+      {/* ── Floating Right Side Controls (Stitch Minimalist Round Controls) ── */}
+      <div className="absolute right-3 sm:right-4 top-3 sm:top-4 z-[1000] flex flex-col gap-2 pointer-events-auto">
+        {/* Layer Switcher Toggle */}
+        <div className="relative">
           <button
             onClick={() => setShowLayerMenu(!showLayerMenu)}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 8,
-              background: 'var(--color-bg-card, #ffffff)',
-              color: 'var(--color-text, #1e293b)',
-              border: '1px solid var(--color-border, rgba(0,0,0,0.1))',
-              borderRadius: 10,
-              padding: '8px 14px',
-              fontSize: '0.85rem',
-              fontWeight: 600,
-              boxShadow: '0 4px 14px rgba(0,0,0,0.15)',
-              cursor: 'pointer'
-            }}
+            className="w-10 h-10 rounded-full bg-white/95 backdrop-blur-md border border-[#E8EBE5] text-[#1A1D1A] flex items-center justify-center shadow-md hover:bg-white active:scale-95 transition-all"
+            title="Lớp bản đồ"
           >
-            <Layers size={18} color="var(--color-primary, #059669)" />
-            <span>{MAP_LAYERS[activeLayer].name}</span>
+            <Layers size={18} className="text-[#246B4A]" />
           </button>
 
-          {/* Layer Options Popup */}
           {showLayerMenu && (
-            <div style={{
-              position: 'absolute',
-              top: 'calc(100% + 6px)',
-              right: 0,
-              background: 'var(--color-bg-card, #ffffff)',
-              borderRadius: 12,
-              padding: 6,
-              boxShadow: '0 8px 24px rgba(0,0,0,0.2)',
-              border: '1px solid var(--color-border, rgba(0,0,0,0.1))',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 4,
-              minWidth: 160,
-              zIndex: 1001
-            }}>
+            <div className="absolute top-0 right-12 bg-white rounded-2xl p-1.5 shadow-xl border border-[#E8EBE5] flex flex-col gap-1 min-w-[140px] z-[1001]">
               {Object.entries(MAP_LAYERS).map(([key, layer]) => (
                 <button
                   key={key}
@@ -348,69 +250,36 @@ export default function MapPage() {
                     setActiveLayer(key)
                     setShowLayerMenu(false)
                   }}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    padding: '8px 12px',
-                    borderRadius: 8,
-                    border: 'none',
-                    background: activeLayer === key ? 'rgba(5, 150, 105, 0.12)' : 'transparent',
-                    color: activeLayer === key ? 'var(--color-primary, #059669)' : 'var(--color-text, #334155)',
-                    fontWeight: activeLayer === key ? 700 : 500,
-                    fontSize: '0.85rem',
-                    cursor: 'pointer',
-                    textAlign: 'left'
-                  }}
+                  className={`flex items-center justify-between px-3 py-1.5 rounded-xl text-xs font-semibold text-left transition-all ${
+                    activeLayer === key
+                      ? 'bg-[#EAF3EB] text-[#246B4A]'
+                      : 'text-[#5A635B] hover:bg-[#FAFAF7]'
+                  }`}
                 >
                   <span>{layer.name}</span>
-                  {activeLayer === key && <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--color-primary, #059669)' }} />}
+                  {activeLayer === key && <span className="w-1.5 h-1.5 rounded-full bg-[#246B4A]" />}
                 </button>
               ))}
             </div>
           )}
         </div>
 
-        {/* Reset View Button */}
-        <button
-          onClick={handleResetView}
-          title="Toàn cảnh Gia Lai"
-          style={{
-            width: 40,
-            height: 40,
-            borderRadius: 10,
-            background: 'var(--color-bg-card, #ffffff)',
-            color: 'var(--color-text, #1e293b)',
-            border: '1px solid var(--color-border, rgba(0,0,0,0.1))',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: '0 4px 14px rgba(0,0,0,0.15)',
-            cursor: 'pointer'
-          }}
-        >
-          <Compass size={20} color="var(--color-primary, #059669)" />
-        </button>
-
-        {/* GPS My Location Button */}
+        {/* GPS My Location */}
         <button
           onClick={handleGetLocation}
+          className="w-10 h-10 rounded-full bg-white/95 backdrop-blur-md border border-[#E8EBE5] text-[#246B4A] flex items-center justify-center shadow-md hover:bg-white active:scale-95 transition-all"
           title="Vị trí của tôi"
-          style={{
-            width: 40,
-            height: 40,
-            borderRadius: 10,
-            background: 'var(--color-bg-card, #ffffff)',
-            color: 'var(--color-text, #1e293b)',
-            border: '1px solid var(--color-border, rgba(0,0,0,0.1))',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: '0 4px 14px rgba(0,0,0,0.15)',
-            cursor: 'pointer'
-          }}
         >
-          <Navigation size={20} color="#0284c7" />
+          <LocateFixed size={18} />
+        </button>
+
+        {/* Reset View Compass */}
+        <button
+          onClick={handleResetView}
+          className="w-10 h-10 rounded-full bg-white/95 backdrop-blur-md border border-[#E8EBE5] text-[#C26D38] flex items-center justify-center shadow-md hover:bg-white active:scale-95 transition-all"
+          title="Toàn cảnh Gia Lai"
+        >
+          <Compass size={18} />
         </button>
       </div>
 
@@ -419,11 +288,10 @@ export default function MapPage() {
         center={defaultCenter}
         zoom={9}
         zoomControl={false}
-        style={{ height: '100%', width: '100%', zIndex: 1 }}
+        className="w-full h-full z-0"
       >
         <MapController targetPos={flyTarget?.pos} targetZoom={flyTarget?.zoom} />
 
-        {/* Dynamic Tile Layer (Google Maps / OpenStreetMap - 100% Free & No API key needed) */}
         <TileLayer
           key={activeLayer}
           url={MAP_LAYERS[activeLayer].url}
@@ -431,15 +299,15 @@ export default function MapPage() {
           maxZoom={MAP_LAYERS[activeLayer].maxZoom}
         />
 
-        {/* User GPS Pin */}
+        {/* User GPS Marker */}
         {userPos && (
           <Marker
             position={userPos}
             icon={L.divIcon({
               className: 'user-gps-marker',
-              html: `<div style="width: 20px; height: 20px; background: #0284c7; border: 3px solid #ffffff; border-radius: 50%; box-shadow: 0 0 10px rgba(2, 132, 199, 0.8);"></div>`,
-              iconSize: [20, 20],
-              iconAnchor: [10, 10]
+              html: `<div style="width: 18px; height: 18px; background: #246B4A; border: 3px solid #ffffff; border-radius: 50%; box-shadow: 0 0 12px rgba(36, 107, 74, 0.8);"></div>`,
+              iconSize: [18, 18],
+              iconAnchor: [9, 9]
             })}
           >
             <Popup>
@@ -448,7 +316,7 @@ export default function MapPage() {
           </Marker>
         )}
 
-        {/* All Location Markers with Custom Pins */}
+        {/* Location Markers */}
         {filteredLocations.map(loc => {
           const isSelected = selectedLoc?.id === loc.id
           return (
@@ -463,70 +331,30 @@ export default function MapPage() {
               }}
             >
               <Popup>
-                <div style={{ minWidth: 220, maxWidth: 280, padding: 4 }}>
+                <div className="p-1 min-w-[200px]">
                   {loc.imageUrl && (
                     <img
                       src={loc.imageUrl}
                       alt={loc.name}
-                      style={{
-                        width: '100%',
-                        height: 120,
-                        objectFit: 'cover',
-                        borderRadius: 8,
-                        marginBottom: 8
-                      }}
-                      onError={(e) => { e.currentTarget.style.display = 'none' }}
+                      className="w-full h-24 object-cover rounded-lg mb-2"
+                      onError={e => { e.currentTarget.style.display = 'none' }}
                     />
                   )}
-                  <h4 style={{ margin: '0 0 4px', fontSize: '1rem', fontWeight: 700, color: '#1e293b' }}>
-                    {loc.name}
-                  </h4>
-                  <div style={{ fontSize: '0.82rem', color: '#64748b', marginBottom: 6, display: 'flex', alignItems: 'center', gap: 4 }}>
-                    <MapPin size={13} color="#059669" />
-                    <span>{loc.district}</span>
-                  </div>
-                  {loc.avgRating > 0 && (
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 4, marginBottom: 8, fontSize: '0.85rem', color: '#f59e0b', fontWeight: 600 }}>
-                      <Star size={14} fill="#f59e0b" color="#f59e0b" />
-                      <span>{loc.avgRating} ({loc.reviewCount || 10} đánh giá)</span>
-                    </div>
-                  )}
-                  <div style={{ display: 'flex', gap: 8, marginTop: 10 }}>
+                  <h4 className="font-bold text-xs text-[#1A1D1A] mb-1">{loc.name}</h4>
+                  <p className="text-[11px] text-[#5A635B] mb-2">{loc.district || 'Gia Lai'}</p>
+                  <div className="flex gap-2">
                     <button
-                      onClick={() => navigate(`/destination/${loc.id}`)}
-                      style={{
-                        flex: 1,
-                        padding: '6px 10px',
-                        background: '#059669',
-                        color: '#ffffff',
-                        border: 'none',
-                        borderRadius: 6,
-                        cursor: 'pointer',
-                        fontSize: '0.82rem',
-                        fontWeight: 600
-                      }}
+                      onClick={() => navigate(`/destinations/${loc.id}`)}
+                      className="flex-1 py-1 px-2 rounded-lg bg-[#246B4A] text-white text-xs font-semibold"
                     >
-                      Xem chi tiết
+                      Chi tiết
                     </button>
                     <a
                       href={`https://www.google.com/maps/dir/?api=1&destination=${loc.lat},${loc.lng}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        gap: 4,
-                        padding: '6px 10px',
-                        background: '#0284c7',
-                        color: '#ffffff',
-                        borderRadius: 6,
-                        textDecoration: 'none',
-                        fontSize: '0.82rem',
-                        fontWeight: 600
-                      }}
+                      className="flex-1 py-1 px-2 rounded-lg bg-[#C26D38] text-white text-xs font-semibold text-center"
                     >
-                      <Navigation size={13} />
                       Chỉ đường
                     </a>
                   </div>
@@ -537,172 +365,86 @@ export default function MapPage() {
         })}
       </MapContainer>
 
-      {/* ── Selected Location Card (Google Maps Style Drawer at Bottom-Left) ── */}
+      {/* ── Stitch Editorial Destination Preview Card (Bottom Drawer) ── */}
       {selectedLoc && (
-        <div style={{
-          position: 'absolute',
-          bottom: 24,
-          left: 16,
-          zIndex: 1000,
-          width: 'calc(100% - 32px)',
-          maxWidth: 400,
-          background: 'var(--color-bg-card, #ffffff)',
-          borderRadius: 16,
-          boxShadow: '0 12px 32px rgba(0,0,0,0.22)',
-          border: '1px solid var(--color-border, rgba(0,0,0,0.1))',
-          overflow: 'hidden',
-          display: 'flex',
-          flexDirection: 'column',
-          animation: 'slideUp 0.3s ease-out'
-        }}>
-          {/* Card Image Banner */}
-          <div style={{ position: 'relative', height: 140, background: '#1e293b' }}>
-            <img
-              src={selectedLoc.imageUrl || 'https://images.unsplash.com/photo-1506744038136-46273834b3fb'}
-              alt={selectedLoc.name}
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-              onError={(e) => { e.currentTarget.src = 'https://images.unsplash.com/photo-1506744038136-46273834b3fb' }}
-            />
-            <div style={{
-              position: 'absolute',
-              inset: 0,
-              background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%)'
-            }} />
-            <button
-              onClick={() => setSelectedLoc(null)}
-              style={{
-                position: 'absolute',
-                top: 10,
-                right: 10,
-                width: 32,
-                height: 32,
-                borderRadius: '50%',
-                background: 'rgba(0,0,0,0.5)',
-                color: '#ffffff',
-                border: 'none',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                backdropFilter: 'blur(4px)'
-              }}
-            >
-              <X size={16} />
-            </button>
-            {selectedLoc.category && (
-              <span style={{
-                position: 'absolute',
-                bottom: 10,
-                left: 12,
-                background: 'rgba(5, 150, 105, 0.9)',
-                color: '#ffffff',
-                padding: '3px 10px',
-                borderRadius: 9999,
-                fontSize: '0.75rem',
-                fontWeight: 600,
-                backdropFilter: 'blur(4px)'
-              }}>
-                {selectedLoc.category}
-              </span>
-            )}
-          </div>
-
-          {/* Card Body */}
-          <div style={{ padding: '14px 16px' }}>
-            <h3 style={{ margin: '0 0 6px', fontSize: '1.1rem', fontWeight: 700, color: 'var(--color-text, #1e293b)' }}>
-              {selectedLoc.name}
-            </h3>
-
-            <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.85rem', color: 'var(--color-text-2, #64748b)', marginBottom: 8 }}>
-              <MapPin size={14} color="var(--color-primary, #059669)" style={{ flexShrink: 0 }} />
-              <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                {selectedLoc.address || selectedLoc.district}
-              </span>
-            </div>
-
-            <div style={{ display: 'flex', alignItems: 'center', gap: 14, fontSize: '0.82rem', marginBottom: 14, flexWrap: 'wrap' }}>
-              {selectedLoc.avgRating > 0 && (
-                <div style={{ display: 'flex', alignItems: 'center', gap: 4, color: '#f59e0b', fontWeight: 600 }}>
-                  <Star size={14} fill="#f59e0b" color="#f59e0b" />
-                  <span>{selectedLoc.avgRating} ({selectedLoc.reviewCount || 10})</span>
-                </div>
-              )}
-              <div style={{ display: 'flex', alignItems: 'center', gap: 4, color: '#059669', fontWeight: 600 }}>
-                <Ticket size={14} />
-                <span>
-                  {(!selectedLoc.budget || selectedLoc.budget === 0 || selectedLoc.budget === '0')
-                    ? 'Miễn phí vé'
-                    : typeof selectedLoc.budget === 'number'
-                      ? `${selectedLoc.budget.toLocaleString('vi-VN')} đ`
-                      : selectedLoc.budget}
+        <div className="absolute left-3 right-3 sm:left-4 sm:right-auto sm:w-[400px] bottom-3 z-[1000] pointer-events-auto">
+          <div className="bg-white rounded-3xl shadow-2xl p-3.5 border border-[#E8EBE5] transition-all animate-in fade-in slide-in-from-bottom-4 duration-300">
+            {/* Main Destination Info Header */}
+            <div className="flex gap-3 items-start">
+              {/* Thumbnail 104x78 */}
+              <div className="relative w-[104px] h-[78px] rounded-2xl overflow-hidden shrink-0 bg-[#E8EBE5]">
+                <img
+                  src={selectedLoc.imageUrl || 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&auto=format&fit=crop'}
+                  alt={selectedLoc.name}
+                  className="w-full h-full object-cover"
+                  onError={e => { e.currentTarget.src = 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&auto=format&fit=crop' }}
+                />
+                <span className="absolute bottom-1 left-1 bg-black/60 backdrop-blur-xs text-white text-[9px] font-semibold px-1.5 py-0.5 rounded-full">
+                  {selectedLoc.category || 'Thắng cảnh'}
                 </span>
               </div>
-              {selectedLoc.bestTime && (
-                <div style={{ display: 'flex', alignItems: 'center', gap: 4, color: '#64748b' }}>
-                  <Clock size={14} />
-                  <span>{Array.isArray(selectedLoc.bestTime) ? selectedLoc.bestTime.join(', ') : selectedLoc.bestTime}</span>
+
+              {/* Typography Details */}
+              <div className="flex-1 min-w-0 flex flex-col justify-between self-stretch py-0.5">
+                <div>
+                  <div className="flex items-center justify-between gap-1 mb-0.5">
+                    <span className="text-[10px] font-bold text-[#246B4A] uppercase tracking-wide">
+                      {selectedLoc.district || 'Gia Lai'}
+                    </span>
+                    <span className="text-[10px] font-bold text-[#C26D38]">
+                      {(!selectedLoc.budget || selectedLoc.budget === 0 || selectedLoc.budget === '0') ? 'Miễn phí vé' : selectedLoc.budget}
+                    </span>
+                  </div>
+                  <h3 className="font-editorial text-sm font-bold text-[#1A1D1A] truncate leading-tight">
+                    {selectedLoc.name}
+                  </h3>
                 </div>
-              )}
+
+                <div className="flex items-center gap-1.5 text-xs text-[#5A635B] mt-1">
+                  <div className="flex items-center text-[#C26D38] font-bold">
+                    <Star size={13} fill="#C26D38" />
+                    <span className="ml-0.5 text-xs">{selectedLoc.avgRating || selectedLoc.rating || 4.8}</span>
+                  </div>
+                  <span>•</span>
+                  <span>
+                    {userPos
+                      ? `Cách bạn ${getDistanceFromLatLonInKm(userPos[0], userPos[1], selectedLoc.lat, selectedLoc.lng)} km`
+                      : (selectedLoc.district || 'Gia Lai')}
+                  </span>
+                </div>
+              </div>
+
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedLoc(null)}
+                className="w-6 h-6 rounded-full bg-[#FAFAF7] hover:bg-[#E8EBE5] text-[#8A948C] flex items-center justify-center shrink-0"
+              >
+                <X size={14} />
+              </button>
             </div>
 
-            {/* Action Buttons: View Detail & Directions */}
-            <div style={{ display: 'flex', gap: 10 }}>
+            {/* Dual Action Buttons */}
+            <div className="grid grid-cols-2 gap-2 mt-3 pt-3 border-t border-[#E8EBE5]">
               <button
-                onClick={() => navigate(`/destination/${selectedLoc.id}`)}
-                style={{
-                  flex: 1,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: 6,
-                  padding: '10px 14px',
-                  borderRadius: 10,
-                  background: 'var(--color-primary, #059669)',
-                  color: '#ffffff',
-                  fontWeight: 600,
-                  fontSize: '0.88rem',
-                  border: 'none',
-                  cursor: 'pointer'
-                }}
+                onClick={() => navigate(`/destinations/${selectedLoc.id}`)}
+                className="h-9 rounded-full border border-[#E8EBE5] hover:bg-[#FAFAF7] text-[#1A1D1A] text-xs font-bold flex items-center justify-center gap-1.5 transition-all"
               >
-                <ExternalLink size={15} />
-                Xem chi tiết
+                <Info size={14} className="text-[#5A635B]" />
+                <span>Xem chi tiết</span>
               </button>
-
               <a
                 href={`https://www.google.com/maps/dir/?api=1&destination=${selectedLoc.lat},${selectedLoc.lng}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{
-                  flex: 1,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: 6,
-                  padding: '10px 14px',
-                  borderRadius: 10,
-                  background: '#0284c7',
-                  color: '#ffffff',
-                  fontWeight: 600,
-                  fontSize: '0.88rem',
-                  textDecoration: 'none'
-                }}
+                className="h-9 rounded-full bg-[#246B4A] hover:bg-[#1E573C] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-xs transition-all"
               >
-                <Navigation size={15} />
-                Chỉ đường
+                <Navigation size={14} />
+                <span>Chỉ đường</span>
               </a>
             </div>
           </div>
         </div>
       )}
-
-      {/* Slide-up keyframe animation style */}
-      <style>{`
-        @keyframes slideUp {
-          from { transform: translateY(20px); opacity: 0; }
-          to { transform: translateY(0); opacity: 1; }
-        }
-      `}</style>
     </div>
   )
 }

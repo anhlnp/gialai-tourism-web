@@ -1,13 +1,26 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Search, UtensilsCrossed, Clock, MapPin, Navigation, Camera, Sparkles, ChevronDown, ChevronUp, Store } from 'lucide-react'
+import {
+  Search,
+  UtensilsCrossed,
+  Clock,
+  MapPin,
+  Navigation,
+  Camera,
+  Sparkles,
+  ChevronDown,
+  ChevronUp,
+  Bookmark,
+  Store,
+  ArrowRight
+} from 'lucide-react'
 import { useApi } from '../hooks/useApi'
 import ImageGalleryModal from '../components/ImageGalleryModal'
 
 function parseEatery(raw) {
   if (!raw) return { name: '', address: '', hours: '', query: '' }
-  
-  // Format 1: Name (Address - Hours)
+
+  // Format: Name (Address - Hours)
   let m = raw.match(/^(.*?)\s*\((.*?)\)$/)
   if (m) {
     const name = m[1].trim()
@@ -21,7 +34,7 @@ function parseEatery(raw) {
     return { name, address: inner, hours: '', query: `${name} ${inner}` }
   }
 
-  // Format 2: Name - Address (Hours)
+  // Format: Name - Address (Hours)
   m = raw.match(/^(.*?)\s*-\s*(.*?)\s*\((.*?)\)$/)
   if (m) {
     const name = m[1].trim()
@@ -38,9 +51,48 @@ export default function Food() {
   const [selectedFilter, setSelectedFilter] = useState('all')
   const [expandedEateries, setExpandedEateries] = useState({})
   const [galleryModal, setGalleryModal] = useState({ isOpen: false, images: [], title: '' })
+  const [savedIds, setSavedIds] = useState([])
 
   const params = search ? { search } : {}
   const { data: rawDishes, loading } = useApi('/dishes', { params })
+
+  useEffect(() => {
+    try {
+      const saved = JSON.parse(localStorage.getItem('saved_places') || '[]')
+      setSavedIds(saved.map(item => item.id))
+    } catch {
+      setSavedIds([])
+    }
+  }, [])
+
+  const toggleSave = (dish, e) => {
+    e.stopPropagation()
+    try {
+      const saved = JSON.parse(localStorage.getItem('saved_places') || '[]')
+      const dishId = dish.id || dish.dishId
+      let next
+      if (savedIds.includes(dishId)) {
+        next = saved.filter(item => item.id !== dishId)
+        setSavedIds(savedIds.filter(id => id !== dishId))
+      } else {
+        next = [
+          ...saved,
+          {
+            id: dishId,
+            name: dish.name,
+            imageUrl: dish.imageUrl,
+            budget: dish.budget,
+            type: 'food',
+            description: dish.description
+          }
+        ]
+        setSavedIds([...savedIds, dishId])
+      }
+      localStorage.setItem('saved_places', JSON.stringify(next))
+    } catch (err) {
+      console.error(err)
+    }
+  }
 
   // Filter dishes
   const filteredDishes = useMemo(() => {
@@ -76,396 +128,314 @@ export default function Food() {
   }
 
   const getMapsUrl = (query) => {
-    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`
+    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query + ' Gia Lai')}`
   }
 
   return (
-    <div className="page" style={{ minHeight: '100vh', paddingBottom: '60px' }}>
-      <div className="container section">
-        {/* Header */}
-        <div style={{ marginBottom: '28px' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 14px', borderRadius: '999px', background: 'rgba(234, 88, 12, 0.1)', color: '#ea580c', fontSize: '0.85rem', fontWeight: 600, marginBottom: '12px' }}>
-            <Sparkles size={16} />
-            <span>Tinh Hoa Ẩm Thực Phố Núi Gia Lai</span>
+    <div className="page" style={{ paddingTop: '20px', paddingBottom: '60px' }}>
+      <div className="container" style={{ maxWidth: '1080px' }}>
+        {/* ── Header (Stitch Screen 5) ── */}
+        <div style={{ marginBottom: '22px' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: 'var(--color-terracotta)', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '4px' }}>
+            <UtensilsCrossed size={14} />
+            <span>Mỹ vị đại ngàn • Thổ nhưỡng Tây Nguyên</span>
           </div>
-          <h1 style={{ fontSize: '2.2rem', fontWeight: 800, marginBottom: '10px', color: 'var(--color-text)' }}>
-            Ẩm Thực Đặc Sản & Quán Ăn Đề Xuất
+          <h1 className="font-editorial" style={{ fontSize: '2.2rem', margin: '2px 0 6px 0', color: 'var(--color-text)' }}>
+            Ẩm thực <span className="editorial-italic">Gia Lai</span>
           </h1>
-          <p style={{ color: 'var(--color-text-2)', fontSize: '1.05rem', maxWidth: '720px' }}>
-            Khám phá 25 món ăn trứ danh Gia Lai kèm địa chỉ quán ăn nổi tiếng, giờ mở cửa và chỉ đường Google Maps chính xác nhất.
+          <p style={{ color: 'var(--color-text-3)', fontSize: '0.95rem', margin: 0, maxWidth: '640px' }}>
+            Khám phá hương vị phở khô hai tô trứ danh, gà nướng than hồng cơm lam ống nứa và bò một nắng muối kiến vàng Krông Pa.
           </p>
         </div>
 
-        {/* Search & Filter Bar */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
-          <div className="search-bar" style={{ maxWidth: '100%' }}>
-            <Search size={20} className="search-icon" />
+        {/* ── Search Bar Pill ── */}
+        <div style={{ marginBottom: '16px' }}>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            background: 'var(--color-surface)',
+            border: '1px solid var(--color-border)',
+            borderRadius: 'var(--radius-pill)',
+            padding: '6px 16px',
+            boxShadow: 'var(--shadow-xs)'
+          }}>
+            <Search size={18} style={{ color: 'var(--color-primary)', marginRight: '10px', flexShrink: 0 }} />
             <input
-              placeholder="Tìm món ngon, tên quán ăn đề xuất (Phở hai tô, Gà nướng bazan, Bún cua...)"
+              type="text"
+              placeholder="Tìm món ăn, đặc sản hoặc quán ngon Gia Lai..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
+              style={{
+                border: 'none',
+                outline: 'none',
+                width: '100%',
+                background: 'transparent',
+                color: 'var(--color-text)',
+                fontSize: '14px',
+                fontFamily: 'var(--font-body)'
+              }}
             />
-          </div>
-
-          {/* Filter Chips */}
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-            {[
-              { id: 'all', label: 'Tất cả đặc sản' },
-              { id: 'morning', label: '🌅 Bữa sáng' },
-              { id: 'main', label: '🍗 Bữa trưa & tối' },
-              { id: 'snack', label: '🍢 Ăn vặt & Nhâm nhi' },
-              { id: 'trend', label: '🔥 Món Hot Trend' },
-            ].map((chip) => (
-              <button
-                key={chip.id}
-                onClick={() => setSelectedFilter(chip.id)}
-                style={{
-                  padding: '8px 18px',
-                  borderRadius: '999px',
-                  fontSize: '0.9rem',
-                  fontWeight: selectedFilter === chip.id ? 700 : 500,
-                  border: '1px solid',
-                  borderColor: selectedFilter === chip.id ? '#ea580c' : 'var(--color-border)',
-                  background: selectedFilter === chip.id ? '#ea580c' : 'var(--color-surface)',
-                  color: selectedFilter === chip.id ? '#ffffff' : 'var(--color-text-2)',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  boxShadow: selectedFilter === chip.id ? '0 4px 12px rgba(234, 88, 12, 0.25)' : 'none'
-                }}
-              >
-                {chip.label}
-              </button>
-            ))}
           </div>
         </div>
 
-        {/* Dishes Cards Grid */}
-        <div className="cards-grid" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '26px' }}>
-          {loading ? (
-            [...Array(6)].map((_, i) => (
-              <div key={i} className="skeleton" style={{ height: 420, borderRadius: '16px' }} />
-            ))
-          ) : filteredDishes.length === 0 ? (
-            <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '60px 20px', color: 'var(--color-text-3)' }}>
-              <p style={{ fontSize: '1.2rem', marginBottom: '8px' }}>Không tìm thấy món ăn phù hợp</p>
-              <p style={{ fontSize: '0.9rem' }}>Thử tìm kiếm với từ khóa khác như "Phở khô", "Gà nướng", "Cà phê"</p>
-            </div>
-          ) : (
-            filteredDishes.map((dish, i) => {
-              const eateries = (dish.suggestedEateries || []).map(parseEatery)
-              const photoCount = dish.imageUrls?.length || (dish.imageUrl ? 1 : 0)
-              const hasMultiplePhotos = photoCount > 1
-              const isExpanded = !!expandedEateries[dish.id || i]
+        {/* ── Filter Chips Row ── */}
+        <div className="filter-chips-row" style={{ marginBottom: '28px' }}>
+          {[
+            { id: 'all', label: 'Tất cả món đặc sản' },
+            { id: 'morning', label: 'Bữa sáng phố núi' },
+            { id: 'main', label: 'Bữa chính (Trưa/Tối)' },
+            { id: 'snack', label: 'Ăn vặt & Cà phê' },
+            { id: 'trend', label: 'Món Hot Trend' }
+          ].map((cat) => (
+            <button
+              key={cat.id}
+              className={`chip-pill ${selectedFilter === cat.id ? 'active' : ''}`}
+              onClick={() => setSelectedFilter(cat.id)}
+            >
+              {cat.label}
+            </button>
+          ))}
+        </div>
+
+        {/* ── Dishes Grid ── */}
+        {loading ? (
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '24px' }}>
+            {[1, 2, 3, 4].map(n => (
+              <div key={n} style={{ height: '320px', borderRadius: 'var(--radius-lg)', background: 'var(--color-bg-3)' }} className="skeleton" />
+            ))}
+          </div>
+        ) : filteredDishes.length === 0 ? (
+          <div className="empty-state-card">
+            <h3 className="font-display" style={{ fontSize: '1.2rem', marginBottom: '8px' }}>Không tìm thấy món ăn</h3>
+            <p style={{ color: 'var(--color-text-3)', fontSize: '0.9rem' }}>Vui lòng thử lại với từ khóa tìm kiếm khác.</p>
+          </div>
+        ) : (
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '24px' }}>
+            {filteredDishes.map((dish) => {
+              const dishId = dish.id || dish.dishId
+              const isSaved = savedIds.includes(dishId)
+              const hasPhotos = dish.imageUrls && dish.imageUrls.length > 1
+              const eateries = dish.suggestedEateries || []
+              const isExpanded = !!expandedEateries[dishId]
 
               return (
-                <motion.div
-                  key={dish.id || i}
-                  className="card"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: Math.min(i * 0.04, 0.4) }}
+                <div
+                  key={dishId}
                   style={{
+                    background: 'var(--color-surface)',
+                    border: '1px solid var(--color-border)',
+                    borderRadius: 'var(--radius-lg)',
+                    overflow: 'hidden',
+                    boxShadow: 'var(--shadow-xs)',
                     display: 'flex',
                     flexDirection: 'column',
-                    borderRadius: '16px',
-                    overflow: 'hidden',
-                    border: '1px solid var(--color-border)',
-                    background: 'var(--color-surface)',
-                    boxShadow: '0 4px 20px rgba(0,0,0,0.04)',
-                    position: 'relative'
+                    transition: 'all var(--transition-fast)'
                   }}
                 >
-                  {/* Dish Image */}
-                  <div
-                    className="card-image"
-                    style={{ height: '210px', position: 'relative', cursor: 'pointer', overflow: 'hidden' }}
-                    onClick={(e) => openGallery(dish, e)}
-                    title="Nhấn để xem album ảnh món ăn"
-                  >
+                  {/* Card Image */}
+                  <div style={{ height: '200px', position: 'relative', overflow: 'hidden' }}>
                     <img
-                      src={dish.imageUrl || (dish.imageUrls && dish.imageUrls[0]) || 'https://placehold.co/600x400/1e293b/94a3b8?text=Food'}
+                      src={dish.imageUrl || 'https://images.unsplash.com/photo-1544025162-d76694265947?w=800'}
                       alt={dish.name}
-                      loading="lazy"
-                      onError={(e) => {
-                        e.currentTarget.src = 'https://images.unsplash.com/photo-1544025162-d76694265947?w=600'
-                      }}
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      loading="lazy"
                     />
 
-                    {/* Meal time badge */}
+                    {/* Bookmark Toggle */}
+                    <button
+                      onClick={(e) => toggleSave(dish, e)}
+                      aria-label="Lưu món ăn"
+                      style={{
+                        position: 'absolute',
+                        top: '12px',
+                        right: '12px',
+                        width: '34px',
+                        height: '34px',
+                        borderRadius: '50%',
+                        background: isSaved ? 'var(--color-primary)' : 'rgba(255,255,255,0.9)',
+                        backdropFilter: 'blur(8px)',
+                        border: 'none',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: isSaved ? '#ffffff' : 'var(--color-text)',
+                        cursor: 'pointer',
+                        boxShadow: 'var(--shadow-xs)'
+                      }}
+                    >
+                      <Bookmark size={16} fill={isSaved ? '#ffffff' : 'none'} />
+                    </button>
+
+                    {/* Meal Time Badge */}
                     {dish.mealTime && (
-                      <span
-                        className="card-badge"
-                        style={{
-                          top: 12,
-                          left: 12,
-                          background: 'rgba(15, 23, 42, 0.85)',
-                          color: '#f97316',
-                          border: '1px solid rgba(249, 115, 22, 0.3)',
-                          backdropFilter: 'blur(8px)',
-                          fontWeight: 600,
-                          fontSize: '0.8rem'
-                        }}
-                      >
+                      <span style={{
+                        position: 'absolute',
+                        top: '12px',
+                        left: '12px',
+                        background: 'rgba(255,255,255,0.92)',
+                        backdropFilter: 'blur(8px)',
+                        color: 'var(--color-primary)',
+                        fontSize: '11px',
+                        fontWeight: 700,
+                        padding: '4px 10px',
+                        borderRadius: 'var(--radius-pill)'
+                      }}>
                         {dish.mealTime}
                       </span>
                     )}
 
-                    {/* Photo count indicator */}
-                    <div
-                      style={{
-                        position: 'absolute',
-                        bottom: 12,
-                        right: 12,
-                        background: 'rgba(0, 0, 0, 0.72)',
-                        backdropFilter: 'blur(6px)',
-                        color: '#ffffff',
-                        padding: '4px 10px',
-                        borderRadius: '8px',
-                        fontSize: '0.78rem',
-                        fontWeight: 600,
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '5px',
-                        border: '1px solid rgba(255, 255, 255, 0.2)'
-                      }}
-                    >
-                      <Camera size={13} />
-                      <span>{photoCount} ảnh</span>
-                    </div>
-                  </div>
-
-                  {/* Card Content */}
-                  <div className="card-body" style={{ display: 'flex', flexDirection: 'column', flexGrow: 1, padding: '18px' }}>
-                    {/* Dish Name */}
-                    <h3
-                      style={{
-                        fontSize: '1.2rem',
-                        fontWeight: 700,
-                        marginBottom: '6px',
-                        color: 'var(--color-text)',
-                        lineHeight: 1.35
-                      }}
-                    >
-                      {dish.name}
-                    </h3>
-
-                    {/* Description */}
-                    {dish.description && (
-                      <p
+                    {/* Gallery button */}
+                    {hasPhotos && (
+                      <button
+                        onClick={(e) => openGallery(dish, e)}
                         style={{
-                          fontSize: '0.88rem',
-                          color: 'var(--color-text-2)',
-                          marginBottom: '12px',
-                          display: '-webkit-box',
-                          WebkitLineClamp: 2,
-                          WebkitBoxOrient: 'vertical',
-                          overflow: 'hidden',
-                          lineHeight: 1.5
+                          position: 'absolute',
+                          bottom: '10px',
+                          right: '10px',
+                          background: 'rgba(0,0,0,0.65)',
+                          backdropFilter: 'blur(6px)',
+                          color: '#ffffff',
+                          border: 'none',
+                          borderRadius: 'var(--radius-pill)',
+                          padding: '3px 9px',
+                          fontSize: '11px',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '4px',
+                          cursor: 'pointer'
                         }}
                       >
-                        {dish.description}
-                      </p>
+                        <Camera size={12} /> {dish.imageUrls.length} ảnh
+                      </button>
                     )}
+                  </div>
 
-                    {/* Price Range */}
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
-                      <span className="price" style={{ fontSize: '1rem', fontWeight: 800, color: '#ea580c' }}>
-                        {dish.budget || 'Giá tham khảo bình dân'}
-                      </span>
-                      {dish.regions && dish.regions.length > 0 && (
-                        <span style={{ fontSize: '0.8rem', color: 'var(--color-text-3)', fontWeight: 500 }}>
-                          {dish.regions.join(', ')}
-                        </span>
+                  {/* Card Body */}
+                  <div style={{ padding: '18px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                    <div>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '6px' }}>
+                        <h3 className="font-display" style={{ fontSize: '1.1rem', fontWeight: 700, margin: 0, color: 'var(--color-text)' }}>
+                          {dish.name}
+                        </h3>
+                        {dish.tasteType && (
+                          <span style={{
+                            fontSize: '10.5px',
+                            fontWeight: 600,
+                            padding: '2px 8px',
+                            borderRadius: 'var(--radius-pill)',
+                            background: dish.tasteType === 'HOT_TREND' ? 'var(--color-terracotta-soft)' : 'var(--color-primary-light)',
+                            color: dish.tasteType === 'HOT_TREND' ? 'var(--color-terracotta)' : 'var(--color-primary)'
+                          }}>
+                            {dish.tasteType === 'HOT_TREND' ? 'Hot Trend' : 'Truyền thống'}
+                          </span>
+                        )}
+                      </div>
+
+                      {dish.budget && (
+                        <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-terracotta)', marginBottom: '8px' }}>
+                          {dish.budget}
+                        </div>
+                      )}
+
+                      {dish.description && (
+                        <p style={{
+                          fontSize: '13px',
+                          color: 'var(--color-text-2)',
+                          lineHeight: 1.5,
+                          margin: '0 0 14px 0'
+                        }}>
+                          {dish.description}
+                        </p>
                       )}
                     </div>
 
-                    {/* SECTION: Quán ăn đề xuất */}
+                    {/* Eateries List */}
                     {eateries.length > 0 && (
-                      <div
-                        style={{
-                          background: 'var(--color-bg-3)',
-                          borderRadius: '12px',
-                          padding: '14px',
-                          marginTop: 'auto',
-                          border: '1px solid var(--color-border)'
-                        }}
-                      >
-                        {/* Section Title */}
+                      <div style={{ borderTop: '1px solid var(--color-border-light)', paddingTop: '12px' }}>
                         <div
+                          onClick={() => toggleExpand(dishId)}
                           style={{
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'space-between',
-                            marginBottom: '10px'
+                            cursor: 'pointer',
+                            color: 'var(--color-primary)',
+                            fontSize: '12.5px',
+                            fontWeight: 600,
+                            userSelect: 'none'
                           }}
                         >
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.86rem', fontWeight: 700, color: 'var(--color-text)' }}>
-                            <UtensilsCrossed size={15} color="#ea580c" />
-                            <span>Quán ăn đề xuất ({eateries.length})</span>
-                          </div>
-
-                          {eateries.length > 1 && (
-                            <button
-                              onClick={() => toggleExpand(dish.id || i)}
-                              style={{
-                                background: 'none',
-                                border: 'none',
-                                color: '#ea580c',
-                                fontSize: '0.8rem',
-                                fontWeight: 600,
-                                cursor: 'pointer',
-                                display: 'inline-flex',
-                                alignItems: 'center',
-                                gap: '2px',
-                                padding: 0
-                              }}
-                            >
-                              <span>{isExpanded ? 'Thu gọn' : `+${eateries.length - 1} quán khác`}</span>
-                              {isExpanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
-                            </button>
-                          )}
+                          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                            <Store size={14} /> Gợi ý {eateries.length} quán ngon
+                          </span>
+                          {isExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                         </div>
 
-                        {/* Primary Eatery (Always visible) */}
-                        {(() => {
-                          const top = eateries[0]
-                          return (
-                            <div
-                              style={{
-                                background: 'var(--color-surface)',
-                                borderRadius: '8px',
-                                padding: '10px 12px',
-                                border: '1px solid var(--color-border)',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                gap: '6px'
-                              }}
-                            >
-                              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
-                                <div style={{ fontWeight: 700, fontSize: '0.9rem', color: 'var(--color-text)' }}>
-                                  {top.name}
-                                </div>
-                                <a
-                                  href={getMapsUrl(top.query)}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  style={{
-                                    display: 'inline-flex',
-                                    alignItems: 'center',
-                                    gap: '4px',
-                                    padding: '3px 8px',
-                                    borderRadius: '6px',
-                                    background: 'rgba(234, 88, 12, 0.1)',
-                                    color: '#ea580c',
-                                    fontSize: '0.75rem',
-                                    fontWeight: 700,
-                                    textDecoration: 'none',
-                                    flexShrink: 0
-                                  }}
-                                  title="Mở chỉ đường trên Google Maps"
-                                >
-                                  <Navigation size={12} />
-                                  <span>Bản đồ</span>
-                                </a>
-                              </div>
-
-                              {top.address && (
-                                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '5px', fontSize: '0.8rem', color: 'var(--color-text-2)', lineHeight: 1.35 }}>
-                                  <MapPin size={13} color="var(--color-text-3)" style={{ flexShrink: 0, marginTop: '2px' }} />
-                                  <span>{top.address}</span>
-                                </div>
-                              )}
-
-                              {top.hours && (
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.76rem', color: 'var(--color-text-3)' }}>
-                                  <Clock size={12} />
-                                  <span>{top.hours}</span>
-                                </div>
-                              )}
-                            </div>
-                          )
-                        })()}
-
                         {/* Expanded Eateries List */}
-                        <AnimatePresence>
-                          {isExpanded && eateries.length > 1 && (
-                            <motion.div
-                              initial={{ opacity: 0, height: 0 }}
-                              animate={{ opacity: 1, height: 'auto' }}
-                              exit={{ opacity: 0, height: 0 }}
-                              style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginTop: '8px', overflow: 'hidden' }}
-                            >
-                              {eateries.slice(1).map((eat, eIdx) => (
+                        {isExpanded && (
+                          <div style={{ marginTop: '10px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                            {eateries.map((raw, idx) => {
+                              const eInfo = parseEatery(raw)
+                              return (
                                 <div
-                                  key={eIdx}
+                                  key={idx}
                                   style={{
-                                    background: 'var(--color-surface)',
-                                    borderRadius: '8px',
-                                    padding: '10px 12px',
-                                    border: '1px solid var(--color-border)',
+                                    background: 'var(--color-bg-3)',
+                                    borderRadius: 'var(--radius-md)',
+                                    padding: '9px 12px',
                                     display: 'flex',
-                                    flexDirection: 'column',
-                                    gap: '5px'
+                                    alignItems: 'center',
+                                    justifyContent: 'space-between',
+                                    gap: '8px'
                                   }}
                                 >
-                                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
-                                    <div style={{ fontWeight: 600, fontSize: '0.88rem', color: 'var(--color-text)' }}>
-                                      {eat.name}
+                                  <div style={{ flex: 1, minWidth: 0 }}>
+                                    <div style={{ fontSize: '12.5px', fontWeight: 700, color: 'var(--color-text)' }}>
+                                      {eInfo.name}
                                     </div>
-                                    <a
-                                      href={getMapsUrl(eat.query)}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      style={{
-                                        display: 'inline-flex',
-                                        alignItems: 'center',
-                                        gap: '4px',
-                                        padding: '3px 8px',
-                                        borderRadius: '6px',
-                                        background: 'rgba(234, 88, 12, 0.1)',
-                                        color: '#ea580c',
-                                        fontSize: '0.75rem',
-                                        fontWeight: 700,
-                                        textDecoration: 'none',
-                                        flexShrink: 0
-                                      }}
-                                      title="Mở chỉ đường trên Google Maps"
-                                    >
-                                      <Navigation size={12} />
-                                      <span>Bản đồ</span>
-                                    </a>
+                                    {eInfo.address && (
+                                      <div style={{ fontSize: '11px', color: 'var(--color-text-3)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                                        {eInfo.address}
+                                      </div>
+                                    )}
                                   </div>
 
-                                  {eat.address && (
-                                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '5px', fontSize: '0.78rem', color: 'var(--color-text-2)', lineHeight: 1.35 }}>
-                                      <MapPin size={13} color="var(--color-text-3)" style={{ flexShrink: 0, marginTop: '2px' }} />
-                                      <span>{eat.address}</span>
-                                    </div>
-                                  )}
-
-                                  {eat.hours && (
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.75rem', color: 'var(--color-text-3)' }}>
-                                      <Clock size={12} />
-                                      <span>{eat.hours}</span>
-                                    </div>
-                                  )}
+                                  <a
+                                    href={getMapsUrl(eInfo.query)}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{
+                                      display: 'inline-flex',
+                                      alignItems: 'center',
+                                      gap: '4px',
+                                      fontSize: '11px',
+                                      color: 'var(--color-primary)',
+                                      fontWeight: 600,
+                                      textDecoration: 'none',
+                                      background: '#ffffff',
+                                      padding: '4px 8px',
+                                      borderRadius: 'var(--radius-pill)',
+                                      border: '1px solid var(--color-border)',
+                                      flexShrink: 0
+                                    }}
+                                  >
+                                    <Navigation size={11} /> Chỉ đường
+                                  </a>
                                 </div>
-                              ))}
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
+                              )
+                            })}
+                          </div>
+                        )}
                       </div>
                     )}
                   </div>
-                </motion.div>
+                </div>
               )
-            })
-          )}
-        </div>
+            })}
+          </div>
+        )}
       </div>
 
-      {/* Lightbox Photo Gallery Modal */}
       <ImageGalleryModal
         isOpen={galleryModal.isOpen}
         images={galleryModal.images}

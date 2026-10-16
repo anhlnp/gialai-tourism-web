@@ -15,7 +15,7 @@ services:
       - key: NEO4J_PASSWORD
         sync: false
       - key: NEO4J_DATABASE
-        value: neo4j
+        sync: false
       - key: GOOGLE_API_KEY
         sync: false
       - key: PYTHON_VERSION

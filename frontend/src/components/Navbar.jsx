@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import { Compass, UtensilsCrossed, Hotel, Map, CalendarDays, MessageCircle, Mountain, Sun, Moon } from 'lucide-react'
+import { Compass, UtensilsCrossed, Hotel, Map, CalendarDays, MessageCircle, Mountain, Sun, Moon, Flame } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
 export default function Navbar() {
@@ -24,6 +24,7 @@ export default function Navbar() {
         </NavLink>
         <ul className="navbar-links">
           <li><NavLink to="/explore" className={({ isActive }) => isActive ? 'active' : ''}><Compass size={16} /> Khám phá</NavLink></li>
+          <li><NavLink to="/events" className={({ isActive }) => isActive ? 'active' : ''}><Flame size={16} /> Lễ hội</NavLink></li>
           <li><NavLink to="/food" className={({ isActive }) => isActive ? 'active' : ''}><UtensilsCrossed size={16} /> Ẩm thực</NavLink></li>
           <li><NavLink to="/stay" className={({ isActive }) => isActive ? 'active' : ''}><Hotel size={16} /> Lưu trú</NavLink></li>
           <li><NavLink to="/map" className={({ isActive }) => isActive ? 'active' : ''}><Map size={16} /> Bản đồ</NavLink></li>

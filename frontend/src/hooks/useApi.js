@@ -7,7 +7,9 @@ import {
   MOCK_CATEGORIES,
   MOCK_DISTRICTS,
   MOCK_DISHES,
-  MOCK_STAYS
+  MOCK_STAYS,
+  MOCK_EVENTS,
+  MOCK_ENTERTAINMENTS
 } from '../data/mockData'
 
 const API_BASE = import.meta.env.VITE_API_BASE || '/api'
@@ -150,6 +152,14 @@ export function resolveFallback(endpoint, params = {}) {
       )
     }
     return MOCK_STAYS
+  }
+
+  if (cleanEndpoint === '/events') {
+    return MOCK_EVENTS
+  }
+
+  if (cleanEndpoint === '/entertainments') {
+    return MOCK_ENTERTAINMENTS
   }
 
   if (cleanEndpoint.startsWith('/search/')) {

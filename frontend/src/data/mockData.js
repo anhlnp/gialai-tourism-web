@@ -1963,3 +1963,137 @@ export const MOCK_STAYS = [
     "description": "Homestay do hai chàng trai người Anh sáng lập, không gian mộc mạc sát biển với bar bia thủ công cực chill."
   }
 ];
+
+export const MOCK_EVENTS = [
+  {
+    "id": "EVT_DAQUY",
+    "eventId": "EVT_DAQUY",
+    "name": "Tuần lễ Hoa Dã Quỳ - Núi lửa Chư Đang Ya",
+    "time": "Tháng 11 hàng năm",
+    "monthOccurred": "Tháng 11 hàng năm",
+    "frequency": "Thường niên",
+    "locationId": "LOC_CHUDANGYA",
+    "locationName": "Núi lửa Chư Đang Ya",
+    "highlight": "Biểu diễn cồng chiêng, thi đan lát, dệt thổ cẩm, chinh phục đỉnh núi lửa ngắm thảm dã quỳ rực rỡ",
+    "description": "Sự kiện du lịch văn hóa lớn nhất năm của tỉnh Gia Lai thu hút hàng vạn du khách về chiêm ngưỡng miệng núi lửa cổ vàng rực sắc hoa."
+  },
+  {
+    "id": "EVT_CONGCHIENG",
+    "eventId": "EVT_CONGCHIENG",
+    "name": "Ngày hội Văn hóa Cồng chiêng Tây Nguyên tại Gia Lai",
+    "time": "Tháng 3 hoặc Tháng 11",
+    "monthOccurred": "Tháng 3 hoặc Tháng 11",
+    "frequency": "Định kỳ",
+    "locationId": "LOC_QUANGTRUONG_GL",
+    "locationName": "Quảng trường Đại Đoàn Kết & Bảo tàng Gia Lai",
+    "highlight": "Đại hợp tấu cồng chiêng của các nghệ nhân Jrai, Bahnar, rước lửa thiêng, múa xoang quanh ánh lửa",
+    "description": "Không gian tôn vinh di sản văn hóa phi vật thể của nhân loại với sự tham gia của hàng trăm nghệ nhân buôn làng."
+  },
+  {
+    "id": "EVT_CAUMUA",
+    "eventId": "EVT_CAUMUA",
+    "name": "Lễ Cầu Mưa của Yang Pơtao Apui (Vua Lửa)",
+    "time": "Tháng 4 âm lịch",
+    "monthOccurred": "Tháng 4 âm lịch",
+    "frequency": "Thường niên",
+    "locationId": "LOC_LANGVOI",
+    "locationName": "Làng Plei Ơi (Di tích Vua Lửa Plei Mơ Nú)",
+    "highlight": "Nghi thức tế lễ thần sấm, thần mưa của đồng bào Jrai cầu quốc thái dân an, mùa màng bội thu",
+    "description": "Nghi lễ tín ngưỡng tâm linh dân gian đặc sắc được công nhận là Di sản văn hóa phi vật thể quốc gia."
+  },
+  {
+    "id": "EVT_DUA_THUYEN_SESAN",
+    "eventId": "EVT_DUA_THUYEN_SESAN",
+    "name": "Hội Đua Thuyền Độc Mộc trên Sông Sê San",
+    "time": "Tháng 11",
+    "monthOccurred": "Tháng 11",
+    "frequency": "Thường niên",
+    "locationId": "LOC_THUYDIEN_SESAN4",
+    "locationName": "Lòng hồ Thủy điện Sê San 4",
+    "highlight": "Đua thuyền độc mộc truyền thống, thi câu cá lăng, trình diễn cồng chiêng trên mặt nước",
+    "description": "Hội thi thể thao sông nước đậm chất bản địa thu hút đông đảo du khách và cư dân biên giới tham gia."
+  },
+  {
+    "id": "EVT_CAFE_PLEIKU",
+    "eventId": "EVT_CAFE_PLEIKU",
+    "name": "Tuần lễ Cà phê Pleiku & Văn hóa Ẩm thực Phố Núi",
+    "time": "Tháng 12",
+    "monthOccurred": "Tháng 12",
+    "frequency": "Thường niên",
+    "locationId": "LOC_QUANGTRUONG_GL",
+    "locationName": "Quảng trường Đại Đoàn Kết & Bảo tàng Gia Lai",
+    "highlight": "Thưởng thức cà phê miễn phí, thi pha chế Barista, trưng bày các sản phẩm OCOP Gia Lai",
+    "description": "Sự kiện tôn vinh hạt cà phê bazan nồng nàn và văn hóa thưởng thức cà phê đường phố đặc trưng của Pleiku."
+  },
+  {
+    "id": "EVT_TAYSON_THUONGDAO",
+    "eventId": "EVT_TAYSON_THUONGDAO",
+    "name": "Lễ hội Kỷ niệm Khởi nghĩa Tây Sơn Thượng Đạo",
+    "time": "Mùng 4 đến mùng 5 tháng Giêng",
+    "monthOccurred": "Mùng 4 đến mùng 5 tháng Giêng",
+    "frequency": "Thường niên",
+    "locationId": "LOC_TAYSON_THUONGDAO",
+    "locationName": "Quần thể di tích Tây Sơn Thượng Đạo",
+    "highlight": "Tế lễ rước linh vị nghĩa quân Tây Sơn, biểu diễn võ cổ truyền Bình Định - Gia Lai, múa lân sư rồng",
+    "description": "Lễ hội tri ân phong trào khởi nghĩa nông dân Tây Sơn và tưởng nhớ công đức vua Quang Trung cùng nghĩa sĩ."
+  }
+];
+
+export const MOCK_ENTERTAINMENTS = [
+  {
+    "id": "ENT_PHODIBO_PLEIKU",
+    "entId": "ENT_PHODIBO_PLEIKU",
+    "name": "Phố Đi Bộ & Chợ Đêm Ẩm Thực Pleiku",
+    "type": "Chợ đêm & Ẩm thực đường phố",
+    "entertainmentType": "Chợ đêm & Ẩm thực đường phố",
+    "openHours": "17h00 - 23h30 hàng ngày",
+    "address": "Đường Hoàng Hoa Thám & Nguyễn Thiện Thuật, TP. Pleiku",
+    "budget": 0,
+    "ticketPrice": 0,
+    "locationId": "LOC_QUANGTRUONG_GL",
+    "imageUrl": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=800",
+    "description": "Khu phố đêm sầm uất tập trung hàng trăm gian hàng ẩm thực nướng, chè nóng, bún mắm cua và cà phê đường phố nhộn nhịp."
+  },
+  {
+    "id": "ENT_CAFE_HONG_IADER",
+    "entId": "ENT_CAFE_HONG_IADER",
+    "name": "Tổ hợp Cafe Check-in Đồi thông Ia Dêr",
+    "type": "Quán cafe ngắm cảnh & Sunset check-in",
+    "entertainmentType": "Quán cafe ngắm cảnh & Sunset check-in",
+    "openHours": "6h30 - 22h00",
+    "address": "Xã Ia Dêr, Huyện Ia Grai (Cách trung tâm Pleiku 5km)",
+    "budget": 0,
+    "ticketPrice": 0,
+    "locationId": "LOC_MINHTHANH",
+    "imageUrl": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800",
+    "description": "Điểm ngắm hoàng hôn triệu view trên đồi thông thơ mộng với xích đu vô cực, lều cắm trại và ánh hoàng hôn buông lãng mạn."
+  },
+  {
+    "id": "ENT_VUCSAU_ECO",
+    "entId": "ENT_VUCSAU_ECO",
+    "name": "Khu Du lịch Sinh thái Vực Sâu",
+    "type": "Dã ngoại & Tắm suối sinh thái",
+    "entertainmentType": "Dã ngoại & Tắm suối sinh thái",
+    "openHours": "8h00 - 18h00",
+    "address": "Xã Biển Hồ, TP. Pleiku, Gia Lai",
+    "budget": 30000,
+    "ticketPrice": 30000,
+    "locationId": "LOC_BIENHO",
+    "imageUrl": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800",
+    "description": "Không gian dã ngoại cuối tuần ven suối đá mát rượi, có chòi nghỉ thưởng thức gà nướng và tắm suối thiên nhiên."
+  },
+  {
+    "id": "ENT_TIENSON_CAMP",
+    "entId": "ENT_TIENSON_CAMP",
+    "name": "Khu Cắm trại Dã ngoại Tiên Sơn View Lake",
+    "type": "Glamping & Tiệc nướng BBQ",
+    "entertainmentType": "Glamping & Tiệc nướng BBQ",
+    "openHours": "Mở cửa 24/24 cho khách lưu trú cắm trại",
+    "address": "Bờ hồ Ea Nueng, Xã Tân Sơn, TP. Pleiku",
+    "budget": 100000,
+    "ticketPrice": 100000,
+    "locationId": "LOC_BIENHO",
+    "imageUrl": "https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=800",
+    "description": "Dịch vụ lều trại sang trọng (glamping) sát mép nước Biển Hồ, nơi tổ chức đốt lửa trại và ngắm bầu trời đầy sao cao nguyên."
+  }
+];

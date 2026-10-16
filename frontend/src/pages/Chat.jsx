@@ -116,10 +116,10 @@ export default function Chat() {
   }
 
   return (
-    <div className="min-h-screen bg-[#FAFAF7] pb-20 md:pb-0 text-[#1A1D1A]">
-      <div className="max-w-4xl lg:max-w-5xl mx-auto flex flex-col h-[calc(100vh-140px)] md:h-[calc(100vh-72px)]">
-        {/* Top Header */}
-        <header className="sticky top-0 z-30 bg-[#FAFAF7]/95 backdrop-blur-md px-4 sm:px-6 py-3 border-b border-[#E8EBE5] flex items-center justify-between">
+    <div className="w-full bg-[#FAFAF7] dark:bg-slate-950 text-[#1A1D1A] dark:text-slate-100">
+      <div className="max-w-4xl lg:max-w-5xl mx-auto flex flex-col h-[calc(100vh-136px)] lg:h-[calc(100vh-68px)]">
+        {/* Chat Header */}
+        <header className="px-4 sm:px-6 py-3 border-b border-[#E8EBE5] dark:border-slate-800 flex items-center justify-between bg-white/70 dark:bg-slate-900/70 backdrop-blur-md shrink-0">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-2xl bg-[#246B4A] flex items-center justify-center text-white shadow-xs">
               <Bot size={22} />

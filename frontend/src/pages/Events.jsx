@@ -39,8 +39,8 @@ export default function Events() {
 
   return (
     <div className="min-h-screen bg-[#FAFAF7] pb-24 md:pb-12 text-[#1A1D1A]">
-      {/* Top Sticky Header */}
-      <header className="sticky top-0 z-30 bg-[#FAFAF7]/95 backdrop-blur-md border-b border-[#E8EBE5]">
+      {/* Top Sticky Filter Header */}
+      <header className="sticky top-[68px] z-30 bg-[#FAFAF7]/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-[#E8EBE5] dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-3 pb-3">
           <div className="flex items-center justify-between gap-3 mb-3">
             <div className="flex items-center gap-2">

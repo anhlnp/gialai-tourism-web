@@ -83,7 +83,7 @@ export default function DestinationDetail() {
 
   if (loading) {
     return (
-      <div className="container" style={{ paddingTop: '80px', paddingBottom: '40px', maxWidth: '1200px' }}>
+      <div className="container" style={{ paddingTop: '24px', paddingBottom: '40px', maxWidth: '1200px' }}>
         <div style={{ height: '380px', borderRadius: 'var(--radius-xl)', background: 'var(--color-bg-3)', marginBottom: '24px' }} className="skeleton" />
         <div style={{ height: '120px', borderRadius: 'var(--radius-lg)', background: 'var(--color-bg-3)', marginBottom: '16px' }} className="skeleton" />
         <div style={{ height: '200px', borderRadius: 'var(--radius-lg)', background: 'var(--color-bg-3)' }} className="skeleton" />
@@ -93,7 +93,7 @@ export default function DestinationDetail() {
 
   if (!data || data.error) {
     return (
-      <div className="container" style={{ paddingTop: '100px', textAlign: 'center', maxWidth: '600px' }}>
+      <div className="container" style={{ paddingTop: '40px', textAlign: 'center', maxWidth: '600px' }}>
         <h1 className="font-editorial" style={{ fontSize: '2rem', marginBottom: '12px' }}>Không tìm thấy điểm đến</h1>
         <p style={{ color: 'var(--color-text-3)', marginBottom: '24px' }}>Điểm đến có thể đang được cập nhật thông tin trên Đồ thị Tri thức.</p>
         <button onClick={() => navigate('/explore')} className="btn btn-primary">

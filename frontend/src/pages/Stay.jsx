@@ -27,7 +27,7 @@ export default function Stay() {
   const navigate = useNavigate()
 
   const params = search ? { search } : {}
-  const { data: rawStays, loading } = useApi('/accommodations', { params })
+  const { data: rawStays, loading, error, refetch } = useApi('/accommodations', { params })
 
   useEffect(() => {
     try {
@@ -111,7 +111,7 @@ export default function Stay() {
   }
 
   return (
-    <div className="page pb-24 md:pb-12" style={{ paddingTop: '20px' }}>
+    <div className="page pb-24 lg:pb-12 pt-6">
       <div className="container" style={{ maxWidth: '1280px' }}>
         {/* ── Header (Stitch Screen 4) ── */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px', flexWrap: 'wrap', gap: '12px' }}>
@@ -223,6 +223,14 @@ export default function Stay() {
               <div key={n} style={{ height: '300px', borderRadius: 'var(--radius-lg)', background: 'var(--color-bg-3)' }} className="skeleton" />
             ))}
           </div>
+        ) : error && filteredStays.length === 0 ? (
+          <div className="empty-state-card" style={{ borderColor: 'rgba(239, 68, 68, 0.3)', background: 'rgba(254, 242, 242, 0.6)' }}>
+            <h3 className="font-display" style={{ fontSize: '1.2rem', marginBottom: '8px', color: '#b91c1c' }}>Không thể tải dữ liệu lưu trú</h3>
+            <p style={{ color: '#7f1d1d', fontSize: '0.9rem', marginBottom: '16px' }}>{error}</p>
+            <button onClick={() => refetch()} className="btn btn-primary" style={{ fontSize: '12px', padding: '6px 16px' }}>
+              Thử lại kết nối
+            </button>
+          </div>
         ) : filteredStays.length === 0 ? (
           <div className="empty-state-card">
             <h3 className="font-display" style={{ fontSize: '1.2rem', marginBottom: '8px' }}>Không tìm thấy cơ sở lưu trú</h3>
@@ -256,6 +264,7 @@ export default function Stay() {
                       alt={stay.name}
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                       loading="lazy"
+                      onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800' }}
                     />
 
                     {/* Bookmark Toggle */}

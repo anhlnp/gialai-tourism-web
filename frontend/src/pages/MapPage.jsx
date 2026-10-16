@@ -160,7 +160,7 @@ export default function MapPage() {
   }
 
   return (
-    <div className="relative w-full h-[calc(100vh-140px)] md:h-[calc(100vh-72px)] overflow-hidden bg-[#FAFAF7]">
+    <div className="relative w-full h-[calc(100vh-136px)] lg:h-[calc(100vh-68px)] overflow-hidden bg-[#FAFAF7]">
       {/* ── Top Floating Search & Filter Pill Bar (Stitch Frosted Glass) ── */}
       <div className="absolute top-3 left-3 right-3 sm:left-4 sm:right-auto sm:w-[420px] z-[1000] flex flex-col gap-2 pointer-events-auto">
         {/* Search Pill */}

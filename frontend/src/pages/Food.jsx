@@ -54,7 +54,7 @@ export default function Food() {
   const [savedIds, setSavedIds] = useState([])
 
   const params = search ? { search } : {}
-  const { data: rawDishes, loading } = useApi('/dishes', { params })
+  const { data: rawDishes, loading, error, refetch } = useApi('/dishes', { params })
 
   useEffect(() => {
     try {
@@ -132,7 +132,7 @@ export default function Food() {
   }
 
   return (
-    <div className="page pb-24 md:pb-12" style={{ paddingTop: '20px' }}>
+    <div className="page pb-24 lg:pb-12 pt-6">
       <div className="container" style={{ maxWidth: '1280px' }}>
         {/* ── Header (Stitch Screen 5) ── */}
         <div style={{ marginBottom: '22px' }}>
@@ -204,6 +204,14 @@ export default function Food() {
               <div key={n} style={{ height: '320px', borderRadius: 'var(--radius-lg)', background: 'var(--color-bg-3)' }} className="skeleton" />
             ))}
           </div>
+        ) : error && filteredDishes.length === 0 ? (
+          <div className="empty-state-card" style={{ borderColor: 'rgba(239, 68, 68, 0.3)', background: 'rgba(254, 242, 242, 0.6)' }}>
+            <h3 className="font-display" style={{ fontSize: '1.2rem', marginBottom: '8px', color: '#b91c1c' }}>Không thể tải dữ liệu ẩm thực</h3>
+            <p style={{ color: '#7f1d1d', fontSize: '0.9rem', marginBottom: '16px' }}>{error}</p>
+            <button onClick={() => refetch()} className="btn btn-primary" style={{ fontSize: '12px', padding: '6px 16px' }}>
+              Thử lại kết nối
+            </button>
+          </div>
         ) : filteredDishes.length === 0 ? (
           <div className="empty-state-card">
             <h3 className="font-display" style={{ fontSize: '1.2rem', marginBottom: '8px' }}>Không tìm thấy món ăn</h3>
@@ -239,6 +247,7 @@ export default function Food() {
                       alt={dish.name}
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                       loading="lazy"
+                      onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1544025162-d76694265947?w=800' }}
                     />
 
                     {/* Bookmark Toggle */}

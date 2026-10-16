@@ -31,6 +31,7 @@ export default function Planner() {
   })
   const [activeDay, setActiveDay] = useState(1)
   const [savedSuccess, setSavedSuccess] = useState(false)
+  const [planError, setPlanError] = useState(null)
 
   const interestOptions = [
     { id: 'nature', label: 'Cảnh quan thiên nhiên', icon: Trees },
@@ -53,6 +54,7 @@ export default function Planner() {
 
   const generatePlan = async () => {
     setLoading(true)
+    setPlanError(null)
     setLoadingStep(1)
 
     // Hiệu ứng các bước phân tích GraphRAG
@@ -76,6 +78,7 @@ export default function Planner() {
     } catch (err) {
       console.error('Error generating itinerary:', err)
       clearInterval(stepInterval)
+      setPlanError(err.message || 'Không thể tạo lộ trình lúc này. Vui lòng kiểm tra kết nối mạng và thử lại.')
     } finally {
       setLoading(false)
     }
@@ -104,7 +107,7 @@ export default function Planner() {
   return (
     <div className="min-h-screen bg-[#FAFAF7] pb-24 md:pb-12 text-[#1A1D1A]">
       {/* Top Header */}
-      <header className="sticky top-0 z-30 bg-[#FAFAF7]/95 backdrop-blur-md border-b border-[#E8EBE5]">
+      <header className="sticky top-[68px] z-30 bg-[#FAFAF7]/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-[#E8EBE5] dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <button
@@ -353,6 +356,18 @@ export default function Planner() {
                 })}
               </div>
             </section>
+
+            {planError && (
+              <div className="p-3.5 rounded-xl bg-red-50 border border-red-200 text-xs text-red-700 flex items-center justify-between">
+                <span>{planError}</span>
+                <button 
+                  onClick={() => setPlanError(null)} 
+                  className="font-bold underline text-red-800 ml-2"
+                >
+                  Đóng
+                </button>
+              </div>
+            )}
 
             {/* Nút hành động Tạo lịch trình */}
             <button

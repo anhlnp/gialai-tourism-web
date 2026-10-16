@@ -42,7 +42,7 @@ export default function Home() {
   ]
 
   return (
-    <div className="page pb-24 md:pb-12" style={{ paddingTop: '16px' }}>
+    <div className="page pb-24 lg:pb-12 pt-6">
       <div className="container" style={{ maxWidth: '1280px' }}>
         {/* ── Top Editorial Header (Stitch Screen 1) ── */}
         <section style={{ marginBottom: '22px' }}>

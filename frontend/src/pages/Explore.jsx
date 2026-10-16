@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { 
   Search, Sparkles, BookOpen, Layers, MapPin, Star, Clock, 
-  ArrowLeft, Map as MapIcon, Bookmark, SlidersHorizontal, X, ArrowRight
+  ArrowLeft, Map as MapIcon, Bookmark, SlidersHorizontal, X, ArrowRight, AlertCircle
 } from 'lucide-react'
 import { useApi, getApi } from '../hooks/useApi'
 
@@ -56,7 +56,7 @@ export default function Explore() {
   if (selectedCategory) params.category = selectedCategory
   if (selectedDistrict) params.region = selectedDistrict
 
-  const { data: defaultLocations, loading: defaultLoading } = useApi('/locations', { params })
+  const { data: defaultLocations, loading: defaultLoading, error: defaultError, refetch } = useApi('/locations', { params })
   const { data: categories } = useApi('/locations/categories')
   const { data: districts } = useApi('/locations/districts')
 
@@ -101,8 +101,8 @@ export default function Explore() {
 
   return (
     <div className="min-h-screen bg-[#FAFAF7] pb-24 md:pb-12 text-[#1A1D1A]">
-      {/* Top Header */}
-      <header className="sticky top-0 z-30 bg-[#FAFAF7]/95 backdrop-blur-md border-b border-[#E8EBE5]">
+      {/* Top Filter & Search Header */}
+      <header className="sticky top-[68px] z-30 bg-[#FAFAF7]/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-[#E8EBE5] dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-3 pb-3">
           <div className="flex items-center justify-between gap-3 mb-3">
             <div className="flex items-center gap-2">
@@ -281,6 +281,24 @@ export default function Explore() {
               </div>
             ))}
           </div>
+        ) : defaultError && displayLocations.length === 0 ? (
+          <div className="empty-state-card text-center my-8 p-6 bg-red-50/50 border border-red-200 rounded-2xl max-w-lg mx-auto">
+            <div className="w-14 h-14 rounded-full bg-red-100 flex items-center justify-center mx-auto mb-3 text-red-600">
+              <AlertCircle size={26} />
+            </div>
+            <h3 className="font-editorial text-lg font-bold text-red-900 mb-1">
+              Không thể tải dữ liệu điểm đến
+            </h3>
+            <p className="text-xs text-red-700 max-w-sm mx-auto mb-4">
+              {defaultError}
+            </p>
+            <button
+              onClick={() => refetch()}
+              className="px-4 py-2 rounded-full bg-[#246B4A] text-white text-xs font-semibold hover:bg-[#1E573C] transition-all"
+            >
+              Thử lại kết nối
+            </button>
+          </div>
         ) : displayLocations.length === 0 ? (
           <div className="empty-state-card text-center my-8">
             <div className="w-14 h-14 rounded-full bg-[#E8EBE5] flex items-center justify-center mx-auto mb-3 text-[#5A635B]">
@@ -308,6 +326,11 @@ export default function Explore() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {displayLocations.map(loc => {
               const isSaved = savedIds.includes(loc.id)
+              const cardImage = loc.imageUrl || loc.image_url || 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop'
+              const isFree = loc.budget === 0 || loc.budget === '0' || loc.budget === 'Miễn phí' || loc.ticket_price === 'Miễn phí' || loc.ticket_price === 0
+              const ratingDisplay = loc.avgRating || loc.rating || 4.8
+              const timeDisplay = loc.bestTime || loc.best_time_to_visit || loc.opening_hours || 'Mở cả ngày'
+
               return (
                 <article
                   key={loc.id}
@@ -316,7 +339,7 @@ export default function Explore() {
                   {/* Card Image Thumbnail */}
                   <div className="relative w-full aspect-[16/10] bg-[#E8EBE5] overflow-hidden">
                     <img
-                      src={loc.image_url || 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop'}
+                      src={cardImage}
                       alt={loc.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       onError={e => {
@@ -329,7 +352,7 @@ export default function Explore() {
                       <span className="px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md text-[#1A1D1A] text-[11px] font-semibold border border-white/60 shadow-xs">
                         {loc.category || 'Điểm đến'}
                       </span>
-                      {loc.ticket_price === 'Miễn phí' || loc.ticket_price === 0 ? (
+                      {isFree ? (
                         <span className="px-2 py-0.5 rounded-full bg-[#246B4A]/90 text-white text-[11px] font-medium backdrop-blur-xs">
                           Miễn phí vé
                         </span>
@@ -358,7 +381,7 @@ export default function Explore() {
                         </Link>
                         <div className="flex items-center gap-1 shrink-0 text-[#C26D38] font-bold text-xs">
                           <Star size={14} fill="#C26D38" />
-                          <span>{loc.rating || 4.8}</span>
+                          <span>{ratingDisplay}</span>
                         </div>
                       </div>
 
@@ -375,7 +398,7 @@ export default function Explore() {
                     <div className="pt-3 border-t border-[#E8EBE5] flex items-center justify-between text-xs">
                       <span className="inline-flex items-center gap-1 text-[#8A948C]">
                         <Clock size={13} />
-                        {loc.opening_hours || 'Mở cả ngày'}
+                        {timeDisplay}
                       </span>
                       <Link
                         to={`/destinations/${loc.id}`}

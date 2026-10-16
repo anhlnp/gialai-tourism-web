@@ -3,8 +3,28 @@
    Premium Light Tourism Theme
    ═══════════════════════════════════════════════════════════════ */
 
-/* ── Google Font ── */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+/* ── Google Fonts (Stitch Editorial Suite: Newsreader + Plus Jakarta Sans + Inter) ── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #fafaf7;
+  --color-primary: #246b4a;
+  --color-primary-dark: #194e36;
+  --color-primary-light: #eaf2ec;
+  --color-primary-soft: #f2f7f3;
+  --color-terracotta: #c26d38;
+  --color-terracotta-soft: #faf1eb;
+  --color-charcoal: #1a1d1a;
+  --color-muted: #6e756f;
+  --color-hairline: #e8ebe5;
+  --color-surface-pure: #ffffff;
+  
+  --font-editorial: 'Newsreader', Georgia, serif;
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+}
 
 /* ── Design Tokens (Google Stitch: Gia Lai Explorer Editorial Theme) ── */
 :root {
@@ -82,16 +102,16 @@
   --shadow-glow: 0 0 30px rgba(16, 185, 129, 0.15);
 }
 
-/* ── Reset ── */
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
+/* ── Base Layer Reset (Safely layered so utilities like mx-auto are never blocked) ── */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
 }
 
 body {
@@ -104,20 +124,21 @@ body {
   padding-bottom: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   body {
-    padding-bottom: 76px; /* Space for Mobile Bottom Navigation on handhelds */
+    padding-bottom: 72px; /* Space for Mobile Bottom Navigation on handhelds */
+  }
+}
+@media (min-width: 1024px) {
+  body {
+    padding-bottom: 0;
   }
 }
 
 .app-main {
   min-height: calc(100vh - 72px);
-}
-
-@media (max-width: 768px) {
-  .app-main {
-    min-height: calc(100vh - 140px);
-  }
+  display: flex;
+  flex-direction: column;
 }
 
 /* ── Typography Classes (Google Stitch) ── */
@@ -158,19 +179,20 @@ a:hover {
 }
 
 .page {
-  min-height: 100vh;
-  padding-top: 80px;
+  min-height: calc(100vh - 72px);
+  padding-top: 16px;
 }
 
-/* ── Navbar ── */
+/* ── Navbar (Sticky Document Flow — Never Overlaps Content) ── */
 .navbar {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
-  height: 72px;
-  background: rgba(255, 255, 255, 0.85);
+  height: 70px;
+  background: rgba(250, 250, 247, 0.92);
   backdrop-filter: var(--glass);
+  -webkit-backdrop-filter: var(--glass);
   border-bottom: 1px solid var(--color-border);
   z-index: 1000;
   display: flex;
@@ -178,8 +200,8 @@ a:hover {
 }
 
 [data-theme='dark'] .navbar {
-  background: rgba(15, 23, 42, 0.85);
-  border-bottom-color: rgba(255,255,255,0.06);
+  background: rgba(15, 23, 42, 0.9);
+  border-bottom-color: rgba(255,255,255,0.08);
 }
 
 .navbar .container {
@@ -883,6 +905,9 @@ a:hover {
   .hero h1 {
     font-size: 2rem;
   }
+}
+
+@media (max-width: 1023px) {
   .navbar-links {
     display: none;
   }
@@ -892,7 +917,7 @@ a:hover {
    STITCH COMPONENT DESIGN SYSTEM (5-Tab Bar, Editorial Cards, etc.)
    ═══════════════════════════════════════════════════════════════ */
 
-/* ── Mobile Bottom 5-Tab Bar (Hidden on Desktop >= 769px) ── */
+/* ── Mobile Bottom 5-Tab Bar (Hidden on Desktop >= 1024px) ── */
 .stitch-bottom-nav {
   position: fixed;
   bottom: 0;
@@ -912,7 +937,7 @@ a:hover {
   box-shadow: 0 -4px 16px rgba(26, 29, 26, 0.03);
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1024px) {
   .stitch-bottom-nav {
     display: none !important;
   }
@@ -936,7 +961,7 @@ a:hover {
   z-index: 999;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1024px) {
   .stitch-floating-action-bar {
     bottom: 0 !important;
   }

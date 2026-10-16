@@ -181,8 +181,9 @@ export function useApi(endpoint, options = {}) {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [isFallback, setIsFallback] = useState(false)
 
-  const { immediate = true, params = {} } = options
+  const { immediate = true, params = {}, allowOfflineFallback = false } = options
 
   const fetchData = useCallback(async (overrideParams) => {
     setLoading(true)
@@ -193,17 +194,25 @@ export function useApi(endpoint, options = {}) {
       const qs = queryParams.toString()
       const url = `${API_BASE}${endpoint}${qs ? '?' + qs : ''}`
       const res = await fetch(url)
-      if (!res.ok) throw new Error(`HTTP ${res.status}`)
+      if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText || 'Lỗi máy chủ'}`)
       const json = await res.json()
       setData(json)
+      setIsFallback(false)
       return json
     } catch (err) {
-      const fallback = resolveFallback(endpoint, effectiveParams)
-      if (fallback !== null) {
-        setData(fallback)
-        return fallback
+      const isOffline = typeof navigator !== 'undefined' && !navigator.onLine
+      if (allowOfflineFallback || isOffline) {
+        const fallback = resolveFallback(endpoint, effectiveParams)
+        if (fallback !== null) {
+          setData(fallback)
+          setIsFallback(true)
+          setError(err.message || 'Mất kết nối mạng - Đang dùng dữ liệu ngoại tuyến')
+          return fallback
+        }
       }
-      setError(err.message)
+      setData(null)
+      setIsFallback(false)
+      setError(err.message || 'Không thể kết nối đến máy chủ backend')
       return null
     } finally {
       setLoading(false)
@@ -214,60 +223,37 @@ export function useApi(endpoint, options = {}) {
     if (immediate) fetchData()
   }, [endpoint])
 
-  return { data, loading, error, refetch: fetchData }
+  return { data, loading, error, isFallback, refetch: fetchData }
 }
 
-export async function getApi(endpoint) {
+export async function getApi(endpoint, { allowFallback = false } = {}) {
   try {
     const res = await fetch(`${API_BASE}${endpoint}`)
-    if (!res.ok) throw new Error(`HTTP ${res.status}`)
+    if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText || 'Lỗi tải dữ liệu'}`)
     return await res.json()
   } catch (err) {
-    const fallback = resolveFallback(endpoint)
-    if (fallback !== null) return fallback
+    const isOffline = typeof navigator !== 'undefined' && !navigator.onLine
+    if (allowFallback || isOffline) {
+      const fallback = resolveFallback(endpoint)
+      if (fallback !== null) return fallback
+    }
     throw err
   }
 }
 
 export async function postApi(endpoint, body) {
-  try {
-    const res = await fetch(`${API_BASE}${endpoint}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
-    })
-    if (!res.ok) throw new Error(`HTTP ${res.status}`)
-    return await res.json()
-  } catch (err) {
-    // Graceful fallback cho cả Planner và Chat khi Vercel standalone hoặc backend lỗi
-    if (endpoint === '/planner') {
-      const { days = 2, region = null } = body || {}
-      return generateFallbackPlan(days, region)
-    }
-
-    if (endpoint === '/chat') {
-      const userText = (body?.message || body?.query || '').trim().toLowerCase()
-      const greetings = ['hi', 'hello', 'chào', 'xin chào', 'alo', 'ơi', 'hey', 'hai', 'helo']
-      let reply = ''
-      if (greetings.includes(userText) || userText.length <= 4) {
-        reply = 'Dạ xin chào bạn! 👋 Tôi là Trợ lý Du lịch Thông minh Gia Lai. Tôi có thể hỗ trợ bạn tìm kiếm điểm tham quan danh thắng, món ăn đặc sản, khách sạn homestay hay lên lộ trình du lịch tối ưu. Hôm nay bạn cần tôi hỗ trợ thông tin gì ạ? 😊'
-      } else if (userText.includes('ăn') || userText.includes('món') || userText.includes('đặc sản')) {
-        reply = '🍲 **Đặc sản Gia Lai nhất định phải thử:**\n\n1. **Phở Khô Gia Lai (Phở Hai Tô)**: Món ăn biểu tượng với tô bánh phở trụng riêng và tô súp ngọt xương thơm lừng.\n2. **Gà nướng sa lửa & Cơm lam**: Thịt gà đồi ướp lá rừng nướng than hồng chấm muối é ớt hiểm.\n3. **Bò một nắng muối kiến vàng Krông Pa**: Bò cỏ phơi nắng nướng chấm muối trứng kiến chua cay lạ miệng.\n4. **Bún mắm cua (Bún cua thối)**: Nét ẩm thực bản địa độc đáo phố núi Pleiku.'
-      } else if (userText.includes('khách sạn') || userText.includes('homestay') || userText.includes('nghỉ') || userText.includes('ở')) {
-        reply = '🏨 **Gợi ý nơi lưu trú tốt nhất tại Gia Lai:**\n\n• **HAGL Hotel Pleiku (4 sao)**: Trung tâm TP. Pleiku, view toàn cảnh phố núi, hồ bơi và buffet sáng.\n• **Boston Hotel Pleiku (3 sao)**: Gần sân bay, phòng ốc hiện đại, giá hợp lý.\n• **Tiên Sơn Homestay**: Gần Biển Hồ, view hồ xanh mát yên bình.\n• **XOM Homestay & Coffee**: View đồi chè Biển Hồ thơ mộng.'
-      } else {
-        reply = `Dạ chào bạn! Đối với câu hỏi về "${body?.message || 'du lịch Gia Lai'}", hệ thống Đồ thị Tri thức đã cập nhật 40 điểm đến, ẩm thực và lưu trú chính thống. Bạn có thể tra cứu chi tiết tại trang Khám phá, Bản đồ du lịch hoặc Lên lộ trình nhé!`
-      }
-      return {
-        answer: reply,
-        reply: reply,
-        sources: [
-          { name: "Cổng Thông tin Du lịch Tỉnh Gia Lai", url: "https://gialaitourism.gov.vn" }
-        ]
-      }
-    }
-
-    // Nếu endpoint khác thì ném lỗi
-    throw err
+  const res = await fetch(`${API_BASE}${endpoint}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  })
+  if (!res.ok) {
+    let errDetail = `HTTP ${res.status}: ${res.statusText || 'Lỗi yêu cầu'}`
+    try {
+      const errJson = await res.json()
+      if (errJson.detail) errDetail = errJson.detail
+    } catch {}
+    throw new Error(errDetail)
   }
+  return await res.json()
 }

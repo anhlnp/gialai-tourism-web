@@ -99,9 +99,10 @@ export default function MapPage() {
   const { data: locations } = useApi('/locations?limit=200')
   const navigate = useNavigate()
 
-  const defaultCenter = [14.05, 108.05] // Pleiku / Gia Lai
+  const defaultCenter = [13.98, 108.6] // Trung tâm hành lang Rừng & Biển Gia Lai Mới
   const [activeLayer, setActiveLayer] = useState('streets')
   const [searchQuery, setSearchQuery] = useState('')
+  const [selectedRegion, setSelectedRegion] = useState('ALL') // 'ALL' | 'Cao nguyên' | 'Duyên hải'
   const [selectedCategory, setSelectedCategory] = useState('ALL')
   const [selectedLoc, setSelectedLoc] = useState(null)
   const [flyTarget, setFlyTarget] = useState(null)
@@ -121,13 +122,17 @@ export default function MapPage() {
   // Filtered locations
   const filteredLocations = useMemo(() => {
     return validLocations.filter(loc => {
+      const matchRegion = selectedRegion === 'ALL' || 
+        loc.geographicRegion === selectedRegion || 
+        (selectedRegion === 'Duyên hải' && (loc.legacyProvince === 'Bình Định' || ['Thành phố Quy Nhơn', 'Huyện Tây Sơn', 'Huyện Tuy Phước', 'Huyện Phù Cát', 'Thị xã An Nhơn', 'Huyện Phù Mỹ'].includes(loc.district))) ||
+        (selectedRegion === 'Cao nguyên' && (loc.legacyProvince === 'Gia Lai' || !['Thành phố Quy Nhơn', 'Huyện Tây Sơn', 'Huyện Tuy Phước', 'Huyện Phù Cát', 'Thị xã An Nhơn', 'Huyện Phù Mỹ'].includes(loc.district)))
       const matchCat = selectedCategory === 'ALL' || loc.category === selectedCategory
       const matchSearch = !searchQuery.trim() ||
         loc.name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
         loc.district?.toLowerCase().includes(searchQuery.toLowerCase())
-      return matchCat && matchSearch
+      return matchRegion && matchCat && matchSearch
     })
-  }, [validLocations, selectedCategory, searchQuery])
+  }, [validLocations, selectedRegion, selectedCategory, searchQuery])
 
   // Select location on map
   const handleSelectLocation = (loc) => {
@@ -183,6 +188,49 @@ export default function MapPage() {
           )}
         </div>
 
+        {/* Region & Corridor Horizontal Filter Chips */}
+        <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5">
+          <button
+            onClick={() => {
+              setSelectedRegion('ALL')
+              setFlyTarget({ pos: [13.98, 108.6], zoom: 8.5 })
+            }}
+            className={`shrink-0 px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-md shadow-xs active:scale-95 transition-all ${
+              selectedRegion === 'ALL'
+                ? 'bg-[#1A1D1A] text-white border border-[#1A1D1A]'
+                : 'bg-white/90 border border-[#E8EBE5] text-[#5A635B] hover:bg-white'
+            }`}
+          >
+            Toàn tỉnh mới (43)
+          </button>
+          <button
+            onClick={() => {
+              setSelectedRegion('Cao nguyên')
+              setFlyTarget({ pos: [13.98, 108.0], zoom: 10 })
+            }}
+            className={`shrink-0 px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-md shadow-xs active:scale-95 transition-all ${
+              selectedRegion === 'Cao nguyên'
+                ? 'bg-[#246B4A] text-white border border-[#246B4A]'
+                : 'bg-white/90 border border-[#E8EBE5] text-[#246B4A] hover:bg-white'
+            }`}
+          >
+            Cao nguyên (30)
+          </button>
+          <button
+            onClick={() => {
+              setSelectedRegion('Duyên hải')
+              setFlyTarget({ pos: [13.82, 109.18], zoom: 11 })
+            }}
+            className={`shrink-0 px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-md shadow-xs active:scale-95 transition-all ${
+              selectedRegion === 'Duyên hải'
+                ? 'bg-[#1E40AF] text-white border border-[#1E40AF]'
+                : 'bg-white/90 border border-[#E8EBE5] text-[#1E40AF] hover:bg-white'
+            }`}
+          >
+            Duyên hải (13)
+          </button>
+        </div>
+
         {/* Category Horizontal Filter Chips */}
         <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5">
           {categories.slice(0, 7).map(cat => (
@@ -191,11 +239,11 @@ export default function MapPage() {
               onClick={() => setSelectedCategory(cat)}
               className={`shrink-0 px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-md shadow-xs active:scale-95 transition-all ${
                 selectedCategory === cat
-                  ? 'bg-[#246B4A] text-white border border-[#246B4A]'
+                  ? 'bg-[#C26D38] text-white border border-[#C26D38]'
                   : 'bg-white/90 border border-[#E8EBE5] text-[#5A635B] hover:bg-white'
               }`}
             >
-              {cat === 'ALL' ? 'Tất cả' : cat}
+              {cat === 'ALL' ? 'Tất cả loại hình' : cat}
             </button>
           ))}
         </div>

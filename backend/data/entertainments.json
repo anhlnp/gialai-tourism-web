@@ -1,46 +1,67 @@
 [
   {
-    "entId": "ENT_PHODIBO_PLEIKU",
-    "name": "Phố Đi Bộ & Chợ Đêm Ẩm Thực Pleiku",
-    "entertainmentType": "Chợ đêm & Ẩm thực đường phố",
-    "openHours": "17h00 - 23h30 hàng ngày",
-    "address": "Đường Hoàng Hoa Thám & Nguyễn Thiện Thuật, TP. Pleiku",
+    "entId": "ENT_BD_CHO_DEM_QUYNHON",
+    "name": "Chợ đêm Quy Nhơn & Phố ẩm thực Xuân Diệu",
+    "description": "Không gian phố đi bộ ẩm thực hải sản và mua sắm sầm uất ven bờ biển Quy Nhơn, quy tụ hàng trăm món ngon hải sản và quà lưu niệm.",
+    "address": "Đường Xuân Diệu & Nguyễn Thiếp, Phường Trần Phú, Thành phố Quy Nhơn",
     "ticketPrice": 0,
-    "locationId": "LOC_QUANGTRUONG_GL",
-    "imageUrl": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=800",
-    "description": "Khu phố đêm sầm uất tập trung hàng trăm gian hàng ẩm thực nướng, chè nóng, bún mắm cua và cà phê đường phố nhộn nhịp."
-  },
-  {
-    "entId": "ENT_CAFE_HONG_IADER",
-    "name": "Tổ hợp Cafe Check-in Đồi thông Ia Dêr",
-    "entertainmentType": "Quán cafe ngắm cảnh & Sunset check-in",
-    "openHours": "6h30 - 22h00",
-    "address": "Xã Ia Dêr, Huyện Ia Grai (Cách trung tâm Pleiku 5km)",
-    "ticketPrice": 0,
-    "locationId": "LOC_MINHTHANH",
-    "imageUrl": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800",
-    "description": "Điểm ngắm hoàng hôn triệu view trên đồi thông thơ mộng với xích đu vô cực, lều cắm trại và ánh hoàng hôn buông lãng mạn."
-  },
-  {
-    "entId": "ENT_VUCSAU_ECO",
-    "name": "Khu Du lịch Sinh thái Vực Sâu",
-    "entertainmentType": "Dã ngoại & Tắm suối sinh thái",
-    "openHours": "8h00 - 18h00",
-    "address": "Xã Biển Hồ, TP. Pleiku, Gia Lai",
-    "ticketPrice": 30000,
-    "locationId": "LOC_BIENHO",
-    "imageUrl": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800",
-    "description": "Không gian dã ngoại cuối tuần ven suối đá mát rượi, có chòi nghỉ thưởng thức gà nướng và tắm suối thiên nhiên."
+    "entertainmentType": "Chợ đêm & Ẩm thực",
+    "openHours": "17:00 - 23:30 hàng ngày",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Night_market_in_Qui_Nhon_Vietnam.JPG",
+    "legacy_province": "Bình Định",
+    "current_province": "Gia Lai",
+    "geographic_region": "Duyên hải"
   },
   {
     "entId": "ENT_TIENSON_CAMP",
     "name": "Khu Cắm trại Dã ngoại Tiên Sơn View Lake",
-    "entertainmentType": "Glamping & Tiệc nướng BBQ",
-    "openHours": "Mở cửa 24/24 cho khách lưu trú cắm trại",
+    "description": "Dịch vụ lều trại sang trọng (glamping) sát mép nước Biển Hồ, nơi tổ chức đốt lửa trại và ngắm bầu trời đầy sao cao nguyên.",
     "address": "Bờ hồ Ea Nueng, Xã Tân Sơn, TP. Pleiku",
     "ticketPrice": 100000,
-    "locationId": "LOC_BIENHO",
+    "entertainmentType": "Glamping & Tiệc nướng BBQ",
+    "openHours": "Mở cửa 24/24 cho khách lưu trú cắm trại",
     "imageUrl": "https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=800",
-    "description": "Dịch vụ lều trại sang trọng (glamping) sát mép nước Biển Hồ, nơi tổ chức đốt lửa trại và ngắm bầu trời đầy sao cao nguyên."
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "entId": "ENT_VUCSAU_ECO",
+    "name": "Khu Du lịch Sinh thái Vực Sâu",
+    "description": "Không gian dã ngoại cuối tuần ven suối đá mát rượi, có chòi nghỉ thưởng thức gà nướng và tắm suối thiên nhiên.",
+    "address": "Xã Biển Hồ, TP. Pleiku, Gia Lai",
+    "ticketPrice": 30000,
+    "entertainmentType": "Dã ngoại & Tắm suối sinh thái",
+    "openHours": "8h00 - 18h00",
+    "imageUrl": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "entId": "ENT_PHODIBO_PLEIKU",
+    "name": "Phố Đi Bộ & Chợ Đêm Ẩm Thực Pleiku",
+    "description": "Khu phố đêm sầm uất tập trung hàng trăm gian hàng ẩm thực nướng, chè nóng, bún mắm cua và cà phê đường phố nhộn nhịp.",
+    "address": "Đường Hoàng Hoa Thám & Nguyễn Thiện Thuật, TP. Pleiku",
+    "ticketPrice": 0,
+    "entertainmentType": "Chợ đêm & Ẩm thực đường phố",
+    "openHours": "17h00 - 23h30 hàng ngày",
+    "imageUrl": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=800",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "entId": "ENT_CAFE_HONG_IADER",
+    "name": "Tổ hợp Cafe Check-in Đồi thông Ia Dêr",
+    "description": "Điểm ngắm hoàng hôn triệu view trên đồi thông thơ mộng với xích đu vô cực, lều cắm trại và ánh hoàng hôn buông lãng mạn.",
+    "address": "Xã Ia Dêr, Huyện Ia Grai (Cách trung tâm Pleiku 5km)",
+    "ticketPrice": 0,
+    "entertainmentType": "Quán cafe ngắm cảnh & Sunset check-in",
+    "openHours": "6h30 - 22h00",
+    "imageUrl": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   }
 ]

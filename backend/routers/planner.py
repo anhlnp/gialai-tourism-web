@@ -1,4 +1,4 @@
-﻿"""
+"""
 Planner Router — Lập lộ trình du lịch thông minh tỉnh Gia Lai.
 """
 import os
@@ -25,14 +25,14 @@ def generate_plan(req: PlanRequest):
         params: dict = {}
 
         if req.region:
-            conditions.append("d.name = $region")
+            conditions.append("(d.name = $region OR loc.geographic_region = $region OR loc.legacy_province = $region OR d.geographic_region = $region)")
             params["region"] = req.region
 
         where = ("WHERE " + " AND ".join(conditions)) if conditions else ""
 
         cypher = f"""
         MATCH (loc:Location)-[:LOCATED_IN]->(d:District)
-        OPTIONAL MATCH (loc)-[:BELONGS_TO|BELONGS_TO_CATEGORY]->(cat:Category)
+        OPTIONAL MATCH (loc)-[:BELONGS_TO]->(cat:Category)
         OPTIONAL MATCH (u:User)-[r:RATED]->(loc)
         WITH loc, d, cat,
              CASE WHEN count(r) > 0 THEN avg(toFloat(r.rating)) ELSE loc.ratingAvg END AS score

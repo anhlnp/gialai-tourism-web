@@ -1,56 +1,106 @@
 [
   {
-    "eventId": "EVT_DAQUY",
-    "name": "Tuần lễ Hoa Dã Quỳ - Núi lửa Chư Đang Ya",
-    "monthOccurred": "Tháng 11 hàng năm",
+    "eventId": "EVT_DUA_THUYEN_SESAN",
+    "name": "Hội Đua Thuyền Độc Mộc trên Sông Sê San",
+    "description": "Hội thi thể thao sông nước đậm chất bản địa thu hút đông đảo du khách và cư dân biên giới tham gia.",
+    "highlightActivity": "Đua thuyền độc mộc truyền thống, thi câu cá lăng, trình diễn cồng chiêng trên mặt nước",
+    "monthOccurred": "Tháng 11",
     "frequency": "Thường niên",
-    "locationId": "LOC_CHUDANGYA",
-    "highlightActivity": "Biểu diễn cồng chiêng, thi đan lát, dệt thổ cẩm, chinh phục đỉnh núi lửa ngắm thảm dã quỳ rực rỡ",
-    "description": "Sự kiện du lịch văn hóa lớn nhất năm của tỉnh Gia Lai thu hút hàng vạn du khách về chiêm ngưỡng miệng núi lửa cổ vàng rực sắc hoa."
+    "locationName": "Hồ Thủy điện Sê San 4",
+    "locationId": "LOC_THUYDIEN_SESAN4",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
-    "eventId": "EVT_CONGCHIENG",
-    "name": "Ngày hội Văn hóa Cồng chiêng Tây Nguyên tại Gia Lai",
-    "monthOccurred": "Tháng 3 hoặc Tháng 11",
+    "eventId": "EVT_BD_VO_CO_TRUYEN",
+    "name": "Liên hoan Quốc tế Võ Cổ truyền Việt Nam",
+    "description": "Sự kiện võ thuật quốc tế quy tụ hàng nghìn võ sư, vận động viên từ hơn 30 quốc gia về giao lưu võ thuật cổ truyền trên đất võ Bình Định.",
+    "highlightActivity": "Đồng diễn quyền thuật, đối kháng thập bát ban binh khí, diễu hành võ phái",
+    "monthOccurred": "Tháng 8 (Định kỳ 2-3 năm/lần)",
     "frequency": "Định kỳ",
-    "locationId": "LOC_QUANGTRUONG_GL",
-    "highlightActivity": "Đại hợp tấu cồng chiêng của các nghệ nhân Jrai, Bahnar, rước lửa thiêng, múa xoang quanh ánh lửa",
-    "description": "Không gian tôn vinh di sản văn hóa phi vật thể của nhân loại với sự tham gia của hàng trăm nghệ nhân buôn làng."
+    "locationName": "Làng Võ Cổ truyền Tây Sơn - Bình Định",
+    "locationId": "LOC_BD_LANG_VO_TAY_SON",
+    "legacy_province": "Bình Định",
+    "current_province": "Gia Lai",
+    "geographic_region": "Duyên hải"
   },
   {
     "eventId": "EVT_CAUMUA",
     "name": "Lễ Cầu Mưa của Yang Pơtao Apui (Vua Lửa)",
+    "description": "Nghi lễ tín ngưỡng tâm linh dân gian đặc sắc được công nhận là Di sản văn hóa phi vật thể quốc gia.",
+    "highlightActivity": "Nghi thức tế lễ thần sấm, thần mưa của đồng bào Jrai cầu quốc thái dân an, mùa màng bội thu",
     "monthOccurred": "Tháng 4 âm lịch",
     "frequency": "Thường niên",
+    "locationName": "Làng Văn hóa Du lịch Plei Ốp",
     "locationId": "LOC_LANGVOI",
-    "highlightActivity": "Nghi thức tế lễ thần sấm, thần mưa của đồng bào Jrai cầu quốc thái dân an, mùa màng bội thu",
-    "description": "Nghi lễ tín ngưỡng tâm linh dân gian đặc sắc được công nhận là Di sản văn hóa phi vật thể quốc gia."
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
-    "eventId": "EVT_DUA_THUYEN_SESAN",
-    "name": "Hội Đua Thuyền Độc Mộc trên Sông Sê San",
-    "monthOccurred": "Tháng 11",
+    "eventId": "EVT_BD_DONG_DA",
+    "name": "Lễ hội Kỷ niệm Chiến thắng Ngọc Hồi - Đống Đa",
+    "description": "Lễ hội truyền thống quy mô lớn tái hiện khí thế hào hùng của đoàn quân Tây Sơn thần tốc đại phá 29 vạn quân Thanh mùa xuân năm Kỷ Dậu 1789.",
+    "highlightActivity": "Tế lễ truyền thống, diễn võ cổ truyền, biểu diễn trống trận Tây Sơn hoành tráng",
+    "monthOccurred": "Mùng 4 - 5 tháng Giêng (Âm lịch)",
     "frequency": "Thường niên",
-    "locationId": "LOC_THUYDIEN_SESAN4",
-    "highlightActivity": "Đua thuyền độc mộc truyền thống, thi câu cá lăng, trình diễn cồng chiêng trên mặt nước",
-    "description": "Hội thi thể thao sông nước đậm chất bản địa thu hút đông đảo du khách và cư dân biên giới tham gia."
-  },
-  {
-    "eventId": "EVT_CAFE_PLEIKU",
-    "name": "Tuần lễ Cà phê Pleiku & Văn hóa Ẩm thực Phố Núi",
-    "monthOccurred": "Tháng 12",
-    "frequency": "Thường niên",
-    "locationId": "LOC_QUANGTRUONG_GL",
-    "highlightActivity": "Thưởng thức cà phê miễn phí, thi pha chế Barista, trưng bày các sản phẩm OCOP Gia Lai",
-    "description": "Sự kiện tôn vinh hạt cà phê bazan nồng nàn và văn hóa thưởng thức cà phê đường phố đặc trưng của Pleiku."
+    "locationName": "Bảo tàng Quang Trung & Điện thờ Tây Sơn Tam Kiệt",
+    "locationId": "LOC_BD_BAO_TANG_QUANG_TRUNG",
+    "legacy_province": "Bình Định",
+    "current_province": "Gia Lai",
+    "geographic_region": "Duyên hải"
   },
   {
     "eventId": "EVT_TAYSON_THUONGDAO",
     "name": "Lễ hội Kỷ niệm Khởi nghĩa Tây Sơn Thượng Đạo",
+    "description": "Lễ hội tri ân phong trào khởi nghĩa nông dân Tây Sơn và tưởng nhớ công đức vua Quang Trung cùng nghĩa sĩ.",
+    "highlightActivity": "Tế lễ rước linh vị nghĩa quân Tây Sơn, biểu diễn võ cổ truyền Bình Định - Gia Lai, múa lân sư rồng",
     "monthOccurred": "Mùng 4 đến mùng 5 tháng Giêng",
     "frequency": "Thường niên",
+    "locationName": "Quần thể Di tích Tây Sơn Thượng Đạo",
     "locationId": "LOC_TAYSON_THUONGDAO",
-    "highlightActivity": "Tế lễ rước linh vị nghĩa quân Tây Sơn, biểu diễn võ cổ truyền Bình Định - Gia Lai, múa lân sư rồng",
-    "description": "Lễ hội tri ân phong trào khởi nghĩa nông dân Tây Sơn và tưởng nhớ công đức vua Quang Trung cùng nghĩa sĩ."
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "eventId": "EVT_CONGCHIENG",
+    "name": "Ngày hội Văn hóa Cồng chiêng Tây Nguyên tại Gia Lai",
+    "description": "Không gian tôn vinh di sản văn hóa phi vật thể của nhân loại với sự tham gia của hàng trăm nghệ nhân buôn làng.",
+    "highlightActivity": "Đại hợp tấu cồng chiêng của các nghệ nhân Jrai, Bahnar, rước lửa thiêng, múa xoang quanh ánh lửa",
+    "monthOccurred": "Tháng 3 hoặc Tháng 11",
+    "frequency": "Định kỳ",
+    "locationName": "Quảng trường Đại Đoàn Kết & Bảo tàng Gia Lai",
+    "locationId": "LOC_QUANGTRUONG_GL",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "eventId": "EVT_CAFE_PLEIKU",
+    "name": "Tuần lễ Cà phê Pleiku & Văn hóa Ẩm thực Phố Núi",
+    "description": "Sự kiện tôn vinh hạt cà phê bazan nồng nàn và văn hóa thưởng thức cà phê đường phố đặc trưng của Pleiku.",
+    "highlightActivity": "Thưởng thức cà phê miễn phí, thi pha chế Barista, trưng bày các sản phẩm OCOP Gia Lai",
+    "monthOccurred": "Tháng 12",
+    "frequency": "Thường niên",
+    "locationName": "Quảng trường Đại Đoàn Kết & Bảo tàng Gia Lai",
+    "locationId": "LOC_QUANGTRUONG_GL",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "eventId": "EVT_DAQUY",
+    "name": "Tuần lễ Hoa Dã Quỳ - Núi lửa Chư Đang Ya",
+    "description": "Sự kiện du lịch văn hóa lớn nhất năm của tỉnh Gia Lai thu hút hàng vạn du khách về chiêm ngưỡng miệng núi lửa cổ vàng rực sắc hoa.",
+    "highlightActivity": "Biểu diễn cồng chiêng, thi đan lát, dệt thổ cẩm, chinh phục đỉnh núi lửa ngắm thảm dã quỳ rực rỡ",
+    "monthOccurred": "Tháng 11 hàng năm",
+    "frequency": "Thường niên",
+    "locationName": "Núi lửa Chư Đang Ya",
+    "locationId": "LOC_CHUDANGYA",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   }
 ]

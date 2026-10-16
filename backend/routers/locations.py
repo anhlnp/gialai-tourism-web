@@ -1,4 +1,4 @@
-﻿"""
+"""
 Locations Router — Điểm tham quan du lịch tỉnh Gia Lai (Chính thống).
 """
 import os
@@ -48,7 +48,7 @@ def list_locations(
         params: dict = {"limit": limit}
 
         if region:
-            conditions.append("d.name = $region")
+            conditions.append("(d.name = $region OR loc.geographic_region = $region OR loc.legacy_province = $region OR d.geographic_region = $region)")
             params["region"] = region
         if category:
             conditions.append("cat.name = $category")
@@ -64,7 +64,7 @@ def list_locations(
 
         cypher = f"""
         MATCH (loc:Location)-[:LOCATED_IN]->(d:District)
-        OPTIONAL MATCH (loc)-[:BELONGS_TO|BELONGS_TO_CATEGORY]->(cat:Category)
+        OPTIONAL MATCH (loc)-[:BELONGS_TO]->(cat:Category)
         OPTIONAL MATCH (u:User)-[r:RATED]->(loc)
         WITH loc, d, cat,
              CASE WHEN count(r) > 0 THEN round(avg(toFloat(r.rating)), 1) ELSE loc.ratingAvg END AS avgRating,
@@ -81,6 +81,8 @@ def list_locations(
                loc.ticketPrice AS budget,
                d.name AS district,
                cat.name AS category,
+               coalesce(loc.legacy_province, 'Gia Lai') AS legacyProvince,
+               coalesce(loc.geographic_region, 'Cao nguyên') AS geographicRegion,
                avgRating,
                reviewCount
         ORDER BY avgRating DESC, reviewCount DESC
@@ -101,7 +103,7 @@ def list_locations(
         cat_name = cats.get(l.get("categoryId"), "Danh thắng Gia Lai")
         rating = float(l.get("ratingAvg", 4.5))
         
-        if region and dist_name != region:
+        if region and dist_name != region and l.get("geographic_region") != region and l.get("legacy_province") != region:
             continue
         if category and cat_name != category:
             continue
@@ -122,6 +124,8 @@ def list_locations(
             "budget": l.get("ticketPrice", 0),
             "district": dist_name,
             "category": cat_name,
+            "legacyProvince": l.get("legacy_province", "Gia Lai"),
+            "geographicRegion": l.get("geographic_region", "Cao nguyên"),
             "avgRating": rating,
             "reviewCount": 12
         })
@@ -151,12 +155,15 @@ def list_categories():
 
 @router.get("/districts")
 def list_districts():
-    """Danh sách quận/huyện/thị/thành phố tỉnh Gia Lai."""
+    """Danh sách quận/huyện/thị/thành phố tỉnh Gia Lai (toàn tỉnh mới)."""
     try:
         cypher = """
         MATCH (d:District)
         OPTIONAL MATCH (loc:Location)-[:LOCATED_IN]->(d)
-        RETURN d.districtId AS id, d.name AS name, count(loc) AS locationCount
+        RETURN d.districtId AS id, d.name AS name,
+               coalesce(d.geographic_region, 'Cao nguyên') AS region,
+               coalesce(d.legacy_province, 'Gia Lai') AS province,
+               count(loc) AS locationCount
         ORDER BY d.name
         """
         res = run_query(cypher)
@@ -189,12 +196,18 @@ def get_location_detail(location_id: str):
     try:
         info = run_query_single("""
             MATCH (loc:Location {locationId: $id})-[:LOCATED_IN]->(d:District)
-            OPTIONAL MATCH (loc)-[:BELONGS_TO|BELONGS_TO_CATEGORY]->(cat:Category)
+            OPTIONAL MATCH (loc)-[:BELONGS_TO]->(cat:Category)
             RETURN loc.locationId AS id, loc.name AS name, loc.description AS description,
                    loc.address AS address, loc.latitude AS lat, loc.longitude AS lng,
                    loc.imageUrl AS imageUrl, loc.imageUrls AS imageUrls,
                    loc.bestTimeOfDay AS bestTime, loc.ticketPrice AS budget,
                    d.name AS district, cat.name AS category,
+                   coalesce(loc.legacy_province, 'Gia Lai') AS legacyProvince,
+                   coalesce(loc.geographic_region, 'Cao nguyên') AS geographicRegion,
+                   loc.sourceUrl AS sourceUrl,
+                   loc.sourceName AS sourceName,
+                   loc.licenseStatus AS licenseStatus,
+                   loc.attribution AS attribution,
                    loc.ratingAvg AS avgRating,
                    15 AS reviewCount
         """, {"id": location_id})
@@ -232,12 +245,20 @@ def get_location_detail(location_id: str):
                        ent.openHours AS openHours, ent.imageUrl AS imageUrl
             """, {"id": location_id})
 
+            # Connected inter-regional corridors
+            corridors = run_query("""
+                MATCH (loc:Location {locationId: $id})-[c:CONNECTS_TO]-(conn:Location)
+                RETURN conn.locationId AS id, conn.name AS name, conn.imageUrl AS imageUrl,
+                       c.corridor AS corridor, c.distanceKm AS distanceKm, c.route AS route
+            """, {"id": location_id})
+
             return {
                 **info,
                 "nearbyDishes": dishes,
                 "nearbyStays": stays,
                 "events": events,
-                "entertainments": entertainments
+                "entertainments": entertainments,
+                "corridors": corridors
             }
     except Exception:
         pass

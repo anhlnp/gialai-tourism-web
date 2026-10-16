@@ -10,6 +10,7 @@ export default function Explore() {
   const navigate = useNavigate()
   const [search, setSearch] = useState('')
   const [searchMode, setSearchMode] = useState('filter') // 'filter' | 'fulltext' | 'semantic' | 'hybrid'
+  const [selectedRegion, setSelectedRegion] = useState('') // '' | 'Cao nguyên' | 'Duyên hải'
   const [selectedCategory, setSelectedCategory] = useState('')
   const [selectedDistrict, setSelectedDistrict] = useState('')
   const [sortBy, setSortBy] = useState('rating') // 'rating' | 'name'
@@ -54,7 +55,11 @@ export default function Explore() {
   const params = {}
   if (search && searchMode === 'filter') params.search = search
   if (selectedCategory) params.category = selectedCategory
-  if (selectedDistrict) params.region = selectedDistrict
+  if (selectedDistrict) {
+    params.region = selectedDistrict
+  } else if (selectedRegion) {
+    params.region = selectedRegion
+  }
 
   const { data: defaultLocations, loading: defaultLoading, error: defaultError, refetch } = useApi('/locations', { params })
   const { data: categories } = useApi('/locations/categories')
@@ -118,7 +123,7 @@ export default function Explore() {
                   Điểm du lịch
                 </h1>
                 <p className="text-xs text-[#5A635B]">
-                  Khám phá những danh lam, di tích và cảnh quan Gia Lai
+                  Khám phá 43 danh lam, di tích và cảnh quan hành lang Rừng & Biển Gia Lai Mới
                 </p>
               </div>
             </div>
@@ -140,12 +145,12 @@ export default function Explore() {
                 type="text"
                 placeholder={
                   searchMode === 'fulltext'
-                    ? "Tìm kiếm toàn văn (thác nước, núi lửa, di tích Tây Sơn...)"
+                    ? "Tìm kiếm toàn văn (thác nước, núi lửa, di tích Tây Sơn, Eo Gió...)"
                     : searchMode === 'semantic'
-                    ? "Hỏi ngữ nghĩa AI (nơi yên tĩnh ngắm hoàng hôn, di tích tiền sử...)"
+                    ? "Hỏi ngữ nghĩa AI (nơi yên tĩnh ngắm hoàng hôn, di tích tiền sử, bãi biển...)"
                     : searchMode === 'hybrid'
                     ? "Tìm kiếm kết hợp từ khóa và ngữ nghĩa..."
-                    : "Tìm danh lam thắng cảnh, di tích, thác nước..."
+                    : "Tìm danh lam thắng cảnh, di tích, thác nước, bãi biển..."
                 }
                 value={search}
                 onChange={e => setSearch(e.target.value)}
@@ -206,17 +211,51 @@ export default function Explore() {
             </button>
           </div>
 
+          {/* Region Tabs (Corridor Rừng & Biển) */}
+          <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pt-1 pb-1">
+            <button
+              onClick={() => { setSelectedRegion(''); setSelectedDistrict(''); }}
+              className={`shrink-0 px-3 py-1 rounded-full text-xs font-semibold transition-all ${
+                !selectedRegion && !selectedDistrict
+                  ? 'bg-[#1A1D1A] text-white shadow-xs'
+                  : 'bg-white border border-[#E8EBE5] text-[#5A635B] hover:bg-[#F0F4EC]'
+              }`}
+            >
+              Toàn tỉnh mới (43)
+            </button>
+            <button
+              onClick={() => { setSelectedRegion('Cao nguyên'); setSelectedDistrict(''); }}
+              className={`shrink-0 px-3 py-1 rounded-full text-xs font-semibold transition-all ${
+                selectedRegion === 'Cao nguyên'
+                  ? 'bg-[#246B4A] text-white shadow-xs'
+                  : 'bg-white border border-[#E8EBE5] text-[#246B4A] hover:bg-[#F0F4EC]'
+              }`}
+            >
+              Cao nguyên Gia Lai (30)
+            </button>
+            <button
+              onClick={() => { setSelectedRegion('Duyên hải'); setSelectedDistrict(''); }}
+              className={`shrink-0 px-3 py-1 rounded-full text-xs font-semibold transition-all ${
+                selectedRegion === 'Duyên hải'
+                  ? 'bg-[#1E40AF] text-white shadow-xs'
+                  : 'bg-white border border-[#E8EBE5] text-[#1E40AF] hover:bg-[#F0F4EC]'
+              }`}
+            >
+              Duyên hải Bình Định (13)
+            </button>
+          </div>
+
           {/* Primary Category Filter Chips */}
           <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar md:flex-wrap pt-1 pb-1">
             <button
               onClick={() => setSelectedCategory('')}
               className={`shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${
                 !selectedCategory
-                  ? 'bg-[#246B4A] text-white'
+                  ? 'bg-[#C26D38] text-white'
                   : 'bg-white border border-[#E8EBE5] text-[#5A635B] hover:bg-[#F0F4EC]'
               }`}
             >
-              Tất cả
+              Tất cả danh mục
             </button>
             {categories?.map(c => (
               <button
@@ -224,7 +263,7 @@ export default function Explore() {
                 onClick={() => setSelectedCategory(selectedCategory === c.name ? '' : c.name)}
                 className={`shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${
                   selectedCategory === c.name
-                    ? 'bg-[#246B4A] text-white'
+                    ? 'bg-[#C26D38] text-white'
                     : 'bg-white border border-[#E8EBE5] text-[#5A635B] hover:bg-[#F0F4EC]'
                 }`}
               >
@@ -238,15 +277,27 @@ export default function Explore() {
             <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
               <select
                 value={selectedDistrict}
-                onChange={e => setSelectedDistrict(e.target.value)}
+                onChange={e => {
+                  setSelectedDistrict(e.target.value)
+                  if (e.target.value) setSelectedRegion('')
+                }}
                 className="bg-white border border-[#E8EBE5] rounded-full px-3 py-1 text-xs text-[#5A635B] focus:outline-none focus:border-[#246B4A]"
               >
-                <option value="">Khu vực: Toàn tỉnh</option>
-                {districts?.map(d => (
-                  <option key={d.id || d.name} value={d.name}>
-                    {d.name}
-                  </option>
-                ))}
+                <option value="">Quận/Huyện: Tất cả</option>
+                <optgroup label="Cao nguyên Gia Lai">
+                  {districts?.filter(d => (d.region === 'Cao nguyên' || d.province === 'Gia Lai' || !['Thành phố Quy Nhơn', 'Huyện Tây Sơn', 'Huyện Tuy Phước', 'Huyện Phù Cát', 'Thị xã An Nhơn', 'Huyện Phù Mỹ'].includes(d.name))).map(d => (
+                    <option key={d.id || d.name} value={d.name}>
+                      {d.name} {d.locationCount ? `(${d.locationCount})` : ''}
+                    </option>
+                  ))}
+                </optgroup>
+                <optgroup label="Duyên hải Bình Định">
+                  {districts?.filter(d => (d.region === 'Duyên hải' || d.province === 'Bình Định' || ['Thành phố Quy Nhơn', 'Huyện Tây Sơn', 'Huyện Tuy Phước', 'Huyện Phù Cát', 'Thị xã An Nhơn', 'Huyện Phù Mỹ'].includes(d.name))).map(d => (
+                    <option key={d.id || d.name} value={d.name}>
+                      {d.name} {d.locationCount ? `(${d.locationCount})` : ''}
+                    </option>
+                  ))}
+                </optgroup>
               </select>
 
               <select
@@ -259,7 +310,7 @@ export default function Explore() {
               </select>
             </div>
 
-            <span className="text-[11px] text-[#8A948C] shrink-0">
+            <span className="text-[11px] text-[#8A948C] shrink-0 font-medium">
               {displayLocations.length} địa điểm
             </span>
           </div>
@@ -352,8 +403,17 @@ export default function Explore() {
                       <span className="px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md text-[#1A1D1A] text-[11px] font-semibold border border-white/60 shadow-xs">
                         {loc.category || 'Điểm đến'}
                       </span>
+                      {loc.geographicRegion === 'Duyên hải' || loc.legacyProvince === 'Bình Định' || ['Thành phố Quy Nhơn', 'Huyện Tây Sơn', 'Huyện Tuy Phước', 'Huyện Phù Cát', 'Thị xã An Nhơn', 'Huyện Phù Mỹ'].includes(loc.district) ? (
+                        <span className="px-2 py-0.5 rounded-full bg-blue-700/90 text-white text-[10px] font-semibold backdrop-blur-xs">
+                          Duyên hải
+                        </span>
+                      ) : (
+                        <span className="px-2 py-0.5 rounded-full bg-[#246B4A]/90 text-white text-[10px] font-semibold backdrop-blur-xs">
+                          Cao nguyên
+                        </span>
+                      )}
                       {isFree ? (
-                        <span className="px-2 py-0.5 rounded-full bg-[#246B4A]/90 text-white text-[11px] font-medium backdrop-blur-xs">
+                        <span className="px-2 py-0.5 rounded-full bg-amber-600/90 text-white text-[10px] font-medium backdrop-blur-xs">
                           Miễn phí vé
                         </span>
                       ) : null}

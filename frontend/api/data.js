@@ -1,687 +1,170 @@
 /**
- * OFFLINE / TEST FIXTURE DATASET FOR GIA LAI TOURISM
- * Sourced from official portal and verified Neo4j Knowledge Graph.
- * Note: Runtime features consume the live FastAPI backend & Neo4j database.
+ * mockData.js — Dữ liệu Du lịch Tỉnh Gia Lai Mới (Cao nguyên & Duyên hải Bình Định)
+ * Đồng bộ tự động từ Neo4j Aura Cloud (43 Điểm đến, 30 Món ăn, 26 Nơi lưu trú, 17 Huyện thị)
  */
-export const MOCK_LOCATIONS = [
+
+export const MOCK_DISTRICTS = [
   {
-    "id": "LOC_BIENHO",
-    "locationId": "LOC_BIENHO",
-    "name": "Biển Hồ T'Nưng (Hồ Ea Nueng)",
-    "description": "Đôi mắt Pleiku - Miệng núi lửa cổ bazan triệu năm với mặt nước biếc phẳng lặng như gương soi mây trời cao nguyên. Thắng cảnh quốc gia tiêu biểu nhất của tỉnh Gia Lai.",
-    "address": "Xã Biển Hồ, TP. Pleiku, Gia Lai",
-    "lat": 14.0506,
-    "lng": 108.0001,
-    "imageUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800",
-    "imageUrls": [
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800",
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800"
-    ],
-    "bestTime": "Sáng sớm hoặc Hoàng hôn",
-    "budget": 20000,
-    "district": "Gia Lai",
-    "districtId": null,
-    "category": "Danh thắng Gia Lai",
-    "categoryId": null,
-    "avgRating": 4.9,
-    "rating": 4.9,
-    "reviewCount": 18
+    "districtId": "D_CHUPRONG",
+    "name": "Huyện Chư Prông",
+    "regionType": "Cao nguyên Nam Gia Lai",
+    "description": "Vùng biên cương với thắng cảnh thác Bàu Cạn và di tích lịch sử Thung lũng Ia Drăng",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
-    "id": "LOC_BIENHOCHE",
-    "locationId": "LOC_BIENHOCHE",
-    "name": "Biển Hồ Chè & Hàng thông trăm tuổi",
-    "description": "Đồn điền chè đầu tiên của người Pháp tại Tây Nguyên (1919) trải dài tít tắp, kết hợp con đường hàng thông cổ thụ hơn 100 tuổi thơ mộng ngỡ như xứ sở kim chi.",
-    "address": "Xã Nghĩa Hưng, Huyện Chư Păh, Gia Lai",
-    "lat": 14.075,
-    "lng": 108.02,
-    "imageUrl": "https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=800",
-    "imageUrls": [
-      "https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=800",
-      "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800"
-    ],
-    "bestTime": "Bình minh hoặc Chiều tà",
-    "budget": 0,
-    "district": "Gia Lai",
-    "districtId": null,
-    "category": "Danh thắng Gia Lai",
-    "categoryId": null,
-    "avgRating": 4.8,
-    "rating": 4.8,
-    "reviewCount": 18
+    "districtId": "D_CHUPAH",
+    "name": "Huyện Chư Păh",
+    "regionType": "Cao nguyên Núi lửa",
+    "description": "Thiên đường sinh thái núi lửa Chư Đang Ya, Biển Hồ chè, đỉnh Chư Nâm và hàng thông trăm tuổi",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
-    "id": "LOC_CHIENTHANG_DAKPO",
-    "locationId": "LOC_CHIENTHANG_DAKPO",
-    "name": "Di tích Lịch sử Chiến thắng Đắk Pơ",
-    "description": "Tượng đài chiến thắng trận phục kích Đắk Pơ lẫy lừng ngày 24/6/1954 trên Quốc lộ 19, được mệnh danh là 'Điện Biên Phủ ở Liên khu V'.",
-    "address": "Quốc lộ 19, Huyện Đắk Pơ, Gia Lai",
-    "lat": 13.95,
-    "lng": 108.55,
-    "imageUrl": "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2025/7/3/b5661274536c4ba4b9999460477570e6",
-    "imageUrls": [
-      "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2025/7/3/b5661274536c4ba4b9999460477570e6"
-    ],
-    "bestTime": "Ban ngày",
-    "budget": 0,
-    "district": "Gia Lai",
-    "districtId": null,
-    "category": "Danh thắng Gia Lai",
-    "categoryId": null,
-    "avgRating": 4.5,
-    "rating": 4.5,
-    "reviewCount": 18
+    "districtId": "D_CHUSE",
+    "name": "Huyện Chư Sê",
+    "regionType": "Vùng đất Bazan",
+    "description": "Thủ phủ hồ tiêu Gia Lai với danh thắng Thác Phú Cường kỳ vĩ trên nền dung nham bazan cổ",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
-    "id": "LOC_CHUA_BUUMINH",
-    "locationId": "LOC_CHUA_BUUMINH",
-    "name": "Chùa Bửu Minh",
-    "description": "Ngôi cổ tự thanh bình tọa lạc giữa ngút ngàn đồi chè Biển Hồ xanh mướt, nổi bật với đỉnh tháp nhọn vươn cao lên bầu trời xanh bình yên.",
-    "address": "Xã Nghĩa Hưng, Huyện Chư Păh, Gia Lai",
-    "lat": 14.078,
-    "lng": 108.018,
-    "imageUrl": "http://cotrang.org/dia-diem/images/gia-lai/dia-diem/chua-buu-minh/chua-buu-minh-gia-lai-bk-001.jpg",
-    "imageUrls": [
-      "http://cotrang.org/dia-diem/images/gia-lai/dia-diem/chua-buu-minh/chua-buu-minh-gia-lai-bk-001.jpg",
-      "https://static.riviu.co/image/2022/12/18/b104c97c2f6b1f0aef14c3d82fb24982_output.jpeg"
-    ],
-    "bestTime": "Buổi sáng thanh tịnh",
-    "budget": 0,
-    "district": "Gia Lai",
-    "districtId": null,
-    "category": "Danh thắng Gia Lai",
-    "categoryId": null,
-    "avgRating": 4.8,
-    "rating": 4.8,
-    "reviewCount": 18
+    "districtId": "D_IAGRAI",
+    "name": "Huyện Ia Grai",
+    "regionType": "Hồ thủy điện & Nương rẫy",
+    "description": "Vùng lòng hồ thủy điện Sê San, bến thuyền độc mộc và rừng cao su bạt ngàn",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
-    "id": "LOC_CHUDANGYA",
-    "locationId": "LOC_CHUDANGYA",
-    "name": "Núi lửa Chư Đang Ya",
-    "description": "Tuyệt tác miệng núi lửa cổ hình phễu lòng chảo triệu năm, nơi sắc vàng rực rỡ của hoa dã quỳ nở rộ khắp các triền bazan đỏ màu mỡ vào mỗi dịp cuối thu đầu đông.",
-    "address": "Làng Ploi lagri, Xã Chư Đang Ya, Huyện Chư Păh, Gia Lai",
-    "lat": 14.15,
-    "lng": 108.0667,
-    "imageUrl": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
-    "imageUrls": [
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
-      "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800"
-    ],
-    "bestTime": "Sáng sớm (mùa hoa dã quỳ tháng 10-12)",
-    "budget": 0,
-    "district": "Gia Lai",
-    "districtId": null,
-    "category": "Danh thắng Gia Lai",
-    "categoryId": null,
-    "avgRating": 4.9,
-    "rating": 4.9,
-    "reviewCount": 18
+    "districtId": "D_KBANG",
+    "name": "Huyện K'Bang",
+    "regionType": "Rừng Nguyên sinh",
+    "description": "Thủ phủ du lịch sinh thái rừng nguyên sinh, thác K50 Kon Chư Răng và Làng kháng chiến Stơr",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
-    "id": "LOC_CONGVIEN_DIENHONG",
-    "locationId": "LOC_CONGVIEN_DIENHONG",
-    "name": "Công viên Diên Hồng",
-    "description": "Lá phổi xanh giữa lòng đô thị Pleiku với hồ nước trong lành, cầu treo uốn lượn, vườn hoa và những quán cafe ven hồ râm mát cho du khách tản bộ thư giãn.",
-    "address": "Đường Thống Nhất, Phường Ia Kring, TP. Pleiku, Gia Lai",
-    "lat": 13.975,
-    "lng": 107.99,
-    "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
-    "imageUrls": [
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800"
-    ],
-    "bestTime": "Sáng sớm hoặc Chiều mát",
-    "budget": 0,
-    "district": "Gia Lai",
-    "districtId": null,
-    "category": "Danh thắng Gia Lai",
-    "categoryId": null,
-    "avgRating": 4.6,
-    "rating": 4.6,
-    "reviewCount": 18
+    "districtId": "D_KRONPA",
+    "name": "Huyện Krông Pa",
+    "regionType": "Thung lũng Nắng",
+    "description": "Vùng hạ lưu sông Ba trù phú với đặc sản bò một nắng và di tích tháp Bang Keng",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
-    "id": "LOC_CONGVIEN_DONGXANH",
-    "locationId": "LOC_CONGVIEN_DONGXANH",
-    "name": "Công viên Văn hóa Đồng Xanh",
-    "description": "Khu sinh thái văn hóa tái hiện thu nhỏ bản sắc Tây Nguyên với nhà mồ, nhà rông, tượng gỗ dân gian, cây hóa thạch triệu năm và cây đàn T'rưng nước độc đáo.",
-    "address": "Thôn 5, Xã An Phú, TP. Pleiku, Gia Lai",
-    "lat": 13.94,
-    "lng": 108.06,
-    "imageUrl": "https://cdn.xanhsm.com/2025/03/742405be-cho-dem-pleiku-gia-lai-8.jpg",
-    "imageUrls": [
-      "https://cdn.xanhsm.com/2025/03/742405be-cho-dem-pleiku-gia-lai-8.jpg",
-      "https://dulichdemen.vn/wp-content/uploads/2023/01/quang-truong-dai-doan-ket-pleiku-gia-lai-du-lich-de-men-vn.jpg"
-    ],
-    "bestTime": "Ban ngày cuối tuần",
-    "budget": 40000,
-    "district": "Gia Lai",
-    "districtId": null,
-    "category": "Danh thắng Gia Lai",
-    "categoryId": null,
-    "avgRating": 4.5,
-    "rating": 4.5,
-    "reviewCount": 18
+    "districtId": "D_MANGYANG",
+    "name": "Huyện Mang Yang",
+    "regionType": "Cổng trời Tây Nguyên",
+    "description": "Vùng đèo Mang Yang lịch sử và Vườn Quốc gia Kon Ka Kinh",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
-    "id": "LOC_DINH_CHUNAM",
-    "locationId": "LOC_DINH_CHUNAM",
-    "name": "Đỉnh Núi Chư Nâm",
-    "description": "Đỉnh núi cao nhất vùng bình nguyên Chư Păh (gần 1.500m), thiên đường săn biển mây bồng bềnh và ngắm toàn cảnh thung lũng miệng núi lửa Chư Đang Ya từ trên cao.",
-    "address": "Xã Chư Đang Ya, Huyện Chư Păh, Gia Lai",
-    "lat": 14.16,
-    "lng": 108.08,
-    "imageUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800",
-    "imageUrls": [
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800"
-    ],
-    "bestTime": "Sáng sớm săn mây (5h - 7h)",
-    "budget": 0,
-    "district": "Gia Lai",
-    "districtId": null,
-    "category": "Danh thắng Gia Lai",
-    "categoryId": null,
-    "avgRating": 4.8,
-    "rating": 4.8,
-    "reviewCount": 18
+    "districtId": "D_DAKDOA",
+    "name": "Huyện Đắk Đoa",
+    "regionType": "Thảo nguyên Thông",
+    "description": "Vùng thảo nguyên đồi cỏ hồng đuôi chồn và rừng thông Glar bonsai",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
-    "id": "LOC_DOICOHONG_DAKDOA",
-    "locationId": "LOC_DOICOHONG_DAKDOA",
-    "name": "Đồi Cỏ Hồng Đắk Đoa (Rừng thông Glar)",
-    "description": "Thảo nguyên cỏ hồng đuôi chồn bồng bềnh dưới ánh sương mai xen lẫn rừng thông dáng bonsai tự nhiên, tạo nên bức tranh thiên nhiên lãng mạn níu chân du khách.",
-    "address": "Xã Glar, Huyện Đắk Đoa, Gia Lai",
-    "lat": 13.98,
-    "lng": 108.15,
-    "imageUrl": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=800",
-    "imageUrls": [
-      "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=800"
-    ],
-    "bestTime": "Sáng sớm bình minh tháng 11 - 12",
-    "budget": 0,
-    "district": "Gia Lai",
-    "districtId": null,
-    "category": "Danh thắng Gia Lai",
-    "categoryId": null,
-    "avgRating": 4.7,
-    "rating": 4.7,
-    "reviewCount": 18
+    "districtId": "D_DUCCO",
+    "name": "Huyện Đức Cơ",
+    "regionType": "Cửa khẩu Quốc tế",
+    "description": "Vùng cửa khẩu quốc tế Lệ Thanh và thắng cảnh thác nước Ia Krel hoang sơ",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
-    "id": "LOC_LANGVOI",
-    "locationId": "LOC_LANGVOI",
-    "name": "Làng Văn hóa Du lịch Plei Ốp",
-    "description": "Buôn làng người Jrai bản địa nguyên sơ nằm ngay lòng đô thị Pleiku, nơi du khách được đắm chìm trong tiếng cồng chiêng, ngắm nhà rông và uống rượu cần ấm áp.",
-    "address": "Phường Hoa Lư, TP. Pleiku, Gia Lai",
-    "lat": 13.99,
-    "lng": 108.01,
-    "imageUrl": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=800",
-    "imageUrls": [
-      "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=800"
-    ],
-    "bestTime": "Buổi chiều tối giao lưu cồng chiêng",
-    "budget": 0,
-    "district": "Gia Lai",
-    "districtId": null,
-    "category": "Danh thắng Gia Lai",
-    "categoryId": null,
-    "avgRating": 4.7,
-    "rating": 4.7,
-    "reviewCount": 18
+    "districtId": "D_PLEIKU",
+    "name": "Thành phố Pleiku",
+    "regionType": "Đô thị Trung tâm",
+    "description": "Đô thị trung tâm cao nguyên Gia Lai, phố núi sương mù với Biển Hồ T'Nưng và Quảng trường Đại Đoàn Kết",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
-    "id": "LOC_LANG_MOHRA",
-    "locationId": "LOC_LANG_MOHRA",
-    "name": "Làng Du lịch Cộng đồng Mơ Hra - K'Păng",
-    "description": "Điểm du lịch cộng đồng kiểu mẫu của người Bahnar với nghề dệt thổ cẩm truyền thống, tạc tượng gỗ dân gian và những điệu múa xoang nhịp nhàng.",
-    "address": "Xã K'Dang, Huyện Đắk Đoa, Gia Lai",
-    "lat": 13.95,
-    "lng": 108.2,
-    "imageUrl": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=800",
-    "imageUrls": [
-      "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=800"
-    ],
-    "bestTime": "Cuối tuần",
-    "budget": 0,
-    "district": "Gia Lai",
-    "districtId": null,
-    "category": "Danh thắng Gia Lai",
-    "categoryId": null,
-    "avgRating": 4.6,
-    "rating": 4.6,
-    "reviewCount": 18
+    "districtId": "D_ANKHE",
+    "name": "Thị xã An Khê",
+    "regionType": "Thung lũng Di sản",
+    "description": "Cái nôi lịch sử phong trào Tây Sơn Thượng Đạo và Di tích khảo cổ sơ kỳ Đá cũ Rộc Tưng - Gò Đá",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
-    "id": "LOC_LANG_STOR",
-    "locationId": "LOC_LANG_STOR",
-    "name": "Làng Kháng chiến Stơr (Quê hương Anh hùng Núp)",
-    "description": "Cái nôi kháng chiến của đồng bào Bahnar gắn liền với tên tuổi Anh hùng Đinh Núp trong tác phẩm 'Đất nước đứng lên', lưu giữ nhà lưu niệm và nhà rông truyền thống.",
-    "address": "Xã Tơ Tung, Huyện K'Bang, Gia Lai",
-    "lat": 14.15,
-    "lng": 108.52,
-    "imageUrl": "https://tungphuongfood.com.vn/wp-content/uploads/2023/05/thac-hang-doi-kbang-6.jpg",
-    "imageUrls": [
-      "https://tungphuongfood.com.vn/wp-content/uploads/2023/05/thac-hang-doi-kbang-6.jpg"
-    ],
-    "bestTime": "Ban ngày",
-    "budget": 0,
-    "district": "Gia Lai",
-    "districtId": null,
-    "category": "Danh thắng Gia Lai",
-    "categoryId": null,
-    "avgRating": 4.7,
-    "rating": 4.7,
-    "reviewCount": 18
+    "districtId": "D_PHUCAT",
+    "name": "Huyện Phù Cát",
+    "regionType": "Biển & Tâm linh",
+    "description": "Vùng bãi biển Cát Tiến hoang sơ và Chùa Linh Phong với tượng Phật ngồi cao nhất Đông Nam Á",
+    "legacy_province": "Bình Định",
+    "current_province": "Gia Lai",
+    "geographic_region": "Duyên hải"
   },
   {
-    "id": "LOC_MINHTHANH",
-    "locationId": "LOC_MINHTHANH",
-    "name": "Chùa Minh Thành Pleiku",
-    "description": "Quần thể kiến trúc Phật giáo tuyệt mỹ mang phong cách Á Đông cổ kính kết hợp tháp Từ Ân 9 tầng thanh tịnh uy nghiêm giữa trung tâm thành phố Pleiku.",
-    "address": "348 đường Nguyễn Viết Xuân, Phường Hội Phú, TP. Pleiku, Gia Lai",
-    "lat": 13.9667,
-    "lng": 108.0167,
-    "imageUrl": "https://media.gody.vn/images/gia-lai/chua-minh-thanh/11-2016/20161101090033-chua-minh-thanh-gody(3).jpg",
-    "imageUrls": [
-      "https://media.gody.vn/images/gia-lai/chua-minh-thanh/11-2016/20161101090033-chua-minh-thanh-gody(3).jpg",
-      "https://cdn.xanhsm.com/2025/03/742405be-cho-dem-pleiku-gia-lai-8.jpg"
-    ],
-    "bestTime": "Sáng 7h - 10h hoặc Hoàng hôn",
-    "budget": 0,
-    "district": "Gia Lai",
-    "districtId": null,
-    "category": "Danh thắng Gia Lai",
-    "categoryId": null,
-    "avgRating": 4.9,
-    "rating": 4.9,
-    "reviewCount": 18
+    "districtId": "D_PHUMY",
+    "name": "Huyện Phù Mỹ",
+    "regionType": "Bán đảo & Ghềnh đá",
+    "description": "Vùng biển phía bắc với thắng cảnh Mũi Vi Rồng bazan kỳ vĩ vươn mình ra biển Đông",
+    "legacy_province": "Bình Định",
+    "current_province": "Gia Lai",
+    "geographic_region": "Duyên hải"
   },
   {
-    "id": "LOC_NHADAY_PLEIKU",
-    "locationId": "LOC_NHADAY_PLEIKU",
-    "name": "Di tích Lịch sử Nhà đày Pleiku",
-    "description": "Di tích quốc gia đặc biệt ghi dấu tội ác thực dân Pháp và đế quốc Mỹ, đồng thời tôn vinh ý chí kiên trung bất khuất của các chiến sĩ cách mạng Tây Nguyên.",
-    "address": "Đường Ngô Gia Tự, Phường Hội Thương, TP. Pleiku, Gia Lai",
-    "lat": 13.9833,
-    "lng": 108.005,
-    "imageUrl": "https://cdn.xanhsm.com/2025/03/1b3f9e9b-lang-plei-op-2.jpg",
-    "imageUrls": [
-      "https://cdn.xanhsm.com/2025/03/1b3f9e9b-lang-plei-op-2.jpg"
-    ],
-    "bestTime": "Giờ hành chính (7h30 - 17h)",
-    "budget": 0,
-    "district": "Gia Lai",
-    "districtId": null,
-    "category": "Danh thắng Gia Lai",
-    "categoryId": null,
-    "avgRating": 4.6,
-    "rating": 4.6,
-    "reviewCount": 18
+    "districtId": "D_TUYPHUOC",
+    "name": "Huyện Tuy Phước",
+    "regionType": "Đầm phá & Tháp cổ",
+    "description": "Vùng hạ lưu sông Côn với quần thể 4 tháp Chăm Bánh Ít nghìn năm tuổi và đặc sản nem Chợ Huyện",
+    "legacy_province": "Bình Định",
+    "current_province": "Gia Lai",
+    "geographic_region": "Duyên hải"
   },
   {
-    "id": "LOC_NHATHO_PLEICHUET",
-    "locationId": "LOC_NHATHO_PLEICHUET",
-    "name": "Nhà thờ Gỗ Pleichuet",
-    "description": "Công trình tôn giáo độc đáo được dựng hoàn toàn theo mô hình nhà rông truyền thống của đồng bào Jrai với mái nhọn cao vút và hoa văn chạm khắc tinh xảo.",
-    "address": "Đường Trương Định, Phường Thắng Lợi, TP. Pleiku, Gia Lai",
-    "lat": 13.972,
-    "lng": 108.028,
-    "imageUrl": "https://cdn.xanhsm.com/2025/03/1b3f9e9b-lang-plei-op-2.jpg",
-    "imageUrls": [
-      "https://cdn.xanhsm.com/2025/03/1b3f9e9b-lang-plei-op-2.jpg"
-    ],
-    "bestTime": "Ban ngày",
-    "budget": 0,
-    "district": "Gia Lai",
-    "districtId": null,
-    "category": "Danh thắng Gia Lai",
-    "categoryId": null,
-    "avgRating": 4.7,
-    "rating": 4.7,
-    "reviewCount": 18
+    "districtId": "D_TAYSON",
+    "name": "Huyện Tây Sơn",
+    "regionType": "Di sản Lịch sử Tây Sơn Hạ Đạo",
+    "description": "Cái nôi khởi phát phong trào Tây Sơn với Bảo tàng Quang Trung, Tháp Dương Long và thắng cảnh Hầm Hô",
+    "legacy_province": "Bình Định",
+    "current_province": "Gia Lai",
+    "geographic_region": "Duyên hải"
   },
   {
-    "id": "LOC_QUANGTRUONG_GL",
-    "locationId": "LOC_QUANGTRUONG_GL",
-    "name": "Quảng trường Đại Đoàn Kết & Bảo tàng Gia Lai",
-    "description": "Trái tim của thành phố Pleiku với Tượng đài Bác Hồ với các dân tộc Tây Nguyên lớn nhất cả nước, bức phù điêu đá tạc hình tượng sử thi và tháp đá mô phỏng cồng chiêng.",
-    "address": "Đường Trần Hưng Đạo, Phường Tây Sơn, TP. Pleiku, Gia Lai",
-    "lat": 13.9806,
-    "lng": 108.0067,
-    "imageUrl": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=800",
-    "imageUrls": [
-      "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=800"
-    ],
-    "bestTime": "Chiều tối (17h - 22h)",
-    "budget": 0,
-    "district": "Gia Lai",
-    "districtId": null,
-    "category": "Danh thắng Gia Lai",
-    "categoryId": null,
-    "avgRating": 4.9,
-    "rating": 4.9,
-    "reviewCount": 18
+    "districtId": "D_QUYNHON",
+    "name": "Thành phố Quy Nhơn",
+    "regionType": "Đô thị Biển Đảo",
+    "description": "Đô thị biển trung tâm với các bãi biển trứ danh Kỳ Co, Eo Gió, Ghềnh Ráng Tiên Sa và di tích Tháp Đôi",
+    "legacy_province": "Bình Định",
+    "current_province": "Gia Lai",
+    "geographic_region": "Duyên hải"
   },
   {
-    "id": "LOC_ROCTUNG_GODA",
-    "locationId": "LOC_ROCTUNG_GODA",
-    "name": "Di tích Khảo cổ sơ kỳ Đá cũ Rộc Tưng - Gò Đá",
-    "description": "Di tích khảo cổ học quốc gia đặc biệt chứng minh sự xuất hiện của người tiền sử tại Việt Nam cách đây khoảng 80 vạn năm, một phát hiện có tầm vóc khoa học thế giới.",
-    "address": "Xã Xuân An, Thị xã An Khê, Gia Lai",
-    "lat": 13.99,
-    "lng": 108.68,
-    "imageUrl": "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2025/7/3/b5661274536c4ba4b9999460477570e6",
-    "imageUrls": [
-      "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2025/7/3/b5661274536c4ba4b9999460477570e6"
-    ],
-    "bestTime": "Ban ngày",
-    "budget": 0,
-    "district": "Gia Lai",
-    "districtId": null,
-    "category": "Danh thắng Gia Lai",
-    "categoryId": null,
-    "avgRating": 4.8,
-    "rating": 4.8,
-    "reviewCount": 18
-  },
-  {
-    "id": "LOC_RUNGCAOSU_CHUPAH",
-    "locationId": "LOC_RUNGCAOSU_CHUPAH",
-    "name": "Rừng Cao su Chư Păh (Mùa thay lá)",
-    "description": "Con đường rợp bóng hàng cây cao su thẳng tắp, chuyển sắc từ vàng sang đỏ rực vào mùa rụng lá tạo nên khung cảnh lãng mạn đậm chất điện ảnh.",
-    "address": "Thị trấn Phú Hòa, Huyện Chư Păh, Gia Lai",
-    "lat": 14.09,
-    "lng": 108.05,
-    "imageUrl": "https://gialai.info/wp-content/uploads/2023/02/anh-3-3-3135.jpg",
-    "imageUrls": [
-      "https://gialai.info/wp-content/uploads/2023/02/anh-3-3-3135.jpg",
-      "https://static.riviu.co/image/2022/12/18/b104c97c2f6b1f0aef14c3d82fb24982_output.jpeg"
-    ],
-    "bestTime": "Tháng 12 đến tháng 2 (mùa lá đỏ)",
-    "budget": 0,
-    "district": "Gia Lai",
-    "districtId": null,
-    "category": "Danh thắng Gia Lai",
-    "categoryId": null,
-    "avgRating": 4.7,
-    "rating": 4.7,
-    "reviewCount": 18
-  },
-  {
-    "id": "LOC_SUOI_DACO_LANGVAN",
-    "locationId": "LOC_SUOI_DACO_LANGVAN",
-    "name": "Suối Đá Cổ Làng Vân",
-    "description": "Quần thể cột đá bazan hình lục lăng kỳ vĩ có cấu trúc tương tự Gành Đá Đĩa, xếp lớp tầng tầng lớp lớp bên bờ suối trong veo giữa buôn làng Jrai nguyên sơ.",
-    "address": "Làng Vân, Xã Ia Mơ Nông, Huyện Chư Păh, Gia Lai",
-    "lat": 14.18,
-    "lng": 107.95,
-    "imageUrl": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800",
-    "imageUrls": [
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800"
-    ],
-    "bestTime": "Sáng 9h - 15h",
-    "budget": 0,
-    "district": "Gia Lai",
-    "districtId": null,
-    "category": "Danh thắng Gia Lai",
-    "categoryId": null,
-    "avgRating": 4.8,
-    "rating": 4.8,
-    "reviewCount": 18
-  },
-  {
-    "id": "LOC_TAYSON_THUONGDAO",
-    "locationId": "LOC_TAYSON_THUONGDAO",
-    "name": "Quần thể Di tích Tây Sơn Thượng Đạo",
-    "description": "Căn cứ địa khởi nghĩa của phong trào ba anh em Tây Sơn Tam Kiệt (Nguyễn Nhạc, Nguyễn Huệ, Nguyễn Lữ) năm 1771, gồm Đền An Khê, Gò Chợ, Vườn Mít Cô Hầu.",
-    "address": "Thị xã An Khê & Huyện K'Bang, Gia Lai",
-    "lat": 13.978,
-    "lng": 108.652,
-    "imageUrl": "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2025/7/3/b5661274536c4ba4b9999460477570e6",
-    "imageUrls": [
-      "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2025/7/3/b5661274536c4ba4b9999460477570e6",
-      "https://dulichdemen.vn/wp-content/uploads/2023/01/quang-truong-dai-doan-ket-pleiku-gia-lai-du-lich-de-men-vn.jpg"
-    ],
-    "bestTime": "Ban ngày",
-    "budget": 0,
-    "district": "Gia Lai",
-    "districtId": null,
-    "category": "Danh thắng Gia Lai",
-    "categoryId": null,
-    "avgRating": 4.7,
-    "rating": 4.7,
-    "reviewCount": 18
-  },
-  {
-    "id": "LOC_THACK50",
-    "locationId": "LOC_THACK50",
-    "name": "Thác K50 (Thác Hang Én) - Kon Chư Răng",
-    "description": "Tuyệt tác thác nước nguyên sinh nằm ẩn mình giữa lõi rừng già Kon Chư Răng. Dòng thác bạc cao hơn 50m buông xõa như dải lụa tiên cảnh giữa vòm hang đá cổ nơi hàng ngàn cánh én trú ngụ.",
-    "address": "Khu Bảo tồn Thiên nhiên Kon Chư Răng, Xã Sơn Lang, Huyện K'Bang, Gia Lai",
-    "lat": 14.52,
-    "lng": 108.61,
-    "imageUrl": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=800",
-    "imageUrls": [
-      "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=800"
-    ],
-    "bestTime": "Mùa khô tháng 1 đến tháng 6",
-    "budget": 50000,
-    "district": "Gia Lai",
-    "districtId": null,
-    "category": "Danh thắng Gia Lai",
-    "categoryId": null,
-    "avgRating": 5.0,
-    "rating": 5.0,
-    "reviewCount": 18
-  },
-  {
-    "id": "LOC_THACPHUCUONG",
-    "locationId": "LOC_THACPHUCUONG",
-    "name": "Thác Phú Cường",
-    "description": "Thác nước tự nhiên cao hơn 45m đổ ầm vang trên vách đá bazan của miệng núi lửa cổ đã tắt, tạo nên làn sương nước kỳ ảo phản chiếu cầu vồng 7 sắc rực rỡ.",
-    "address": "Xã Dun, Huyện Chư Sê, Gia Lai",
-    "lat": 13.6822,
-    "lng": 108.1256,
-    "imageUrl": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=800",
-    "imageUrls": [
-      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=800"
-    ],
-    "bestTime": "Sáng 8h - 11h ngắm cầu vồng nước",
-    "budget": 25000,
-    "district": "Gia Lai",
-    "districtId": null,
-    "category": "Danh thắng Gia Lai",
-    "categoryId": null,
-    "avgRating": 4.7,
-    "rating": 4.7,
-    "reviewCount": 18
-  },
-  {
-    "id": "LOC_THAC_BAUCAN",
-    "locationId": "LOC_THAC_BAUCAN",
-    "name": "Thác Bàu Cạn (Thác Đội 3)",
-    "description": "Dòng thác thơ mộng nép mình bên cạnh những nương chè Bàu Cạn trăm tuổi xanh ngắt, điểm cắm trại cuối tuần quen thuộc của người dân phố núi.",
-    "address": "Xã Bàu Cạn, Huyện Chư Prông, Gia Lai",
-    "lat": 13.85,
-    "lng": 107.98,
-    "imageUrl": "https://media.mia.vn/uploads/blog-du-lich/thac-phu-cuong-chiem-nguong-tuyet-tac-cua-nui-rung-gia-lai-04-1659179228.jpg",
-    "imageUrls": [
-      "https://media.mia.vn/uploads/blog-du-lich/thac-phu-cuong-chiem-nguong-tuyet-tac-cua-nui-rung-gia-lai-04-1659179228.jpg",
-      "https://gialai.info/wp-content/uploads/2023/02/anh-3-3-3135.jpg"
-    ],
-    "bestTime": "Mùa mưa hoặc đầu mùa khô",
-    "budget": 0,
-    "district": "Gia Lai",
-    "districtId": null,
-    "category": "Danh thắng Gia Lai",
-    "categoryId": null,
-    "avgRating": 4.5,
-    "rating": 4.5,
-    "reviewCount": 18
-  },
-  {
-    "id": "LOC_THAC_HANGDOI",
-    "locationId": "LOC_THAC_HANGDOI",
-    "name": "Thác Hang Dơi Kbang",
-    "description": "Thác nước hoang sơ chia làm nhiều tầng đá cuội tự nhiên giữa thung lũng rừng nguyên sinh Kbang, điểm dã ngoại picnic yêu thích của giới phượt thủ.",
-    "address": "Thị trấn Kbang, Huyện K'Bang, Gia Lai",
-    "lat": 14.18,
-    "lng": 108.6,
-    "imageUrl": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=800",
-    "imageUrls": [
-      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=800"
-    ],
-    "bestTime": "Buổi sáng",
-    "budget": 15000,
-    "district": "Gia Lai",
-    "districtId": null,
-    "category": "Danh thắng Gia Lai",
-    "categoryId": null,
-    "avgRating": 4.6,
-    "rating": 4.6,
-    "reviewCount": 18
-  },
-  {
-    "id": "LOC_THAC_IAKREL",
-    "locationId": "LOC_THAC_IAKREL",
-    "name": "Thác Ia Krel",
-    "description": "Dòng thác hoang sơ miền biên giới Đức Cơ với các bãi đá bazan bằng phẳng, thích hợp cho các hoạt động dã ngoại ngoài trời và câu cá thư giãn.",
-    "address": "Xã Ia Krel, Huyện Đức Cơ, Gia Lai",
-    "lat": 13.78,
-    "lng": 107.72,
-    "imageUrl": "https://tungphuongfood.com.vn/wp-content/uploads/2023/05/thac-hang-doi-kbang-6.jpg",
-    "imageUrls": [
-      "https://tungphuongfood.com.vn/wp-content/uploads/2023/05/thac-hang-doi-kbang-6.jpg"
-    ],
-    "bestTime": "Ban ngày",
-    "budget": 0,
-    "district": "Gia Lai",
-    "districtId": null,
-    "category": "Danh thắng Gia Lai",
-    "categoryId": null,
-    "avgRating": 4.5,
-    "rating": 4.5,
-    "reviewCount": 18
-  },
-  {
-    "id": "LOC_THAP_BANGKENG",
-    "locationId": "LOC_THAP_BANGKENG",
-    "name": "Tháp Bang Keng (Phế tích Tháp Chăm)",
-    "description": "Dấu tích kiến trúc văn hóa Chăm Pa cổ xưa trên lưu vực sông Ba ở phía nam Gia Lai, minh chứng sinh động cho giao lưu văn hóa giữa duyên hải và cao nguyên.",
-    "address": "Xã Krông Năng, Huyện Krông Pa, Gia Lai",
-    "lat": 13.25,
-    "lng": 108.7,
-    "imageUrl": "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2025/7/3/b5661274536c4ba4b9999460477570e6",
-    "imageUrls": [
-      "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2025/7/3/b5661274536c4ba4b9999460477570e6"
-    ],
-    "bestTime": "Sáng mát",
-    "budget": 0,
-    "district": "Gia Lai",
-    "districtId": null,
-    "category": "Danh thắng Gia Lai",
-    "categoryId": null,
-    "avgRating": 4.4,
-    "rating": 4.4,
-    "reviewCount": 18
-  },
-  {
-    "id": "LOC_THUNGLUNG_IADRANG",
-    "locationId": "LOC_THUNGLUNG_IADRANG",
-    "name": "Di tích Thung lũng Ia Drăng",
-    "description": "Nơi diễn ra trận chạm trán quy mô lớn đầu tiên giữa quân chủ lực Việt Nam và kỵ binh bay Mỹ vào tháng 11/1965 dưới chân núi Chu Pơr linh thiêng.",
-    "address": "Xã Ia Me, Huyện Chư Prông, Gia Lai",
-    "lat": 13.58,
-    "lng": 107.75,
-    "imageUrl": "https://media.mia.vn/uploads/blog-du-lich/thac-phu-cuong-chiem-nguong-tuyet-tac-cua-nui-rung-gia-lai-04-1659179228.jpg",
-    "imageUrls": [
-      "https://media.mia.vn/uploads/blog-du-lich/thac-phu-cuong-chiem-nguong-tuyet-tac-cua-nui-rung-gia-lai-04-1659179228.jpg"
-    ],
-    "bestTime": "Ban ngày",
-    "budget": 0,
-    "district": "Gia Lai",
-    "districtId": null,
-    "category": "Danh thắng Gia Lai",
-    "categoryId": null,
-    "avgRating": 4.4,
-    "rating": 4.4,
-    "reviewCount": 18
-  },
-  {
-    "id": "LOC_THUYDIEN_IALY",
-    "locationId": "LOC_THUYDIEN_IALY",
-    "name": "Lòng Hồ Thủy điện Ia Ly",
-    "description": "Công trình thủy điện ngầm lớn thứ hai Việt Nam trên dòng sông Sê San hùng vĩ, kết hợp lòng hồ sinh thái mênh mông sông nước giữa điệp trùng đồi núi.",
-    "address": "Xã Ia Mơ Nông, Huyện Chư Păh, Gia Lai",
-    "lat": 14.215,
-    "lng": 107.828,
-    "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
-    "imageUrls": [
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800"
-    ],
-    "bestTime": "Buổi chiều ngắm hoàng hôn sông Sê San",
-    "budget": 30000,
-    "district": "Gia Lai",
-    "districtId": null,
-    "category": "Danh thắng Gia Lai",
-    "categoryId": null,
-    "avgRating": 4.6,
-    "rating": 4.6,
-    "reviewCount": 18
-  },
-  {
-    "id": "LOC_THUYDIEN_SESAN4",
-    "locationId": "LOC_THUYDIEN_SESAN4",
-    "name": "Hồ Thủy điện Sê San 4",
-    "description": "Biển hồ nhân tạo giữa đại ngàn Tây Nguyên với làng chài nổi Sê San, nơi du khách có thể trải nghiệm chèo thuyền độc mộc và thưởng thức cá lăng lòng hồ nướng than hồng.",
-    "address": "Xã Ia O, Huyện Ia Grai, Gia Lai",
-    "lat": 14.02,
-    "lng": 107.6,
-    "imageUrl": "https://sacotravel.com/wp-content/uploads/2022/12/thuy-dien-yaly.jpg",
-    "imageUrls": [
-      "https://sacotravel.com/wp-content/uploads/2022/12/thuy-dien-yaly.jpg",
-      "https://nhahangvanlocphat.vn/images/News/ca-lang-nuong-muoi-ot2.jpg"
-    ],
-    "bestTime": "Buổi chiều lộng gió",
-    "budget": 0,
-    "district": "Gia Lai",
-    "districtId": null,
-    "category": "Danh thắng Gia Lai",
-    "categoryId": null,
-    "avgRating": 4.7,
-    "rating": 4.7,
-    "reviewCount": 18
-  },
-  {
-    "id": "LOC_VQG_KONKAKINH",
-    "locationId": "LOC_VQG_KONKAKINH",
-    "name": "Vườn Quốc gia Kon Ka Kinh",
-    "description": "Vườn Di sản ASEAN với hệ sinh thái rừng á nhiệt đới phong phú, nơi cư ngụ của loài Voọc chà vá chân xám quý hiếm và đỉnh Kon Ka Kinh cao 1.748m - nóc nhà của tỉnh Gia Lai.",
-    "address": "Xã Ayun, Huyện Mang Yang & K'Bang, Gia Lai",
-    "lat": 14.3,
-    "lng": 108.4,
-    "imageUrl": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=800",
-    "imageUrls": [
-      "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=800"
-    ],
-    "bestTime": "Mùa khô, thích hợp trekking",
-    "budget": 60000,
-    "district": "Gia Lai",
-    "districtId": null,
-    "category": "Danh thắng Gia Lai",
-    "categoryId": null,
-    "avgRating": 4.8,
-    "rating": 4.8,
-    "reviewCount": 18
+    "districtId": "D_ANNHON",
+    "name": "Thị xã An Nhơn",
+    "regionType": "Cố đô & Làng nghề",
+    "description": "Vùng cố đô Champa Thành Đồ Bàn, di tích Thành Hoàng Đế, Tháp Cánh Tiên và làng nghề truyền thống rượu Bàu Đá",
+    "legacy_province": "Bình Định",
+    "current_province": "Gia Lai",
+    "geographic_region": "Duyên hải"
   }
 ];
 
 export const MOCK_CATEGORIES = [
   {
-    "categoryId": "CAT_GL_NATURE",
-    "name": "Điểm du lịch sinh thái, danh lam thắng cảnh tự nhiên",
-    "description": "Hồ miệng núi lửa cổ, thác nước nguyên sinh, đồi chè, rừng thông và các vườn quốc gia bảo tồn thiên nhiên",
-    "icon": "Trees"
+    "categoryId": "CAT_GL_CULTURE",
+    "name": "Văn hóa Dân tộc, Làng nghề & Lễ hội truyền thống",
+    "description": "Không gian văn hóa cồng chiêng Jrai/Bahnar, làng nghề dệt thổ cẩm, kiến trúc nhà rông và chùa tháp cổ",
+    "icon": "Users"
   },
   {
     "categoryId": "CAT_GL_HISTORY",
@@ -690,10 +173,10 @@ export const MOCK_CATEGORIES = [
     "icon": "Landmark"
   },
   {
-    "categoryId": "CAT_GL_CULTURE",
-    "name": "Văn hóa Dân tộc, Làng nghề & Lễ hội truyền thống",
-    "description": "Không gian văn hóa cồng chiêng Jrai/Bahnar, làng nghề dệt thổ cẩm, kiến trúc nhà rông và chùa tháp cổ",
-    "icon": "Users"
+    "categoryId": "CAT_GL_NATURE",
+    "name": "Điểm du lịch sinh thái, danh lam thắng cảnh tự nhiên",
+    "description": "Hồ miệng núi lửa cổ, thác nước nguyên sinh, đồi chè, rừng thông và các vườn quốc gia bảo tồn thiên nhiên",
+    "icon": "Trees"
   },
   {
     "categoryId": "CAT_GL_PARK",
@@ -703,72 +186,1306 @@ export const MOCK_CATEGORIES = [
   }
 ];
 
-export const MOCK_DISTRICTS = [
+export const MOCK_LOCATIONS = [
   {
-    "districtId": "D_PLEIKU",
-    "name": "Thành phố Pleiku",
-    "regionType": "Đô thị Trung tâm",
-    "description": "Đô thị trung tâm cao nguyên Gia Lai, phố núi sương mù với Biển Hồ T'Nưng và Quảng trường Đại Đoàn Kết"
-  },
-  {
-    "districtId": "D_CHUPAH",
-    "name": "Huyện Chư Păh",
-    "regionType": "Cao nguyên Núi lửa",
-    "description": "Thiên đường sinh thái núi lửa Chư Đang Ya, Biển Hồ chè, đỉnh Chư Nâm và hàng thông trăm tuổi"
-  },
-  {
-    "districtId": "D_CHUSE",
-    "name": "Huyện Chư Sê",
-    "regionType": "Vùng đất Bazan",
-    "description": "Thủ phủ hồ tiêu Gia Lai với danh thắng Thác Phú Cường kỳ vĩ trên nền dung nham bazan cổ"
-  },
-  {
-    "districtId": "D_DAKDOA",
-    "name": "Huyện Đắk Đoa",
-    "regionType": "Thảo nguyên Thông",
-    "description": "Vùng thảo nguyên đồi cỏ hồng đuôi chồn và rừng thông Glar bonsai"
-  },
-  {
+    "id": "LOC_THACK50",
+    "locationId": "LOC_THACK50",
+    "name": "Thác K50 (Thác Hang Én) - Kon Chư Răng",
+    "description": "Tuyệt tác thác nước nguyên sinh nằm ẩn mình giữa lõi rừng già Kon Chư Răng. Dòng thác bạc cao hơn 50m buông xõa như dải lụa tiên cảnh giữa vòm hang đá cổ nơi hàng ngàn cánh én trú ngụ.",
+    "address": "Khu Bảo tồn Thiên nhiên Kon Chư Răng, Xã Sơn Lang, Huyện K'Bang, Gia Lai",
+    "latitude": 14.52,
+    "longitude": 108.61,
+    "lat": 14.52,
+    "lng": 108.61,
+    "imageUrl": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=800",
+    "image_url": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=800",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=800"
+    ],
+    "bestTime": "Mùa khô tháng 1 đến tháng 6",
+    "bestTimeOfDay": "Mùa khô tháng 1 đến tháng 6",
+    "budget": 50000,
+    "ticketPrice": 50000,
+    "avgRating": 5.0,
+    "rating": 5.0,
+    "district": "Huyện K'Bang",
     "districtId": "D_KBANG",
-    "name": "Huyện K'Bang",
-    "regionType": "Rừng Nguyên sinh",
-    "description": "Thủ phủ du lịch sinh thái rừng nguyên sinh, thác K50 Kon Chư Răng và Làng kháng chiến Stơr"
+    "category": "Điểm du lịch sinh thái, danh lam thắng cảnh tự nhiên",
+    "categoryId": "CAT_GL_NATURE",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên",
+    "reviewCount": 18
   },
   {
-    "districtId": "D_MANGYANG",
-    "name": "Huyện Mang Yang",
-    "regionType": "Cổng trời Tây Nguyên",
-    "description": "Vùng đèo Mang Yang lịch sử và Vườn Quốc gia Kon Ka Kinh"
+    "id": "LOC_BIENHO",
+    "locationId": "LOC_BIENHO",
+    "name": "Biển Hồ T'Nưng (Hồ Ea Nueng)",
+    "description": "Đôi mắt Pleiku - Miệng núi lửa cổ bazan triệu năm với mặt nước biếc phẳng lặng như gương soi mây trời cao nguyên. Thắng cảnh quốc gia tiêu biểu nhất của tỉnh Gia Lai.",
+    "address": "Xã Biển Hồ, TP. Pleiku, Gia Lai",
+    "latitude": 14.0506,
+    "longitude": 108.0001,
+    "lat": 14.0506,
+    "lng": 108.0001,
+    "imageUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800",
+    "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800",
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800"
+    ],
+    "bestTime": "Sáng sớm hoặc Hoàng hôn",
+    "bestTimeOfDay": "Sáng sớm hoặc Hoàng hôn",
+    "budget": 20000,
+    "ticketPrice": 20000,
+    "avgRating": 4.9,
+    "rating": 4.9,
+    "district": "Thành phố Pleiku",
+    "districtId": "D_PLEIKU",
+    "category": "Điểm du lịch sinh thái, danh lam thắng cảnh tự nhiên",
+    "categoryId": "CAT_GL_NATURE",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên",
+    "reviewCount": 18
   },
   {
+    "id": "LOC_BD_KY_CO",
+    "locationId": "LOC_BD_KY_CO",
+    "name": "Bãi biển Kỳ Co",
+    "description": "Bãi tắm thiên đường được ví như Maldives của Việt Nam với làn nước trong vắt hai màu rõ rệt, bãi cát trắng mịn nép mình dưới chân dãy núi Triều Châu.",
+    "address": "Xã Nhơn Lý, Thành phố Quy Nhơn",
+    "latitude": 13.8967,
+    "longitude": 109.2789,
+    "lat": 13.8967,
+    "lng": 109.2789,
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Ky_Co_beach%2C_Quy_Nhon_city%2C_Binh_Dinh_province%2C_Vietnam.jpg/1280px-Ky_Co_beach%2C_Quy_Nhon_city%2C_Binh_Dinh_province%2C_Vietnam.jpg",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Ky_Co_beach%2C_Quy_Nhon_city%2C_Binh_Dinh_province%2C_Vietnam.jpg/1280px-Ky_Co_beach%2C_Quy_Nhon_city%2C_Binh_Dinh_province%2C_Vietnam.jpg",
+    "imageUrls": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Ky_Co_beach%2C_Quy_Nhon_city%2C_Binh_Dinh_province%2C_Vietnam.jpg/1280px-Ky_Co_beach%2C_Quy_Nhon_city%2C_Binh_Dinh_province%2C_Vietnam.jpg"
+    ],
+    "bestTime": "Sáng đến đầu giờ chiều",
+    "bestTimeOfDay": "Sáng đến đầu giờ chiều",
+    "budget": 120000,
+    "ticketPrice": 120000,
+    "avgRating": 4.9,
+    "rating": 4.9,
+    "district": "Thành phố Quy Nhơn",
+    "districtId": "D_QUYNHON",
+    "category": "Điểm du lịch sinh thái, danh lam thắng cảnh tự nhiên",
+    "categoryId": "CAT_GL_NATURE",
+    "legacy_province": "Bình Định",
+    "current_province": "Gia Lai",
+    "geographic_region": "Duyên hải",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_BD_BAO_TANG_QUANG_TRUNG",
+    "locationId": "LOC_BD_BAO_TANG_QUANG_TRUNG",
+    "name": "Bảo tàng Quang Trung & Điện thờ Tây Sơn Tam Kiệt",
+    "description": "Di tích quốc gia đặc biệt tôn vinh người anh hùng áo vải cờ đào Quang Trung - Nguyễn Huệ, nơi lưu giữ giếng nước cổ, cây me di sản 300 năm tuổi và nghệ thuật trống trận, võ cổ truyền Tây Sơn.",
+    "address": "Thị trấn Phú Phong, Huyện Tây Sơn",
+    "latitude": 13.9011,
+    "longitude": 108.9103,
+    "lat": 13.9011,
+    "lng": 108.9103,
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/B%E1%BA%A3o_T%C3%A0ng_Quang_Trung.JPG/1280px-B%E1%BA%A3o_T%C3%A0ng_Quang_Trung.JPG",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/B%E1%BA%A3o_T%C3%A0ng_Quang_Trung.JPG/1280px-B%E1%BA%A3o_T%C3%A0ng_Quang_Trung.JPG",
+    "imageUrls": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/B%E1%BA%A3o_T%C3%A0ng_Quang_Trung.JPG/1280px-B%E1%BA%A3o_T%C3%A0ng_Quang_Trung.JPG"
+    ],
+    "bestTime": "Sáng hoặc Đầu chiều",
+    "bestTimeOfDay": "Sáng hoặc Đầu chiều",
+    "budget": 30000,
+    "ticketPrice": 30000,
+    "avgRating": 4.9,
+    "rating": 4.9,
+    "district": "Huyện Tây Sơn",
+    "districtId": "D_TAYSON",
+    "category": "Di tích Lịch sử - Văn hóa - Khảo cổ",
+    "categoryId": "CAT_GL_HISTORY",
+    "legacy_province": "Bình Định",
+    "current_province": "Gia Lai",
+    "geographic_region": "Duyên hải",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_MINHTHANH",
+    "locationId": "LOC_MINHTHANH",
+    "name": "Chùa Minh Thành Pleiku",
+    "description": "Quần thể kiến trúc Phật giáo tuyệt mỹ mang phong cách Á Đông cổ kính kết hợp tháp Từ Ân 9 tầng thanh tịnh uy nghiêm giữa trung tâm thành phố Pleiku.",
+    "address": "348 đường Nguyễn Viết Xuân, Phường Hội Phú, TP. Pleiku, Gia Lai",
+    "latitude": 13.9667,
+    "longitude": 108.0167,
+    "lat": 13.9667,
+    "lng": 108.0167,
+    "imageUrl": "https://media.gody.vn/images/gia-lai/chua-minh-thanh/11-2016/20161101090033-chua-minh-thanh-gody(3).jpg",
+    "image_url": "https://media.gody.vn/images/gia-lai/chua-minh-thanh/11-2016/20161101090033-chua-minh-thanh-gody(3).jpg",
+    "imageUrls": [
+      "https://media.gody.vn/images/gia-lai/chua-minh-thanh/11-2016/20161101090033-chua-minh-thanh-gody(3).jpg",
+      "https://cdn.xanhsm.com/2025/03/742405be-cho-dem-pleiku-gia-lai-8.jpg"
+    ],
+    "bestTime": "Sáng 7h - 10h hoặc Hoàng hôn",
+    "bestTimeOfDay": "Sáng 7h - 10h hoặc Hoàng hôn",
+    "budget": 0,
+    "ticketPrice": 0,
+    "avgRating": 4.9,
+    "rating": 4.9,
+    "district": "Thành phố Pleiku",
+    "districtId": "D_PLEIKU",
+    "category": "Văn hóa Dân tộc, Làng nghề & Lễ hội truyền thống",
+    "categoryId": "CAT_GL_CULTURE",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_CHUDANGYA",
+    "locationId": "LOC_CHUDANGYA",
+    "name": "Núi lửa Chư Đang Ya",
+    "description": "Tuyệt tác miệng núi lửa cổ hình phễu lòng chảo triệu năm, nơi sắc vàng rực rỡ của hoa dã quỳ nở rộ khắp các triền bazan đỏ màu mỡ vào mỗi dịp cuối thu đầu đông.",
+    "address": "Làng Ploi lagri, Xã Chư Đang Ya, Huyện Chư Păh, Gia Lai",
+    "latitude": 14.15,
+    "longitude": 108.0667,
+    "lat": 14.15,
+    "lng": 108.0667,
+    "imageUrl": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
+    "image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
+      "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800"
+    ],
+    "bestTime": "Sáng sớm (mùa hoa dã quỳ tháng 10-12)",
+    "bestTimeOfDay": "Sáng sớm (mùa hoa dã quỳ tháng 10-12)",
+    "budget": 0,
+    "ticketPrice": 0,
+    "avgRating": 4.9,
+    "rating": 4.9,
+    "district": "Huyện Chư Păh",
+    "districtId": "D_CHUPAH",
+    "category": "Điểm du lịch sinh thái, danh lam thắng cảnh tự nhiên",
+    "categoryId": "CAT_GL_NATURE",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_QUANGTRUONG_GL",
+    "locationId": "LOC_QUANGTRUONG_GL",
+    "name": "Quảng trường Đại Đoàn Kết & Bảo tàng Gia Lai",
+    "description": "Trái tim của thành phố Pleiku với Tượng đài Bác Hồ với các dân tộc Tây Nguyên lớn nhất cả nước, bức phù điêu đá tạc hình tượng sử thi và tháp đá mô phỏng cồng chiêng.",
+    "address": "Đường Trần Hưng Đạo, Phường Tây Sơn, TP. Pleiku, Gia Lai",
+    "latitude": 13.9806,
+    "longitude": 108.0067,
+    "lat": 13.9806,
+    "lng": 108.0067,
+    "imageUrl": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=800",
+    "image_url": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=800",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=800"
+    ],
+    "bestTime": "Chiều tối (17h - 22h)",
+    "bestTimeOfDay": "Chiều tối (17h - 22h)",
+    "budget": 0,
+    "ticketPrice": 0,
+    "avgRating": 4.9,
+    "rating": 4.9,
+    "district": "Thành phố Pleiku",
+    "districtId": "D_PLEIKU",
+    "category": "Công viên & Không gian cảnh quan công cộng",
+    "categoryId": "CAT_GL_PARK",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_BD_EO_GIO",
+    "locationId": "LOC_BD_EO_GIO",
+    "name": "Thắng cảnh Eo Gió Nhơn Lý",
+    "description": "Eo biển hút gió kỳ vĩ với cung đường đi bộ ven biển ngoạn mục men theo vách núi bazan uốn lượn ôm trọn bờ biển ngọc bích.",
+    "address": "Thôn Lý Lương, Xã Nhơn Lý, Thành phố Quy Nhơn",
+    "latitude": 13.8821,
+    "longitude": 109.2895,
+    "lat": 13.8821,
+    "lng": 109.2895,
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Eo_Gi%C3%B3_-_Nh%C6%A1n_L%C3%BD.jpg/1280px-Eo_Gi%C3%B3_-_Nh%C6%A1n_L%C3%BD.jpg",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Eo_Gi%C3%B3_-_Nh%C6%A1n_L%C3%BD.jpg/1280px-Eo_Gi%C3%B3_-_Nh%C6%A1n_L%C3%BD.jpg",
+    "imageUrls": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Eo_Gi%C3%B3_-_Nh%C6%A1n_L%C3%BD.jpg/1280px-Eo_Gi%C3%B3_-_Nh%C6%A1n_L%C3%BD.jpg"
+    ],
+    "bestTime": "Bình minh hoặc Hoàng hôn",
+    "bestTimeOfDay": "Bình minh hoặc Hoàng hôn",
+    "budget": 25000,
+    "ticketPrice": 25000,
+    "avgRating": 4.9,
+    "rating": 4.9,
+    "district": "Thành phố Quy Nhơn",
+    "districtId": "D_QUYNHON",
+    "category": "Điểm du lịch sinh thái, danh lam thắng cảnh tự nhiên",
+    "categoryId": "CAT_GL_NATURE",
+    "legacy_province": "Bình Định",
+    "current_province": "Gia Lai",
+    "geographic_region": "Duyên hải",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_BIENHOCHE",
+    "locationId": "LOC_BIENHOCHE",
+    "name": "Biển Hồ Chè & Hàng thông trăm tuổi",
+    "description": "Đồn điền chè đầu tiên của người Pháp tại Tây Nguyên (1919) trải dài tít tắp, kết hợp con đường hàng thông cổ thụ hơn 100 tuổi thơ mộng ngỡ như xứ sở kim chi.",
+    "address": "Xã Nghĩa Hưng, Huyện Chư Păh, Gia Lai",
+    "latitude": 14.075,
+    "longitude": 108.02,
+    "lat": 14.075,
+    "lng": 108.02,
+    "imageUrl": "https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=800",
+    "image_url": "https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=800",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=800",
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800"
+    ],
+    "bestTime": "Bình minh hoặc Chiều tà",
+    "bestTimeOfDay": "Bình minh hoặc Chiều tà",
+    "budget": 0,
+    "ticketPrice": 0,
+    "avgRating": 4.8,
+    "rating": 4.8,
+    "district": "Huyện Chư Păh",
+    "districtId": "D_CHUPAH",
+    "category": "Điểm du lịch sinh thái, danh lam thắng cảnh tự nhiên",
+    "categoryId": "CAT_GL_NATURE",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_CHUA_BUUMINH",
+    "locationId": "LOC_CHUA_BUUMINH",
+    "name": "Chùa Bửu Minh",
+    "description": "Ngôi cổ tự thanh bình tọa lạc giữa ngút ngàn đồi chè Biển Hồ xanh mướt, nổi bật với đỉnh tháp nhọn vươn cao lên bầu trời xanh bình yên.",
+    "address": "Xã Nghĩa Hưng, Huyện Chư Păh, Gia Lai",
+    "latitude": 14.078,
+    "longitude": 108.018,
+    "lat": 14.078,
+    "lng": 108.018,
+    "imageUrl": "http://cotrang.org/dia-diem/images/gia-lai/dia-diem/chua-buu-minh/chua-buu-minh-gia-lai-bk-001.jpg",
+    "image_url": "http://cotrang.org/dia-diem/images/gia-lai/dia-diem/chua-buu-minh/chua-buu-minh-gia-lai-bk-001.jpg",
+    "imageUrls": [
+      "http://cotrang.org/dia-diem/images/gia-lai/dia-diem/chua-buu-minh/chua-buu-minh-gia-lai-bk-001.jpg",
+      "https://static.riviu.co/image/2022/12/18/b104c97c2f6b1f0aef14c3d82fb24982_output.jpeg"
+    ],
+    "bestTime": "Buổi sáng thanh tịnh",
+    "bestTimeOfDay": "Buổi sáng thanh tịnh",
+    "budget": 0,
+    "ticketPrice": 0,
+    "avgRating": 4.8,
+    "rating": 4.8,
+    "district": "Huyện Chư Păh",
+    "districtId": "D_CHUPAH",
+    "category": "Văn hóa Dân tộc, Làng nghề & Lễ hội truyền thống",
+    "categoryId": "CAT_GL_CULTURE",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_ROCTUNG_GODA",
+    "locationId": "LOC_ROCTUNG_GODA",
+    "name": "Di tích Khảo cổ sơ kỳ Đá cũ Rộc Tưng - Gò Đá",
+    "description": "Di tích khảo cổ học quốc gia đặc biệt chứng minh sự xuất hiện của người tiền sử tại Việt Nam cách đây khoảng 80 vạn năm, một phát hiện có tầm vóc khoa học thế giới.",
+    "address": "Xã Xuân An, Thị xã An Khê, Gia Lai",
+    "latitude": 13.99,
+    "longitude": 108.68,
+    "lat": 13.99,
+    "lng": 108.68,
+    "imageUrl": "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2025/7/3/b5661274536c4ba4b9999460477570e6",
+    "image_url": "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2025/7/3/b5661274536c4ba4b9999460477570e6",
+    "imageUrls": [
+      "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2025/7/3/b5661274536c4ba4b9999460477570e6"
+    ],
+    "bestTime": "Ban ngày",
+    "bestTimeOfDay": "Ban ngày",
+    "budget": 0,
+    "ticketPrice": 0,
+    "avgRating": 4.8,
+    "rating": 4.8,
+    "district": "Thị xã An Khê",
     "districtId": "D_ANKHE",
-    "name": "Thị xã An Khê",
-    "regionType": "Thung lũng Di sản",
-    "description": "Cái nôi lịch sử phong trào Tây Sơn Thượng Đạo và Di tích khảo cổ sơ kỳ Đá cũ Rộc Tưng - Gò Đá"
+    "category": "Di tích Lịch sử - Văn hóa - Khảo cổ",
+    "categoryId": "CAT_GL_HISTORY",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên",
+    "reviewCount": 18
   },
   {
+    "id": "LOC_BD_GHENH_RANG",
+    "locationId": "LOC_BD_GHENH_RANG",
+    "name": "Khu danh thắng Ghềnh Ráng Tiên Sa & Bãi tắm Hoàng Hậu",
+    "description": "Quần thể ghềnh đá nhô ra biển với Bãi Đá Trứng tròn nhẵn độc đáo dành riêng cho Nam Phương Hoàng Hậu và khu tưởng niệm thi sĩ tài hoa Hàn Mặc Tử trên đồi Thi Nhân.",
+    "address": "Phường Ghềnh Ráng, Thành phố Quy Nhơn",
+    "latitude": 13.7386,
+    "longitude": 109.2227,
+    "lat": 13.7386,
+    "lng": 109.2227,
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Queen%27s_beach%2C_Quy_Nhon_city%2C_Binh_Dinh_province%2C_Vietnam.jpg/1280px-Queen%27s_beach%2C_Quy_Nhon_city%2C_Binh_Dinh_province%2C_Vietnam.jpg",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Queen%27s_beach%2C_Quy_Nhon_city%2C_Binh_Dinh_province%2C_Vietnam.jpg/1280px-Queen%27s_beach%2C_Quy_Nhon_city%2C_Binh_Dinh_province%2C_Vietnam.jpg",
+    "imageUrls": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Queen%27s_beach%2C_Quy_Nhon_city%2C_Binh_Dinh_province%2C_Vietnam.jpg/1280px-Queen%27s_beach%2C_Quy_Nhon_city%2C_Binh_Dinh_province%2C_Vietnam.jpg"
+    ],
+    "bestTime": "Sáng sớm hoặc Chiều mát",
+    "bestTimeOfDay": "Sáng sớm hoặc Chiều mát",
+    "budget": 0,
+    "ticketPrice": 0,
+    "avgRating": 4.8,
+    "rating": 4.8,
+    "district": "Thành phố Quy Nhơn",
+    "districtId": "D_QUYNHON",
+    "category": "Điểm du lịch sinh thái, danh lam thắng cảnh tự nhiên",
+    "categoryId": "CAT_GL_NATURE",
+    "legacy_province": "Bình Định",
+    "current_province": "Gia Lai",
+    "geographic_region": "Duyên hải",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_BD_LANG_VO_TAY_SON",
+    "locationId": "LOC_BD_LANG_VO_TAY_SON",
+    "name": "Làng Võ Cổ truyền Tây Sơn - Bình Định",
+    "description": "Cái nôi miền đất võ trứ danh với truyền thống thượng võ hào hùng, nơi lưu giữ tinh hoa thập bát ban binh khí, quyền thuật An Thái và roi trận Thuận Truyền.",
+    "address": "Xã Bình Nghi & Thị trấn Phú Phong, Huyện Tây Sơn",
+    "latitude": 13.9167,
+    "longitude": 108.95,
+    "lat": 13.9167,
+    "lng": 108.95,
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/T%C6%B0%E1%BB%A3ng_%C4%91%C3%A0i_Quang_Trung_t%E1%BA%A1i_B%E1%BA%A3o_t%C3%A0ng_Quang_Trung.JPG/1280px-T%C6%B0%E1%BB%A3ng_%C4%91%C3%A0i_Quang_Trung_t%E1%BA%A1i_B%E1%BA%A3o_t%C3%A0ng_Quang_Trung.JPG",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/T%C6%B0%E1%BB%A3ng_%C4%91%C3%A0i_Quang_Trung_t%E1%BA%A1i_B%E1%BA%A3o_t%C3%A0ng_Quang_Trung.JPG/1280px-T%C6%B0%E1%BB%A3ng_%C4%91%C3%A0i_Quang_Trung_t%E1%BA%A1i_B%E1%BA%A3o_t%C3%A0ng_Quang_Trung.JPG",
+    "imageUrls": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/T%C6%B0%E1%BB%A3ng_%C4%91%C3%A0i_Quang_Trung_t%E1%BA%A1i_B%E1%BA%A3o_t%C3%A0ng_Quang_Trung.JPG/1280px-T%C6%B0%E1%BB%A3ng_%C4%91%C3%A0i_Quang_Trung_t%E1%BA%A1i_B%E1%BA%A3o_t%C3%A0ng_Quang_Trung.JPG"
+    ],
+    "bestTime": "Ban ngày",
+    "bestTimeOfDay": "Ban ngày",
+    "budget": 0,
+    "ticketPrice": 0,
+    "avgRating": 4.8,
+    "rating": 4.8,
+    "district": "Huyện Tây Sơn",
+    "districtId": "D_TAYSON",
+    "category": "Văn hóa Dân tộc, Làng nghề & Lễ hội truyền thống",
+    "categoryId": "CAT_GL_CULTURE",
+    "legacy_province": "Bình Định",
+    "current_province": "Gia Lai",
+    "geographic_region": "Duyên hải",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_BD_THAP_BANH_IT",
+    "locationId": "LOC_BD_THAP_BANH_IT",
+    "name": "Quần thể Tháp Bánh Ít (Tháp Bạc)",
+    "description": "Quần thể di tích kiến trúc Chăm Pa thế kỷ 11-12 gồm 4 ngọn tháp tọa lạc trên đồi cao hình chóp bánh ít, công trình kiến trúc cổ duy nhất của Việt Nam được ghi tên trong sách '1.001 công trình kiến trúc phải đến trong đời'.",
+    "address": "Xã Phước Hiệp, Huyện Tuy Phước",
+    "latitude": 13.8767,
+    "longitude": 109.1172,
+    "lat": 13.8767,
+    "lng": 109.1172,
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/0040323_Thap_Banh_It_complex%2C_Nhon_Hoa%2C_Binh_Dinh_Vietnam_001.jpg/1280px-0040323_Thap_Banh_It_complex%2C_Nhon_Hoa%2C_Binh_Dinh_Vietnam_001.jpg",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/0040323_Thap_Banh_It_complex%2C_Nhon_Hoa%2C_Binh_Dinh_Vietnam_001.jpg/1280px-0040323_Thap_Banh_It_complex%2C_Nhon_Hoa%2C_Binh_Dinh_Vietnam_001.jpg",
+    "imageUrls": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/0040323_Thap_Banh_It_complex%2C_Nhon_Hoa%2C_Binh_Dinh_Vietnam_001.jpg/1280px-0040323_Thap_Banh_It_complex%2C_Nhon_Hoa%2C_Binh_Dinh_Vietnam_001.jpg"
+    ],
+    "bestTime": "Hoàng hôn hoặc Sáng sớm",
+    "bestTimeOfDay": "Hoàng hôn hoặc Sáng sớm",
+    "budget": 20000,
+    "ticketPrice": 20000,
+    "avgRating": 4.8,
+    "rating": 4.8,
+    "district": "Huyện Tuy Phước",
+    "districtId": "D_TUYPHUOC",
+    "category": "Di tích Lịch sử - Văn hóa - Khảo cổ",
+    "categoryId": "CAT_GL_HISTORY",
+    "legacy_province": "Bình Định",
+    "current_province": "Gia Lai",
+    "geographic_region": "Duyên hải",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_BD_THAP_DUONG_LONG",
+    "locationId": "LOC_BD_THAP_DUONG_LONG",
+    "name": "Quần thể Tháp Dương Long (Tháp Ngà)",
+    "description": "Cụm 3 ngọn tháp gạch Chăm cao nhất Đông Nam Á (tháp giữa cao 39m), đỉnh cao rực rỡ của nghệ thuật điêu khắc phù điêu đá sa thạch Champa thời kỳ Vijaya.",
+    "address": "Xã Tây Bình, Huyện Tây Sơn",
+    "latitude": 13.9167,
+    "longitude": 108.9833,
+    "lat": 13.9167,
+    "lng": 108.9833,
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/0040423_Thap_Duong_Long_Cham_tower_temples%2C_Hindu_trinity%2C_Binh_Dinh_Vietnam_003.jpg/1280px-0040423_Thap_Duong_Long_Cham_tower_temples%2C_Hindu_trinity%2C_Binh_Dinh_Vietnam_003.jpg",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/0040423_Thap_Duong_Long_Cham_tower_temples%2C_Hindu_trinity%2C_Binh_Dinh_Vietnam_003.jpg/1280px-0040423_Thap_Duong_Long_Cham_tower_temples%2C_Hindu_trinity%2C_Binh_Dinh_Vietnam_003.jpg",
+    "imageUrls": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/0040423_Thap_Duong_Long_Cham_tower_temples%2C_Hindu_trinity%2C_Binh_Dinh_Vietnam_003.jpg/1280px-0040423_Thap_Duong_Long_Cham_tower_temples%2C_Hindu_trinity%2C_Binh_Dinh_Vietnam_003.jpg"
+    ],
+    "bestTime": "Sáng mát",
+    "bestTimeOfDay": "Sáng mát",
+    "budget": 20000,
+    "ticketPrice": 20000,
+    "avgRating": 4.8,
+    "rating": 4.8,
+    "district": "Huyện Tây Sơn",
+    "districtId": "D_TAYSON",
+    "category": "Di tích Lịch sử - Văn hóa - Khảo cổ",
+    "categoryId": "CAT_GL_HISTORY",
+    "legacy_province": "Bình Định",
+    "current_province": "Gia Lai",
+    "geographic_region": "Duyên hải",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_SUOI_DACO_LANGVAN",
+    "locationId": "LOC_SUOI_DACO_LANGVAN",
+    "name": "Suối Đá Cổ Làng Vân",
+    "description": "Quần thể cột đá bazan hình lục lăng kỳ vĩ có cấu trúc tương tự Gành Đá Đĩa, xếp lớp tầng tầng lớp lớp bên bờ suối trong veo giữa buôn làng Jrai nguyên sơ.",
+    "address": "Làng Vân, Xã Ia Mơ Nông, Huyện Chư Păh, Gia Lai",
+    "latitude": 14.18,
+    "longitude": 107.95,
+    "lat": 14.18,
+    "lng": 107.95,
+    "imageUrl": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800",
+    "image_url": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800"
+    ],
+    "bestTime": "Sáng 9h - 15h",
+    "bestTimeOfDay": "Sáng 9h - 15h",
+    "budget": 0,
+    "ticketPrice": 0,
+    "avgRating": 4.8,
+    "rating": 4.8,
+    "district": "Huyện Chư Păh",
+    "districtId": "D_CHUPAH",
+    "category": "Điểm du lịch sinh thái, danh lam thắng cảnh tự nhiên",
+    "categoryId": "CAT_GL_NATURE",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_VQG_KONKAKINH",
+    "locationId": "LOC_VQG_KONKAKINH",
+    "name": "Vườn Quốc gia Kon Ka Kinh",
+    "description": "Vườn Di sản ASEAN với hệ sinh thái rừng á nhiệt đới phong phú, nơi cư ngụ của loài Voọc chà vá chân xám quý hiếm và đỉnh Kon Ka Kinh cao 1.748m - nóc nhà của tỉnh Gia Lai.",
+    "address": "Xã Ayun, Huyện Mang Yang & K'Bang, Gia Lai",
+    "latitude": 14.3,
+    "longitude": 108.4,
+    "lat": 14.3,
+    "lng": 108.4,
+    "imageUrl": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=800",
+    "image_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=800",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=800"
+    ],
+    "bestTime": "Mùa khô, thích hợp trekking",
+    "bestTimeOfDay": "Mùa khô, thích hợp trekking",
+    "budget": 60000,
+    "ticketPrice": 60000,
+    "avgRating": 4.8,
+    "rating": 4.8,
+    "district": "Huyện Mang Yang",
+    "districtId": "D_MANGYANG",
+    "category": "Điểm du lịch sinh thái, danh lam thắng cảnh tự nhiên",
+    "categoryId": "CAT_GL_NATURE",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_BD_CU_LAO_XANH",
+    "locationId": "LOC_BD_CU_LAO_XANH",
+    "name": "Đảo Cù Lao Xanh (Đảo Vân Phi)",
+    "description": "Hòn ngọc xanh giữa biển Đông nổi tiếng với ngọn hải đăng Pháp cổ hơn 100 năm tuổi, cột cờ Tổ quốc kiêu hãnh và không gian làng chài thanh bình.",
+    "address": "Xã đảo Nhơn Châu, Thành phố Quy Nhơn",
+    "latitude": 13.6167,
+    "longitude": 109.35,
+    "lat": 13.6167,
+    "lng": 109.35,
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Cu_Lao_Xanh_%28Green_Island%29_in_Quy_Nhon_city_%2830527170483%29.jpg/1280px-Cu_Lao_Xanh_%28Green_Island%29_in_Quy_Nhon_city_%2830527170483%29.jpg",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Cu_Lao_Xanh_%28Green_Island%29_in_Quy_Nhon_city_%2830527170483%29.jpg/1280px-Cu_Lao_Xanh_%28Green_Island%29_in_Quy_Nhon_city_%2830527170483%29.jpg",
+    "imageUrls": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Cu_Lao_Xanh_%28Green_Island%29_in_Quy_Nhon_city_%2830527170483%29.jpg/1280px-Cu_Lao_Xanh_%28Green_Island%29_in_Quy_Nhon_city_%2830527170483%29.jpg"
+    ],
+    "bestTime": "Trọn ngày hoặc qua đêm",
+    "bestTimeOfDay": "Trọn ngày hoặc qua đêm",
+    "budget": 0,
+    "ticketPrice": 0,
+    "avgRating": 4.8,
+    "rating": 4.8,
+    "district": "Thành phố Quy Nhơn",
+    "districtId": "D_QUYNHON",
+    "category": "Điểm du lịch sinh thái, danh lam thắng cảnh tự nhiên",
+    "categoryId": "CAT_GL_NATURE",
+    "legacy_province": "Bình Định",
+    "current_province": "Gia Lai",
+    "geographic_region": "Duyên hải",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_DINH_CHUNAM",
+    "locationId": "LOC_DINH_CHUNAM",
+    "name": "Đỉnh Núi Chư Nâm",
+    "description": "Đỉnh núi cao nhất vùng bình nguyên Chư Păh (gần 1.500m), thiên đường săn biển mây bồng bềnh và ngắm toàn cảnh thung lũng miệng núi lửa Chư Đang Ya từ trên cao.",
+    "address": "Xã Chư Đang Ya, Huyện Chư Păh, Gia Lai",
+    "latitude": 14.16,
+    "longitude": 108.08,
+    "lat": 14.16,
+    "lng": 108.08,
+    "imageUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800",
+    "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800"
+    ],
+    "bestTime": "Sáng sớm săn mây (5h - 7h)",
+    "bestTimeOfDay": "Sáng sớm săn mây (5h - 7h)",
+    "budget": 0,
+    "ticketPrice": 0,
+    "avgRating": 4.8,
+    "rating": 4.8,
+    "district": "Huyện Chư Păh",
+    "districtId": "D_CHUPAH",
+    "category": "Điểm du lịch sinh thái, danh lam thắng cảnh tự nhiên",
+    "categoryId": "CAT_GL_NATURE",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_BD_BIEN_QUY_NHON",
+    "locationId": "LOC_BD_BIEN_QUY_NHON",
+    "name": "Bãi biển Vịnh Quy Nhơn & Đại lộ Xuân Diệu",
+    "description": "Bãi biển vầng trăng khuyết chạy dài dọc theo trung tâm thành phố Quy Nhơn, nơi du khách tận hưởng làn gió biển trong lành, tắm biển và thưởng thức ẩm thực phố biển về đêm.",
+    "address": "Đại lộ Xuân Diệu, Thành phố Quy Nhơn",
+    "latitude": 13.77,
+    "longitude": 109.23,
+    "lat": 13.77,
+    "lng": 109.23,
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Quy_Nhon_Beach_Promenade.jpg/1280px-Quy_Nhon_Beach_Promenade.jpg",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Quy_Nhon_Beach_Promenade.jpg/1280px-Quy_Nhon_Beach_Promenade.jpg",
+    "imageUrls": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Quy_Nhon_Beach_Promenade.jpg/1280px-Quy_Nhon_Beach_Promenade.jpg"
+    ],
+    "bestTime": "Sáng sớm và Chiều hoàng hôn",
+    "bestTimeOfDay": "Sáng sớm và Chiều hoàng hôn",
+    "budget": 0,
+    "ticketPrice": 0,
+    "avgRating": 4.7,
+    "rating": 4.7,
+    "district": "Thành phố Quy Nhơn",
+    "districtId": "D_QUYNHON",
+    "category": "Công viên & Không gian cảnh quan công cộng",
+    "categoryId": "CAT_GL_PARK",
+    "legacy_province": "Bình Định",
+    "current_province": "Gia Lai",
+    "geographic_region": "Duyên hải",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_BD_THAP_DOI",
+    "locationId": "LOC_BD_THAP_DOI",
+    "name": "Di tích Tháp Đôi Quy Nhơn",
+    "description": "Cặp tháp Chăm Pa thế kỷ 12 độc đáo nằm ngay trong lòng thành phố Quy Nhơn, mang đậm ảnh hưởng phong cách kiến trúc điêu khắc Angkor với hoa văn chim thần Garuda và các vũ nữ duyên dáng.",
+    "address": "Đường Trần Hưng Đạo, Phường Đống Đa, Thành phố Quy Nhơn",
+    "latitude": 13.7917,
+    "longitude": 109.2083,
+    "lat": 13.7917,
+    "lng": 109.2083,
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Th%C3%A1p_%C4%90%C3%B4i%2C_Quy_Nh%C6%A1n_-_43083336701.jpg/1280px-Th%C3%A1p_%C4%90%C3%B4i%2C_Quy_Nh%C6%A1n_-_43083336701.jpg",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Th%C3%A1p_%C4%90%C3%B4i%2C_Quy_Nh%C6%A1n_-_43083336701.jpg/1280px-Th%C3%A1p_%C4%90%C3%B4i%2C_Quy_Nh%C6%A1n_-_43083336701.jpg",
+    "imageUrls": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Th%C3%A1p_%C4%90%C3%B4i%2C_Quy_Nh%C6%A1n_-_43083336701.jpg/1280px-Th%C3%A1p_%C4%90%C3%B4i%2C_Quy_Nh%C6%A1n_-_43083336701.jpg"
+    ],
+    "bestTime": "Cả ngày",
+    "bestTimeOfDay": "Cả ngày",
+    "budget": 20000,
+    "ticketPrice": 20000,
+    "avgRating": 4.7,
+    "rating": 4.7,
+    "district": "Thành phố Quy Nhơn",
+    "districtId": "D_QUYNHON",
+    "category": "Di tích Lịch sử - Văn hóa - Khảo cổ",
+    "categoryId": "CAT_GL_HISTORY",
+    "legacy_province": "Bình Định",
+    "current_province": "Gia Lai",
+    "geographic_region": "Duyên hải",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_THUYDIEN_SESAN4",
+    "locationId": "LOC_THUYDIEN_SESAN4",
+    "name": "Hồ Thủy điện Sê San 4",
+    "description": "Biển hồ nhân tạo giữa đại ngàn Tây Nguyên với làng chài nổi Sê San, nơi du khách có thể trải nghiệm chèo thuyền độc mộc và thưởng thức cá lăng lòng hồ nướng than hồng.",
+    "address": "Xã Ia O, Huyện Ia Grai, Gia Lai",
+    "latitude": 14.02,
+    "longitude": 107.6,
+    "lat": 14.02,
+    "lng": 107.6,
+    "imageUrl": "https://sacotravel.com/wp-content/uploads/2022/12/thuy-dien-yaly.jpg",
+    "image_url": "https://sacotravel.com/wp-content/uploads/2022/12/thuy-dien-yaly.jpg",
+    "imageUrls": [
+      "https://sacotravel.com/wp-content/uploads/2022/12/thuy-dien-yaly.jpg",
+      "https://nhahangvanlocphat.vn/images/News/ca-lang-nuong-muoi-ot2.jpg"
+    ],
+    "bestTime": "Buổi chiều lộng gió",
+    "bestTimeOfDay": "Buổi chiều lộng gió",
+    "budget": 0,
+    "ticketPrice": 0,
+    "avgRating": 4.7,
+    "rating": 4.7,
+    "district": "Huyện Ia Grai",
     "districtId": "D_IAGRAI",
-    "name": "Huyện Ia Grai",
-    "regionType": "Hồ thủy điện & Nương rẫy",
-    "description": "Vùng lòng hồ thủy điện Sê San, bến thuyền độc mộc và rừng cao su bạt ngàn"
+    "category": "Điểm du lịch sinh thái, danh lam thắng cảnh tự nhiên",
+    "categoryId": "CAT_GL_NATURE",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên",
+    "reviewCount": 18
   },
   {
+    "id": "LOC_LANG_STOR",
+    "locationId": "LOC_LANG_STOR",
+    "name": "Làng Kháng chiến Stơr (Quê hương Anh hùng Núp)",
+    "description": "Cái nôi kháng chiến của đồng bào Bahnar gắn liền với tên tuổi Anh hùng Đinh Núp trong tác phẩm 'Đất nước đứng lên', lưu giữ nhà lưu niệm và nhà rông truyền thống.",
+    "address": "Xã Tơ Tung, Huyện K'Bang, Gia Lai",
+    "latitude": 14.15,
+    "longitude": 108.52,
+    "lat": 14.15,
+    "lng": 108.52,
+    "imageUrl": "https://tungphuongfood.com.vn/wp-content/uploads/2023/05/thac-hang-doi-kbang-6.jpg",
+    "image_url": "https://tungphuongfood.com.vn/wp-content/uploads/2023/05/thac-hang-doi-kbang-6.jpg",
+    "imageUrls": [
+      "https://tungphuongfood.com.vn/wp-content/uploads/2023/05/thac-hang-doi-kbang-6.jpg"
+    ],
+    "bestTime": "Ban ngày",
+    "bestTimeOfDay": "Ban ngày",
+    "budget": 0,
+    "ticketPrice": 0,
+    "avgRating": 4.7,
+    "rating": 4.7,
+    "district": "Huyện K'Bang",
+    "districtId": "D_KBANG",
+    "category": "Di tích Lịch sử - Văn hóa - Khảo cổ",
+    "categoryId": "CAT_GL_HISTORY",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_LANGVOI",
+    "locationId": "LOC_LANGVOI",
+    "name": "Làng Văn hóa Du lịch Plei Ốp",
+    "description": "Buôn làng người Jrai bản địa nguyên sơ nằm ngay lòng đô thị Pleiku, nơi du khách được đắm chìm trong tiếng cồng chiêng, ngắm nhà rông và uống rượu cần ấm áp.",
+    "address": "Phường Hoa Lư, TP. Pleiku, Gia Lai",
+    "latitude": 13.99,
+    "longitude": 108.01,
+    "lat": 13.99,
+    "lng": 108.01,
+    "imageUrl": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=800",
+    "image_url": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=800",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=800"
+    ],
+    "bestTime": "Buổi chiều tối giao lưu cồng chiêng",
+    "bestTimeOfDay": "Buổi chiều tối giao lưu cồng chiêng",
+    "budget": 0,
+    "ticketPrice": 0,
+    "avgRating": 4.7,
+    "rating": 4.7,
+    "district": "Thành phố Pleiku",
+    "districtId": "D_PLEIKU",
+    "category": "Văn hóa Dân tộc, Làng nghề & Lễ hội truyền thống",
+    "categoryId": "CAT_GL_CULTURE",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_NHATHO_PLEICHUET",
+    "locationId": "LOC_NHATHO_PLEICHUET",
+    "name": "Nhà thờ Gỗ Pleichuet",
+    "description": "Công trình tôn giáo độc đáo được dựng hoàn toàn theo mô hình nhà rông truyền thống của đồng bào Jrai với mái nhọn cao vút và hoa văn chạm khắc tinh xảo.",
+    "address": "Đường Trương Định, Phường Thắng Lợi, TP. Pleiku, Gia Lai",
+    "latitude": 13.972,
+    "longitude": 108.028,
+    "lat": 13.972,
+    "lng": 108.028,
+    "imageUrl": "https://cdn.xanhsm.com/2025/03/1b3f9e9b-lang-plei-op-2.jpg",
+    "image_url": "https://cdn.xanhsm.com/2025/03/1b3f9e9b-lang-plei-op-2.jpg",
+    "imageUrls": [
+      "https://cdn.xanhsm.com/2025/03/1b3f9e9b-lang-plei-op-2.jpg"
+    ],
+    "bestTime": "Ban ngày",
+    "bestTimeOfDay": "Ban ngày",
+    "budget": 0,
+    "ticketPrice": 0,
+    "avgRating": 4.7,
+    "rating": 4.7,
+    "district": "Thành phố Pleiku",
+    "districtId": "D_PLEIKU",
+    "category": "Văn hóa Dân tộc, Làng nghề & Lễ hội truyền thống",
+    "categoryId": "CAT_GL_CULTURE",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_TAYSON_THUONGDAO",
+    "locationId": "LOC_TAYSON_THUONGDAO",
+    "name": "Quần thể Di tích Tây Sơn Thượng Đạo",
+    "description": "Căn cứ địa khởi nghĩa của phong trào ba anh em Tây Sơn Tam Kiệt (Nguyễn Nhạc, Nguyễn Huệ, Nguyễn Lữ) năm 1771, gồm Đền An Khê, Gò Chợ, Vườn Mít Cô Hầu.",
+    "address": "Thị xã An Khê & Huyện K'Bang, Gia Lai",
+    "latitude": 13.978,
+    "longitude": 108.652,
+    "lat": 13.978,
+    "lng": 108.652,
+    "imageUrl": "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2025/7/3/b5661274536c4ba4b9999460477570e6",
+    "image_url": "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2025/7/3/b5661274536c4ba4b9999460477570e6",
+    "imageUrls": [
+      "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2025/7/3/b5661274536c4ba4b9999460477570e6",
+      "https://dulichdemen.vn/wp-content/uploads/2023/01/quang-truong-dai-doan-ket-pleiku-gia-lai-du-lich-de-men-vn.jpg"
+    ],
+    "bestTime": "Ban ngày",
+    "bestTimeOfDay": "Ban ngày",
+    "budget": 0,
+    "ticketPrice": 0,
+    "avgRating": 4.7,
+    "rating": 4.7,
+    "district": "Thị xã An Khê",
+    "districtId": "D_ANKHE",
+    "category": "Di tích Lịch sử - Văn hóa - Khảo cổ",
+    "categoryId": "CAT_GL_HISTORY",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_RUNGCAOSU_CHUPAH",
+    "locationId": "LOC_RUNGCAOSU_CHUPAH",
+    "name": "Rừng Cao su Chư Păh (Mùa thay lá)",
+    "description": "Con đường rợp bóng hàng cây cao su thẳng tắp, chuyển sắc từ vàng sang đỏ rực vào mùa rụng lá tạo nên khung cảnh lãng mạn đậm chất điện ảnh.",
+    "address": "Thị trấn Phú Hòa, Huyện Chư Păh, Gia Lai",
+    "latitude": 14.09,
+    "longitude": 108.05,
+    "lat": 14.09,
+    "lng": 108.05,
+    "imageUrl": "https://gialai.info/wp-content/uploads/2023/02/anh-3-3-3135.jpg",
+    "image_url": "https://gialai.info/wp-content/uploads/2023/02/anh-3-3-3135.jpg",
+    "imageUrls": [
+      "https://gialai.info/wp-content/uploads/2023/02/anh-3-3-3135.jpg",
+      "https://static.riviu.co/image/2022/12/18/b104c97c2f6b1f0aef14c3d82fb24982_output.jpeg"
+    ],
+    "bestTime": "Tháng 12 đến tháng 2 (mùa lá đỏ)",
+    "bestTimeOfDay": "Tháng 12 đến tháng 2 (mùa lá đỏ)",
+    "budget": 0,
+    "ticketPrice": 0,
+    "avgRating": 4.7,
+    "rating": 4.7,
+    "district": "Huyện Chư Păh",
+    "districtId": "D_CHUPAH",
+    "category": "Điểm du lịch sinh thái, danh lam thắng cảnh tự nhiên",
+    "categoryId": "CAT_GL_NATURE",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_THACPHUCUONG",
+    "locationId": "LOC_THACPHUCUONG",
+    "name": "Thác Phú Cường",
+    "description": "Thác nước tự nhiên cao hơn 45m đổ ầm vang trên vách đá bazan của miệng núi lửa cổ đã tắt, tạo nên làn sương nước kỳ ảo phản chiếu cầu vồng 7 sắc rực rỡ.",
+    "address": "Xã Dun, Huyện Chư Sê, Gia Lai",
+    "latitude": 13.6822,
+    "longitude": 108.1256,
+    "lat": 13.6822,
+    "lng": 108.1256,
+    "imageUrl": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=800",
+    "image_url": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=800",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=800"
+    ],
+    "bestTime": "Sáng 8h - 11h ngắm cầu vồng nước",
+    "bestTimeOfDay": "Sáng 8h - 11h ngắm cầu vồng nước",
+    "budget": 25000,
+    "ticketPrice": 25000,
+    "avgRating": 4.7,
+    "rating": 4.7,
+    "district": "Huyện Chư Sê",
+    "districtId": "D_CHUSE",
+    "category": "Điểm du lịch sinh thái, danh lam thắng cảnh tự nhiên",
+    "categoryId": "CAT_GL_NATURE",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_BD_HON_KHO",
+    "locationId": "LOC_BD_HON_KHO",
+    "name": "Đảo Hòn Khô & Làng chài Nhơn Hải",
+    "description": "Hòn đảo hoang sơ với bãi cát trắng phau, cây cầu gỗ men theo vách đá và con đường xuyên biển lộ ra khi thủy triều rút cùng rạn san hô tự nhiên đa dạng.",
+    "address": "Thôn Hải Đông, Xã Nhơn Hải, Thành phố Quy Nhơn",
+    "latitude": 13.7667,
+    "longitude": 109.2981,
+    "lat": 13.7667,
+    "lng": 109.2981,
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Nh%C6%A1n_H%E1%BA%A3i%2C_Quy_Nh%C6%A1n_-_33275233023.jpg/1280px-Nh%C6%A1n_H%E1%BA%A3i%2C_Quy_Nh%C6%A1n_-_33275233023.jpg",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Nh%C6%A1n_H%E1%BA%A3i%2C_Quy_Nh%C6%A1n_-_33275233023.jpg/1280px-Nh%C6%A1n_H%E1%BA%A3i%2C_Quy_Nh%C6%A1n_-_33275233023.jpg",
+    "imageUrls": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Nh%C6%A1n_H%E1%BA%A3i%2C_Quy_Nh%C6%A1n_-_33275233023.jpg/1280px-Nh%C6%A1n_H%E1%BA%A3i%2C_Quy_Nh%C6%A1n_-_33275233023.jpg"
+    ],
+    "bestTime": "Mùa khô tháng 3 đến tháng 9",
+    "bestTimeOfDay": "Mùa khô tháng 3 đến tháng 9",
+    "budget": 50000,
+    "ticketPrice": 50000,
+    "avgRating": 4.7,
+    "rating": 4.7,
+    "district": "Thành phố Quy Nhơn",
+    "districtId": "D_QUYNHON",
+    "category": "Điểm du lịch sinh thái, danh lam thắng cảnh tự nhiên",
+    "categoryId": "CAT_GL_NATURE",
+    "legacy_province": "Bình Định",
+    "current_province": "Gia Lai",
+    "geographic_region": "Duyên hải",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_DOICOHONG_DAKDOA",
+    "locationId": "LOC_DOICOHONG_DAKDOA",
+    "name": "Đồi Cỏ Hồng Đắk Đoa (Rừng thông Glar)",
+    "description": "Thảo nguyên cỏ hồng đuôi chồn bồng bềnh dưới ánh sương mai xen lẫn rừng thông dáng bonsai tự nhiên, tạo nên bức tranh thiên nhiên lãng mạn níu chân du khách.",
+    "address": "Xã Glar, Huyện Đắk Đoa, Gia Lai",
+    "latitude": 13.98,
+    "longitude": 108.15,
+    "lat": 13.98,
+    "lng": 108.15,
+    "imageUrl": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=800",
+    "image_url": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=800",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=800"
+    ],
+    "bestTime": "Sáng sớm bình minh tháng 11 - 12",
+    "bestTimeOfDay": "Sáng sớm bình minh tháng 11 - 12",
+    "budget": 0,
+    "ticketPrice": 0,
+    "avgRating": 4.7,
+    "rating": 4.7,
+    "district": "Huyện Đắk Đoa",
+    "districtId": "D_DAKDOA",
+    "category": "Điểm du lịch sinh thái, danh lam thắng cảnh tự nhiên",
+    "categoryId": "CAT_GL_NATURE",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_CONGVIEN_DIENHONG",
+    "locationId": "LOC_CONGVIEN_DIENHONG",
+    "name": "Công viên Diên Hồng",
+    "description": "Lá phổi xanh giữa lòng đô thị Pleiku với hồ nước trong lành, cầu treo uốn lượn, vườn hoa và những quán cafe ven hồ râm mát cho du khách tản bộ thư giãn.",
+    "address": "Đường Thống Nhất, Phường Ia Kring, TP. Pleiku, Gia Lai",
+    "latitude": 13.975,
+    "longitude": 107.99,
+    "lat": 13.975,
+    "lng": 107.99,
+    "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+    "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800"
+    ],
+    "bestTime": "Sáng sớm hoặc Chiều mát",
+    "bestTimeOfDay": "Sáng sớm hoặc Chiều mát",
+    "budget": 0,
+    "ticketPrice": 0,
+    "avgRating": 4.6,
+    "rating": 4.6,
+    "district": "Thành phố Pleiku",
+    "districtId": "D_PLEIKU",
+    "category": "Công viên & Không gian cảnh quan công cộng",
+    "categoryId": "CAT_GL_PARK",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_NHADAY_PLEIKU",
+    "locationId": "LOC_NHADAY_PLEIKU",
+    "name": "Di tích Lịch sử Nhà đày Pleiku",
+    "description": "Di tích quốc gia đặc biệt ghi dấu tội ác thực dân Pháp và đế quốc Mỹ, đồng thời tôn vinh ý chí kiên trung bất khuất của các chiến sĩ cách mạng Tây Nguyên.",
+    "address": "Đường Ngô Gia Tự, Phường Hội Thương, TP. Pleiku, Gia Lai",
+    "latitude": 13.9833,
+    "longitude": 108.005,
+    "lat": 13.9833,
+    "lng": 108.005,
+    "imageUrl": "https://cdn.xanhsm.com/2025/03/1b3f9e9b-lang-plei-op-2.jpg",
+    "image_url": "https://cdn.xanhsm.com/2025/03/1b3f9e9b-lang-plei-op-2.jpg",
+    "imageUrls": [
+      "https://cdn.xanhsm.com/2025/03/1b3f9e9b-lang-plei-op-2.jpg"
+    ],
+    "bestTime": "Giờ hành chính (7h30 - 17h)",
+    "bestTimeOfDay": "Giờ hành chính (7h30 - 17h)",
+    "budget": 0,
+    "ticketPrice": 0,
+    "avgRating": 4.6,
+    "rating": 4.6,
+    "district": "Thành phố Pleiku",
+    "districtId": "D_PLEIKU",
+    "category": "Di tích Lịch sử - Văn hóa - Khảo cổ",
+    "categoryId": "CAT_GL_HISTORY",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_BD_THANH_HOANG_DE",
+    "locationId": "LOC_BD_THANH_HOANG_DE",
+    "name": "Di tích Thành Hoàng Đế & Tháp Cánh Tiên",
+    "description": "Kinh đô Đồ Bàn cổ xưa của Vương quốc Champa và đại bản doanh của nghĩa quân Tây Sơn dưới triều vua Thái Đức Nguyễn Nhạc, với ngọn tháp Cánh Tiên thanh thoát sừng sững giữa cố thành.",
+    "address": "Xã Nhơn Hậu, Thị xã An Nhơn",
+    "latitude": 13.9333,
+    "longitude": 109.0833,
+    "lat": 13.9333,
+    "lng": 109.0833,
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Th%C3%A1p_C%C3%A1nh_Ti%C3%AAn%2C_An_Nh%C6%A1n%2C_B%C3%ACnh_%C4%90%E1%BB%8Bnh..JPG/1280px-Th%C3%A1p_C%C3%A1nh_Ti%C3%AAn%2C_An_Nh%C6%A1n%2C_B%C3%ACnh_%C4%90%E1%BB%8Bnh..JPG",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Th%C3%A1p_C%C3%A1nh_Ti%C3%AAn%2C_An_Nh%C6%A1n%2C_B%C3%ACnh_%C4%90%E1%BB%8Bnh..JPG/1280px-Th%C3%A1p_C%C3%A1nh_Ti%C3%AAn%2C_An_Nh%C6%A1n%2C_B%C3%ACnh_%C4%90%E1%BB%8Bnh..JPG",
+    "imageUrls": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Th%C3%A1p_C%C3%A1nh_Ti%C3%AAn%2C_An_Nh%C6%A1n%2C_B%C3%ACnh_%C4%90%E1%BB%8Bnh..JPG/1280px-Th%C3%A1p_C%C3%A1nh_Ti%C3%AAn%2C_An_Nh%C6%A1n%2C_B%C3%ACnh_%C4%90%E1%BB%8Bnh..JPG"
+    ],
+    "bestTime": "Ban ngày",
+    "bestTimeOfDay": "Ban ngày",
+    "budget": 20000,
+    "ticketPrice": 20000,
+    "avgRating": 4.6,
+    "rating": 4.6,
+    "district": "Thị xã An Nhơn",
+    "districtId": "D_ANNHON",
+    "category": "Di tích Lịch sử - Văn hóa - Khảo cổ",
+    "categoryId": "CAT_GL_HISTORY",
+    "legacy_province": "Bình Định",
+    "current_province": "Gia Lai",
+    "geographic_region": "Duyên hải",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_BD_HAM_HO",
+    "locationId": "LOC_BD_HAM_HO",
+    "name": "Khu du lịch sinh thái Hầm Hô",
+    "description": "Thắng cảnh danh tiếng vùng Tây Sơn với lòng sông Kút đầy những khối đá hoa cương muôn hình vạn trạng, rừng nguyên sinh râm mát và hoạt động chèo thuyền du ngoạn ngắm cảnh.",
+    "address": "Xã Tây Phú, Huyện Tây Sơn",
+    "latitude": 13.8722,
+    "longitude": 108.8778,
+    "lat": 13.8722,
+    "lng": 108.8778,
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Th%E1%BA%AFng_c%E1%BA%A3nh_H%E1%BA%A7m_H%C3%B4.jpg/1280px-Th%E1%BA%AFng_c%E1%BA%A3nh_H%E1%BA%A7m_H%C3%B4.jpg",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Th%E1%BA%AFng_c%E1%BA%A3nh_H%E1%BA%A7m_H%C3%B4.jpg/1280px-Th%E1%BA%AFng_c%E1%BA%A3nh_H%E1%BA%A7m_H%C3%B4.jpg",
+    "imageUrls": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Th%E1%BA%AFng_c%E1%BA%A3nh_H%E1%BA%A7m_H%C3%B4.jpg/1280px-Th%E1%BA%AFng_c%E1%BA%A3nh_H%E1%BA%A7m_H%C3%B4.jpg"
+    ],
+    "bestTime": "Sáng mát",
+    "bestTimeOfDay": "Sáng mát",
+    "budget": 40000,
+    "ticketPrice": 40000,
+    "avgRating": 4.6,
+    "rating": 4.6,
+    "district": "Huyện Tây Sơn",
+    "districtId": "D_TAYSON",
+    "category": "Điểm du lịch sinh thái, danh lam thắng cảnh tự nhiên",
+    "categoryId": "CAT_GL_NATURE",
+    "legacy_province": "Bình Định",
+    "current_province": "Gia Lai",
+    "geographic_region": "Duyên hải",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_LANG_MOHRA",
+    "locationId": "LOC_LANG_MOHRA",
+    "name": "Làng Du lịch Cộng đồng Mơ Hra - K'Păng",
+    "description": "Điểm du lịch cộng đồng kiểu mẫu của người Bahnar với nghề dệt thổ cẩm truyền thống, tạc tượng gỗ dân gian và những điệu múa xoang nhịp nhàng.",
+    "address": "Xã K'Dang, Huyện Đắk Đoa, Gia Lai",
+    "latitude": 13.95,
+    "longitude": 108.2,
+    "lat": 13.95,
+    "lng": 108.2,
+    "imageUrl": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=800",
+    "image_url": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=800",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=800"
+    ],
+    "bestTime": "Cuối tuần",
+    "bestTimeOfDay": "Cuối tuần",
+    "budget": 0,
+    "ticketPrice": 0,
+    "avgRating": 4.6,
+    "rating": 4.6,
+    "district": "Huyện Đắk Đoa",
+    "districtId": "D_DAKDOA",
+    "category": "Văn hóa Dân tộc, Làng nghề & Lễ hội truyền thống",
+    "categoryId": "CAT_GL_CULTURE",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_THUYDIEN_IALY",
+    "locationId": "LOC_THUYDIEN_IALY",
+    "name": "Lòng Hồ Thủy điện Ia Ly",
+    "description": "Công trình thủy điện ngầm lớn thứ hai Việt Nam trên dòng sông Sê San hùng vĩ, kết hợp lòng hồ sinh thái mênh mông sông nước giữa điệp trùng đồi núi.",
+    "address": "Xã Ia Mơ Nông, Huyện Chư Păh, Gia Lai",
+    "latitude": 14.215,
+    "longitude": 107.828,
+    "lat": 14.215,
+    "lng": 107.828,
+    "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+    "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800"
+    ],
+    "bestTime": "Buổi chiều ngắm hoàng hôn sông Sê San",
+    "bestTimeOfDay": "Buổi chiều ngắm hoàng hôn sông Sê San",
+    "budget": 30000,
+    "ticketPrice": 30000,
+    "avgRating": 4.6,
+    "rating": 4.6,
+    "district": "Huyện Chư Păh",
+    "districtId": "D_CHUPAH",
+    "category": "Điểm du lịch sinh thái, danh lam thắng cảnh tự nhiên",
+    "categoryId": "CAT_GL_NATURE",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_THAC_HANGDOI",
+    "locationId": "LOC_THAC_HANGDOI",
+    "name": "Thác Hang Dơi Kbang",
+    "description": "Thác nước hoang sơ chia làm nhiều tầng đá cuội tự nhiên giữa thung lũng rừng nguyên sinh Kbang, điểm dã ngoại picnic yêu thích của giới phượt thủ.",
+    "address": "Thị trấn Kbang, Huyện K'Bang, Gia Lai",
+    "latitude": 14.18,
+    "longitude": 108.6,
+    "lat": 14.18,
+    "lng": 108.6,
+    "imageUrl": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=800",
+    "image_url": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=800",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=800"
+    ],
+    "bestTime": "Buổi sáng",
+    "bestTimeOfDay": "Buổi sáng",
+    "budget": 15000,
+    "ticketPrice": 15000,
+    "avgRating": 4.6,
+    "rating": 4.6,
+    "district": "Huyện K'Bang",
+    "districtId": "D_KBANG",
+    "category": "Điểm du lịch sinh thái, danh lam thắng cảnh tự nhiên",
+    "categoryId": "CAT_GL_NATURE",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_CONGVIEN_DONGXANH",
+    "locationId": "LOC_CONGVIEN_DONGXANH",
+    "name": "Công viên Văn hóa Đồng Xanh",
+    "description": "Khu sinh thái văn hóa tái hiện thu nhỏ bản sắc Tây Nguyên với nhà mồ, nhà rông, tượng gỗ dân gian, cây hóa thạch triệu năm và cây đàn T'rưng nước độc đáo.",
+    "address": "Thôn 5, Xã An Phú, TP. Pleiku, Gia Lai",
+    "latitude": 13.94,
+    "longitude": 108.06,
+    "lat": 13.94,
+    "lng": 108.06,
+    "imageUrl": "https://cdn.xanhsm.com/2025/03/742405be-cho-dem-pleiku-gia-lai-8.jpg",
+    "image_url": "https://cdn.xanhsm.com/2025/03/742405be-cho-dem-pleiku-gia-lai-8.jpg",
+    "imageUrls": [
+      "https://cdn.xanhsm.com/2025/03/742405be-cho-dem-pleiku-gia-lai-8.jpg",
+      "https://dulichdemen.vn/wp-content/uploads/2023/01/quang-truong-dai-doan-ket-pleiku-gia-lai-du-lich-de-men-vn.jpg"
+    ],
+    "bestTime": "Ban ngày cuối tuần",
+    "bestTimeOfDay": "Ban ngày cuối tuần",
+    "budget": 40000,
+    "ticketPrice": 40000,
+    "avgRating": 4.5,
+    "rating": 4.5,
+    "district": "Thành phố Pleiku",
+    "districtId": "D_PLEIKU",
+    "category": "Công viên & Không gian cảnh quan công cộng",
+    "categoryId": "CAT_GL_PARK",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_CHIENTHANG_DAKPO",
+    "locationId": "LOC_CHIENTHANG_DAKPO",
+    "name": "Di tích Lịch sử Chiến thắng Đắk Pơ",
+    "description": "Tượng đài chiến thắng trận phục kích Đắk Pơ lẫy lừng ngày 24/6/1954 trên Quốc lộ 19, được mệnh danh là 'Điện Biên Phủ ở Liên khu V'.",
+    "address": "Quốc lộ 19, Huyện Đắk Pơ, Gia Lai",
+    "latitude": 13.95,
+    "longitude": 108.55,
+    "lat": 13.95,
+    "lng": 108.55,
+    "imageUrl": "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2025/7/3/b5661274536c4ba4b9999460477570e6",
+    "image_url": "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2025/7/3/b5661274536c4ba4b9999460477570e6",
+    "imageUrls": [
+      "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2025/7/3/b5661274536c4ba4b9999460477570e6"
+    ],
+    "bestTime": "Ban ngày",
+    "bestTimeOfDay": "Ban ngày",
+    "budget": 0,
+    "ticketPrice": 0,
+    "avgRating": 4.5,
+    "rating": 4.5,
+    "district": "Thị xã An Khê",
+    "districtId": "D_ANKHE",
+    "category": "Di tích Lịch sử - Văn hóa - Khảo cổ",
+    "categoryId": "CAT_GL_HISTORY",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_THAC_BAUCAN",
+    "locationId": "LOC_THAC_BAUCAN",
+    "name": "Thác Bàu Cạn (Thác Đội 3)",
+    "description": "Dòng thác thơ mộng nép mình bên cạnh những nương chè Bàu Cạn trăm tuổi xanh ngắt, điểm cắm trại cuối tuần quen thuộc của người dân phố núi.",
+    "address": "Xã Bàu Cạn, Huyện Chư Prông, Gia Lai",
+    "latitude": 13.85,
+    "longitude": 107.98,
+    "lat": 13.85,
+    "lng": 107.98,
+    "imageUrl": "https://media.mia.vn/uploads/blog-du-lich/thac-phu-cuong-chiem-nguong-tuyet-tac-cua-nui-rung-gia-lai-04-1659179228.jpg",
+    "image_url": "https://media.mia.vn/uploads/blog-du-lich/thac-phu-cuong-chiem-nguong-tuyet-tac-cua-nui-rung-gia-lai-04-1659179228.jpg",
+    "imageUrls": [
+      "https://media.mia.vn/uploads/blog-du-lich/thac-phu-cuong-chiem-nguong-tuyet-tac-cua-nui-rung-gia-lai-04-1659179228.jpg",
+      "https://gialai.info/wp-content/uploads/2023/02/anh-3-3-3135.jpg"
+    ],
+    "bestTime": "Mùa mưa hoặc đầu mùa khô",
+    "bestTimeOfDay": "Mùa mưa hoặc đầu mùa khô",
+    "budget": 0,
+    "ticketPrice": 0,
+    "avgRating": 4.5,
+    "rating": 4.5,
+    "district": "Huyện Chư Prông",
     "districtId": "D_CHUPRONG",
-    "name": "Huyện Chư Prông",
-    "regionType": "Cao nguyên Nam Gia Lai",
-    "description": "Vùng biên cương với thắng cảnh thác Bàu Cạn và di tích lịch sử Thung lũng Ia Drăng"
+    "category": "Điểm du lịch sinh thái, danh lam thắng cảnh tự nhiên",
+    "categoryId": "CAT_GL_NATURE",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên",
+    "reviewCount": 18
   },
   {
+    "id": "LOC_THAC_IAKREL",
+    "locationId": "LOC_THAC_IAKREL",
+    "name": "Thác Ia Krel",
+    "description": "Dòng thác hoang sơ miền biên giới Đức Cơ với các bãi đá bazan bằng phẳng, thích hợp cho các hoạt động dã ngoại ngoài trời và câu cá thư giãn.",
+    "address": "Xã Ia Krel, Huyện Đức Cơ, Gia Lai",
+    "latitude": 13.78,
+    "longitude": 107.72,
+    "lat": 13.78,
+    "lng": 107.72,
+    "imageUrl": "https://tungphuongfood.com.vn/wp-content/uploads/2023/05/thac-hang-doi-kbang-6.jpg",
+    "image_url": "https://tungphuongfood.com.vn/wp-content/uploads/2023/05/thac-hang-doi-kbang-6.jpg",
+    "imageUrls": [
+      "https://tungphuongfood.com.vn/wp-content/uploads/2023/05/thac-hang-doi-kbang-6.jpg"
+    ],
+    "bestTime": "Ban ngày",
+    "bestTimeOfDay": "Ban ngày",
+    "budget": 0,
+    "ticketPrice": 0,
+    "avgRating": 4.5,
+    "rating": 4.5,
+    "district": "Huyện Đức Cơ",
     "districtId": "D_DUCCO",
-    "name": "Huyện Đức Cơ",
-    "regionType": "Cửa khẩu Quốc tế",
-    "description": "Vùng cửa khẩu quốc tế Lệ Thanh và thắng cảnh thác nước Ia Krel hoang sơ"
+    "category": "Điểm du lịch sinh thái, danh lam thắng cảnh tự nhiên",
+    "categoryId": "CAT_GL_NATURE",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên",
+    "reviewCount": 18
   },
   {
+    "id": "LOC_THUNGLUNG_IADRANG",
+    "locationId": "LOC_THUNGLUNG_IADRANG",
+    "name": "Di tích Thung lũng Ia Drăng",
+    "description": "Nơi diễn ra trận chạm trán quy mô lớn đầu tiên giữa quân chủ lực Việt Nam và kỵ binh bay Mỹ vào tháng 11/1965 dưới chân núi Chu Pơr linh thiêng.",
+    "address": "Xã Ia Me, Huyện Chư Prông, Gia Lai",
+    "latitude": 13.58,
+    "longitude": 107.75,
+    "lat": 13.58,
+    "lng": 107.75,
+    "imageUrl": "https://media.mia.vn/uploads/blog-du-lich/thac-phu-cuong-chiem-nguong-tuyet-tac-cua-nui-rung-gia-lai-04-1659179228.jpg",
+    "image_url": "https://media.mia.vn/uploads/blog-du-lich/thac-phu-cuong-chiem-nguong-tuyet-tac-cua-nui-rung-gia-lai-04-1659179228.jpg",
+    "imageUrls": [
+      "https://media.mia.vn/uploads/blog-du-lich/thac-phu-cuong-chiem-nguong-tuyet-tac-cua-nui-rung-gia-lai-04-1659179228.jpg"
+    ],
+    "bestTime": "Ban ngày",
+    "bestTimeOfDay": "Ban ngày",
+    "budget": 0,
+    "ticketPrice": 0,
+    "avgRating": 4.4,
+    "rating": 4.4,
+    "district": "Huyện Chư Prông",
+    "districtId": "D_CHUPRONG",
+    "category": "Di tích Lịch sử - Văn hóa - Khảo cổ",
+    "categoryId": "CAT_GL_HISTORY",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên",
+    "reviewCount": 18
+  },
+  {
+    "id": "LOC_THAP_BANGKENG",
+    "locationId": "LOC_THAP_BANGKENG",
+    "name": "Tháp Bang Keng (Phế tích Tháp Chăm)",
+    "description": "Dấu tích kiến trúc văn hóa Chăm Pa cổ xưa trên lưu vực sông Ba ở phía nam Gia Lai, minh chứng sinh động cho giao lưu văn hóa giữa duyên hải và cao nguyên.",
+    "address": "Xã Krông Năng, Huyện Krông Pa, Gia Lai",
+    "latitude": 13.25,
+    "longitude": 108.7,
+    "lat": 13.25,
+    "lng": 108.7,
+    "imageUrl": "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2025/7/3/b5661274536c4ba4b9999460477570e6",
+    "image_url": "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2025/7/3/b5661274536c4ba4b9999460477570e6",
+    "imageUrls": [
+      "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2025/7/3/b5661274536c4ba4b9999460477570e6"
+    ],
+    "bestTime": "Sáng mát",
+    "bestTimeOfDay": "Sáng mát",
+    "budget": 0,
+    "ticketPrice": 0,
+    "avgRating": 4.4,
+    "rating": 4.4,
+    "district": "Huyện Krông Pa",
     "districtId": "D_KRONPA",
-    "name": "Huyện Krông Pa",
-    "regionType": "Thung lũng Nắng",
-    "description": "Vùng hạ lưu sông Ba trù phú với đặc sản bò một nắng và di tích tháp Bang Keng"
+    "category": "Di tích Lịch sử - Văn hóa - Khảo cổ",
+    "categoryId": "CAT_GL_HISTORY",
+    "legacy_province": "Gia Lai",
+    "current_province": "Gia Lai",
+    "geographic_region": "Cao nguyên",
+    "reviewCount": 18
   }
 ];
 
@@ -778,1244 +1495,1289 @@ export const MOCK_DISHES = [
     "dishId": "DISH_BANHCANH_CALOC",
     "name": "Bánh canh cá lóc bột gạo Pleiku",
     "description": "Tô bánh canh nóng hổi sợi gạo tươi dai mềm, thịt cá lóc đồng om nghệ vàng ươm thơm phức.",
+    "priceRange": null,
+    "budget": null,
     "imageUrl": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=100044418626393",
     "imageUrls": [
-      "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=100044418626393",
-      "https://alltop.vn/backend/media/images/posts/3271/Banh_canh_Ca_Loc_O_Be-277988.png",
-      "https://ticotravel.com.vn/wp-content/uploads/2022/05/Banh-canh-ca-loc-1.jpg",
-      "https://alltop.vn/backend/media/images/posts/690/Banh_canh_Ca_Loc_O_Be-278653.png"
+      "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=100044418626393"
     ],
-    "budget": "",
-    "mealTime": "Buổi sáng / Đêm",
     "tasteType": "TRADITIONAL",
+    "mealTime": "Buổi sáng / Đêm",
     "suggestedEateries": [
       "Bánh canh cá lóc A Mập (04 Lê Hồng Phong, P. Diên Hồng, TP. Pleiku, Gia Lai - 06:00 - 22:00)",
       "Bánh canh cá lóc Đồng Nhi (135 Hùng Vương, P. Hội Thương, TP. Pleiku, Gia Lai - 06:00 - 21:00)",
       "Bánh canh Bà Định (28 Trần Hưng Đạo, P. Tây Sơn, TP. Pleiku, Gia Lai - 06:00 - 20:00)"
     ],
-    "regions": [
-      "Gia Lai"
-    ]
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
     "id": "DISH_BANHHOILONGHEO_TS",
     "dishId": "DISH_BANHHOILONGHEO_TS",
     "name": "Bánh hỏi lòng heo Tây Sơn quán Mẫn",
     "description": "Bánh hỏi sợi mềm tơi thoa mỡ hẹ ăn cùng đĩa lòng heo luộc thơm ngọt và chén cháo huyết nóng hổi.",
+    "priceRange": null,
+    "budget": null,
     "imageUrl": "https://bepnhatoi.net/wp-content/uploads/2025/06/dia-banh-hoi-long-heo-quy-nhon-hap-dan-tai-quan-man-voi-banh-hoi-trang-tinh-long-heo-luoc-day-dan-chao-va-rau-song.webp",
     "imageUrls": [
-      "https://bepnhatoi.net/wp-content/uploads/2025/06/dia-banh-hoi-long-heo-quy-nhon-hap-dan-tai-quan-man-voi-banh-hoi-trang-tinh-long-heo-luoc-day-dan-chao-va-rau-song.webp",
-      "https://giadinh.mediacdn.vn/296230595582509056/2022/8/30/photo-1-16616745913211172715108-1661817673113-16618176749941014335991.jpg",
-      "https://tuyhoago.com/wp-content/uploads/2020/10/banh-hoi-long-heo-phu-yen-su-ket-hop-doc-dao-ma-hap-dan-cua-am-thuc2.jpg"
+      "https://bepnhatoi.net/wp-content/uploads/2025/06/dia-banh-hoi-long-heo-quy-nhon-hap-dan-tai-quan-man-voi-banh-hoi-trang-tinh-long-heo-luoc-day-dan-chao-va-rau-song.webp"
     ],
-    "budget": "",
-    "mealTime": "Buổi sáng",
     "tasteType": "TRADITIONAL",
+    "mealTime": "Buổi sáng",
     "suggestedEateries": [
       "Quán Mẫn (Bánh hỏi lòng heo trứ danh Tây Sơn) (76 Trần Phú, TT. Phú Phong, huyện Tây Sơn - 06:00 - 12:00)",
       "Bánh hỏi lòng heo Diên Hồng (20 Diên Hồng, P. Lê Hồng Phong, TP. Quy Nhơn - 06:00 - 10:30)",
       "Bánh hỏi lòng heo Hồng Linh (242 Lạc Long Quân, P. Trần Quang Diệu (ngã ba Phú Tài), Quy Nhơn - 06:00 - 11:00)"
     ],
-    "regions": [
-      "Gia Lai"
-    ]
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
-    "id": "DISH_BANHIT_LAGAI",
-    "dishId": "DISH_BANHIT_LAGAI",
-    "name": "Bánh ít lá gai xứ dừa Bình Định",
-    "description": "Vỏ bánh dẻo quánh đen tuyền từ lá gai tự nhiên bọc nhân dừa đậu xanh ngọt bùi thơm hương gừng cay.",
-    "imageUrl": "https://mia.vn/media/uploads/blog-du-lich/banh-it-la-gai-binh-dinh-4-1679331850.jpg",
+    "id": "DISH_BD_BANHXEOTOMNHAY",
+    "dishId": "DISH_BD_BANHXEOTOMNHAY",
+    "name": "Bánh xèo tôm nhảy Mỹ Cang",
+    "description": "Bánh xèo giòn rụm đúc trên khuôn gang với những con tôm đất tươi rói nhảy tanh tách, ăn kèm bánh tráng gạo dẻo, xoài ghém, dưa leo và nước mắm ớt tỏi chua ngọt.",
+    "priceRange": "30.000đ - 50.000đ",
+    "budget": "30.000đ - 50.000đ",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a5/B%C3%A1nh_x%C3%A8o_with_n%C6%B0%E1%BB%9Bc_m%E1%BA%AFm.jpg",
     "imageUrls": [
-      "https://mia.vn/media/uploads/blog-du-lich/banh-it-la-gai-binh-dinh-4-1679331850.jpg",
-      "https://dacsanvietnam.co/wp-content/uploads/2020/09/banh-it-la-gai-binh-dinh.jpg",
-      "https://static.vinwonders.com/production/banh-it-la-gai-binh-dinh-6-1046x1536.jpg",
-      "https://imagevietnam.vnanet.vn/Upload/2021/1/14/14012021144850899-2_resize.JPG"
+      "https://upload.wikimedia.org/wikipedia/commons/a/a5/B%C3%A1nh_x%C3%A8o_with_n%C6%B0%E1%BB%9Bc_m%E1%BA%AFm.jpg"
     ],
-    "budget": "",
-    "mealTime": "Ăn tráng miệng / Quà biếu",
-    "tasteType": "TRADITIONAL",
+    "tasteType": "Giòn rụm, ngọt hải sản",
+    "mealTime": "Bữa xế chiều, tối",
     "suggestedEateries": [
-      "Bánh ít lá gai Bà Dư (Thôn Nam Tượng 1, xã Nhơn Tân, thị xã An Nhơn - 07:00 - 20:00)",
-      "Lò bánh ít Cụ Bà Tuy Phước (Khu chợ Tuy Phước, TT. Tuy Phước, huyện Tuy Phước - 06:00 - 18:00)",
-      "Cửa hàng Đặc sản Phương Nghi (115-117 Tây Sơn, P. Quang Trung, TP. Quy Nhơn - 07:00 - 21:30)"
+      "Bánh xèo tôm nhảy Gia Vỹ - 14 Diên Hồng, TP. Quy Nhơn",
+      "Bánh xèo tôm nhảy Mỹ Cang - Cầu Mỹ Cang, Xã Phước Sơn, Tuy Phước",
+      "Bánh xèo tôm nhảy Rau Mầm - 91 Đống Đa, TP. Quy Nhơn"
     ],
-    "regions": [
-      "Gia Lai"
-    ]
+    "legacy_province": "Bình Định",
+    "geographic_region": "Duyên hải"
   },
   {
     "id": "DISH_BANHXEOTOM_QN",
     "dishId": "DISH_BANHXEOTOM_QN",
     "name": "Bánh xèo tôm nhảy rau mầm Gia Vỹ",
     "description": "Vỏ bánh đúc giòn rụm trên chảo gang, tôm đất tươi nhảy tanh tách, ăn kèm xoài băm, rau mầm non và nước mắm ớt tỏi.",
+    "priceRange": null,
+    "budget": null,
     "imageUrl": "https://statics.vinpearl.com/banh-xeo-tom-nhay-quy-nhon-7_1706527733.jpg",
     "imageUrls": [
-      "https://statics.vinpearl.com/banh-xeo-tom-nhay-quy-nhon-7_1706527733.jpg",
-      "https://datviettour.com.vn/uploads/images/tin-tuc-SEO/mien-trung/quy-nhon/am-thuc/Banh-xeo-Tom-nhay-Rau-Mam.jpg",
-      "https://thoitiet24h.vn/templateEditor/kcfinder/uploads/images/quan-banh-xeo-tom-nhay-rau-mam-1.jpg"
+      "https://statics.vinpearl.com/banh-xeo-tom-nhay-quy-nhon-7_1706527733.jpg"
     ],
-    "budget": "",
-    "mealTime": "Buổi sáng / Buổi tối",
     "tasteType": "HOT_TREND",
+    "mealTime": "Buổi sáng / Buổi tối",
     "suggestedEateries": [
       "Bánh xèo tôm nhảy Gia Vỹ 1 (14 Diên Hồng, P. Lê Hồng Phong, TP. Quy Nhơn - 06:00 - 22:00)",
       "Bánh xèo tôm nhảy Gia Vỹ 2 (118 Đống Đa, P. Thị Nại, TP. Quy Nhơn - 06:00 - 22:00)",
       "Bánh xèo Rau Mầm (91 Đống Đa, P. Thị Nại, TP. Quy Nhơn - 06:30 - 21:30)",
       "Bánh xèo tôm nhảy Cô Năm Mỹ Cang (Chân cầu Mỹ Cang, xã Phước Sơn, huyện Tuy Phước (quán gốc lâu đời) - 07:00 - 17:00)"
     ],
-    "regions": [
-      "Gia Lai"
-    ]
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "DISH_BD_BANHITLAGAI",
+    "dishId": "DISH_BD_BANHITLAGAI",
+    "name": "Bánh ít lá gai Tuy Phước",
+    "description": "Đặc sản bánh dẻo truyền thống bọc lá chuối hình chóp nón tháp Chăm, vỏ bánh giã từ lá gai nhung đen bóng, nhân đậu xanh dừa béo bùi ngọt dịu.",
+    "priceRange": "5.000đ - 10.000đ/cái",
+    "budget": "5.000đ - 10.000đ/cái",
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/B%C3%A1nh_%C3%ADt_tr%E1%BA%A7n.JPG/1280px-B%C3%A1nh_%C3%ADt_tr%E1%BA%A7n.JPG",
+    "imageUrls": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/B%C3%A1nh_%C3%ADt_tr%E1%BA%A7n.JPG/1280px-B%C3%A1nh_%C3%ADt_tr%E1%BA%A7n.JPG"
+    ],
+    "tasteType": "Ngọt bùi, dẻo thơm",
+    "mealTime": "Ăn vặt, quà biếu",
+    "suggestedEateries": [
+      "Bánh ít lá gai Bà Dư - Xã Phước Lộc, Tuy Phước",
+      "Cửa hàng đặc sản Bình Định Như Ý - 156 Nguyễn Huệ, TP. Quy Nhơn"
+    ],
+    "legacy_province": "Bình Định",
+    "geographic_region": "Duyên hải"
+  },
+  {
+    "id": "DISH_BANHIT_LAGAI",
+    "dishId": "DISH_BANHIT_LAGAI",
+    "name": "Bánh ít lá gai xứ dừa Bình Định",
+    "description": "Vỏ bánh dẻo quánh đen tuyền từ lá gai tự nhiên bọc nhân dừa đậu xanh ngọt bùi thơm hương gừng cay.",
+    "priceRange": null,
+    "budget": null,
+    "imageUrl": "https://mia.vn/media/uploads/blog-du-lich/banh-it-la-gai-binh-dinh-4-1679331850.jpg",
+    "imageUrls": [
+      "https://mia.vn/media/uploads/blog-du-lich/banh-it-la-gai-binh-dinh-4-1679331850.jpg"
+    ],
+    "tasteType": "TRADITIONAL",
+    "mealTime": "Ăn tráng miệng / Quà biếu",
+    "suggestedEateries": [
+      "Bánh ít lá gai Bà Dư (Thôn Nam Tượng 1, xã Nhơn Tân, thị xã An Nhơn - 07:00 - 20:00)",
+      "Lò bánh ít Cụ Bà Tuy Phước (Khu chợ Tuy Phước, TT. Tuy Phước, huyện Tuy Phước - 06:00 - 18:00)",
+      "Cửa hàng Đặc sản Phương Nghi (115-117 Tây Sơn, P. Quang Trung, TP. Quy Nhơn - 07:00 - 21:30)"
+    ],
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
     "id": "DISH_BOMOTNANG_KPA",
     "dishId": "DISH_BOMOTNANG_KPA",
     "name": "Bò một nắng muối kiến vàng Krông Pa",
     "description": "Thịt bò thăn tẩm ướp phơi đúng một nắng giòn ngọt chấm cùng muối kiến vàng chua cay đặc hữu đại ngàn.",
+    "priceRange": null,
+    "budget": null,
     "imageUrl": "https://cdn.hstatic.net/products/1000300839/dac-san-gia-lai-bo-1-nang-nguyet-vien-krong-pa_a8bf3a04f02a448fa193603317b64514_master.jpg",
     "imageUrls": [
-      "https://cdn.hstatic.net/products/1000300839/dac-san-gia-lai-bo-1-nang-nguyet-vien-krong-pa_a8bf3a04f02a448fa193603317b64514_master.jpg",
-      "https://www.cotrang.org/public/images/tin_dang/6/160_muoi-kien-vang-gia-lai-bk-9.jpg"
+      "https://cdn.hstatic.net/products/1000300839/dac-san-gia-lai-bo-1-nang-nguyet-vien-krong-pa_a8bf3a04f02a448fa193603317b64514_master.jpg"
     ],
-    "budget": "",
-    "mealTime": "Ăn vặt / Nhâm nhi",
     "tasteType": "TRADITIONAL",
+    "mealTime": "Ăn vặt / Nhâm nhi",
     "suggestedEateries": [
       "Bò một nắng Hải Nhi Krông Pa (147 Hùng Vương, TT. Phú Túc, huyện Krông Pa, Gia Lai - 07:00 - 21:00)",
       "Cửa hàng Đặc sản Chư Sê - Krông Pa (41 Anh Hùng Núp, P. Hoa Lư, TP. Pleiku, Gia Lai - 07:30 - 21:30)",
       "Bò một nắng Trọng Nghĩa (73 Nguyễn Huệ, P. Tây Sơn, TP. Pleiku, Gia Lai - 08:00 - 20:30)"
     ],
-    "regions": [
-      "Gia Lai"
-    ]
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
     "id": "DISH_BONUONG_ONGTRE",
     "dishId": "DISH_BONUONG_ONGTRE",
     "name": "Bò nướng ống tre hương rừng Chư Păh",
     "description": "Thịt bò tơ tẩm ướp tiêu rừng và lá chuối nhồi vào ống tre tươi nướng giữ trọn vẹn vị ngọt thanh thuần khiết.",
+    "priceRange": null,
+    "budget": null,
     "imageUrl": "https://touring.vn/wp-content/uploads/2024/04/Bo-Nuong-ong-tre.jpg",
     "imageUrls": [
-      "https://touring.vn/wp-content/uploads/2024/04/Bo-Nuong-ong-tre.jpg",
-      "https://cdn.realtech.com.vn/uploads/gostay/news/416/bo-nuong-ong-tre-gia-lai.jpeg",
-      "https://gialai.info/wp-content/uploads/2023/03/bo-nuong-ong-tre.jpg",
-      "https://tourdulichmangden.vn/upload/news/bo-nuong-ong-tre-gia-lai-9306.jpg"
+      "https://touring.vn/wp-content/uploads/2024/04/Bo-Nuong-ong-tre.jpg"
     ],
-    "budget": "",
-    "mealTime": "Buổi trưa / Buổi tối",
     "tasteType": "HOT_TREND",
+    "mealTime": "Buổi trưa / Buổi tối",
     "suggestedEateries": [
       "Ẩm thực Làng Kép Chư Păh (Làng Kép, xã Ia Mơ Nông, huyện Chư Păh, Gia Lai - 09:30 - 21:00)",
       "Quán Nướng Lửa Rừng Chư Păh (Quốc lộ 14, TT. Phú Hòa, huyện Chư Păh, Gia Lai - 10:00 - 21:30)",
       "Nhà hàng Ẩm thực Bản địa Plei Ốp (Làng Plei Ốp, P. Hoa Lư, TP. Pleiku, Gia Lai - 09:00 - 22:00)"
     ],
-    "regions": [
-      "Gia Lai"
-    ]
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "DISH_BD_BUNCHACA",
+    "dishId": "DISH_BD_BUNCHACA",
+    "name": "Bún chả cá Quy Nhơn",
+    "description": "Món bún trứ danh phố biển với nước dùng ngọt thanh hầm từ xương cá tươi, chả cá thu quết nhuyễn chiên vàng ruộm thơm phức ăn kèm rau sống và ớt dầm.",
+    "priceRange": "35.000đ - 55.000đ",
+    "budget": "35.000đ - 55.000đ",
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/B%C3%BAn_ch%E1%BA%A3_c%C3%A1%2C_th%C3%A1ng_8_n%C4%83m_2018.JPG/1280px-B%C3%BAn_ch%E1%BA%A3_c%C3%A1%2C_th%C3%A1ng_8_n%C4%83m_2018.JPG",
+    "imageUrls": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/B%C3%BAn_ch%E1%BA%A3_c%C3%A1%2C_th%C3%A1ng_8_n%C4%83m_2018.JPG/1280px-B%C3%BAn_ch%E1%BA%A3_c%C3%A1%2C_th%C3%A1ng_8_n%C4%83m_2018.JPG"
+    ],
+    "tasteType": "Đặc sản biển, thanh ngọt",
+    "mealTime": "Bữa sáng, trưa, tối",
+    "suggestedEateries": [
+      "Bún chả cá Thu - 261 Nguyễn Huệ, TP. Quy Nhơn",
+      "Bún chả cá Ngọc Liên - 379 Nguyễn Huệ, TP. Quy Nhơn",
+      "Bún cá Phượng Tèo - 211 Nguyễn Huệ, TP. Quy Nhơn"
+    ],
+    "legacy_province": "Bình Định",
+    "geographic_region": "Duyên hải"
   },
   {
     "id": "DISH_BUNCA_QN",
     "dishId": "DISH_BUNCA_QN",
     "name": "Bún chả cá Quy Nhơn Phượng Tèo",
     "description": "Chả cá thu quết dẻo thơm kết hợp nước lèo nấu từ đầu cá và xương hầm trong thanh ngọt tự nhiên của biển cả.",
+    "priceRange": null,
+    "budget": null,
     "imageUrl": "https://cdn.yeutre.vn/medias/uploads/203/203979-cach-lam-bun-cha-ca-quy-nhon.jpg",
     "imageUrls": [
-      "https://cdn.yeutre.vn/medias/uploads/203/203979-cach-lam-bun-cha-ca-quy-nhon.jpg",
-      "https://dinhtho.com.vn/wp-content/uploads/2025/04/Bun-cha-ca-quy-nhon.jpg",
-      "https://statics.vinpearl.com/bun-cha-ca-phuong-teo-quy-nhon_1761920268.jpg"
+      "https://cdn.yeutre.vn/medias/uploads/203/203979-cach-lam-bun-cha-ca-quy-nhon.jpg"
     ],
-    "budget": "",
-    "mealTime": "Buổi sáng",
     "tasteType": "TRADITIONAL",
+    "mealTime": "Buổi sáng",
     "suggestedEateries": [
       "Bún cá Phượng Tèo Cơ sở 1 (211 Nguyễn Huệ, P. Trần Phú, TP. Quy Nhơn - 06:00 - 21:00)",
       "Bún cá Phượng Tèo Cơ sở 2 (415 Nguyễn Huệ, P. Trần Phú, TP. Quy Nhơn - 06:00 - 21:00)",
       "Bún cá Ngọc Liên (379 Nguyễn Huệ, P. Trần Phú, TP. Quy Nhơn - 05:30 - 22:30)",
       "Bún cá Thuận Biển (08 Hàn Thuyên, P. Lê Hồng Phong, TP. Quy Nhơn - 06:00 - 11:30)"
     ],
-    "regions": [
-      "Gia Lai"
-    ]
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
     "id": "DISH_BUNCUA_GL",
     "dishId": "DISH_BUNCUA_GL",
     "name": "Bún cua thối Pleiku (Bún mắm cua)",
     "description": "Món ăn độc lạ trứ danh phố núi từ cua đồng lên men tự nhiên, ăn cùng da heo giòn rụm và chả lụa ớt hiểm.",
+    "priceRange": null,
+    "budget": null,
     "imageUrl": "https://media.mia.vn/uploads/blog-du-lich/bun-cua-thoi-huong-vi-doc-la-giua-long-pho-nui-pleiku-01-1659249181.jpeg",
     "imageUrls": [
-      "https://media.mia.vn/uploads/blog-du-lich/bun-cua-thoi-huong-vi-doc-la-giua-long-pho-nui-pleiku-01-1659249181.jpeg",
-      "https://afamilycdn.com/2018/4/16/bun-cua-thoi2-copy-152387092922026077814.jpg",
-      "https://vivumangden.com/wp-content/uploads/2025/11/Bun-mam-cua-8.png"
+      "https://media.mia.vn/uploads/blog-du-lich/bun-cua-thoi-huong-vi-doc-la-giua-long-pho-nui-pleiku-01-1659249181.jpeg"
     ],
-    "budget": "",
-    "mealTime": "Buổi chiều / Ăn vặt",
     "tasteType": "TRADITIONAL",
+    "mealTime": "Buổi chiều / Ăn vặt",
     "suggestedEateries": [
       "Bún cua Chi (Chợ Nhỏ Pleiku) (02 Phùng Hưng, P. Hội Thương, TP. Pleiku, Gia Lai - 11:00 - 18:00)",
       "Bún mắm cua Cô Nhị (19 Phan Đình Phùng, P. Tây Sơn, TP. Pleiku, Gia Lai - 13:00 - 19:00)",
       "Bún cua thối Bà Hạnh (87 Phan Đình Phùng, TP. Pleiku, Gia Lai - 12:00 - 18:30)"
     ],
-    "regions": [
-      "Gia Lai"
-    ]
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
     "id": "DISH_BUNRAM_QN",
     "dishId": "DISH_BUNRAM_QN",
     "name": "Bún rạm tươi Phù Mỹ - Quy Nhơn",
     "description": "Con rạm đầm Châu Trúc giã nhuyễn nấu nước riêu béo ngậy ăn cùng sợi bún tươi và rau húng lủi.",
+    "priceRange": null,
+    "budget": null,
     "imageUrl": "https://cdn2.fptshop.com.vn/unsafe/800x0/bun_ram_quy_nhon_7_14db72b028.jpg",
     "imageUrls": [
-      "https://cdn2.fptshop.com.vn/unsafe/800x0/bun_ram_quy_nhon_7_14db72b028.jpg",
-      "https://vmcar.com.vn/wp-content/uploads/2024/08/quy-nhon-bun-ram.webp",
-      "https://static.vinwonders.com/production/bun-ram-quy-nhon-3.jpg",
-      "https://higialai.vn/wp-content/uploads/2024/11/bun-ram-quy-nhon-quy-nhon-1.jpg"
+      "https://cdn2.fptshop.com.vn/unsafe/800x0/bun_ram_quy_nhon_7_14db72b028.jpg"
     ],
-    "budget": "",
-    "mealTime": "Buổi sáng",
     "tasteType": "HOT_TREND",
+    "mealTime": "Buổi sáng",
     "suggestedEateries": [
       "Bún rạm Mỹ Hạnh (32 Ngô Đức Đệ, P. Nguyễn Văn Cừ, TP. Quy Nhơn - 06:00 - 11:00)",
       "Bún tôm rạm Cô Mười (127 Hoàng Văn Thụ, P. Quang Trung, TP. Quy Nhơn - 06:00 - 11:30)",
       "Quán bún rạm gốc Châu Trúc (Quốc lộ 1A, TT. Phù Mỹ, huyện Phù Mỹ, Bình Định - 05:30 - 10:30)"
     ],
-    "regions": [
-      "Gia Lai"
-    ]
-  },
-  {
-    "id": "DISH_CAFE_PLEIKU",
-    "dishId": "DISH_CAFE_PLEIKU",
-    "name": "Cà Phê Nguyên Chất Pleiku",
-    "description": "Ly cà phê đen sánh nâu cánh gián pha phin từ hạt Robusta trồng trên đất bazan núi lửa nồng nàn thơm quyến rũ, nét văn hóa thưởng thức bất hủ của người Pleiku.",
-    "imageUrl": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800",
-    "imageUrls": [
-      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800"
-    ],
-    "budget": "25.000đ - 55.000đ / ly",
-    "mealTime": "Cả ngày",
-    "tasteType": "Văn hóa Thức uống",
-    "suggestedEateries": [],
-    "regions": [
-      "Gia Lai"
-    ]
-  },
-  {
-    "id": "DISH_CALANG_SESAN",
-    "dishId": "DISH_CALANG_SESAN",
-    "name": "Cá lăng sông Sê San nướng muối ớt",
-    "description": "Cá lăng da trơn săn chắc đánh bắt tự nhiên từ dòng Sê San hùng vĩ nướng muối ớt xanh thơm lừng.",
-    "imageUrl": "https://nhahangvanlocphat.vn/images/News/ca-lang-nuong-muoi-ot2.jpg",
-    "imageUrls": [
-      "https://nhahangvanlocphat.vn/images/News/ca-lang-nuong-muoi-ot2.jpg"
-    ],
-    "budget": "",
-    "mealTime": "Buổi trưa / Buổi tối",
-    "tasteType": "TRADITIONAL",
-    "suggestedEateries": [
-      "Nhà hàng Thủy tạ Sê San Ialy (Khu bảo vệ lòng hồ Thủy điện Ialy, xã Ialy, Chư Păh, Gia Lai - 08:30 - 20:30)",
-      "Quán Cá lăng Biển Hồ (Đường Tôn Đức Thắng (ngã ba Biển Hồ), P. Yên Thế, TP. Pleiku, Gia Lai - 09:00 - 21:30)",
-      "Quán ẩm thực Sê San Pleiku (125 Đinh Tiên Hoàng, P. Diên Hồng, TP. Pleiku, Gia Lai - 09:30 - 22:00)"
-    ],
-    "regions": [
-      "Gia Lai"
-    ]
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
     "id": "DISH_CHAOBOHAM_TS",
     "dishId": "DISH_CHAOBOHAM_TS",
     "name": "Cháo bò giò gân Tây Sơn Phú Phong",
     "description": "Cháo hầm hạt sen thơm phức cùng thịt bò cỏ Tây Sơn mềm ngọt và chén mắm gừng ớt hiểm cay nồng.",
+    "priceRange": null,
+    "budget": null,
     "imageUrl": "https://i.vietgiaitri.com/2022/10/13/ban-do-am-thuc-de-bo-tay-son-dac-san-binh-dinh-khong-phai-ai-cung-dam-thuong-thuc-204-6692110.jpg",
     "imageUrls": [
       "https://i.vietgiaitri.com/2022/10/13/ban-do-am-thuc-de-bo-tay-son-dac-san-binh-dinh-khong-phai-ai-cung-dam-thuong-thuc-204-6692110.jpg"
     ],
-    "budget": "",
-    "mealTime": "Buổi tối",
     "tasteType": "TRADITIONAL",
+    "mealTime": "Buổi tối",
     "suggestedEateries": [
       "Quán cháo bò Cô Ba Tây Sơn (Khối 1, TT. Phú Phong, huyện Tây Sơn (đối diện Bảo tàng Quang Trung) - 15:00 - 21:30)",
       "Quán Bò cỏ Tây Sơn Phú Phong (Quốc lộ 19, TT. Phú Phong, huyện Tây Sơn - 09:00 - 21:00)",
       "Cháo bò giò gân Bảy Nga (Thôn Kiên Mỹ, xã Bình Thành, huyện Tây Sơn - 14:00 - 21:00)"
     ],
-    "regions": [
-      "Gia Lai"
-    ]
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
     "id": "DISH_CHARAMTOM_BD",
     "dishId": "DISH_CHARAMTOM_BD",
     "name": "Chả ram tôm đất Bình Định Bé Di",
     "description": "Cuộn ram giòn rụm nhân tôm đất béo ngọt bọc bánh tráng phơi sương Bình Định, cuốn rau sống chấm mắm tương đậu.",
+    "priceRange": null,
+    "budget": null,
     "imageUrl": "https://statics.vinpearl.com/banh-xeo-tom-nhay-quy-nhon-7_1706527733.jpg",
     "imageUrls": [
       "https://statics.vinpearl.com/banh-xeo-tom-nhay-quy-nhon-7_1706527733.jpg"
     ],
-    "budget": "",
-    "mealTime": "Buổi chiều / Buổi tối",
     "tasteType": "HOT_TREND",
+    "mealTime": "Buổi chiều / Buổi tối",
     "suggestedEateries": [
       "Chả ram tôm đất Bé Di (130 Tây Sơn, P. Quang Trung, TP. Quy Nhơn - 07:30 - 21:30)",
       "Chả ram tôm đất Cô Hiền (218 Diên Hồng, P. Ngô Mây, TP. Quy Nhơn - 08:00 - 21:00)",
       "Đặc sản Chả ram Dũng Trinh (03 Vũ Bảo, P. Ngô Mây, TP. Quy Nhơn - 07:00 - 21:00)"
     ],
-    "regions": [
-      "Gia Lai"
-    ]
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
     "id": "DISH_CUAHUYNHDE",
     "dishId": "DISH_CUAHUYNHDE",
     "name": "Cua huỳnh đế hấp nước dừa Nhơn Lý",
     "description": "Vua của các loài cua với lớp vỏ đỏ au như hoàng bào, thịt trắng ngần ngọt thanh và gạch thơm béo tuyệt đỉnh.",
+    "priceRange": null,
+    "budget": null,
     "imageUrl": "https://www.icisequynhon.com/wp-content/uploads/2020/05/nhon-ly.jpg",
     "imageUrls": [
-      "https://www.icisequynhon.com/wp-content/uploads/2020/05/nhon-ly.jpg",
-      "https://nhonlytourist.com/images/nhonlytourist.com/thumbs/2023/04/tour-du-lich-nhon-ly-quy-nhon.jpg",
-      "https://static.vinwonders.com/production/Nhon-Ly-Fishing-Village.jpg",
-      "https://dulichchat.com/wp-content/uploads/2019/03/cua-huynh-de-dulichchat.jpg"
+      "https://www.icisequynhon.com/wp-content/uploads/2020/05/nhon-ly.jpg"
     ],
-    "budget": "",
-    "mealTime": "Buổi trưa / Buổi tối",
     "tasteType": "HOT_TREND",
+    "mealTime": "Buổi trưa / Buổi tối",
     "suggestedEateries": [
       "Nhà hàng hải sản Leng Keng 2 (Thôn Lý Lương, xã Nhơn Lý, TP. Quy Nhơn (cách Eo Gió 300m) - 09:00 - 21:30)",
       "Nhà hàng Hoàng Thao Seaview (Đường số 4, thôn Lý Lương, xã Nhơn Lý, TP. Quy Nhơn - 08:30 - 22:00)",
       "Nhà hàng Biển Nhớ Nhơn Hải (Thôn Hải Nam, xã Nhơn Hải, TP. Quy Nhơn (bến tàu Hòn Khô) - 09:00 - 21:00)"
     ],
-    "regions": [
-      "Gia Lai"
-    ]
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "DISH_CAFE_PLEIKU",
+    "dishId": "DISH_CAFE_PLEIKU",
+    "name": "Cà Phê Nguyên Chất Pleiku",
+    "description": "Ly cà phê đen sánh nâu cánh gián pha phin từ hạt Robusta trồng trên đất bazan núi lửa nồng nàn thơm quyến rũ, nét văn hóa thưởng thức bất hủ của người Pleiku.",
+    "priceRange": "25.000đ - 55.000đ / ly",
+    "budget": "25.000đ - 55.000đ / ly",
+    "imageUrl": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800"
+    ],
+    "tasteType": "Văn hóa Thức uống",
+    "mealTime": "Cả ngày",
+    "suggestedEateries": [],
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "DISH_CALANG_SESAN",
+    "dishId": "DISH_CALANG_SESAN",
+    "name": "Cá lăng sông Sê San nướng muối ớt",
+    "description": "Cá lăng da trơn săn chắc đánh bắt tự nhiên từ dòng Sê San hùng vĩ nướng muối ớt xanh thơm lừng.",
+    "priceRange": null,
+    "budget": null,
+    "imageUrl": "https://nhahangvanlocphat.vn/images/News/ca-lang-nuong-muoi-ot2.jpg",
+    "imageUrls": [
+      "https://nhahangvanlocphat.vn/images/News/ca-lang-nuong-muoi-ot2.jpg"
+    ],
+    "tasteType": "TRADITIONAL",
+    "mealTime": "Buổi trưa / Buổi tối",
+    "suggestedEateries": [
+      "Nhà hàng Thủy tạ Sê San Ialy (Khu bảo vệ lòng hồ Thủy điện Ialy, xã Ialy, Chư Păh, Gia Lai - 08:30 - 20:30)",
+      "Quán Cá lăng Biển Hồ (Đường Tôn Đức Thắng (ngã ba Biển Hồ), P. Yên Thế, TP. Pleiku, Gia Lai - 09:00 - 21:30)",
+      "Quán ẩm thực Sê San Pleiku (125 Đinh Tiên Hoàng, P. Diên Hồng, TP. Pleiku, Gia Lai - 09:30 - 22:00)"
+    ],
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
     "id": "DISH_GANUONG_COMLAM",
     "dishId": "DISH_GANUONG_COMLAM",
     "name": "Gà nướng sa lửa cơm lam Tây Nguyên",
     "description": "Gà đồi thả rông nướng giòn rụm than hồng, chấm muối sả lá é rừng cay nồng, ăn kèm ống cơm lam dẻo thơm.",
+    "priceRange": "220.000đ - 300.000đ / con",
+    "budget": "220.000đ - 300.000đ / con",
     "imageUrl": "https://cdnphoto.dantri.com.vn/rIP6Z8lrRaFN1UzPs3uIKZTrLVw=/thumb_w/990/2021/09/09/anh-10-1631155392885.jpeg",
     "imageUrls": [
-      "https://cdnphoto.dantri.com.vn/rIP6Z8lrRaFN1UzPs3uIKZTrLVw=/thumb_w/990/2021/09/09/anh-10-1631155392885.jpeg",
-      "https://www.cotrang.org/public/images/tin_dang/1/151_ga-nuong-com-lam-pleiku-gia-lai-bk-01.jpg",
-      "https://gialai24h.vn/wp-content/uploads/2024/06/cach-lam-ga-nuong-com-lam-tai-nha-1-768x576.jpeg"
+      "https://cdnphoto.dantri.com.vn/rIP6Z8lrRaFN1UzPs3uIKZTrLVw=/thumb_w/990/2021/09/09/anh-10-1631155392885.jpeg"
     ],
-    "budget": "220.000đ - 300.000đ / con",
-    "mealTime": "Buổi trưa / Buổi tối",
     "tasteType": "HOT_TREND",
+    "mealTime": "Buổi trưa / Buổi tối",
     "suggestedEateries": [
       "Quán Gà nướng Bazan (Hẻm 480 Lê Duẩn, P. Thắng Lợi, TP. Pleiku, Gia Lai - 09:00 - 21:30)",
       "Gà nướng Plơi Roh (Làng Kép, xã Ia Mơ Nông, huyện Chư Păh, Gia Lai - 09:00 - 20:00)",
       "Quán Gà nướng Cơm lam Ti Bagia (Thôn 2, xã Biển Hồ (đường vào Biển Hồ chè), TP. Pleiku, Gia Lai - 08:30 - 21:00)",
       "Gà nướng Plei Tiêng (Làng Tiêng 1, xã Tân Sơn, TP. Pleiku, Gia Lai - 09:00 - 21:00)"
     ],
-    "regions": [
-      "Gia Lai"
-    ]
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
     "id": "DISH_GOISUA_QN",
     "dishId": "DISH_GOISUA_QN",
     "name": "Gỏi sứa tai chua ngọt Quy Nhơn",
     "description": "Sứa biển tươi giòn sần sật bóp thấu cùng hoa chuối, đậu phộng rang, chấm nước lèo thơm béo chua cay.",
+    "priceRange": null,
+    "budget": null,
     "imageUrl": "https://vietravelasia.com/media/images/2024/4/goi-sua-quy-nhon-faca5e66d16c1faebdec727074c13f32.jpg",
     "imageUrls": [
-      "https://vietravelasia.com/media/images/2024/4/goi-sua-quy-nhon-faca5e66d16c1faebdec727074c13f32.jpg",
-      "https://www.dulichvtv.vn/wp-content/uploads/goi-sua-quy-nhon.jpg",
-      "https://www.asiaeyestravel.com/uploads/source/blog/quynhon/goi-sua-quy-nhon.jpg",
-      "https://i.ytimg.com/vi/uszzG_hsLTo/maxresdefault.jpg"
+      "https://vietravelasia.com/media/images/2024/4/goi-sua-quy-nhon-faca5e66d16c1faebdec727074c13f32.jpg"
     ],
-    "budget": "",
-    "mealTime": "Buổi chiều / Buổi tối",
     "tasteType": "HOT_TREND",
+    "mealTime": "Buổi chiều / Buổi tối",
     "suggestedEateries": [
       "Nhà hàng Tàu Hoa Hoa (03-05 Phan Chu Trinh, P. Hải Cảng, TP. Quy Nhơn - 10:00 - 22:00)",
       "Quán hải sản Cây Dừa (124 Phan Chu Trinh, P. Hải Cảng, TP. Quy Nhơn - 10:00 - 22:30)",
       "Quán ốc gỏi sứa Thúy Kiều (5D Tăng Bạt Hổ, P. Lê Lợi, TP. Quy Nhơn - 15:00 - 22:00)"
     ],
-    "regions": [
-      "Gia Lai"
-    ]
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
     "id": "DISH_HEOSOC_GL",
     "dishId": "DISH_HEOSOC_GL",
     "name": "Heo sóc bản nướng than hồng đọt mây",
     "description": "Heo thả rông da giòn thịt thơm ngọt nướng xiên tre, ăn kèm đọt mây nướng đắng thanh bùi bùi.",
+    "priceRange": null,
+    "budget": null,
     "imageUrl": "https://static2.abay.vn/Images/2024/11/13/thit-heo-nuong-ong-lo-o-min.jpg",
     "imageUrls": [
-      "https://static2.abay.vn/Images/2024/11/13/thit-heo-nuong-ong-lo-o-min.jpg",
-      "https://labanfood.com/wp-content/uploads/2026/03/thit-than-heo-nuong-09.jpg",
-      "https://labanfood.com/wp-content/uploads/2026/03/thit-than-heo-nuong-06.jpg",
-      "https://yeutre.vn/cdn/medias/uploads/158/158344-cach-nuong-thit-heo.jpg"
+      "https://static2.abay.vn/Images/2024/11/13/thit-heo-nuong-ong-lo-o-min.jpg"
     ],
-    "budget": "",
-    "mealTime": "Buổi tối",
     "tasteType": "TRADITIONAL",
+    "mealTime": "Buổi tối",
     "suggestedEateries": [
       "Quán Ẩm thực Heo Bản K'Bang (Đường Quang Trung, TT. K'Bang, huyện K'Bang, Gia Lai - 10:00 - 21:30)",
       "Nhà hàng Cơm lam Tây Nguyên Pleiku (154 Wừu, P. Thắng Lợi, TP. Pleiku, Gia Lai - 09:30 - 22:00)",
       "Quán Heo Rừng Mang Yang (Trục Quốc lộ 19, TT. Kon Dơng, huyện Mang Yang, Gia Lai - 09:00 - 21:00)"
     ],
-    "regions": [
-      "Gia Lai"
-    ]
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
     "id": "DISH_LUINUONG_GL",
     "dishId": "DISH_LUINUONG_GL",
     "name": "Lụi nướng chấm mắm me phố núi Pleiku",
     "description": "Bánh tráng cuộn thịt heo băm nướng vàng giòn rụm, chấm sốt tương me chua ngọt cay nồng.",
+    "priceRange": null,
+    "budget": null,
     "imageUrl": "https://media.mia.vn/uploads/blog-du-lich/lui-nuong-gia-lai-mon-an-truyen-thong-cua-nguoi-dan-vung-dat-do-06-1659256875.jpeg",
     "imageUrls": [
-      "https://media.mia.vn/uploads/blog-du-lich/lui-nuong-gia-lai-mon-an-truyen-thong-cua-nguoi-dan-vung-dat-do-06-1659256875.jpeg",
-      "https://media.mia.vn/uploads/blog-du-lich/lui-nuong-gia-lai-mon-an-truyen-thong-cua-nguoi-dan-vung-dat-do-01-1659256874.jpeg",
-      "https://media.cungphuot.info/2020/03/27074/lui-nuong.jpg",
-      "https://luhanhvietnam.com.vn/du-lich/vnt_upload/news/12_2022/batch_quan-lui-nuong-o-pleiku-dss.jpg"
+      "https://media.mia.vn/uploads/blog-du-lich/lui-nuong-gia-lai-mon-an-truyen-thong-cua-nguoi-dan-vung-dat-do-06-1659256875.jpeg"
     ],
-    "budget": "",
-    "mealTime": "Buổi chiều / Ăn vặt xế",
     "tasteType": "HOT_TREND",
+    "mealTime": "Buổi chiều / Ăn vặt xế",
     "suggestedEateries": [
       "Lụi nướng Bà Sáu (122 Cao Bá Quát, P. Yên Đỗ, TP. Pleiku, Gia Lai - 14:30 - 19:30)",
       "Lụi nướng Phù Đổng (28 Phù Đổng, TP. Pleiku, Gia Lai - 15:00 - 21:00)",
       "Gian hàng Lụi Chợ Đêm Pleiku (Cổng chợ đêm Pleiku, đường Hoàng Văn Thụ, TP. Pleiku, Gia Lai - 17:00 - 23:00)"
     ],
-    "regions": [
-      "Gia Lai"
-    ]
-  },
-  {
-    "id": "DISH_MUC_NGAO_BD",
-    "dishId": "DISH_MUC_NGAO_BD",
-    "name": "Mực ngào tỏi ớt Bình Định",
-    "description": "Mực cơm khô rim đường cát, tỏi ớt dẻo quánh cay xè đầu lưỡi cực kỳ bắt mồi nhâm nhi.",
-    "imageUrl": "https://nemchohuyen.com.vn/wp-content/uploads/2021/11/muc-ngao-binh-dinh.jpg",
-    "imageUrls": [
-      "https://nemchohuyen.com.vn/wp-content/uploads/2021/11/muc-ngao-binh-dinh.jpg"
-    ],
-    "budget": "",
-    "mealTime": "Ăn vặt / Mua làm quà",
-    "tasteType": "TRADITIONAL",
-    "suggestedEateries": [
-      "Quán đặc sản Hương Biển (07 Phan Chu Trinh, P. Hải Cảng, TP. Quy Nhơn - 07:30 - 21:00)",
-      "Siêu thị Đặc sản Như Ý (156 Nguyễn Huệ, P. Trần Phú, TP. Quy Nhơn - 07:00 - 21:30)",
-      "Cửa hàng hải sản khô Phụng Nga (61 Vũ Bảo, P. Ngô Mây, TP. Quy Nhơn - 07:30 - 21:00)"
-    ],
-    "regions": [
-      "Gia Lai"
-    ]
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
     "id": "DISH_MUOIKIEN_RUNG",
     "dishId": "DISH_MUOIKIEN_RUNG",
     "name": "Muối kiến vàng rẫy Krông Pa",
     "description": "Gia vị trứ danh chế biến từ kén và kiến vàng rừng béo ngậy vị axit formic chua thanh độc đáo.",
+    "priceRange": null,
+    "budget": null,
     "imageUrl": "https://www.cotrang.org/public/images/tin_dang/6/160_muoi-kien-vang-gia-lai-bk-9.jpg",
     "imageUrls": [
-      "https://www.cotrang.org/public/images/tin_dang/6/160_muoi-kien-vang-gia-lai-bk-9.jpg",
-      "https://honvietstore.vn/wp-content/uploads/2019/11/muoi-kien-vang-Krongpa-3.jpg",
-      "https://dacsanmientay.vn/wp-content/uploads/2021/05/muoi-kien-vang-1-min.jpg",
-      "https://luhanhvietnam.com.vn/du-lich/vnt_upload/news/10_2020/muoi-kien-vang-dunghangviet.jpg"
+      "https://www.cotrang.org/public/images/tin_dang/6/160_muoi-kien-vang-gia-lai-bk-9.jpg"
     ],
-    "budget": "",
-    "mealTime": "Gia vị chấm đặc sản",
     "tasteType": "TRADITIONAL",
+    "mealTime": "Gia vị chấm đặc sản",
     "suggestedEateries": [
       "Cửa hàng Đặc sản Tây Nguyên Yang Ly (38 Nguyễn Thiếp, P. Diên Hồng, TP. Pleiku, Gia Lai - 07:30 - 21:00)",
       "Hợp tác xã Nông nghiệp Muối Kiến Krông Pa (Thôn Thắng Lợi, TT. Phú Túc, huyện Krông Pa, Gia Lai - 07:00 - 18:00)",
       "Cơ sở Muối Kiến Vàng Cô Ba (114 Trần Hưng Đạo, TP. Pleiku, Gia Lai - 07:30 - 20:30)"
     ],
-    "regions": [
-      "Gia Lai"
-    ]
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "DISH_MUC_NGAO_BD",
+    "dishId": "DISH_MUC_NGAO_BD",
+    "name": "Mực ngào tỏi ớt Bình Định",
+    "description": "Mực cơm khô rim đường cát, tỏi ớt dẻo quánh cay xè đầu lưỡi cực kỳ bắt mồi nhâm nhi.",
+    "priceRange": null,
+    "budget": null,
+    "imageUrl": "https://nemchohuyen.com.vn/wp-content/uploads/2021/11/muc-ngao-binh-dinh.jpg",
+    "imageUrls": [
+      "https://nemchohuyen.com.vn/wp-content/uploads/2021/11/muc-ngao-binh-dinh.jpg"
+    ],
+    "tasteType": "TRADITIONAL",
+    "mealTime": "Ăn vặt / Mua làm quà",
+    "suggestedEateries": [
+      "Quán đặc sản Hương Biển (07 Phan Chu Trinh, P. Hải Cảng, TP. Quy Nhơn - 07:30 - 21:00)",
+      "Siêu thị Đặc sản Như Ý (156 Nguyễn Huệ, P. Trần Phú, TP. Quy Nhơn - 07:00 - 21:30)",
+      "Cửa hàng hải sản khô Phụng Nga (61 Vũ Bảo, P. Ngô Mây, TP. Quy Nhơn - 07:30 - 21:00)"
+    ],
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "DISH_BD_NEMCHOHUYEN",
+    "dishId": "DISH_BD_NEMCHOHUYEN",
+    "name": "Nem chua Chợ Huyện Tuy Phước",
+    "description": "Món nem chua nức tiếng gói lá ổi thanh khiết, thịt heo tươi quết dẻo lên men tự nhiên có vị chua thanh giòn sần sật, nướng than hoa thơm lừng.",
+    "priceRange": "40.000đ - 70.000đ/chục",
+    "budget": "40.000đ - 70.000đ/chục",
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Fermented_pork_wrapped_in_leaves.jpg/1280px-Fermented_pork_wrapped_in_leaves.jpg",
+    "imageUrls": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Fermented_pork_wrapped_in_leaves.jpg/1280px-Fermented_pork_wrapped_in_leaves.jpg"
+    ],
+    "tasteType": "Chua ngọt, giòn sần sật",
+    "mealTime": "Bữa tối, nhâm nhi",
+    "suggestedEateries": [
+      "Nem Chợ Huyện Bốn Tạo - Xã Phước Thuận, Huyện Tuy Phước",
+      "Quán nem nướng Lợi - 113 Tăng Bạt Hổ, TP. Quy Nhơn"
+    ],
+    "legacy_province": "Bình Định",
+    "geographic_region": "Duyên hải"
   },
   {
     "id": "DISH_NEMNUONG_CHOHUYEN",
     "dishId": "DISH_NEMNUONG_CHOHUYEN",
     "name": "Nem nướng Chợ Huyện Tuy Phước",
     "description": "Nem thịt heo quết mịn nướng than hoa thơm nức, cuốn bánh tráng rau thơm chấm tương đậu phộng sền sệt.",
+    "priceRange": null,
+    "budget": null,
     "imageUrl": "https://binhdinhtoplist.com/wp-content/uploads/2024/07/nem-cho-huyen-binhdinhtoplist.jpg",
     "imageUrls": [
-      "https://binhdinhtoplist.com/wp-content/uploads/2024/07/nem-cho-huyen-binhdinhtoplist.jpg",
-      "https://dacsanbinhdinhonline.com/wp-content/uploads/2019/06/nem-cho-huyen-binh-dinh.jpg",
-      "https://img2.thuthuatphanmem.vn/uploads/2019/03/11/nem-cho-huyen_034707086.jpg",
-      "https://dacsantayson.com/wp-content/uploads/2023/11/bg-nem-cho-huyen.png"
+      "https://binhdinhtoplist.com/wp-content/uploads/2024/07/nem-cho-huyen-binhdinhtoplist.jpg"
     ],
-    "budget": "",
-    "mealTime": "Buổi chiều / Buổi tối",
     "tasteType": "TRADITIONAL",
+    "mealTime": "Buổi chiều / Buổi tối",
     "suggestedEateries": [
       "Lò nem Bốn Lai Chợ Huyện (Thôn Vinh Thạnh, xã Phước Lộc, huyện Tuy Phước (gần tháp Bánh Ít) - 07:00 - 19:30)",
       "Quán nem Chợ Huyện Cô Tuyết (Xã Phước Hiệp, huyện Tuy Phước, Bình Định - 08:00 - 20:00)",
       "Nem nướng Lợi (113 Tăng Bạt Hổ, P. Lê Lợi, TP. Quy Nhơn - 14:00 - 21:30)"
     ],
-    "regions": [
-      "Gia Lai"
-    ]
-  },
-  {
-    "id": "DISH_OC_MAIXUANTHUONG",
-    "dishId": "DISH_OC_MAIXUANTHUONG",
-    "name": "Ốc biển xào sả ớt phố Mai Xuân Thưởng",
-    "description": "Thiên đường ốc len, ốc hương, ốc móng tay xào me, nướng mỡ hành đậm đà cay xé lưỡi gió biển đêm.",
-    "imageUrl": "https://dulichfun.com/wp-content/uploads/2019/11/Quan-oc-nao-ngon-gia-re-o-Quy-Nhon-oc-94-Mai-Xuan-Thuong.png",
-    "imageUrls": [
-      "https://dulichfun.com/wp-content/uploads/2019/11/Quan-oc-nao-ngon-gia-re-o-Quy-Nhon-oc-94-Mai-Xuan-Thuong.png",
-      "https://basantourist.com/wp-content/uploads/2022/05/oc-94-mai-xuan-thuong-1.jpg",
-      "https://lh3.googleusercontent.com/p/AF1QipMNdc5visdQ-EcVanbdPc8TXDxu8ni8xedgGPub=s680-w680-h510",
-      "https://basantourist.com/wp-content/uploads/2022/05/oc-94-mai-xuan-thuong-2.jpg"
-    ],
-    "budget": "",
-    "mealTime": "Buổi tối nhâm nhi",
-    "tasteType": "HOT_TREND",
-    "suggestedEateries": [
-      "Ốc Cô Xí (Hẻm 22 Đào Duy Từ, P. Trần Hưng Đạo, TP. Quy Nhơn - 14:30 - 22:00)",
-      "Quán ốc Bông (30 Ngọc Hân Công Chúa, P. Trần Phú, TP. Quy Nhơn - 14:00 - 22:30)",
-      "Phố ốc đêm Mai Xuân Thưởng (94 Mai Xuân Thưởng, P. Lý Thường Kiệt, TP. Quy Nhơn - 16:00 - 23:00)"
-    ],
-    "regions": [
-      "Gia Lai"
-    ]
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
     "id": "DISH_PHOHO_GL",
     "dishId": "DISH_PHOHO_GL",
     "name": "Phở hai tô Gia Lai (Phở khô Pleiku)",
     "description": "Tô phở khô trộn tương nâu gia truyền thơm béo ăn kèm tô nước dùng bò thanh ngọt đậm đà.",
+    "priceRange": null,
+    "budget": null,
     "imageUrl": "https://gialai.info/wp-content/uploads/2023/03/cach-an-pho-kho-gia-lai-982x900.jpg",
     "imageUrls": [
-      "https://gialai.info/wp-content/uploads/2023/03/cach-an-pho-kho-gia-lai-982x900.jpg",
-      "https://www.cotrang.org/public/images/tin_dang/6/42_pho-hai-to-gia-lai-bk-4.jpg",
-      "https://booking.muongthanh.com/upload_images/images/H`/pho-kho-gia-lai.jpg"
+      "https://gialai.info/wp-content/uploads/2023/03/cach-an-pho-kho-gia-lai-982x900.jpg"
     ],
-    "budget": "",
-    "mealTime": "Buổi sáng",
     "tasteType": "HOT_TREND",
+    "mealTime": "Buổi sáng",
     "suggestedEateries": [
       "Phở Hồng (24 Nguyễn Văn Trỗi, P. Hội Thương, TP. Pleiku, Gia Lai - 06:00 - 21:00)",
       "Phở Nữ (50 Nguyễn Du, P. Tây Sơn, TP. Pleiku, Gia Lai - 06:00 - 13:00)",
       "Phở khô Bé Tư (282 Phan Đình Phùng, P. Yên Đỗ, TP. Pleiku, Gia Lai - 06:00 - 21:30)",
       "Phở Hiệp (34 Đào Duy Từ, P. Diên Hồng, TP. Pleiku, Gia Lai - 06:00 - 20:30)"
     ],
-    "regions": [
-      "Gia Lai"
-    ]
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
     "id": "DISH_RUOU_BAUDA",
     "dishId": "DISH_RUOU_BAUDA",
     "name": "Rượu Bàu Đá tiến vua Nhơn Lộc",
     "description": "Đệ nhất danh tửu nấu từ mạch nước ngầm làng Bàu Đá men truyền thống sủi bọt tăm tăm thơm nồng nàn.",
+    "priceRange": null,
+    "budget": null,
     "imageUrl": "https://dulich3mien.vn/wp-content/uploads/2022/04/RUOU-BAU-DA-BINH-DINH-01-min.jpg",
     "imageUrls": [
-      "https://dulich3mien.vn/wp-content/uploads/2022/04/RUOU-BAU-DA-BINH-DINH-01-min.jpg",
-      "https://cohaxunau.com/wp-content/uploads/2023/04/ruou-bau-da-binh-dinh.jpg",
-      "https://www.ruoulangvoc.com/images/2023/ruou_bau_da_nhon_loc.jpg",
-      "https://huongquefood.com/wp-content/uploads/2021/08/ruou-bau-da-dac-san-binh-dinh.jpg"
+      "https://dulich3mien.vn/wp-content/uploads/2022/04/RUOU-BAU-DA-BINH-DINH-01-min.jpg"
     ],
-    "budget": "",
-    "mealTime": "Quà biếu di sản",
     "tasteType": "TRADITIONAL",
+    "mealTime": "Quà biếu di sản",
     "suggestedEateries": [
       "Làng nghề Rượu Bàu Đá truyền thống (Thôn Cù Lâm Đông, xã Nhơn Lộc, thị xã An Nhơn - 07:00 - 18:00)",
       "Cơ sở sản xuất Rượu Bàu Đá Tâm Tửu (Trục ĐT636, xã Nhơn Lộc, thị xã An Nhơn - 07:30 - 19:00)",
       "Cửa hàng Rượu Bàu Đá chính hiệu Hai Bê (38 Nguyễn Huệ, P. Trần Phú, TP. Quy Nhơn - 07:30 - 21:00)"
     ],
-    "regions": [
-      "Gia Lai"
-    ]
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
     "id": "DISH_RUOU_GHE_GL",
     "dishId": "DISH_RUOU_GHE_GL",
     "name": "Rượu cần ghè Jrai men lá rừng",
     "description": "Rượu ủ nếp nương bằng men vỏ cây rừng tự nhiên, uống bằng cần trúc bên ánh lửa bập bùng và tiếng cồng chiêng.",
+    "priceRange": null,
+    "budget": null,
     "imageUrl": "https://latour.vn/upload/user/images/Ruou-ghe.jpg",
     "imageUrls": [
       "https://latour.vn/upload/user/images/Ruou-ghe.jpg"
     ],
-    "budget": "",
-    "mealTime": "Lễ hội / Buổi tối",
     "tasteType": "TRADITIONAL",
+    "mealTime": "Lễ hội / Buổi tối",
     "suggestedEateries": [
       "Nhà rông Làng văn hóa Plei Ốp (Đường Bùi Dự, P. Hoa Lư, TP. Pleiku, Gia Lai - 08:00 - 22:00)",
       "Nhà rông Văn hóa Đắk Đoa (Xã Glar, huyện Đắk Đoa, Gia Lai - 08:00 - 21:00)",
       "Cơ sở rượu cần Jrai A Ma Thuột (Làng Ploi lagri, xã Chư Đang Ya, huyện Chư Păh, Gia Lai - 08:00 - 20:00)"
     ],
-    "regions": [
-      "Gia Lai"
-    ]
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
     "id": "DISH_TRE_BINHDINH",
     "dishId": "DISH_TRE_BINHDINH",
     "name": "Tré rơm Bình Định truyền thống",
     "description": "Thịt đầu heo tai mũi thái mỏng ủ lên men thính gạo và mè rang, bọc cây rơm hình bắp ngô độc đáo.",
+    "priceRange": null,
+    "budget": null,
     "imageUrl": "https://quangnamfood.com/wp-content/uploads/2022/04/tre-rom-binh-dinh-tai-hcm_005-trung-binh.jpeg",
     "imageUrls": [
-      "https://binhdinhtoplist.com/wp-content/uploads/2024/07/nem-cho-huyen-binhdinhtoplist.jpg"
+      "https://quangnamfood.com/wp-content/uploads/2022/04/tre-rom-binh-dinh-tai-hcm_005-trung-binh.jpeg"
     ],
-    "budget": "",
-    "mealTime": "Ăn vặt / Mua làm quà",
     "tasteType": "TRADITIONAL",
+    "mealTime": "Ăn vặt / Mua làm quà",
     "suggestedEateries": [
       "Đặc sản Tré Năm Thu (159 Nguyễn Huệ, P. Trần Phú, TP. Quy Nhơn - 07:00 - 21:30)",
       "Tré rơm Bà Đệ Phước Lộc (Quốc lộ 1A, TT. Diêu Trì, huyện Tuy Phước - 06:30 - 20:00)",
       "Siêu thị Đặc sản Thanh Liêm (128 Chương Dương, P. Nguyễn Văn Cừ, TP. Quy Nhơn - 07:00 - 22:00)"
     ],
-    "regions": [
-      "Gia Lai"
-    ]
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "DISH_OC_MAIXUANTHUONG",
+    "dishId": "DISH_OC_MAIXUANTHUONG",
+    "name": "Ốc biển xào sả ớt phố Mai Xuân Thưởng",
+    "description": "Thiên đường ốc len, ốc hương, ốc móng tay xào me, nướng mỡ hành đậm đà cay xé lưỡi gió biển đêm.",
+    "priceRange": null,
+    "budget": null,
+    "imageUrl": "https://dulichfun.com/wp-content/uploads/2019/11/Quan-oc-nao-ngon-gia-re-o-Quy-Nhon-oc-94-Mai-Xuan-Thuong.png",
+    "imageUrls": [
+      "https://dulichfun.com/wp-content/uploads/2019/11/Quan-oc-nao-ngon-gia-re-o-Quy-Nhon-oc-94-Mai-Xuan-Thuong.png"
+    ],
+    "tasteType": "HOT_TREND",
+    "mealTime": "Buổi tối nhâm nhi",
+    "suggestedEateries": [
+      "Ốc Cô Xí (Hẻm 22 Đào Duy Từ, P. Trần Hưng Đạo, TP. Quy Nhơn - 14:30 - 22:00)",
+      "Quán ốc Bông (30 Ngọc Hân Công Chúa, P. Trần Phú, TP. Quy Nhơn - 14:00 - 22:30)",
+      "Phố ốc đêm Mai Xuân Thưởng (94 Mai Xuân Thưởng, P. Lý Thường Kiệt, TP. Quy Nhơn - 16:00 - 23:00)"
+    ],
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   }
 ];
 
 export const MOCK_STAYS = [
   {
-    "id": "ACC_ANYA_QN",
-    "accId": "ACC_ANYA_QN",
-    "name": "Anya Premier Hotel Quy Nhơn (Khách sạn biển 4 sao)",
-    "description": "Khách sạn cao cấp đối diện bãi biển Quy Nhơn, tiện lợi tắm biển và thưởng thức phố ẩm thực đêm Ngô Văn Sở.",
-    "imageUrl": "https://quynhonbooking.vn/wp-content/uploads/2022/10/Anya-Premier-Hotel-Quy-Nhon.jpg",
-    "imageUrls": [
-      "https://quynhonbooking.vn/wp-content/uploads/2022/10/Anya-Premier-Hotel-Quy-Nhon.jpg",
-      "https://quynhonbooking.vn/wp-content/uploads/2022/10/Anya-Premier-Hotel-Quy-Nhon-2.jpg",
-      "https://mia.vn/media/uploads/blog-du-lich/anya-premier-hotel-quy-nhon-1-1679399915.jpg"
-    ],
-    "budget": "1,200,000đ / đêm",
-    "stayType": "Khách sạn 4 sao",
-    "address": "44 An Dương Vương, phường Nguyễn Văn Cừ, Quy Nhơn",
-    "ratingAvg": 4.7,
-    "rating": 4.7,
-    "suitableFor": [
-      "Gia đình",
-      "Cặp đôi",
-      "Nhóm bạn"
-    ],
-    "regions": [
-      "TP. Pleiku"
-    ]
-  },
-  {
-    "id": "ACC_BOSTON_GL",
-    "accId": "ACC_BOSTON_GL",
-    "name": "Khách sạn Boston Hotel Pleiku",
-    "description": "Khách sạn phong cách hiện đại trẻ trung, phòng ốc sạch sẽ, tiện nghi và giá cả hợp lý ngay trung tâm.",
-    "imageUrl": "https://alltop.vn/backend/media/images/posts/692/Boston_Hotel_Gia_Lai-238282.jpg",
-    "imageUrls": [
-      "https://alltop.vn/backend/media/images/posts/692/Boston_Hotel_Gia_Lai-238282.jpg"
-    ],
-    "budget": "650,000đ / đêm",
-    "stayType": "Khách sạn 3 sao",
-    "address": "212 Phù Đổng, TP. Pleiku, Gia Lai",
-    "ratingAvg": 4.6,
-    "rating": 4.6,
-    "suitableFor": [
-      "Nhóm bạn",
-      "Cặp đôi",
-      "Khách công tác"
-    ],
-    "regions": [
-      "TP. Pleiku"
-    ]
-  },
-  {
-    "id": "ACC_CASAMARINA",
-    "accId": "ACC_CASAMARINA",
-    "name": "Casa Marina Resort Quy Nhơn",
-    "description": "Resort ẩn mình trong vịnh biển Quy Hòa thanh bình với hồ bơi vô cực lọc bằng ozone và hàng dừa rợp bóng.",
-    "imageUrl": "https://cdn3.ivivu.com/2023/06/casa-marina-quy-nhon-ivivu-1.jpg",
-    "imageUrls": [
-      "https://cdn3.ivivu.com/2023/06/casa-marina-quy-nhon-ivivu-1.jpg"
-    ],
-    "budget": "1,900,000đ / đêm",
-    "stayType": "Resort 4 sao",
-    "address": "Quốc lộ 1D, khu phố 1, Bãi Xếp, Ghềnh Ráng, Quy Nhơn",
-    "ratingAvg": 4.8,
-    "rating": 4.8,
-    "suitableFor": [
-      "Gia đình",
-      "Cặp đôi trăng mật"
-    ],
-    "regions": [
-      "TP. Pleiku"
-    ]
-  },
-  {
-    "id": "ACC_CHUPAH_FARM",
-    "accId": "ACC_CHUPAH_FARM",
-    "name": "Tiên Sơn Farmstay & Camp Chư Păh",
-    "description": "Khu lều trại glamping giữa đồi chè và chân núi lửa Chư Đang Ya, ngắm dải ngân hà về đêm cực kỳ ấn tượng.",
-    "imageUrl": "https://mia.vn/media/uploads/blog-du-lich/homestay-gia-lai-tien-son-1708100154.jpg",
-    "imageUrls": [
-      "https://mia.vn/media/uploads/blog-du-lich/homestay-gia-lai-tien-son-1708100154.jpg",
-      "https://nongthon.vietnamtourism.gov.vn/wp-content/uploads/2024/02/1602.Gia-Lai-1.jpg",
-      "https://toplist.vn/images/800px/paksong-farmstay-gia-lai-1061702.jpg"
-    ],
-    "budget": "500,000đ / đêm",
-    "stayType": "Homestay / Camping",
-    "address": "Xã Tân Sơn, huyện Chư Păh, Gia Lai",
-    "ratingAvg": 4.8,
-    "rating": 4.8,
-    "suitableFor": [
-      "Nhóm bạn",
-      "Phượt thủ",
-      "Gia đình"
-    ],
-    "regions": [
-      "TP. Pleiku"
-    ]
-  },
-  {
     "id": "ACC_FLC_RESORT",
     "accId": "ACC_FLC_RESORT",
     "name": "FLC Luxury Resort Quy Nhơn (Quần thể Nghỉ dưỡng 5 sao)",
     "description": "Quần thể villa và resort ven biển 5 sao đẳng cấp quốc tế ôm trọn biển Nhơn Lý xanh ngọc bích và sân golf 36 hố.",
+    "address": "Khu 4, bãi biển Nhơn Lý - Cát Tiến",
+    "stayType": "Resort nghỉ dưỡng 5 sao",
+    "pricePerNight": "2,800,000đ / đêm",
+    "priceRange": "2,800,000đ / đêm",
+    "avgRating": 4.9,
+    "phone": null,
     "imageUrl": "https://vietgroupco.com/wp-content/uploads/z2119065044301_fa28b45950b489235def9e9d94fb9f2e.jpg",
     "imageUrls": [
-      "https://vietgroupco.com/wp-content/uploads/z2119065044301_fa28b45950b489235def9e9d94fb9f2e.jpg",
-      "https://owa.bestprice.vn/images/articles/uploads/review-kinh-nghiem-nghi-duong-sieu-sang-chanh-tai-flc-luxury-hotel-resort-quy-nhon-5e9ec5a6d1913.jpg",
-      "https://gotour.com.vn/wp-content/uploads/2023/10/Canh-quan-ban-dem-tai-FLC-Luxury-Hotel-Resort-Quy-Nhon.jpeg"
+      "https://vietgroupco.com/wp-content/uploads/z2119065044301_fa28b45950b489235def9e9d94fb9f2e.jpg"
     ],
-    "budget": "2,800,000đ / đêm",
-    "stayType": "Resort nghỉ dưỡng 5 sao",
-    "address": "Khu 4, bãi biển Nhơn Lý - Cát Tiến",
-    "ratingAvg": 4.9,
-    "rating": 4.9,
-    "suitableFor": [
-      "Gia đình",
-      "Cặp đôi nghỉ dưỡng cao cấp"
-    ],
-    "regions": [
-      "TP. Pleiku"
-    ]
-  },
-  {
-    "id": "ACC_FLEURDELYS_QN",
-    "accId": "ACC_FLEURDELYS_QN",
-    "name": "Khách sạn Fleur De Lys Hotel Quy Nhơn",
-    "description": "Khách sạn 4 sao sang trọng view trực diện vịnh biển Quy Nhơn, phong cách thanh lịch châu Âu hiện đại.",
-    "imageUrl": "https://eholiday.vn/wp-content/uploads/2024/05/Khach-san-Fleur-De-Lys-Quy-Nhon-13.jpg",
-    "imageUrls": [
-      "https://eholiday.vn/wp-content/uploads/2024/05/Khach-san-Fleur-De-Lys-Quy-Nhon-13.jpg",
-      "https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/20044387-2d46e8d32e7ea5cacf81c7befce472b7.jpeg?_src=imagekit&tr=dpr-3",
-      "https://eholiday.vn/wp-content/uploads/2022/04/Khach-san-Fleur-De-Lys-Hotel-Quy-Nhon.jpg?v=1685334099",
-      "https://quynhonhotel.com/wp-content/uploads/2021/05/buoi-toi-khach-san-muong-thanh-quy-nhon-khach-san-4-sao-sat-bien-quy-nhon-quynhonhotel.jpg"
-    ],
-    "budget": "1,400,000đ / đêm",
-    "stayType": "Khách sạn 4 sao cao cấp",
-    "address": "16 Nguyễn Huệ, phường Lê Lợi, TP. Quy Nhơn",
-    "ratingAvg": 4.9,
-    "rating": 4.9,
-    "suitableFor": [
-      "Cặp đôi",
-      "Doanh nhân",
-      "Gia đình"
-    ],
-    "regions": [
-      "TP. Pleiku"
-    ]
-  },
-  {
-    "id": "ACC_HAGL_PLEIKU",
-    "accId": "ACC_HAGL_PLEIKU",
-    "name": "Khách sạn Hoàng Anh Gia Lai (HAGL Hotel)",
-    "description": "Khách sạn cao cấp trung tâm thành phố Pleiku, đầy đủ tiện ích hồ bơi, nhà hàng buffet và view ngắm toàn cảnh phố núi sương mù.",
-    "imageUrl": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800",
-    "imageUrls": [
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800"
-    ],
-    "budget": "1.200.000đ - 2.500.000đ",
-    "stayType": "Khách sạn 4 sao",
-    "address": "01 đường Phù Đổng, TP. Pleiku, Gia Lai",
-    "ratingAvg": 4.8,
-    "rating": 4.8,
-    "suitableFor": [],
-    "regions": [
-      "TP. Pleiku"
-    ]
-  },
-  {
-    "id": "ACC_HOANGYEN_TS",
-    "accId": "ACC_HOANGYEN_TS",
-    "name": "Khách sạn Hoàng Yến Tây Sơn",
-    "description": "Khách sạn trung tâm thị trấn Phú Phong, chỉ cách bảo tàng Quang Trung 5 phút đi bộ.",
-    "imageUrl": "https://gotour.com.vn/wp-content/uploads/2020/11/View-Bien-Khach-San-Hoang-Yen-Quy-Nhon-1.png",
-    "imageUrls": [
-      "https://gotour.com.vn/wp-content/uploads/2020/11/View-Bien-Khach-San-Hoang-Yen-Quy-Nhon-1.png",
-      "https://www.vietnambooking.com/wp-content/uploads/2019/01/khach-san-binh-dinh-hoang-yen-3-quy-nhon-1.jpg",
-      "http://booking24h.vn/image/catalog/khach-san/hoang-yen/Hoang-yen.jpg",
-      "https://gotour.com.vn/wp-content/uploads/2020/11/View-Khach-San-Hoang-Yen-Quy-Nhon-1.jpg"
-    ],
-    "budget": "600,000đ / đêm",
-    "stayType": "Khách sạn 3 sao",
-    "address": "Thị trấn Phú Phong, huyện Tây Sơn",
-    "ratingAvg": 4.6,
-    "rating": 4.6,
-    "suitableFor": [
-      "Gia đình",
-      "Đoàn tham quan di tích"
-    ],
-    "regions": [
-      "TP. Pleiku"
-    ]
-  },
-  {
-    "id": "ACC_JRAI_HOME",
-    "accId": "ACC_JRAI_HOME",
-    "name": "J'rai Homestay & Coffee Pleiku",
-    "description": "Sự kết hợp giữa phòng ngủ vintage ấm cúng và quán cà phê rang xay nguyên chất đậm chất phố núi.",
-    "imageUrl": "https://alltop.vn/backend/media/images/posts/1268/Jrai_Homestay-65074.jpg",
-    "imageUrls": [
-      "https://alltop.vn/backend/media/images/posts/1268/Jrai_Homestay-65074.jpg",
-      "https://alltop.vn/backend/media/images/posts/1268/Jrai_Homestay-65073.jpg",
-      "https://toplist.vn/images/800px/jrai-homestay-pleiku-1061743.jpg",
-      "https://2trip.vn/wp-content/uploads/2023/07/homestay-pleiku-gia-lai-3.jpg"
-    ],
-    "budget": "420,000đ / đêm",
-    "stayType": "Homestay",
-    "address": "Phường Hội Phú, TP. Pleiku, Gia Lai",
-    "ratingAvg": 4.7,
-    "rating": 4.7,
-    "suitableFor": [
-      "Cặp đôi",
-      "Nhóm bạn trẻ"
-    ],
-    "regions": [
-      "TP. Pleiku"
-    ]
-  },
-  {
-    "id": "ACC_KBANG_ECO",
-    "accId": "ACC_KBANG_ECO",
-    "name": "Kbang Eco Homestay & Trekking Base",
-    "description": "Trạm dừng chân lý tưởng của du khách trước chuyến hành trình trekking xuyên rừng già chinh phục thác K50 Kon Chư Răng.",
-    "imageUrl": "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800",
-    "imageUrls": [
-      "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800"
-    ],
-    "budget": "300.000đ - 600.000đ",
-    "stayType": "Homestay sinh thái",
-    "address": "Thị trấn Kbang, Huyện K'Bang, Gia Lai",
-    "ratingAvg": 4.8,
-    "rating": 4.8,
-    "suitableFor": [],
-    "regions": [
-      "TP. Pleiku"
-    ]
-  },
-  {
-    "id": "ACC_KYCO_PENINSULA",
-    "accId": "ACC_KYCO_PENINSULA",
-    "name": "Kỳ Co Peninsula Resort",
-    "description": "Bungalow sát vách núi biển Kỳ Co, mở cửa sổ đón gió trùng khơi và ngắm bình minh trên biển sớm nhất Quy Nhơn.",
-    "imageUrl": "http://www.beach-on-map.com/img/37/vietnam-quy-nhon-life-s-a-beach-orig.jpg",
-    "imageUrls": [
-      "http://www.beach-on-map.com/img/37/vietnam-quy-nhon-life-s-a-beach-orig.jpg",
-      "https://datviettour.com.vn/uploads/images/tin-tuc-SEO/mien-trung/quy-nhon/danh-thang/Lifes-A-Beach-Quy-Nhon-1.jpg",
-      "https://statics.vinpearl.com/bai-xep-beach-3_1688315197.jpg",
-      "https://www.rustycompass.com/uploads/destinations/lifes-a-beach-backpackers-bai-xep-quy-nhon-0817-0002_15028535254.jpg"
-    ],
-    "budget": "1,600,000đ / đêm",
-    "stayType": "Resort ven biển",
-    "address": "Khu du lịch Kỳ Co, xã Nhơn Lý, TP. Quy Nhơn",
-    "ratingAvg": 4.8,
-    "rating": 4.8,
-    "suitableFor": [
-      "Cặp đôi",
-      "Gia đình"
-    ],
-    "regions": [
-      "TP. Pleiku"
-    ]
-  },
-  {
-    "id": "ACC_LABEACH_NHONLY",
-    "accId": "ACC_LABEACH_NHONLY",
-    "name": "La Beach House Nhơn Lý (Cổ tích ven biển)",
-    "description": "Khu nhà rực rỡ sắc màu phong cách Địa Trung Hải nhìn thẳng ra vịnh biển xanh mát, điểm check-in viral trên TikTok.",
-    "imageUrl": "https://vietnamreviewer.com/wp-content/uploads/2023/09/La-Beach-House-Nhon-Ly-Quy-Nhon.jpg",
-    "imageUrls": [
-      "https://vietnamreviewer.com/wp-content/uploads/2023/09/La-Beach-House-Nhon-Ly-Quy-Nhon.jpg",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/22/18/15/nhoen-ly-beach.jpg?w=900&h=500&s=1",
-      "https://quynhontourist.vn/wp-content/uploads/2018/08/la-beach-house-quy-nhon-homestay-quy-nhon-quynhontourist6.jpg"
-    ],
-    "budget": "600,000đ / đêm",
-    "stayType": "Homestay",
-    "address": "Dốc làng chài Lý Lương, xã Nhơn Lý, Quy Nhơn",
-    "ratingAvg": 4.9,
-    "rating": 4.9,
-    "suitableFor": [
-      "Cặp đôi",
-      "Check-in sống ảo",
-      "Nhóm bạn"
-    ],
-    "regions": [
-      "TP. Pleiku"
-    ]
-  },
-  {
-    "id": "ACC_LIFEBEACH",
-    "accId": "ACC_LIFEBEACH",
-    "name": "Life's A Beach Homestay Bãi Xếp",
-    "description": "Homestay do hai chàng trai người Anh sáng lập, không gian mộc mạc sát biển với bar bia thủ công cực chill.",
-    "imageUrl": "http://www.beach-on-map.com/img/37/vietnam-quy-nhon-life-s-a-beach-orig.jpg",
-    "imageUrls": [
-      "http://www.beach-on-map.com/img/37/vietnam-quy-nhon-life-s-a-beach-orig.jpg",
-      "https://datviettour.com.vn/uploads/images/tin-tuc-SEO/mien-trung/quy-nhon/danh-thang/Lifes-A-Beach-Quy-Nhon-1.jpg",
-      "https://statics.vinpearl.com/bai-xep-beach-3_1688315197.jpg",
-      "https://www.rustycompass.com/uploads/destinations/lifes-a-beach-backpackers-bai-xep-quy-nhon-0817-0002_15028535254.jpg"
-    ],
-    "budget": "500,000đ / đêm",
-    "stayType": "Homestay phong cách Tây",
-    "address": "Tổ 2, khu vực 1, Bãi Xếp, Ghềnh Ráng, Quy Nhơn",
-    "ratingAvg": 4.8,
-    "rating": 4.8,
-    "suitableFor": [
-      "Khách Tây balo",
-      "Nhóm bạn trẻ"
-    ],
-    "regions": [
-      "TP. Pleiku"
-    ]
-  },
-  {
-    "id": "ACC_MIRABAIXEP",
-    "accId": "ACC_MIRABAIXEP",
-    "name": "Mira Bãi Xếp Homestay Quy Nhơn (Hidden Jewel)",
-    "description": "Homestay thiết kế gỗ kính mở độc đáo view vách đá và biển ngọc Bãi Xếp, điểm check-in yêu thích của giới trẻ.",
-    "imageUrl": "https://ohdidi.vn/uploads/static/HOMES/binh-dinh/mira-bai-xep-home/mira-bai-xep-06.jpg",
-    "imageUrls": [
-      "https://ohdidi.vn/uploads/static/HOMES/binh-dinh/mira-bai-xep-home/mira-bai-xep-06.jpg"
-    ],
-    "budget": "650,000đ / đêm",
-    "stayType": "Homestay ven biển",
-    "address": "Làng chài Bãi Xếp, phường Ghềnh Ráng, Quy Nhơn",
-    "ratingAvg": 4.9,
-    "rating": 4.9,
-    "suitableFor": [
-      "Cặp đôi",
-      "Người yêu biển yên tĩnh"
-    ],
-    "regions": [
-      "TP. Pleiku"
-    ]
-  },
-  {
-    "id": "ACC_MOC_NHONLY",
-    "accId": "ACC_MOC_NHONLY",
-    "name": "Mộc Homestay Nhơn Lý (View Làng chài & Eo Gió)",
-    "description": "Homestay phong cách mộc mạc sát biển làng chài Nhơn Lý, ngắm hoàng hôn Eo Gió tuyệt đẹp chỉ 3 phút đi bộ.",
-    "imageUrl": "https://halotravel.vn/wp-content/uploads/2021/02/moc-homestay-quy-nhon-1024x768.jpg",
-    "imageUrls": [
-      "https://halotravel.vn/wp-content/uploads/2021/02/moc-homestay-quy-nhon-1024x768.jpg",
-      "https://2trip.vn/wp-content/uploads/2020/08/Moc-homestay-nhon-Ly-750x563.jpg",
-      "https://2trip.vn/wp-content/uploads/2023/05/moc-homestay-quy-nhon_25.jpg"
-    ],
-    "budget": "550,000đ / đêm",
-    "stayType": "Homestay",
-    "address": "Xã Nhơn Lý, TP. Quy Nhơn",
-    "ratingAvg": 4.8,
-    "rating": 4.8,
-    "suitableFor": [
-      "Cặp đôi",
-      "Nhóm bạn trẻ"
-    ],
-    "regions": [
-      "TP. Pleiku"
-    ]
-  },
-  {
-    "id": "ACC_MUONGTHANH_GL",
-    "accId": "ACC_MUONGTHANH_GL",
-    "name": "Khách sạn Mường Thanh Grand Gia Lai",
-    "description": "Khách sạn 4 sao chuẩn quốc tế với hồ bơi ngoài trời, spa cao cấp và tầm nhìn ôm trọn quảng trường trung tâm.",
-    "imageUrl": "https://booking.muongthanh.com/images/hotels/hotels/original/muong-thanh-grand-gia-lai_1726647663.jpg",
-    "imageUrls": [
-      "https://booking.muongthanh.com/images/hotels/hotels/original/muong-thanh-grand-gia-lai_1726647663.jpg",
-      "https://www.cotrang.org/public/images/tin_dang/5/116_khach-san-muong-thanh-grand-gia-lai-pk-06.jpg",
-      "https://ongvove.com/uploads/0005/5428/2025/05/30/khach-san-muong-thanh-grand-gia-lai2.jpg",
-      "https://booking.muongthanh.com/images/news/2024/10/original/muong-thanh-grand-gia-lai_1727856512.jpg"
-    ],
-    "budget": "1,100,000đ / đêm",
-    "stayType": "Khách sạn 4 sao",
-    "address": "02 Lê Duẩn, phường Tây Sơn, TP. Pleiku, Gia Lai",
-    "ratingAvg": 4.8,
-    "rating": 4.8,
-    "suitableFor": [
-      "Doanh nhân",
-      "Gia đình",
-      "Đoàn hội nghị"
-    ],
-    "regions": [
-      "TP. Pleiku"
-    ]
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
     "id": "ACC_NHACUANEP_GL",
     "accId": "ACC_NHACUANEP_GL",
     "name": "Homestay Nhà Của Nếp Pleiku",
     "description": "Không gian mộc mạc làm từ tre nứa mang đậm hồn cốt Tây Nguyên ấm áp và thân thiện.",
+    "address": "Hẻm 48 Nguyễn Viết Xuân, TP. Pleiku, Gia Lai",
+    "stayType": "Homestay",
+    "pricePerNight": "400,000đ / đêm",
+    "priceRange": "400,000đ / đêm",
+    "avgRating": 4.9,
+    "phone": null,
     "imageUrl": "https://gialai.info/wp-content/uploads/2023/06/review-booking-phong-homestay-nha-cua-nep-pleiku-gia-lai-2.jpg",
     "imageUrls": [
-      "https://gialai.info/wp-content/uploads/2023/06/review-booking-phong-homestay-nha-cua-nep-pleiku-gia-lai-2.jpg",
-      "https://gialai.info/wp-content/uploads/2023/06/review-booking-phong-homestay-nha-cua-nep-pleiku-gia-lai-4.jpg",
-      "https://static2.abay.vn/Images/2024/10/25/nha-cua-nep-1-min.jpg",
-      "https://gialai.info/wp-content/uploads/2023/06/khach-checkin-nha-cua-nep-2.jpg"
+      "https://gialai.info/wp-content/uploads/2023/06/review-booking-phong-homestay-nha-cua-nep-pleiku-gia-lai-2.jpg"
     ],
-    "budget": "400,000đ / đêm",
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "ACC_FLEURDELYS_QN",
+    "accId": "ACC_FLEURDELYS_QN",
+    "name": "Khách sạn Fleur De Lys Hotel Quy Nhơn",
+    "description": "Khách sạn 4 sao sang trọng view trực diện vịnh biển Quy Nhơn, phong cách thanh lịch châu Âu hiện đại.",
+    "address": "16 Nguyễn Huệ, phường Lê Lợi, TP. Quy Nhơn",
+    "stayType": "Khách sạn 4 sao cao cấp",
+    "pricePerNight": "1,400,000đ / đêm",
+    "priceRange": "1,400,000đ / đêm",
+    "avgRating": 4.9,
+    "phone": null,
+    "imageUrl": "https://eholiday.vn/wp-content/uploads/2024/05/Khach-san-Fleur-De-Lys-Quy-Nhon-13.jpg",
+    "imageUrls": [
+      "https://eholiday.vn/wp-content/uploads/2024/05/Khach-san-Fleur-De-Lys-Quy-Nhon-13.jpg"
+    ],
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "ACC_LABEACH_NHONLY",
+    "accId": "ACC_LABEACH_NHONLY",
+    "name": "La Beach House Nhơn Lý (Cổ tích ven biển)",
+    "description": "Khu nhà rực rỡ sắc màu phong cách Địa Trung Hải nhìn thẳng ra vịnh biển xanh mát, điểm check-in viral trên TikTok.",
+    "address": "Dốc làng chài Lý Lương, xã Nhơn Lý, Quy Nhơn",
     "stayType": "Homestay",
-    "address": "Hẻm 48 Nguyễn Viết Xuân, TP. Pleiku, Gia Lai",
-    "ratingAvg": 4.9,
-    "rating": 4.9,
-    "suitableFor": [
-      "Cặp đôi",
-      "Bạn trẻ mê check-in"
+    "pricePerNight": "600,000đ / đêm",
+    "priceRange": "600,000đ / đêm",
+    "avgRating": 4.9,
+    "phone": null,
+    "imageUrl": "https://vietnamreviewer.com/wp-content/uploads/2023/09/La-Beach-House-Nhon-Ly-Quy-Nhon.jpg",
+    "imageUrls": [
+      "https://vietnamreviewer.com/wp-content/uploads/2023/09/La-Beach-House-Nhon-Ly-Quy-Nhon.jpg"
     ],
-    "regions": [
-      "TP. Pleiku"
-    ]
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
-    "id": "ACC_PAKSONG_FARM",
-    "accId": "ACC_PAKSONG_FARM",
-    "name": "Paksong Farmstay Gia Lai",
-    "description": "Khu nghỉ dưỡng nông trại xanh mát bên đồi chè cổ thụ, trải nghiệm hái chè và thưởng thức ẩm thực hữu cơ.",
-    "imageUrl": "https://mia.vn/media/uploads/blog-du-lich/homestay-gia-lai-tien-son-1708100154.jpg",
+    "id": "ACC_MIRABAIXEP",
+    "accId": "ACC_MIRABAIXEP",
+    "name": "Mira Bãi Xếp Homestay Quy Nhơn (Hidden Jewel)",
+    "description": "Homestay thiết kế gỗ kính mở độc đáo view vách đá và biển ngọc Bãi Xếp, điểm check-in yêu thích của giới trẻ.",
+    "address": "Làng chài Bãi Xếp, phường Ghềnh Ráng, Quy Nhơn",
+    "stayType": "Homestay ven biển",
+    "pricePerNight": "650,000đ / đêm",
+    "priceRange": "650,000đ / đêm",
+    "avgRating": 4.9,
+    "phone": null,
+    "imageUrl": "https://ohdidi.vn/uploads/static/HOMES/binh-dinh/mira-bai-xep-home/mira-bai-xep-06.jpg",
     "imageUrls": [
-      "https://mia.vn/media/uploads/blog-du-lich/homestay-gia-lai-tien-son-1708100154.jpg"
+      "https://ohdidi.vn/uploads/static/HOMES/binh-dinh/mira-bai-xep-home/mira-bai-xep-06.jpg"
     ],
-    "budget": "600,000đ / đêm",
-    "stayType": "Farmstay sinh thái",
-    "address": "Xã Nghĩa Hưng, huyện Chư Păh, Gia Lai",
-    "ratingAvg": 4.8,
-    "rating": 4.8,
-    "suitableFor": [
-      "Gia đình",
-      "Nhóm bạn",
-      "Người yêu nông nghiệp sạch"
-    ],
-    "regions": [
-      "TP. Pleiku"
-    ]
-  },
-  {
-    "id": "ACC_PLEIKU_HOTEL",
-    "accId": "ACC_PLEIKU_HOTEL",
-    "name": "Pleiku Grand Hotel (Khách sạn 4 sao Trung tâm)",
-    "description": "Khách sạn cao cấp tiện nghi giữa trung tâm Pleiku, gần quảng trường Đại Đoàn Kết và phố đi bộ đêm.",
-    "imageUrl": "https://image.vietgoing.com/hotel/04/21/large/vietgoing_nds2306082394.webp",
-    "imageUrls": [
-      "https://image.vietgoing.com/hotel/04/21/large/vietgoing_nds2306082394.webp"
-    ],
-    "budget": "950,000đ / đêm",
-    "stayType": "Khách sạn 4 sao",
-    "address": "124 Lê Lợi, phường Hoa Lư, TP. Pleiku, Gia Lai",
-    "ratingAvg": 4.7,
-    "rating": 4.7,
-    "suitableFor": [
-      "Gia đình",
-      "Doanh nhân",
-      "Khách đoàn"
-    ],
-    "regions": [
-      "TP. Pleiku"
-    ]
-  },
-  {
-    "id": "ACC_SAIGON_ANKHE",
-    "accId": "ACC_SAIGON_ANKHE",
-    "name": "Khách sạn Sài Gòn - Ban Mê An Khê",
-    "description": "Điểm dừng chân lý tưởng trên trục QL19 trước khi vượt đèo An Khê xuống duyên hải.",
-    "imageUrl": "https://disaigon.com/wp-content/uploads/2023/05/9999.jpg",
-    "imageUrls": [
-      "https://disaigon.com/wp-content/uploads/2023/05/9999.jpg",
-      "https://ticotravel.com.vn/wp-content/uploads/2022/03/Sai-Gon-Ban-Me-Hotel-1.jpg",
-      "https://du-lich.chudu24.com/f/m/1704/26/4-3.jpg",
-      "https://eholiday.vn/wp-content/uploads/2024/11/Khach-san-Sai-Gon-Ban-Me-1.jpg"
-    ],
-    "budget": "550,000đ / đêm",
-    "stayType": "Khách sạn 3 sao",
-    "address": "Đường Quang Trung, thị xã An Khê, Gia Lai",
-    "ratingAvg": 4.5,
-    "rating": 4.5,
-    "suitableFor": [
-      "Khách đi đường liên tuyến",
-      "Công tác"
-    ],
-    "regions": [
-      "TP. Pleiku"
-    ]
-  },
-  {
-    "id": "ACC_SEAGULL_QN",
-    "accId": "ACC_SEAGULL_QN",
-    "name": "Khách sạn Hải Âu Quy Nhơn (Seagull Hotel)",
-    "description": "Khách sạn ven biển lâu đời có ban công ngắm trọn bình minh biển Quy Nhơn và bãi tắm cát vàng.",
-    "imageUrl": "https://2trip.vn/wp-content/uploads/2020/08/seagull-hotel-quy-nhon.jpg",
-    "imageUrls": [
-      "https://2trip.vn/wp-content/uploads/2020/08/seagull-hotel-quy-nhon.jpg",
-      "https://khamphaquynhon.vn/wp-content/uploads/2026/01/danh-gia-seagull-hotel-494.jpg",
-      "https://eholiday.vn/wp-content/uploads/2024/04/Khach-san-Hai-Au-Quy-Nhon.jpg",
-      "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2020/09/khach-san-hai-au-quy-nhon-1.jpg"
-    ],
-    "budget": "950,000đ / đêm",
-    "stayType": "Khách sạn 4 sao",
-    "address": "489 An Dương Vương, TP. Quy Nhơn",
-    "ratingAvg": 4.6,
-    "rating": 4.6,
-    "suitableFor": [
-      "Gia đình",
-      "Đoàn du lịch"
-    ],
-    "regions": [
-      "TP. Pleiku"
-    ]
-  },
-  {
-    "id": "ACC_TREXANH_PLEIKU",
-    "accId": "ACC_TREXANH_PLEIKU",
-    "name": "Khách sạn Tre Xanh Plaza",
-    "description": "Khách sạn lâu năm uy tín tại trung tâm Pleiku, giá cả hợp lý, khuôn viên rộng rãi có bãi đỗ xe du lịch lớn.",
-    "imageUrl": "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800",
-    "imageUrls": [
-      "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800"
-    ],
-    "budget": "500.000đ - 900.000đ",
-    "stayType": "Khách sạn 3 sao",
-    "address": "18 đường Lê Lai, Phường Tây Sơn, TP. Pleiku, Gia Lai",
-    "ratingAvg": 4.5,
-    "rating": 4.5,
-    "suitableFor": [],
-    "regions": [
-      "TP. Pleiku"
-    ]
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
     "id": "ACC_XOM_PLEIKU",
     "accId": "ACC_XOM_PLEIKU",
     "name": "Xóm Homestay Pleiku (View Thung lũng & Rừng thông)",
     "description": "Homestay nhà gỗ mộc mạc bên sườn đồi, săn mây thung lũng thông reo và ngắm hoàng hôn Pleiku cực chill.",
+    "address": "Thôn 1, xã Biển Hồ, TP. Pleiku, Gia Lai",
+    "stayType": "Homestay",
+    "pricePerNight": "450,000đ / đêm",
+    "priceRange": "450,000đ / đêm",
+    "avgRating": 4.9,
+    "phone": null,
     "imageUrl": "https://2trip.vn/wp-content/uploads/2023/07/homestay-pleiku-gia-lai-3-750x563.jpg",
     "imageUrls": [
       "https://2trip.vn/wp-content/uploads/2023/07/homestay-pleiku-gia-lai-3-750x563.jpg"
     ],
-    "budget": "450,000đ / đêm",
-    "stayType": "Homestay",
-    "address": "Thôn 1, xã Biển Hồ, TP. Pleiku, Gia Lai",
-    "ratingAvg": 4.9,
-    "rating": 4.9,
-    "suitableFor": [
-      "Cặp đôi",
-      "Nhóm bạn trẻ",
-      "Người yêu thiên nhiên"
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "ACC_BD_ANYA_PREMIER",
+    "accId": "ACC_BD_ANYA_PREMIER",
+    "name": "Anya Premier Hotel Quy Nhơn",
+    "description": "Khách sạn 5 sao cao cấp tọa lạc tại vị trí đắc địa mặt tiền biển Quy Nhơn, dịch vụ sang trọng, hồ bơi sân thượng ngắm toàn cảnh vịnh biển.",
+    "address": "Số 44 An Dương Vương, Phường Nguyễn Văn Cừ, Thành phố Quy Nhơn",
+    "stayType": "Khách sạn 5 sao",
+    "pricePerNight": 1450000,
+    "priceRange": "1.450.000đ/đêm",
+    "avgRating": 4.8,
+    "phone": "0256 2220 779",
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Quy_Nhon_Beach_Promenade.jpg/1280px-Quy_Nhon_Beach_Promenade.jpg",
+    "imageUrls": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Quy_Nhon_Beach_Promenade.jpg/1280px-Quy_Nhon_Beach_Promenade.jpg"
     ],
-    "regions": [
-      "TP. Pleiku"
-    ]
+    "legacy_province": "Bình Định",
+    "geographic_region": "Duyên hải"
+  },
+  {
+    "id": "ACC_CASAMARINA",
+    "accId": "ACC_CASAMARINA",
+    "name": "Casa Marina Resort Quy Nhơn",
+    "description": "Resort ẩn mình trong vịnh biển Quy Hòa thanh bình với hồ bơi vô cực lọc bằng ozone và hàng dừa rợp bóng.",
+    "address": "Quốc lộ 1D, khu phố 1, Bãi Xếp, Ghềnh Ráng, Quy Nhơn",
+    "stayType": "Resort 4 sao",
+    "pricePerNight": "1,900,000đ / đêm",
+    "priceRange": "1,900,000đ / đêm",
+    "avgRating": 4.8,
+    "phone": null,
+    "imageUrl": "https://cdn3.ivivu.com/2023/06/casa-marina-quy-nhon-ivivu-1.jpg",
+    "imageUrls": [
+      "https://cdn3.ivivu.com/2023/06/casa-marina-quy-nhon-ivivu-1.jpg"
+    ],
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "ACC_BD_FLC_QUYNHON",
+    "accId": "ACC_BD_FLC_QUYNHON",
+    "name": "FLC Luxury Resort & Hotel Quy Nhơn",
+    "description": "Quần thể nghỉ dưỡng 5 sao tiêu chuẩn quốc tế ôm trọn bờ biển Nhơn Lý hoang sơ, với sân golf links 36 hố và hồ bơi vô cực rộng lớn.",
+    "address": "Khu 4, Xã Nhơn Lý, Thành phố Quy Nhơn",
+    "stayType": "Resort",
+    "pricePerNight": 2200000,
+    "priceRange": "2.200.000đ/đêm",
+    "avgRating": 4.8,
+    "phone": "0256 6288 888",
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/FLC_Quy_Nh%C6%A1n_-_42095761555.jpg/1280px-FLC_Quy_Nh%C6%A1n_-_42095761555.jpg",
+    "imageUrls": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/FLC_Quy_Nh%C6%A1n_-_42095761555.jpg/1280px-FLC_Quy_Nh%C6%A1n_-_42095761555.jpg"
+    ],
+    "legacy_province": "Bình Định",
+    "geographic_region": "Duyên hải"
+  },
+  {
+    "id": "ACC_KBANG_ECO",
+    "accId": "ACC_KBANG_ECO",
+    "name": "Kbang Eco Homestay & Trekking Base",
+    "description": "Trạm dừng chân lý tưởng của du khách trước chuyến hành trình trekking xuyên rừng già chinh phục thác K50 Kon Chư Răng.",
+    "address": "Thị trấn Kbang, Huyện K'Bang, Gia Lai",
+    "stayType": "Homestay sinh thái",
+    "pricePerNight": "300.000đ - 600.000đ",
+    "priceRange": "300.000đ - 600.000đ",
+    "avgRating": 4.8,
+    "phone": "0977 123 456",
+    "imageUrl": "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800"
+    ],
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "ACC_HAGL_PLEIKU",
+    "accId": "ACC_HAGL_PLEIKU",
+    "name": "Khách sạn Hoàng Anh Gia Lai (HAGL Hotel)",
+    "description": "Khách sạn cao cấp trung tâm thành phố Pleiku, đầy đủ tiện ích hồ bơi, nhà hàng buffet và view ngắm toàn cảnh phố núi sương mù.",
+    "address": "01 đường Phù Đổng, TP. Pleiku, Gia Lai",
+    "stayType": "Khách sạn 4 sao",
+    "pricePerNight": "1.200.000đ - 2.500.000đ",
+    "priceRange": "1.200.000đ - 2.500.000đ",
+    "avgRating": 4.8,
+    "phone": "0269 3718 100",
+    "imageUrl": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800"
+    ],
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "ACC_MUONGTHANH_GL",
+    "accId": "ACC_MUONGTHANH_GL",
+    "name": "Khách sạn Mường Thanh Grand Gia Lai",
+    "description": "Khách sạn 4 sao chuẩn quốc tế với hồ bơi ngoài trời, spa cao cấp và tầm nhìn ôm trọn quảng trường trung tâm.",
+    "address": "02 Lê Duẩn, phường Tây Sơn, TP. Pleiku, Gia Lai",
+    "stayType": "Khách sạn 4 sao",
+    "pricePerNight": "1,100,000đ / đêm",
+    "priceRange": "1,100,000đ / đêm",
+    "avgRating": 4.8,
+    "phone": null,
+    "imageUrl": "https://booking.muongthanh.com/images/hotels/hotels/original/muong-thanh-grand-gia-lai_1726647663.jpg",
+    "imageUrls": [
+      "https://booking.muongthanh.com/images/hotels/hotels/original/muong-thanh-grand-gia-lai_1726647663.jpg"
+    ],
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "ACC_KYCO_PENINSULA",
+    "accId": "ACC_KYCO_PENINSULA",
+    "name": "Kỳ Co Peninsula Resort",
+    "description": "Bungalow sát vách núi biển Kỳ Co, mở cửa sổ đón gió trùng khơi và ngắm bình minh trên biển sớm nhất Quy Nhơn.",
+    "address": "Khu du lịch Kỳ Co, xã Nhơn Lý, TP. Quy Nhơn",
+    "stayType": "Resort ven biển",
+    "pricePerNight": "1,600,000đ / đêm",
+    "priceRange": "1,600,000đ / đêm",
+    "avgRating": 4.8,
+    "phone": null,
+    "imageUrl": "http://www.beach-on-map.com/img/37/vietnam-quy-nhon-life-s-a-beach-orig.jpg",
+    "imageUrls": [
+      "http://www.beach-on-map.com/img/37/vietnam-quy-nhon-life-s-a-beach-orig.jpg"
+    ],
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "ACC_LIFEBEACH",
+    "accId": "ACC_LIFEBEACH",
+    "name": "Life's A Beach Homestay Bãi Xếp",
+    "description": "Homestay do hai chàng trai người Anh sáng lập, không gian mộc mạc sát biển với bar bia thủ công cực chill.",
+    "address": "Tổ 2, khu vực 1, Bãi Xếp, Ghềnh Ráng, Quy Nhơn",
+    "stayType": "Homestay phong cách Tây",
+    "pricePerNight": "500,000đ / đêm",
+    "priceRange": "500,000đ / đêm",
+    "avgRating": 4.8,
+    "phone": null,
+    "imageUrl": "http://www.beach-on-map.com/img/37/vietnam-quy-nhon-life-s-a-beach-orig.jpg",
+    "imageUrls": [
+      "http://www.beach-on-map.com/img/37/vietnam-quy-nhon-life-s-a-beach-orig.jpg"
+    ],
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "ACC_MOC_NHONLY",
+    "accId": "ACC_MOC_NHONLY",
+    "name": "Mộc Homestay Nhơn Lý (View Làng chài & Eo Gió)",
+    "description": "Homestay phong cách mộc mạc sát biển làng chài Nhơn Lý, ngắm hoàng hôn Eo Gió tuyệt đẹp chỉ 3 phút đi bộ.",
+    "address": "Xã Nhơn Lý, TP. Quy Nhơn",
+    "stayType": "Homestay",
+    "pricePerNight": "550,000đ / đêm",
+    "priceRange": "550,000đ / đêm",
+    "avgRating": 4.8,
+    "phone": null,
+    "imageUrl": "https://halotravel.vn/wp-content/uploads/2021/02/moc-homestay-quy-nhon-1024x768.jpg",
+    "imageUrls": [
+      "https://halotravel.vn/wp-content/uploads/2021/02/moc-homestay-quy-nhon-1024x768.jpg"
+    ],
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "ACC_PAKSONG_FARM",
+    "accId": "ACC_PAKSONG_FARM",
+    "name": "Paksong Farmstay Gia Lai",
+    "description": "Khu nghỉ dưỡng nông trại xanh mát bên đồi chè cổ thụ, trải nghiệm hái chè và thưởng thức ẩm thực hữu cơ.",
+    "address": "Xã Nghĩa Hưng, huyện Chư Păh, Gia Lai",
+    "stayType": "Farmstay sinh thái",
+    "pricePerNight": "600,000đ / đêm",
+    "priceRange": "600,000đ / đêm",
+    "avgRating": 4.8,
+    "phone": null,
+    "imageUrl": "https://mia.vn/media/uploads/blog-du-lich/homestay-gia-lai-tien-son-1708100154.jpg",
+    "imageUrls": [
+      "https://mia.vn/media/uploads/blog-du-lich/homestay-gia-lai-tien-son-1708100154.jpg"
+    ],
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "ACC_CHUPAH_FARM",
+    "accId": "ACC_CHUPAH_FARM",
+    "name": "Tiên Sơn Farmstay & Camp Chư Păh",
+    "description": "Khu lều trại glamping giữa đồi chè và chân núi lửa Chư Đang Ya, ngắm dải ngân hà về đêm cực kỳ ấn tượng.",
+    "address": "Xã Tân Sơn, huyện Chư Păh, Gia Lai",
+    "stayType": "Homestay / Camping",
+    "pricePerNight": "500,000đ / đêm",
+    "priceRange": "500,000đ / đêm",
+    "avgRating": 4.8,
+    "phone": null,
+    "imageUrl": "https://mia.vn/media/uploads/blog-du-lich/homestay-gia-lai-tien-son-1708100154.jpg",
+    "imageUrls": [
+      "https://mia.vn/media/uploads/blog-du-lich/homestay-gia-lai-tien-son-1708100154.jpg"
+    ],
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "ACC_ANYA_QN",
+    "accId": "ACC_ANYA_QN",
+    "name": "Anya Premier Hotel Quy Nhơn (Khách sạn biển 4 sao)",
+    "description": "Khách sạn cao cấp đối diện bãi biển Quy Nhơn, tiện lợi tắm biển và thưởng thức phố ẩm thực đêm Ngô Văn Sở.",
+    "address": "44 An Dương Vương, phường Nguyễn Văn Cừ, Quy Nhơn",
+    "stayType": "Khách sạn 4 sao",
+    "pricePerNight": "1,200,000đ / đêm",
+    "priceRange": "1,200,000đ / đêm",
+    "avgRating": 4.7,
+    "phone": null,
+    "imageUrl": "https://quynhonbooking.vn/wp-content/uploads/2022/10/Anya-Premier-Hotel-Quy-Nhon.jpg",
+    "imageUrls": [
+      "https://quynhonbooking.vn/wp-content/uploads/2022/10/Anya-Premier-Hotel-Quy-Nhon.jpg"
+    ],
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "ACC_JRAI_HOME",
+    "accId": "ACC_JRAI_HOME",
+    "name": "J'rai Homestay & Coffee Pleiku",
+    "description": "Sự kết hợp giữa phòng ngủ vintage ấm cúng và quán cà phê rang xay nguyên chất đậm chất phố núi.",
+    "address": "Phường Hội Phú, TP. Pleiku, Gia Lai",
+    "stayType": "Homestay",
+    "pricePerNight": "420,000đ / đêm",
+    "priceRange": "420,000đ / đêm",
+    "avgRating": 4.7,
+    "phone": null,
+    "imageUrl": "https://alltop.vn/backend/media/images/posts/1268/Jrai_Homestay-65074.jpg",
+    "imageUrls": [
+      "https://alltop.vn/backend/media/images/posts/1268/Jrai_Homestay-65074.jpg"
+    ],
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "ACC_BD_MIRA_BAIXEP",
+    "accId": "ACC_BD_MIRA_BAIXEP",
+    "name": "Mira Bãi Xép Homestay & Cafe",
+    "description": "Homestay phong cách mộc mạc tinh tế nhìn thẳng ra bãi biển làng chài Bãi Xép hoang sơ yên bình, điểm hẹn ngắm bình minh biển tuyệt đẹp.",
+    "address": "Xóm Bãi Xép, Tổ 3, Khu vực 1, Phường Ghềnh Ráng, Thành phố Quy Nhơn",
+    "stayType": "Homestay",
+    "pricePerNight": 650000,
+    "priceRange": "650.000đ/đêm",
+    "avgRating": 4.7,
+    "phone": "0973 693 694",
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Queen%27s_beach%2C_Quy_Nhon_city%2C_Binh_Dinh_province%2C_Vietnam.jpg/1280px-Queen%27s_beach%2C_Quy_Nhon_city%2C_Binh_Dinh_province%2C_Vietnam.jpg",
+    "imageUrls": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Queen%27s_beach%2C_Quy_Nhon_city%2C_Binh_Dinh_province%2C_Vietnam.jpg/1280px-Queen%27s_beach%2C_Quy_Nhon_city%2C_Binh_Dinh_province%2C_Vietnam.jpg"
+    ],
+    "legacy_province": "Bình Định",
+    "geographic_region": "Duyên hải"
+  },
+  {
+    "id": "ACC_PLEIKU_HOTEL",
+    "accId": "ACC_PLEIKU_HOTEL",
+    "name": "Pleiku Grand Hotel (Khách sạn 4 sao Trung tâm)",
+    "description": "Khách sạn cao cấp tiện nghi giữa trung tâm Pleiku, gần quảng trường Đại Đoàn Kết và phố đi bộ đêm.",
+    "address": "124 Lê Lợi, phường Hoa Lư, TP. Pleiku, Gia Lai",
+    "stayType": "Khách sạn 4 sao",
+    "pricePerNight": "950,000đ / đêm",
+    "priceRange": "950,000đ / đêm",
+    "avgRating": 4.7,
+    "phone": null,
+    "imageUrl": "https://image.vietgoing.com/hotel/04/21/large/vietgoing_nds2306082394.webp",
+    "imageUrls": [
+      "https://image.vietgoing.com/hotel/04/21/large/vietgoing_nds2306082394.webp"
+    ],
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "ACC_BOSTON_GL",
+    "accId": "ACC_BOSTON_GL",
+    "name": "Khách sạn Boston Hotel Pleiku",
+    "description": "Khách sạn phong cách hiện đại trẻ trung, phòng ốc sạch sẽ, tiện nghi và giá cả hợp lý ngay trung tâm.",
+    "address": "212 Phù Đổng, TP. Pleiku, Gia Lai",
+    "stayType": "Khách sạn 3 sao",
+    "pricePerNight": "650,000đ / đêm",
+    "priceRange": "650,000đ / đêm",
+    "avgRating": 4.6,
+    "phone": null,
+    "imageUrl": "https://alltop.vn/backend/media/images/posts/692/Boston_Hotel_Gia_Lai-238282.jpg",
+    "imageUrls": [
+      "https://alltop.vn/backend/media/images/posts/692/Boston_Hotel_Gia_Lai-238282.jpg"
+    ],
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "ACC_HOANGYEN_TS",
+    "accId": "ACC_HOANGYEN_TS",
+    "name": "Khách sạn Hoàng Yến Tây Sơn",
+    "description": "Khách sạn trung tâm thị trấn Phú Phong, chỉ cách bảo tàng Quang Trung 5 phút đi bộ.",
+    "address": "Thị trấn Phú Phong, huyện Tây Sơn",
+    "stayType": "Khách sạn 3 sao",
+    "pricePerNight": "600,000đ / đêm",
+    "priceRange": "600,000đ / đêm",
+    "avgRating": 4.6,
+    "phone": null,
+    "imageUrl": "https://gotour.com.vn/wp-content/uploads/2020/11/View-Bien-Khach-San-Hoang-Yen-Quy-Nhon-1.png",
+    "imageUrls": [
+      "https://gotour.com.vn/wp-content/uploads/2020/11/View-Bien-Khach-San-Hoang-Yen-Quy-Nhon-1.png"
+    ],
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "ACC_SEAGULL_QN",
+    "accId": "ACC_SEAGULL_QN",
+    "name": "Khách sạn Hải Âu Quy Nhơn (Seagull Hotel)",
+    "description": "Khách sạn ven biển lâu đời có ban công ngắm trọn bình minh biển Quy Nhơn và bãi tắm cát vàng.",
+    "address": "489 An Dương Vương, TP. Quy Nhơn",
+    "stayType": "Khách sạn 4 sao",
+    "pricePerNight": "950,000đ / đêm",
+    "priceRange": "950,000đ / đêm",
+    "avgRating": 4.6,
+    "phone": null,
+    "imageUrl": "https://2trip.vn/wp-content/uploads/2020/08/seagull-hotel-quy-nhon.jpg",
+    "imageUrls": [
+      "https://2trip.vn/wp-content/uploads/2020/08/seagull-hotel-quy-nhon.jpg"
+    ],
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "ACC_SAIGON_ANKHE",
+    "accId": "ACC_SAIGON_ANKHE",
+    "name": "Khách sạn Sài Gòn - Ban Mê An Khê",
+    "description": "Điểm dừng chân lý tưởng trên trục QL19 trước khi vượt đèo An Khê xuống duyên hải.",
+    "address": "Đường Quang Trung, thị xã An Khê, Gia Lai",
+    "stayType": "Khách sạn 3 sao",
+    "pricePerNight": "550,000đ / đêm",
+    "priceRange": "550,000đ / đêm",
+    "avgRating": 4.5,
+    "phone": null,
+    "imageUrl": "https://disaigon.com/wp-content/uploads/2023/05/9999.jpg",
+    "imageUrls": [
+      "https://disaigon.com/wp-content/uploads/2023/05/9999.jpg"
+    ],
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "ACC_TREXANH_PLEIKU",
+    "accId": "ACC_TREXANH_PLEIKU",
+    "name": "Khách sạn Tre Xanh Plaza",
+    "description": "Khách sạn lâu năm uy tín tại trung tâm Pleiku, giá cả hợp lý, khuôn viên rộng rãi có bãi đỗ xe du lịch lớn.",
+    "address": "18 đường Lê Lai, Phường Tây Sơn, TP. Pleiku, Gia Lai",
+    "stayType": "Khách sạn 3 sao",
+    "pricePerNight": "500.000đ - 900.000đ",
+    "priceRange": "500.000đ - 900.000đ",
+    "avgRating": 4.5,
+    "phone": "0269 3715 787",
+    "imageUrl": "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800"
+    ],
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   }
 ];
 
 export const MOCK_EVENTS = [
   {
-    "eventId": "EVT_DAQUY",
-    "name": "Tuần lễ Hoa Dã Quỳ - Núi lửa Chư Đang Ya",
-    "monthOccurred": "Tháng 11 hàng năm",
-    "frequency": "Thường niên",
-    "locationId": "LOC_CHUDANGYA",
-    "highlightActivity": "Biểu diễn cồng chiêng, thi đan lát, dệt thổ cẩm, chinh phục đỉnh núi lửa ngắm thảm dã quỳ rực rỡ",
-    "description": "Sự kiện du lịch văn hóa lớn nhất năm của tỉnh Gia Lai thu hút hàng vạn du khách về chiêm ngưỡng miệng núi lửa cổ vàng rực sắc hoa."
-  },
-  {
-    "eventId": "EVT_CONGCHIENG",
-    "name": "Ngày hội Văn hóa Cồng chiêng Tây Nguyên tại Gia Lai",
-    "monthOccurred": "Tháng 3 hoặc Tháng 11",
-    "frequency": "Định kỳ",
-    "locationId": "LOC_QUANGTRUONG_GL",
-    "highlightActivity": "Đại hợp tấu cồng chiêng của các nghệ nhân Jrai, Bahnar, rước lửa thiêng, múa xoang quanh ánh lửa",
-    "description": "Không gian tôn vinh di sản văn hóa phi vật thể của nhân loại với sự tham gia của hàng trăm nghệ nhân buôn làng."
-  },
-  {
-    "eventId": "EVT_CAUMUA",
-    "name": "Lễ Cầu Mưa của Yang Pơtao Apui (Vua Lửa)",
-    "monthOccurred": "Tháng 4 âm lịch",
-    "frequency": "Thường niên",
-    "locationId": "LOC_LANGVOI",
-    "highlightActivity": "Nghi thức tế lễ thần sấm, thần mưa của đồng bào Jrai cầu quốc thái dân an, mùa màng bội thu",
-    "description": "Nghi lễ tín ngưỡng tâm linh dân gian đặc sắc được công nhận là Di sản văn hóa phi vật thể quốc gia."
-  },
-  {
+    "id": "EVT_DUA_THUYEN_SESAN",
     "eventId": "EVT_DUA_THUYEN_SESAN",
     "name": "Hội Đua Thuyền Độc Mộc trên Sông Sê San",
+    "description": "Hội thi thể thao sông nước đậm chất bản địa thu hút đông đảo du khách và cư dân biên giới tham gia.",
+    "highlight": "Đua thuyền độc mộc truyền thống, thi câu cá lăng, trình diễn cồng chiêng trên mặt nước",
+    "highlightActivity": "Đua thuyền độc mộc truyền thống, thi câu cá lăng, trình diễn cồng chiêng trên mặt nước",
+    "time": "Tháng 11",
     "monthOccurred": "Tháng 11",
     "frequency": "Thường niên",
+    "locationName": "Hồ Thủy điện Sê San 4",
     "locationId": "LOC_THUYDIEN_SESAN4",
-    "highlightActivity": "Đua thuyền độc mộc truyền thống, thi câu cá lăng, trình diễn cồng chiêng trên mặt nước",
-    "description": "Hội thi thể thao sông nước đậm chất bản địa thu hút đông đảo du khách và cư dân biên giới tham gia."
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
-    "eventId": "EVT_CAFE_PLEIKU",
-    "name": "Tuần lễ Cà phê Pleiku & Văn hóa Ẩm thực Phố Núi",
-    "monthOccurred": "Tháng 12",
+    "id": "EVT_BD_VO_CO_TRUYEN",
+    "eventId": "EVT_BD_VO_CO_TRUYEN",
+    "name": "Liên hoan Quốc tế Võ Cổ truyền Việt Nam",
+    "description": "Sự kiện võ thuật quốc tế quy tụ hàng nghìn võ sư, vận động viên từ hơn 30 quốc gia về giao lưu võ thuật cổ truyền trên đất võ Bình Định.",
+    "highlight": "Đồng diễn quyền thuật, đối kháng thập bát ban binh khí, diễu hành võ phái",
+    "highlightActivity": "Đồng diễn quyền thuật, đối kháng thập bát ban binh khí, diễu hành võ phái",
+    "time": "Tháng 8 (Định kỳ 2-3 năm/lần)",
+    "monthOccurred": "Tháng 8 (Định kỳ 2-3 năm/lần)",
+    "frequency": "Định kỳ",
+    "locationName": "Làng Võ Cổ truyền Tây Sơn - Bình Định",
+    "locationId": "LOC_BD_LANG_VO_TAY_SON",
+    "legacy_province": "Bình Định",
+    "geographic_region": "Duyên hải"
+  },
+  {
+    "id": "EVT_CAUMUA",
+    "eventId": "EVT_CAUMUA",
+    "name": "Lễ Cầu Mưa của Yang Pơtao Apui (Vua Lửa)",
+    "description": "Nghi lễ tín ngưỡng tâm linh dân gian đặc sắc được công nhận là Di sản văn hóa phi vật thể quốc gia.",
+    "highlight": "Nghi thức tế lễ thần sấm, thần mưa của đồng bào Jrai cầu quốc thái dân an, mùa màng bội thu",
+    "highlightActivity": "Nghi thức tế lễ thần sấm, thần mưa của đồng bào Jrai cầu quốc thái dân an, mùa màng bội thu",
+    "time": "Tháng 4 âm lịch",
+    "monthOccurred": "Tháng 4 âm lịch",
     "frequency": "Thường niên",
-    "locationId": "LOC_QUANGTRUONG_GL",
-    "highlightActivity": "Thưởng thức cà phê miễn phí, thi pha chế Barista, trưng bày các sản phẩm OCOP Gia Lai",
-    "description": "Sự kiện tôn vinh hạt cà phê bazan nồng nàn và văn hóa thưởng thức cà phê đường phố đặc trưng của Pleiku."
+    "locationName": "Làng Văn hóa Du lịch Plei Ốp",
+    "locationId": "LOC_LANGVOI",
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   },
   {
+    "id": "EVT_BD_DONG_DA",
+    "eventId": "EVT_BD_DONG_DA",
+    "name": "Lễ hội Kỷ niệm Chiến thắng Ngọc Hồi - Đống Đa",
+    "description": "Lễ hội truyền thống quy mô lớn tái hiện khí thế hào hùng của đoàn quân Tây Sơn thần tốc đại phá 29 vạn quân Thanh mùa xuân năm Kỷ Dậu 1789.",
+    "highlight": "Tế lễ truyền thống, diễn võ cổ truyền, biểu diễn trống trận Tây Sơn hoành tráng",
+    "highlightActivity": "Tế lễ truyền thống, diễn võ cổ truyền, biểu diễn trống trận Tây Sơn hoành tráng",
+    "time": "Mùng 4 - 5 tháng Giêng (Âm lịch)",
+    "monthOccurred": "Mùng 4 - 5 tháng Giêng (Âm lịch)",
+    "frequency": "Thường niên",
+    "locationName": "Bảo tàng Quang Trung & Điện thờ Tây Sơn Tam Kiệt",
+    "locationId": "LOC_BD_BAO_TANG_QUANG_TRUNG",
+    "legacy_province": "Bình Định",
+    "geographic_region": "Duyên hải"
+  },
+  {
+    "id": "EVT_TAYSON_THUONGDAO",
     "eventId": "EVT_TAYSON_THUONGDAO",
     "name": "Lễ hội Kỷ niệm Khởi nghĩa Tây Sơn Thượng Đạo",
+    "description": "Lễ hội tri ân phong trào khởi nghĩa nông dân Tây Sơn và tưởng nhớ công đức vua Quang Trung cùng nghĩa sĩ.",
+    "highlight": "Tế lễ rước linh vị nghĩa quân Tây Sơn, biểu diễn võ cổ truyền Bình Định - Gia Lai, múa lân sư rồng",
+    "highlightActivity": "Tế lễ rước linh vị nghĩa quân Tây Sơn, biểu diễn võ cổ truyền Bình Định - Gia Lai, múa lân sư rồng",
+    "time": "Mùng 4 đến mùng 5 tháng Giêng",
     "monthOccurred": "Mùng 4 đến mùng 5 tháng Giêng",
     "frequency": "Thường niên",
+    "locationName": "Quần thể Di tích Tây Sơn Thượng Đạo",
     "locationId": "LOC_TAYSON_THUONGDAO",
-    "highlightActivity": "Tế lễ rước linh vị nghĩa quân Tây Sơn, biểu diễn võ cổ truyền Bình Định - Gia Lai, múa lân sư rồng",
-    "description": "Lễ hội tri ân phong trào khởi nghĩa nông dân Tây Sơn và tưởng nhớ công đức vua Quang Trung cùng nghĩa sĩ."
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "EVT_CONGCHIENG",
+    "eventId": "EVT_CONGCHIENG",
+    "name": "Ngày hội Văn hóa Cồng chiêng Tây Nguyên tại Gia Lai",
+    "description": "Không gian tôn vinh di sản văn hóa phi vật thể của nhân loại với sự tham gia của hàng trăm nghệ nhân buôn làng.",
+    "highlight": "Đại hợp tấu cồng chiêng của các nghệ nhân Jrai, Bahnar, rước lửa thiêng, múa xoang quanh ánh lửa",
+    "highlightActivity": "Đại hợp tấu cồng chiêng của các nghệ nhân Jrai, Bahnar, rước lửa thiêng, múa xoang quanh ánh lửa",
+    "time": "Tháng 3 hoặc Tháng 11",
+    "monthOccurred": "Tháng 3 hoặc Tháng 11",
+    "frequency": "Định kỳ",
+    "locationName": "Quảng trường Đại Đoàn Kết & Bảo tàng Gia Lai",
+    "locationId": "LOC_QUANGTRUONG_GL",
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "EVT_CAFE_PLEIKU",
+    "eventId": "EVT_CAFE_PLEIKU",
+    "name": "Tuần lễ Cà phê Pleiku & Văn hóa Ẩm thực Phố Núi",
+    "description": "Sự kiện tôn vinh hạt cà phê bazan nồng nàn và văn hóa thưởng thức cà phê đường phố đặc trưng của Pleiku.",
+    "highlight": "Thưởng thức cà phê miễn phí, thi pha chế Barista, trưng bày các sản phẩm OCOP Gia Lai",
+    "highlightActivity": "Thưởng thức cà phê miễn phí, thi pha chế Barista, trưng bày các sản phẩm OCOP Gia Lai",
+    "time": "Tháng 12",
+    "monthOccurred": "Tháng 12",
+    "frequency": "Thường niên",
+    "locationName": "Quảng trường Đại Đoàn Kết & Bảo tàng Gia Lai",
+    "locationId": "LOC_QUANGTRUONG_GL",
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "EVT_DAQUY",
+    "eventId": "EVT_DAQUY",
+    "name": "Tuần lễ Hoa Dã Quỳ - Núi lửa Chư Đang Ya",
+    "description": "Sự kiện du lịch văn hóa lớn nhất năm của tỉnh Gia Lai thu hút hàng vạn du khách về chiêm ngưỡng miệng núi lửa cổ vàng rực sắc hoa.",
+    "highlight": "Biểu diễn cồng chiêng, thi đan lát, dệt thổ cẩm, chinh phục đỉnh núi lửa ngắm thảm dã quỳ rực rỡ",
+    "highlightActivity": "Biểu diễn cồng chiêng, thi đan lát, dệt thổ cẩm, chinh phục đỉnh núi lửa ngắm thảm dã quỳ rực rỡ",
+    "time": "Tháng 11 hàng năm",
+    "monthOccurred": "Tháng 11 hàng năm",
+    "frequency": "Thường niên",
+    "locationName": "Núi lửa Chư Đang Ya",
+    "locationId": "LOC_CHUDANGYA",
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   }
 ];
 
 export const MOCK_ENTERTAINMENTS = [
   {
-    "entId": "ENT_PHODIBO_PLEIKU",
-    "name": "Phố Đi Bộ & Chợ Đêm Ẩm Thực Pleiku",
-    "entertainmentType": "Chợ đêm & Ẩm thực đường phố",
-    "openHours": "17h00 - 23h30 hàng ngày",
-    "address": "Đường Hoàng Hoa Thám & Nguyễn Thiện Thuật, TP. Pleiku",
-    "ticketPrice": 0,
-    "locationId": "LOC_QUANGTRUONG_GL",
-    "imageUrl": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=800",
-    "description": "Khu phố đêm sầm uất tập trung hàng trăm gian hàng ẩm thực nướng, chè nóng, bún mắm cua và cà phê đường phố nhộn nhịp."
+    "id": "ENT_BD_CHO_DEM_QUYNHON",
+    "entId": "ENT_BD_CHO_DEM_QUYNHON",
+    "name": "Chợ đêm Quy Nhơn & Phố ẩm thực Xuân Diệu",
+    "description": "Không gian phố đi bộ ẩm thực hải sản và mua sắm sầm uất ven bờ biển Quy Nhơn, quy tụ hàng trăm món ngon hải sản và quà lưu niệm.",
+    "address": "Đường Xuân Diệu & Nguyễn Thiếp, Phường Trần Phú, Thành phố Quy Nhơn",
+    "budget": 0,
+    "type": "Chợ đêm & Ẩm thực",
+    "openHours": "17:00 - 23:30 hàng ngày",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Night_market_in_Qui_Nhon_Vietnam.JPG",
+    "legacy_province": "Bình Định",
+    "geographic_region": "Duyên hải"
   },
   {
-    "entId": "ENT_CAFE_HONG_IADER",
-    "name": "Tổ hợp Cafe Check-in Đồi thông Ia Dêr",
-    "entertainmentType": "Quán cafe ngắm cảnh & Sunset check-in",
-    "openHours": "6h30 - 22h00",
-    "address": "Xã Ia Dêr, Huyện Ia Grai (Cách trung tâm Pleiku 5km)",
-    "ticketPrice": 0,
-    "locationId": "LOC_MINHTHANH",
-    "imageUrl": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800",
-    "description": "Điểm ngắm hoàng hôn triệu view trên đồi thông thơ mộng với xích đu vô cực, lều cắm trại và ánh hoàng hôn buông lãng mạn."
-  },
-  {
-    "entId": "ENT_VUCSAU_ECO",
-    "name": "Khu Du lịch Sinh thái Vực Sâu",
-    "entertainmentType": "Dã ngoại & Tắm suối sinh thái",
-    "openHours": "8h00 - 18h00",
-    "address": "Xã Biển Hồ, TP. Pleiku, Gia Lai",
-    "ticketPrice": 30000,
-    "locationId": "LOC_BIENHO",
-    "imageUrl": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800",
-    "description": "Không gian dã ngoại cuối tuần ven suối đá mát rượi, có chòi nghỉ thưởng thức gà nướng và tắm suối thiên nhiên."
-  },
-  {
+    "id": "ENT_TIENSON_CAMP",
     "entId": "ENT_TIENSON_CAMP",
     "name": "Khu Cắm trại Dã ngoại Tiên Sơn View Lake",
-    "entertainmentType": "Glamping & Tiệc nướng BBQ",
-    "openHours": "Mở cửa 24/24 cho khách lưu trú cắm trại",
+    "description": "Dịch vụ lều trại sang trọng (glamping) sát mép nước Biển Hồ, nơi tổ chức đốt lửa trại và ngắm bầu trời đầy sao cao nguyên.",
     "address": "Bờ hồ Ea Nueng, Xã Tân Sơn, TP. Pleiku",
-    "ticketPrice": 100000,
-    "locationId": "LOC_BIENHO",
+    "budget": 100000,
+    "type": "Glamping & Tiệc nướng BBQ",
+    "openHours": "Mở cửa 24/24 cho khách lưu trú cắm trại",
     "imageUrl": "https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=800",
-    "description": "Dịch vụ lều trại sang trọng (glamping) sát mép nước Biển Hồ, nơi tổ chức đốt lửa trại và ngắm bầu trời đầy sao cao nguyên."
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "ENT_VUCSAU_ECO",
+    "entId": "ENT_VUCSAU_ECO",
+    "name": "Khu Du lịch Sinh thái Vực Sâu",
+    "description": "Không gian dã ngoại cuối tuần ven suối đá mát rượi, có chòi nghỉ thưởng thức gà nướng và tắm suối thiên nhiên.",
+    "address": "Xã Biển Hồ, TP. Pleiku, Gia Lai",
+    "budget": 30000,
+    "type": "Dã ngoại & Tắm suối sinh thái",
+    "openHours": "8h00 - 18h00",
+    "imageUrl": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800",
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "ENT_PHODIBO_PLEIKU",
+    "entId": "ENT_PHODIBO_PLEIKU",
+    "name": "Phố Đi Bộ & Chợ Đêm Ẩm Thực Pleiku",
+    "description": "Khu phố đêm sầm uất tập trung hàng trăm gian hàng ẩm thực nướng, chè nóng, bún mắm cua và cà phê đường phố nhộn nhịp.",
+    "address": "Đường Hoàng Hoa Thám & Nguyễn Thiện Thuật, TP. Pleiku",
+    "budget": 0,
+    "type": "Chợ đêm & Ẩm thực đường phố",
+    "openHours": "17h00 - 23h30 hàng ngày",
+    "imageUrl": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=800",
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
+  },
+  {
+    "id": "ENT_CAFE_HONG_IADER",
+    "entId": "ENT_CAFE_HONG_IADER",
+    "name": "Tổ hợp Cafe Check-in Đồi thông Ia Dêr",
+    "description": "Điểm ngắm hoàng hôn triệu view trên đồi thông thơ mộng với xích đu vô cực, lều cắm trại và ánh hoàng hôn buông lãng mạn.",
+    "address": "Xã Ia Dêr, Huyện Ia Grai (Cách trung tâm Pleiku 5km)",
+    "budget": 0,
+    "type": "Quán cafe ngắm cảnh & Sunset check-in",
+    "openHours": "6h30 - 22h00",
+    "imageUrl": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800",
+    "legacy_province": "Gia Lai",
+    "geographic_region": "Cao nguyên"
   }
 ];

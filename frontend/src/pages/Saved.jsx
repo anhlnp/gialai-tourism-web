@@ -41,7 +41,7 @@ export default function Saved() {
   })
 
   return (
-    <div className="container" style={{ paddingTop: '28px', paddingBottom: '40px', maxWidth: '1000px' }}>
+    <div className="container pb-24 md:pb-12" style={{ paddingTop: '28px', maxWidth: '1280px' }}>
       {/* Header */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
         <div>

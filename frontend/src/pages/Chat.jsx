@@ -116,10 +116,10 @@ export default function Chat() {
   }
 
   return (
-    <div className="min-h-screen bg-[#FAFAF7] pb-24 text-[#1A1D1A]">
-      <div className="max-w-2xl mx-auto flex flex-col h-[calc(100vh-68px)]">
+    <div className="min-h-screen bg-[#FAFAF7] pb-20 md:pb-0 text-[#1A1D1A]">
+      <div className="max-w-4xl lg:max-w-5xl mx-auto flex flex-col h-[calc(100vh-140px)] md:h-[calc(100vh-72px)]">
         {/* Top Header */}
-        <header className="sticky top-0 z-30 bg-[#FAFAF7]/95 backdrop-blur-md px-4 py-3 border-b border-[#E8EBE5] flex items-center justify-between">
+        <header className="sticky top-0 z-30 bg-[#FAFAF7]/95 backdrop-blur-md px-4 sm:px-6 py-3 border-b border-[#E8EBE5] flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-2xl bg-[#246B4A] flex items-center justify-center text-white shadow-xs">
               <Bot size={22} />
@@ -145,7 +145,7 @@ export default function Chat() {
         </header>
 
         {/* Message Stream */}
-        <div className="flex-1 overflow-y-auto px-4 py-4 space-y-4">
+        <div className="flex-1 overflow-y-auto px-4 sm:px-6 py-4 space-y-4">
           {messages.map((msg, idx) => (
             <motion.div
               key={idx}
@@ -163,7 +163,7 @@ export default function Chat() {
               </div>
 
               {/* Bubble Body */}
-              <div className={`max-w-[85%] sm:max-w-[78%] rounded-2xl p-3.5 text-xs sm:text-sm leading-relaxed shadow-xs ${
+              <div className={`max-w-[85%] sm:max-w-[75%] md:max-w-[70%] lg:max-w-[65%] rounded-2xl p-4 text-xs sm:text-sm leading-relaxed shadow-xs ${
                 msg.role === 'user'
                   ? 'bg-[#246B4A] text-white rounded-tr-none'
                   : 'bg-white border border-[#E8EBE5] text-[#1A1D1A] rounded-tl-none'
@@ -206,8 +206,8 @@ export default function Chat() {
         </div>
 
         {/* Quick Suggestions Bar */}
-        <div className="px-4 py-2 border-t border-[#E8EBE5] bg-[#FAFAF7]">
-          <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar">
+        <div className="px-4 sm:px-6 py-2 border-t border-[#E8EBE5] bg-[#FAFAF7]">
+          <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar md:flex-wrap">
             {SUGGESTIONS.map((s, idx) => (
               <button
                 key={idx}
@@ -221,7 +221,7 @@ export default function Chat() {
         </div>
 
         {/* Input Bar */}
-        <div className="p-4 bg-[#FAFAF7] border-t border-[#E8EBE5]/60">
+        <div className="p-4 sm:px-6 bg-[#FAFAF7] border-t border-[#E8EBE5]/60">
           <form
             onSubmit={(e) => {
               e.preventDefault()

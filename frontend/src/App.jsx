@@ -18,7 +18,7 @@ export default function App() {
     <BrowserRouter>
       <OfflineBanner />
       <Navbar />
-      <main style={{ minHeight: 'calc(100vh - 140px)' }}>
+      <main className="app-main">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/explore" element={<Explore />} />

@@ -101,7 +101,23 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   overflow-x: hidden;
-  padding-bottom: 76px; /* Space for Mobile Bottom Navigation */
+  padding-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 76px; /* Space for Mobile Bottom Navigation on handhelds */
+  }
+}
+
+.app-main {
+  min-height: calc(100vh - 72px);
+}
+
+@media (max-width: 768px) {
+  .app-main {
+    min-height: calc(100vh - 140px);
+  }
 }
 
 /* ── Typography Classes (Google Stitch) ── */
@@ -876,7 +892,7 @@ a:hover {
    STITCH COMPONENT DESIGN SYSTEM (5-Tab Bar, Editorial Cards, etc.)
    ═══════════════════════════════════════════════════════════════ */
 
-/* ── Mobile & Desktop Bottom 5-Tab Bar ── */
+/* ── Mobile Bottom 5-Tab Bar (Hidden on Desktop >= 769px) ── */
 .stitch-bottom-nav {
   position: fixed;
   bottom: 0;
@@ -894,6 +910,36 @@ a:hover {
   padding: 0 12px;
   padding-bottom: env(safe-area-inset-bottom, 0px);
   box-shadow: 0 -4px 16px rgba(26, 29, 26, 0.03);
+}
+
+@media (min-width: 769px) {
+  .stitch-bottom-nav {
+    display: none !important;
+  }
+}
+
+/* ── Floating Action Bar for Destination Detail / Quick Actions ── */
+.stitch-floating-action-bar {
+  position: fixed;
+  bottom: 68px;
+  left: 0;
+  right: 0;
+  background: rgba(250, 250, 247, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--color-border);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  z-index: 999;
+}
+
+@media (min-width: 769px) {
+  .stitch-floating-action-bar {
+    bottom: 0 !important;
+  }
 }
 
 .stitch-tab-item {

@@ -102,10 +102,10 @@ export default function Planner() {
   }
 
   return (
-    <div className="min-h-screen bg-[#FAFAF7] pb-24 text-[#1A1D1A]">
+    <div className="min-h-screen bg-[#FAFAF7] pb-24 md:pb-12 text-[#1A1D1A]">
       {/* Top Header */}
       <header className="sticky top-0 z-30 bg-[#FAFAF7]/95 backdrop-blur-md border-b border-[#E8EBE5]">
-        <div className="max-w-xl mx-auto px-4 py-3 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <button
               onClick={() => navigate(-1)}
@@ -155,7 +155,7 @@ export default function Planner() {
       </header>
 
       {/* Main Content Area */}
-      <main className="max-w-xl mx-auto px-4 pt-4">
+      <main className={plan ? "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-5" : "max-w-3xl mx-auto px-4 sm:px-6 pt-5"}>
         {loading ? (
           /* Màn hình Loading Stitch: Đang tổng hợp lộ trình AI */
           <div className="bg-white rounded-3xl border border-[#E8EBE5] p-6 text-center my-6 shadow-sm">
@@ -365,168 +365,209 @@ export default function Planner() {
           </div>
         ) : (
           /* Màn hình Hiển thị Lịch trình Stitch Editorial */
-          <div className="space-y-4">
-            {/* Days Segmented Tab Bar */}
-            <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
-              {plan?.itinerary?.map(d => (
-                <button
-                  key={d.day}
-                  onClick={() => setActiveDay(d.day)}
-                  className={`px-4 py-2 rounded-2xl text-xs font-bold shrink-0 transition-all ${
-                    activeDay === d.day
-                      ? 'bg-[#246B4A] text-white shadow-xs'
-                      : 'bg-white border border-[#E8EBE5] text-[#5A635B] hover:bg-[#F2FCF2]'
-                  }`}
-                >
-                  Ngày {d.day}: {d.theme || `Khám phá`}
-                </button>
-              ))}
+          <div className="space-y-4 lg:grid lg:grid-cols-12 lg:gap-6 lg:space-y-0">
+            {/* Cột trái (4/12) trên Desktop: Chọn ngày & Tóm tắt hành trình */}
+            <div className="lg:col-span-4 space-y-4 lg:sticky lg:top-24 lg:self-start">
+              {/* Days Segmented Tab Bar */}
+              <div className="bg-white rounded-2xl p-3 sm:p-4 border border-[#E8EBE5] shadow-xs">
+                <div className="flex items-center justify-between mb-2 px-1">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#5A635B]">
+                    Các ngày hành trình
+                  </span>
+                  <span className="text-[11px] font-semibold text-[#246B4A]">
+                    {plan?.itinerary?.length || days} ngày
+                  </span>
+                </div>
+                <div className="flex lg:flex-col gap-2 overflow-x-auto no-scrollbar pb-1 lg:pb-0">
+                  {plan?.itinerary?.map(d => (
+                    <button
+                      key={d.day}
+                      onClick={() => setActiveDay(d.day)}
+                      className={`px-3.5 py-2.5 rounded-xl text-xs font-bold text-left shrink-0 lg:w-full transition-all flex items-center justify-between gap-2 ${
+                        activeDay === d.day
+                          ? 'bg-[#246B4A] text-white shadow-xs'
+                          : 'bg-[#FAFAF7] hover:bg-[#F2FCF2] border border-[#E8EBE5] text-[#5A635B]'
+                      }`}
+                    >
+                      <span className="truncate">Ngày {d.day}: {d.theme || `Khám phá`}</span>
+                      <span className={`text-[10px] px-2 py-0.5 rounded-full shrink-0 ${activeDay === d.day ? 'bg-white/20 text-white' : 'bg-[#E8EBE5] text-[#5A635B]'}`}>
+                        {d.locations?.length || 0} điểm
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Trip Overview Card (Desktop) */}
+              <div className="hidden lg:block bg-white rounded-2xl p-4 border border-[#E8EBE5] shadow-xs space-y-3">
+                <h4 className="font-editorial text-sm font-bold text-[#1A1D1A]">
+                  Thông tin chuyến đi
+                </h4>
+                <div className="text-xs space-y-2 text-[#5A635B]">
+                  <div className="flex justify-between items-center py-1 border-b border-[#E8EBE5]/60">
+                    <span>Thời lượng:</span>
+                    <span className="font-bold text-[#1A1D1A]">{plan?.days || days} ngày</span>
+                  </div>
+                  <div className="flex justify-between items-center py-1 border-b border-[#E8EBE5]/60">
+                    <span>Trọng tâm vùng:</span>
+                    <span className="font-bold text-[#1A1D1A]">{region || 'Toàn tỉnh Gia Lai'}</span>
+                  </div>
+                  <div className="flex justify-between items-center py-1">
+                    <span>Nhịp độ di chuyển:</span>
+                    <span className="font-bold text-[#1A1D1A]">
+                      {pace === 'relaxed' ? 'Thư thái' : pace === 'active' ? 'Năng động' : 'Cân bằng'}
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Content của ngày đang chọn */}
-            {(() => {
-              const currentDayData = plan?.itinerary?.find(d => d.day === activeDay) || plan?.itinerary?.[0]
-              if (!currentDayData) return null
+            {/* Cột phải (8/12) trên Desktop: Chi tiết timeline ngày đang chọn */}
+            <div className="lg:col-span-8">
+              {(() => {
+                const currentDayData = plan?.itinerary?.find(d => d.day === activeDay) || plan?.itinerary?.[0]
+                if (!currentDayData) return null
 
-              return (
-                <div className="space-y-4">
-                  {/* Banner ngày */}
-                  <div className="bg-white rounded-2xl p-4 border border-[#E8EBE5] shadow-xs">
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="px-2.5 py-0.5 rounded-full bg-[#EAF3EB] text-[#246B4A] text-[11px] font-bold uppercase tracking-wider">
-                        Ngày {currentDayData.day}
-                      </span>
-                      <span className="text-xs text-[#5A635B]">
-                        {currentDayData.locations?.length || 0} điểm dừng chân
-                      </span>
+                return (
+                  <div className="space-y-4">
+                    {/* Banner ngày */}
+                    <div className="bg-white rounded-2xl p-4 border border-[#E8EBE5] shadow-xs">
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="px-2.5 py-0.5 rounded-full bg-[#EAF3EB] text-[#246B4A] text-[11px] font-bold uppercase tracking-wider">
+                          Ngày {currentDayData.day}
+                        </span>
+                        <span className="text-xs text-[#5A635B]">
+                          {currentDayData.locations?.length || 0} điểm dừng chân
+                        </span>
+                      </div>
+                      <h3 className="font-editorial text-lg font-bold text-[#1A1D1A]">
+                        {currentDayData.theme || 'Hành trình trải nghiệm Gia Lai'}
+                      </h3>
                     </div>
-                    <h3 className="font-editorial text-lg font-bold text-[#1A1D1A]">
-                      {currentDayData.theme || 'Hành trình trải nghiệm Gia Lai'}
-                    </h3>
-                  </div>
 
-                  {/* Danh sách địa điểm trong ngày */}
-                  <div className="relative pl-6 space-y-4 before:absolute before:left-2.5 before:top-3 before:bottom-3 before:w-0.5 before:bg-[#E8EBE5]">
-                    {currentDayData.locations?.map((loc, idx) => (
-                      <div key={loc.id || idx} className="relative">
-                        {/* Timeline Bullet */}
-                        <div className="absolute -left-6 top-3 w-5 h-5 rounded-full bg-[#246B4A] text-white text-[11px] font-bold flex items-center justify-center border-2 border-white shadow-xs">
-                          {idx + 1}
-                        </div>
+                    {/* Danh sách địa điểm trong ngày */}
+                    <div className="relative pl-6 space-y-4 before:absolute before:left-2.5 before:top-3 before:bottom-3 before:w-0.5 before:bg-[#E8EBE5]">
+                      {currentDayData.locations?.map((loc, idx) => (
+                        <div key={loc.id || idx} className="relative">
+                          {/* Timeline Bullet */}
+                          <div className="absolute -left-6 top-3 w-5 h-5 rounded-full bg-[#246B4A] text-white text-[11px] font-bold flex items-center justify-center border-2 border-white shadow-xs">
+                            {idx + 1}
+                          </div>
 
-                        {/* Location Card */}
-                        <div className="bg-white rounded-2xl border border-[#E8EBE5] overflow-hidden hover:border-[#246B4A]/40 transition-all shadow-xs">
-                          <div className="flex flex-col sm:flex-row">
-                            {loc.imageUrl && (
-                              <div className="w-full sm:w-32 aspect-[16/10] sm:aspect-square bg-[#E8EBE5] shrink-0">
-                                <img
-                                  src={loc.imageUrl}
-                                  alt={loc.name}
-                                  className="w-full h-full object-cover"
-                                  onError={e => {
-                                    e.target.src = 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&auto=format&fit=crop'
-                                  }}
-                                />
-                              </div>
-                            )}
-                            <div className="p-3.5 flex-1 flex flex-col justify-between">
-                              <div>
-                                <div className="flex items-start justify-between gap-1 mb-1">
+                          {/* Location Card */}
+                          <div className="bg-white rounded-2xl border border-[#E8EBE5] overflow-hidden hover:border-[#246B4A]/40 transition-all shadow-xs">
+                            <div className="flex flex-col sm:flex-row">
+                              {loc.imageUrl && (
+                                <div className="w-full sm:w-36 aspect-[16/10] sm:aspect-square bg-[#E8EBE5] shrink-0">
+                                  <img
+                                    src={loc.imageUrl}
+                                    alt={loc.name}
+                                    className="w-full h-full object-cover"
+                                    onError={e => {
+                                      e.target.src = 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&auto=format&fit=crop'
+                                    }}
+                                  />
+                                </div>
+                              )}
+                              <div className="p-4 flex-1 flex flex-col justify-between">
+                                <div>
+                                  <div className="flex items-start justify-between gap-1 mb-1">
+                                    <Link
+                                      to={`/destinations/${loc.id}`}
+                                      className="font-editorial text-base font-bold text-[#1A1D1A] hover:text-[#246B4A]"
+                                    >
+                                      {loc.name}
+                                    </Link>
+                                    {loc.time && (
+                                      <span className="text-[11px] text-[#C26D38] font-bold px-2 py-0.5 rounded-full bg-[#FFF5EE]">
+                                        {loc.time}
+                                      </span>
+                                    )}
+                                  </div>
+                                  <div className="flex items-center gap-1 text-xs text-[#5A635B] mb-1.5">
+                                    <MapPin size={12} className="text-[#246B4A]" />
+                                    <span>{loc.district || 'Gia Lai'}</span>
+                                    {loc.bestTime && <span>• {loc.bestTime}</span>}
+                                  </div>
+                                  <p className="text-xs text-[#5A635B] line-clamp-2">
+                                    {loc.notes || loc.description || 'Thắng cảnh thiên nhiên nổi bật trên hành trình.'}
+                                  </p>
+                                </div>
+
+                                <div className="mt-3 pt-2.5 border-t border-[#E8EBE5]/60 flex items-center justify-between text-xs">
+                                  <span className="text-[#8A948C] text-[11px]">
+                                    {loc.budget || 'Miễn phí'}
+                                  </span>
                                   <Link
                                     to={`/destinations/${loc.id}`}
-                                    className="font-editorial text-base font-bold text-[#1A1D1A] hover:text-[#246B4A]"
+                                    className="inline-flex items-center gap-1 text-[#246B4A] font-semibold text-xs hover:underline"
                                   >
-                                    {loc.name}
+                                    <span>Chi tiết</span>
+                                    <ChevronRight size={13} />
                                   </Link>
-                                  {loc.time && (
-                                    <span className="text-[11px] text-[#C26D38] font-bold px-2 py-0.5 rounded-full bg-[#FFF5EE]">
-                                      {loc.time}
-                                    </span>
-                                  )}
                                 </div>
-                                <div className="flex items-center gap-1 text-xs text-[#5A635B] mb-1.5">
-                                  <MapPin size={12} className="text-[#246B4A]" />
-                                  <span>{loc.district || 'Gia Lai'}</span>
-                                  {loc.bestTime && <span>• {loc.bestTime}</span>}
-                                </div>
-                                <p className="text-xs text-[#5A635B] line-clamp-2">
-                                  {loc.notes || loc.description || 'Thắng cảnh thiên nhiên nổi bật trên hành trình.'}
-                                </p>
-                              </div>
-
-                              <div className="mt-2 pt-2 border-t border-[#E8EBE5]/60 flex items-center justify-between text-xs">
-                                <span className="text-[#8A948C] text-[11px]">
-                                  {loc.budget || 'Miễn phí'}
-                                </span>
-                                <Link
-                                  to={`/destinations/${loc.id}`}
-                                  className="inline-flex items-center gap-1 text-[#246B4A] font-semibold text-xs hover:underline"
-                                >
-                                  <span>Chi tiết</span>
-                                  <ChevronRight size={13} />
-                                </Link>
                               </div>
                             </div>
                           </div>
                         </div>
+                      ))}
+                    </div>
+
+                    {/* Gợi ý Ẩm thực trong ngày */}
+                    {currentDayData.food && currentDayData.food.length > 0 && (
+                      <div className="bg-white rounded-2xl p-4 border border-[#E8EBE5] shadow-xs">
+                        <div className="flex items-center gap-2 mb-2.5 text-[#C26D38]">
+                          <UtensilsCrossed size={16} />
+                          <h4 className="font-editorial text-sm font-bold text-[#1A1D1A]">
+                            Gợi ý ẩm thực ngày {currentDayData.day}
+                          </h4>
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                          {currentDayData.food.map((f, i) => (
+                            <div key={i} className="p-2.5 rounded-xl bg-[#FAFAF7] border border-[#E8EBE5] flex items-center justify-between">
+                              <div>
+                                <p className="text-xs font-bold text-[#1A1D1A]">{f.name}</p>
+                                <span className="text-[11px] text-[#5A635B]">{f.restaurant || 'Quán ăn đặc sản'}</span>
+                              </div>
+                              <Link
+                                to="/food"
+                                className="text-[11px] text-[#246B4A] font-semibold hover:underline"
+                              >
+                                Khám phá
+                              </Link>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    ))}
+                    )}
+
+                    {/* Nơi nghỉ đêm */}
+                    {currentDayData.stay && (
+                      <div className="bg-white rounded-2xl p-4 border border-[#E8EBE5] shadow-xs">
+                        <div className="flex items-center gap-2 mb-2 text-[#246B4A]">
+                          <Hotel size={16} />
+                          <h4 className="font-editorial text-sm font-bold text-[#1A1D1A]">
+                            Nơi lưu trú đêm {currentDayData.day}
+                          </h4>
+                        </div>
+                        <div className="p-3 rounded-xl bg-[#FAFAF7] border border-[#E8EBE5] flex items-center justify-between">
+                          <div>
+                            <p className="text-xs font-bold text-[#1A1D1A]">{currentDayData.stay.name}</p>
+                            <span className="text-[11px] text-[#5A635B]">{currentDayData.stay.district || currentDayData.stay.address || 'Gia Lai'}</span>
+                          </div>
+                          <Link
+                            to="/stay"
+                            className="px-3 py-1 rounded-full bg-white border border-[#E8EBE5] text-xs font-semibold text-[#246B4A] hover:bg-[#F2FCF2]"
+                          >
+                            Xem phòng
+                          </Link>
+                        </div>
+                      </div>
+                    )}
                   </div>
-
-                  {/* Gợi ý Ẩm thực trong ngày */}
-                  {currentDayData.food && currentDayData.food.length > 0 && (
-                    <div className="bg-white rounded-2xl p-4 border border-[#E8EBE5] shadow-xs">
-                      <div className="flex items-center gap-2 mb-2.5 text-[#C26D38]">
-                        <UtensilsCrossed size={16} />
-                        <h4 className="font-editorial text-sm font-bold text-[#1A1D1A]">
-                          Gợi ý ẩm thực ngày {currentDayData.day}
-                        </h4>
-                      </div>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                        {currentDayData.food.map((f, i) => (
-                          <div key={i} className="p-2.5 rounded-xl bg-[#FAFAF7] border border-[#E8EBE5] flex items-center justify-between">
-                            <div>
-                              <p className="text-xs font-bold text-[#1A1D1A]">{f.name}</p>
-                              <span className="text-[11px] text-[#5A635B]">{f.restaurant || 'Quán ăn đặc sản'}</span>
-                            </div>
-                            <Link
-                              to="/food"
-                              className="text-[11px] text-[#246B4A] font-semibold hover:underline"
-                            >
-                              Khám phá
-                            </Link>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Nơi nghỉ đêm */}
-                  {currentDayData.stay && (
-                    <div className="bg-white rounded-2xl p-4 border border-[#E8EBE5] shadow-xs">
-                      <div className="flex items-center gap-2 mb-2 text-[#246B4A]">
-                        <Hotel size={16} />
-                        <h4 className="font-editorial text-sm font-bold text-[#1A1D1A]">
-                          Nơi lưu trú đêm {currentDayData.day}
-                        </h4>
-                      </div>
-                      <div className="p-3 rounded-xl bg-[#FAFAF7] border border-[#E8EBE5] flex items-center justify-between">
-                        <div>
-                          <p className="text-xs font-bold text-[#1A1D1A]">{currentDayData.stay.name}</p>
-                          <span className="text-[11px] text-[#5A635B]">{currentDayData.stay.district || currentDayData.stay.address || 'Gia Lai'}</span>
-                        </div>
-                        <Link
-                          to="/stay"
-                          className="px-3 py-1 rounded-full bg-white border border-[#E8EBE5] text-xs font-semibold text-[#246B4A] hover:bg-[#F2FCF2]"
-                        >
-                          Xem phòng
-                        </Link>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              )
-            })()}
+                )
+              })()}
+            </div>
           </div>
         )}
       </main>

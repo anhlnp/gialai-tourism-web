@@ -3,7 +3,7 @@ import { Compass, MapPin, CalendarDays, Sparkles, Bookmark } from 'lucide-react'
 
 export default function BottomNav() {
   return (
-    <nav className="stitch-bottom-nav" aria-label="Thanh điều hướng chính">
+    <nav className="stitch-bottom-nav md:hidden" aria-label="Thanh điều hướng chính">
       <NavLink
         to="/"
         end

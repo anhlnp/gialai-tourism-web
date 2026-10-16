@@ -111,8 +111,8 @@ export default function Stay() {
   }
 
   return (
-    <div className="page" style={{ paddingTop: '20px', paddingBottom: '60px' }}>
-      <div className="container" style={{ maxWidth: '1080px' }}>
+    <div className="page pb-24 md:pb-12" style={{ paddingTop: '20px' }}>
+      <div className="container" style={{ maxWidth: '1280px' }}>
         {/* ── Header (Stitch Screen 4) ── */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px', flexWrap: 'wrap', gap: '12px' }}>
           <div>

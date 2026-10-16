@@ -100,10 +100,10 @@ export default function Explore() {
   const loading = defaultLoading || searching
 
   return (
-    <div className="min-h-screen bg-[#FAFAF7] pb-24 text-[#1A1D1A]">
+    <div className="min-h-screen bg-[#FAFAF7] pb-24 md:pb-12 text-[#1A1D1A]">
       {/* Top Header */}
       <header className="sticky top-0 z-30 bg-[#FAFAF7]/95 backdrop-blur-md border-b border-[#E8EBE5]">
-        <div className="max-w-4xl mx-auto px-4 pt-3 pb-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-3 pb-3">
           <div className="flex items-center justify-between gap-3 mb-3">
             <div className="flex items-center gap-2">
               <button 
@@ -207,7 +207,7 @@ export default function Explore() {
           </div>
 
           {/* Primary Category Filter Chips */}
-          <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pt-1 pb-1">
+          <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar md:flex-wrap pt-1 pb-1">
             <button
               onClick={() => setSelectedCategory('')}
               className={`shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${
@@ -267,10 +267,10 @@ export default function Explore() {
       </header>
 
       {/* Main Content List */}
-      <main className="max-w-4xl mx-auto px-4 pt-4">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-5">
         {loading ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {[1, 2, 3, 4].map(n => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+            {[1, 2, 3, 4, 5, 6, 7, 8].map(n => (
               <div key={n} className="bg-white rounded-2xl border border-[#E8EBE5] overflow-hidden animate-pulse">
                 <div className="w-full aspect-[16/10] bg-[#E8EBE5]" />
                 <div className="p-4 space-y-3">
@@ -305,7 +305,7 @@ export default function Explore() {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {displayLocations.map(loc => {
               const isSaved = savedIds.includes(loc.id)
               return (

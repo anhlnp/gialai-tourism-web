@@ -160,7 +160,7 @@ export default function MapPage() {
   }
 
   return (
-    <div className="relative w-full h-[calc(100vh-68px)] overflow-hidden bg-[#FAFAF7]">
+    <div className="relative w-full h-[calc(100vh-140px)] md:h-[calc(100vh-72px)] overflow-hidden bg-[#FAFAF7]">
       {/* ── Top Floating Search & Filter Pill Bar (Stitch Frosted Glass) ── */}
       <div className="absolute top-3 left-3 right-3 sm:left-4 sm:right-auto sm:w-[420px] z-[1000] flex flex-col gap-2 pointer-events-auto">
         {/* Search Pill */}
@@ -367,7 +367,7 @@ export default function MapPage() {
 
       {/* ── Stitch Editorial Destination Preview Card (Bottom Drawer) ── */}
       {selectedLoc && (
-        <div className="absolute left-3 right-3 sm:left-4 sm:right-auto sm:w-[400px] bottom-3 z-[1000] pointer-events-auto">
+        <div className="absolute left-3 right-3 sm:left-4 sm:right-auto sm:w-[400px] bottom-[80px] md:bottom-4 z-[1000] pointer-events-auto">
           <div className="bg-white rounded-3xl shadow-2xl p-3.5 border border-[#E8EBE5] transition-all animate-in fade-in slide-in-from-bottom-4 duration-300">
             {/* Main Destination Info Header */}
             <div className="flex gap-3 items-start">

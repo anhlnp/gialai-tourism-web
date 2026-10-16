@@ -132,8 +132,8 @@ export default function Food() {
   }
 
   return (
-    <div className="page" style={{ paddingTop: '20px', paddingBottom: '60px' }}>
-      <div className="container" style={{ maxWidth: '1080px' }}>
+    <div className="page pb-24 md:pb-12" style={{ paddingTop: '20px' }}>
+      <div className="container" style={{ maxWidth: '1280px' }}>
         {/* ── Header (Stitch Screen 5) ── */}
         <div style={{ marginBottom: '22px' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: 'var(--color-terracotta)', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '4px' }}>

@@ -38,10 +38,10 @@ export default function Events() {
   })
 
   return (
-    <div className="min-h-screen bg-[#FAFAF7] pb-24 text-[#1A1D1A]">
+    <div className="min-h-screen bg-[#FAFAF7] pb-24 md:pb-12 text-[#1A1D1A]">
       {/* Top Sticky Header */}
       <header className="sticky top-0 z-30 bg-[#FAFAF7]/95 backdrop-blur-md border-b border-[#E8EBE5]">
-        <div className="max-w-4xl mx-auto px-4 pt-3 pb-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-3 pb-3">
           <div className="flex items-center justify-between gap-3 mb-3">
             <div className="flex items-center gap-2">
               <button 
@@ -117,12 +117,12 @@ export default function Events() {
       </header>
 
       {/* Main Content Area */}
-      <main className="max-w-4xl mx-auto px-4 pt-4">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-5">
         {activeTab === 'events' ? (
           /* TAB 1: SỰ KIỆN & LỄ HỘI */
           loadingEvents ? (
-            <div className="space-y-4">
-              {[1, 2, 3].map(n => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {[1, 2, 3, 4, 5, 6].map(n => (
                 <div key={n} className="bg-white rounded-2xl border border-[#E8EBE5] p-5 animate-pulse space-y-3">
                   <div className="h-5 bg-[#E8EBE5] rounded w-2/3" />
                   <div className="h-4 bg-[#E8EBE5] rounded w-1/3" />
@@ -137,7 +137,7 @@ export default function Events() {
               <p className="text-xs text-[#5A635B] mt-1">Hãy thử xóa bộ lọc tìm kiếm để xem tất cả lễ hội.</p>
             </div>
           ) : (
-            <div className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {filteredEvents.map(evt => (
                 <article
                   key={evt.id || evt.eventId}
@@ -193,8 +193,8 @@ export default function Events() {
         ) : (
           /* TAB 2: ĐIỂM VUI CHƠI & GIẢI TRÍ */
           loadingEnts ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {[1, 2, 3, 4].map(n => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+              {[1, 2, 3, 4, 5, 6, 7, 8].map(n => (
                 <div key={n} className="bg-white rounded-2xl border border-[#E8EBE5] overflow-hidden animate-pulse">
                   <div className="w-full aspect-[16/10] bg-[#E8EBE5]" />
                   <div className="p-4 space-y-2">
@@ -211,7 +211,7 @@ export default function Events() {
               <p className="text-xs text-[#5A635B] mt-1">Hãy thử xóa bộ lọc tìm kiếm.</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
               {filteredEnts.map(ent => (
                 <article
                   key={ent.id || ent.entId}

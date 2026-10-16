@@ -83,7 +83,7 @@ export default function DestinationDetail() {
 
   if (loading) {
     return (
-      <div className="container" style={{ paddingTop: '80px', paddingBottom: '40px', maxWidth: '800px' }}>
+      <div className="container" style={{ paddingTop: '80px', paddingBottom: '40px', maxWidth: '1200px' }}>
         <div style={{ height: '380px', borderRadius: 'var(--radius-xl)', background: 'var(--color-bg-3)', marginBottom: '24px' }} className="skeleton" />
         <div style={{ height: '120px', borderRadius: 'var(--radius-lg)', background: 'var(--color-bg-3)', marginBottom: '16px' }} className="skeleton" />
         <div style={{ height: '200px', borderRadius: 'var(--radius-lg)', background: 'var(--color-bg-3)' }} className="skeleton" />
@@ -123,7 +123,7 @@ export default function DestinationDetail() {
     : (data.imageUrl ? [data.imageUrl] : [])
 
   return (
-    <div style={{ paddingBottom: '90px' }}>
+    <div className="pb-24 md:pb-20">
       {/* ── 1. CINEMATIC FULL-BLEED HERO (Stitch Screen 3) ── */}
       <section style={{ position: 'relative', width: '100%', minHeight: '420px', overflow: 'hidden' }}>
         <img
@@ -280,7 +280,7 @@ export default function DestinationDetail() {
       </section>
 
       {/* ── 2. DESTINATION IDENTITY & QUICK FACT STRIP ── */}
-      <div className="container" style={{ maxWidth: '860px', marginTop: '16px' }}>
+      <div className="container" style={{ maxWidth: '1200px', marginTop: '20px' }}>
         <div>
           <span style={{
             color: 'var(--color-terracotta)',
@@ -623,21 +623,7 @@ export default function DestinationDetail() {
       </div>
 
       {/* ── 6. FLOATING BOTTOM ACTION BAR (Native Mobile / Android / Web) ── */}
-      <div style={{
-        position: 'fixed',
-        bottom: '68px',
-        left: 0,
-        right: 0,
-        background: 'rgba(250, 250, 247, 0.95)',
-        backdropFilter: 'blur(16px)',
-        borderTop: '1px solid var(--color-border)',
-        padding: '10px 16px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: '12px',
-        zIndex: 999
-      }}>
+      <div className="stitch-floating-action-bar">
         <div style={{ display: 'flex', gap: '10px', width: '100%', maxWidth: '600px' }}>
           <button
             onClick={() => navigate('/planner')}

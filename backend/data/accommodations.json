@@ -92,10 +92,11 @@
     "pricePerNight": 1450000,
     "ratingAvg": 4.8,
     "phone": "0256 2220 779",
-    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Quy_Nhon_Beach_Promenade.jpg/1280px-Quy_Nhon_Beach_Promenade.jpg",
+    "imageUrl": "",
     "legacy_province": "Bình Định",
     "current_province": "Gia Lai",
-    "geographic_region": "Duyên hải"
+    "geographic_region": "Duyên hải",
+    "imageUrls": []
   },
   {
     "accId": "ACC_CASAMARINA",
@@ -176,10 +177,11 @@
     "pricePerNight": "1,600,000đ / đêm",
     "ratingAvg": 4.8,
     "phone": null,
-    "imageUrl": "http://www.beach-on-map.com/img/37/vietnam-quy-nhon-life-s-a-beach-orig.jpg",
+    "imageUrl": "",
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
-    "geographic_region": "Cao nguyên"
+    "geographic_region": "Cao nguyên",
+    "imageUrls": []
   },
   {
     "accId": "ACC_LIFEBEACH",
@@ -218,10 +220,11 @@
     "pricePerNight": "600,000đ / đêm",
     "ratingAvg": 4.8,
     "phone": null,
-    "imageUrl": "https://mia.vn/media/uploads/blog-du-lich/homestay-gia-lai-tien-son-1708100154.jpg",
+    "imageUrl": "",
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
-    "geographic_region": "Cao nguyên"
+    "geographic_region": "Cao nguyên",
+    "imageUrls": []
   },
   {
     "accId": "ACC_CHUPAH_FARM",
@@ -274,10 +277,11 @@
     "pricePerNight": 650000,
     "ratingAvg": 4.7,
     "phone": "0973 693 694",
-    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Queen%27s_beach%2C_Quy_Nhon_city%2C_Binh_Dinh_province%2C_Vietnam.jpg/1280px-Queen%27s_beach%2C_Quy_Nhon_city%2C_Binh_Dinh_province%2C_Vietnam.jpg",
+    "imageUrl": "",
     "legacy_province": "Bình Định",
     "current_province": "Gia Lai",
-    "geographic_region": "Duyên hải"
+    "geographic_region": "Duyên hải",
+    "imageUrls": []
   },
   {
     "accId": "ACC_PLEIKU_HOTEL",

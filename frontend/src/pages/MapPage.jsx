@@ -7,6 +7,7 @@ import {
   ExternalLink, Ticket, Clock, Info, ChevronRight, LocateFixed, Plus, Minus
 } from 'lucide-react'
 import { useApi } from '../hooks/useApi'
+import { DEFAULT_DESTINATION_THUMB } from '../constants/placeholders'
 
 // Helper component to control map programmatic movement
 function MapController({ targetPos, targetZoom }) {
@@ -422,10 +423,10 @@ export default function MapPage() {
               {/* Thumbnail 104x78 */}
               <div className="relative w-[104px] h-[78px] rounded-2xl overflow-hidden shrink-0 bg-[#E8EBE5]">
                 <img
-                  src={selectedLoc.imageUrl || 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&auto=format&fit=crop'}
+                  src={selectedLoc.imageUrl || DEFAULT_DESTINATION_THUMB}
                   alt={selectedLoc.name}
                   className="w-full h-full object-cover"
-                  onError={e => { e.currentTarget.src = 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&auto=format&fit=crop' }}
+                  onError={e => { e.currentTarget.src = DEFAULT_DESTINATION_THUMB }}
                 />
                 <span className="absolute bottom-1 left-1 bg-black/60 backdrop-blur-xs text-white text-[9px] font-semibold px-1.5 py-0.5 rounded-full">
                   {selectedLoc.category || 'Thắng cảnh'}

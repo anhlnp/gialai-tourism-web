@@ -8,7 +8,7 @@
     "priceMax": 45000,
     "mealTime": "Buổi sáng / Đêm",
     "tasteType": "TRADITIONAL",
-    "imageUrl": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=100044418626393",
+    "imageUrl": "",
     "suggestedEateries": [
       "Bánh canh cá lóc A Mập (04 Lê Hồng Phong, P. Diên Hồng, TP. Pleiku, Gia Lai - 06:00 - 22:00)",
       "Bánh canh cá lóc Đồng Nhi (135 Hùng Vương, P. Hội Thương, TP. Pleiku, Gia Lai - 06:00 - 21:00)",
@@ -16,7 +16,8 @@
     ],
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
-    "geographic_region": "Cao nguyên"
+    "geographic_region": "Cao nguyên",
+    "imageUrls": []
   },
   {
     "dishId": "DISH_BANHHOILONGHEO_TS",
@@ -256,7 +257,7 @@
     "priceMax": 70000,
     "mealTime": "Buổi chiều / Buổi tối",
     "tasteType": "HOT_TREND",
-    "imageUrl": "https://statics.vinpearl.com/banh-xeo-tom-nhay-quy-nhon-7_1706527733.jpg",
+    "imageUrl": "",
     "suggestedEateries": [
       "Chả ram tôm đất Bé Di (130 Tây Sơn, P. Quang Trung, TP. Quy Nhơn - 07:30 - 21:30)",
       "Chả ram tôm đất Cô Hiền (218 Diên Hồng, P. Ngô Mây, TP. Quy Nhơn - 08:00 - 21:00)",
@@ -264,7 +265,8 @@
     ],
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
-    "geographic_region": "Cao nguyên"
+    "geographic_region": "Cao nguyên",
+    "imageUrls": []
   },
   {
     "dishId": "DISH_CUAHUYNHDE",
@@ -348,7 +350,7 @@
     "priceMax": 100000,
     "mealTime": "Buổi chiều / Buổi tối",
     "tasteType": "HOT_TREND",
-    "imageUrl": "https://vietravelasia.com/media/images/2024/4/goi-sua-quy-nhon-faca5e66d16c1faebdec727074c13f32.jpg",
+    "imageUrl": "",
     "suggestedEateries": [
       "Nhà hàng Tàu Hoa Hoa (03-05 Phan Chu Trinh, P. Hải Cảng, TP. Quy Nhơn - 10:00 - 22:00)",
       "Quán hải sản Cây Dừa (124 Phan Chu Trinh, P. Hải Cảng, TP. Quy Nhơn - 10:00 - 22:30)",
@@ -356,7 +358,8 @@
     ],
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
-    "geographic_region": "Cao nguyên"
+    "geographic_region": "Cao nguyên",
+    "imageUrls": []
   },
   {
     "dishId": "DISH_HEOSOC_GL",

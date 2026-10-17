@@ -17,6 +17,7 @@ import {
 } from 'lucide-react'
 import { useApi } from '../hooks/useApi'
 import ImageGalleryModal from '../components/ImageGalleryModal'
+import { DEFAULT_STAY_THUMB } from '../constants/placeholders'
 
 export default function Stay() {
   const [search, setSearch] = useState('')
@@ -260,11 +261,11 @@ export default function Stay() {
                   {/* Card Image */}
                   <div style={{ height: '200px', position: 'relative', overflow: 'hidden' }}>
                     <img
-                      src={stay.imageUrl || 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800'}
+                      src={stay.imageUrl || DEFAULT_STAY_THUMB}
                       alt={stay.name}
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                       loading="lazy"
-                      onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800' }}
+                      onError={(e) => { e.target.src = DEFAULT_STAY_THUMB }}
                     />
 
                     {/* Bookmark Toggle */}

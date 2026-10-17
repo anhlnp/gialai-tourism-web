@@ -5,6 +5,7 @@ import {
   Search, Ticket, Music, Mountain, Compass, ChevronRight, X
 } from 'lucide-react'
 import { useApi } from '../hooks/useApi'
+import { DEFAULT_EVENT_THUMB } from '../constants/placeholders'
 
 export default function Events() {
   const navigate = useNavigate()
@@ -225,7 +226,7 @@ export default function Events() {
                           alt={ent.name}
                           className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                           onError={e => {
-                            e.target.src = 'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=800'
+                            e.target.src = DEFAULT_EVENT_THUMB
                           }}
                         />
                         <span className="absolute bottom-2 left-2 px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-xs text-white text-[10px] font-semibold">

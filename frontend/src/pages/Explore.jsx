@@ -5,6 +5,7 @@ import {
   ArrowLeft, Map as MapIcon, Bookmark, SlidersHorizontal, X, ArrowRight, AlertCircle
 } from 'lucide-react'
 import { useApi, getApi } from '../hooks/useApi'
+import { DEFAULT_DESTINATION_THUMB } from '../constants/placeholders'
 
 export default function Explore() {
   const navigate = useNavigate()
@@ -377,7 +378,7 @@ export default function Explore() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {displayLocations.map(loc => {
               const isSaved = savedIds.includes(loc.id)
-              const cardImage = loc.imageUrl || loc.image_url || 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop'
+              const cardImage = loc.imageUrl || loc.image_url || DEFAULT_DESTINATION_THUMB
               const isFree = loc.budget === 0 || loc.budget === '0' || loc.budget === 'Miễn phí' || loc.ticket_price === 'Miễn phí' || loc.ticket_price === 0
               const ratingDisplay = loc.avgRating || loc.rating || 4.8
               const timeDisplay = loc.bestTime || loc.best_time_to_visit || loc.opening_hours || 'Mở cả ngày'
@@ -394,7 +395,7 @@ export default function Explore() {
                       alt={loc.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       onError={e => {
-                        e.target.src = 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop'
+                        e.target.src = DEFAULT_DESTINATION_THUMB
                       }}
                     />
                     

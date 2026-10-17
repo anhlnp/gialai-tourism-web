@@ -52,12 +52,14 @@ app.include_router(accommodations_router)
 app.include_router(planner_router)
 app.include_router(chat_router)
 app.include_router(search_router)
+from fastapi import FastAPI, HTTPException
+
 app.include_router(events_router)
 
 
 @app.get("/api/stats")
 def get_stats():
-    """Thống kê tổng quan cho trang chủ."""
+    """Thống kê tổng quan trực tiếp từ CSDL đồ thị Neo4j."""
     try:
         from core.neo4j_driver import run_query_single
         stats = run_query_single("""
@@ -67,32 +69,21 @@ def get_stats():
             MATCH (d:District) WITH locations, dishes, stays, count(d) AS districts
             RETURN locations, dishes, stays, districts
         """)
-        if stats and stats.get("locations", 0) > 0:
+        if stats is not None:
             return stats
-    except Exception:
-        pass
-
-    import json, os
-    cur = os.path.dirname(os.path.abspath(__file__))
-    d_path = os.path.join(cur, "data")
-    loc_len, dish_len, stay_len, dist_len = 30, 6, 6, 11
-    try:
-        with open(os.path.join(d_path, "locations.json"), encoding="utf-8") as f:
-            loc_len = len(json.load(f))
-        with open(os.path.join(d_path, "dishes.json"), encoding="utf-8") as f:
-            dish_len = len(json.load(f))
-        with open(os.path.join(d_path, "accommodations.json"), encoding="utf-8") as f:
-            stay_len = len(json.load(f))
-        with open(os.path.join(d_path, "districts.json"), encoding="utf-8") as f:
-            dist_len = len(json.load(f))
-    except Exception:
-        pass
-    return {"locations": loc_len, "dishes": dish_len, "stays": stay_len, "districts": dist_len}
+        raise HTTPException(status_code=503, detail="Không thể truy xuất số liệu thống kê từ Neo4j")
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(
+            status_code=503,
+            detail=f"Dịch vụ cơ sở dữ liệu Neo4j không khả dụng: {type(e).__name__}"
+        )
 
 
 @app.get("/api/featured")
 def get_featured():
-    """Điểm đến nổi bật cho trang chủ."""
+    """Điểm đến nổi bật và món ngon trực tiếp từ Neo4j."""
     try:
         from core.neo4j_driver import run_query
         locations = run_query("""
@@ -110,42 +101,12 @@ def get_featured():
                    dish.priceRange AS budget
             ORDER BY dish.name LIMIT 6
         """)
-        if locations and dishes:
-            return {"locations": locations, "dishes": dishes}
-    except Exception:
-        pass
-
-    import json, os
-    cur = os.path.dirname(os.path.abspath(__file__))
-    d_path = os.path.join(cur, "data")
-    locs, dishes, dists = [], [], {}
-    try:
-        with open(os.path.join(d_path, "districts.json"), encoding="utf-8") as f:
-            for d in json.load(f):
-                dists[d["districtId"]] = d["name"]
-        with open(os.path.join(d_path, "locations.json"), encoding="utf-8") as f:
-            for l in json.load(f)[:8]:
-                locs.append({
-                    "id": l["locationId"],
-                    "name": l["name"],
-                    "imageUrl": l["imageUrl"],
-                    "description": l["description"],
-                    "district": dists.get(l.get("districtId"), "Gia Lai"),
-                    "budget": l.get("ticketPrice", 0),
-                    "rating": l.get("ratingAvg", 4.8)
-                })
-        with open(os.path.join(d_path, "dishes.json"), encoding="utf-8") as f:
-            for d in json.load(f)[:6]:
-                dishes.append({
-                    "id": d["dishId"],
-                    "name": d["name"],
-                    "imageUrl": d["imageUrl"],
-                    "budget": d.get("priceRange", "")
-                })
-    except Exception:
-        pass
-    return {"locations": locs, "dishes": dishes}
-
+        return {"locations": locations or [], "dishes": dishes or []}
+    except Exception as e:
+        raise HTTPException(
+            status_code=503,
+            detail=f"Dịch vụ cơ sở dữ liệu Neo4j không khả dụng: {type(e).__name__}"
+        )
 
 
 @app.get("/api/health")
@@ -157,3 +118,4 @@ def health_check():
         return {"status": "ok", "neo4j": "connected"}
     except Exception as e:
         return {"status": "error", "neo4j": str(e)}
+

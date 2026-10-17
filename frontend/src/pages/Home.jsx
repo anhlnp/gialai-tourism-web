@@ -18,6 +18,7 @@ import {
 } from 'lucide-react'
 import { useApi } from '../hooks/useApi'
 import DestinationCard from '../components/DestinationCard.jsx'
+import { DEFAULT_FOOD_THUMB } from '../constants/placeholders'
 
 export default function Home() {
   const { data: stats } = useApi('/stats')
@@ -351,7 +352,7 @@ export default function Home() {
 
             <motion.div className="region-card park" whileHover={{ scale: 1.02 }}
               onClick={() => navigate('/explore?category=Công viên & Không gian cảnh quan công cộng')}>
-              <img src="https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2024/11/12/quang-truong-dai-doan-ket.jpg" alt="Công viên cảnh quan" />
+              <img src="https://dulichdemen.vn/wp-content/uploads/2023/01/quang-truong-dai-doan-ket-pleiku-gia-lai-du-lich-de-men-vn.jpg" alt="Công viên cảnh quan" />
               <div className="overlay">
                 <Sun size={22} style={{ marginBottom: 4 }} />
                 <div style={{ fontWeight: 700 }}>Công viên & Không gian đô thị</div>
@@ -416,10 +417,11 @@ export default function Home() {
                 >
                   <div style={{ height: '160px', overflow: 'hidden' }}>
                     <img
-                      src={dish.imageUrl || 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800'}
+                      src={dish.imageUrl || DEFAULT_FOOD_THUMB}
                       alt={dish.name}
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                       loading="lazy"
+                      onError={(e) => { e.currentTarget.src = DEFAULT_FOOD_THUMB }}
                     />
                   </div>
                   <div style={{ padding: '14px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>

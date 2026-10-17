@@ -36,7 +36,11 @@
     "locationId": "LOC_LANGVOI",
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
-    "geographic_region": "Cao nguyên"
+    "geographic_region": "Cao nguyên",
+    "imageUrl": "https://cdn.xanhsm.com/2025/03/1b3f9e9b-lang-plei-op-2.jpg",
+    "imageUrls": [
+      "https://cdn.xanhsm.com/2025/03/1b3f9e9b-lang-plei-op-2.jpg"
+    ]
   },
   {
     "eventId": "EVT_BD_DONG_DA",
@@ -75,7 +79,11 @@
     "locationId": "LOC_QUANGTRUONG_GL",
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
-    "geographic_region": "Cao nguyên"
+    "geographic_region": "Cao nguyên",
+    "imageUrl": "https://dulichdemen.vn/wp-content/uploads/2023/01/quang-truong-dai-doan-ket-pleiku-gia-lai-du-lich-de-men-vn.jpg",
+    "imageUrls": [
+      "https://dulichdemen.vn/wp-content/uploads/2023/01/quang-truong-dai-doan-ket-pleiku-gia-lai-du-lich-de-men-vn.jpg"
+    ]
   },
   {
     "eventId": "EVT_CAFE_PLEIKU",
@@ -88,7 +96,11 @@
     "locationId": "LOC_QUANGTRUONG_GL",
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
-    "geographic_region": "Cao nguyên"
+    "geographic_region": "Cao nguyên",
+    "imageUrl": "https://dulichdemen.vn/wp-content/uploads/2023/01/quang-truong-dai-doan-ket-pleiku-gia-lai-du-lich-de-men-vn.jpg",
+    "imageUrls": [
+      "https://dulichdemen.vn/wp-content/uploads/2023/01/quang-truong-dai-doan-ket-pleiku-gia-lai-du-lich-de-men-vn.jpg"
+    ]
   },
   {
     "eventId": "EVT_DAQUY",

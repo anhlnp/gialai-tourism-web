@@ -20,6 +20,7 @@ import {
   Quote
 } from 'lucide-react'
 import { useApi } from '../hooks/useApi'
+import { DEFAULT_DESTINATION_THUMB, DEFAULT_FOOD_THUMB, DEFAULT_STAY_THUMB } from '../constants/placeholders'
 
 export default function DestinationDetail() {
   const { id } = useParams()
@@ -127,10 +128,10 @@ export default function DestinationDetail() {
       {/* ── 1. CINEMATIC FULL-BLEED HERO (Stitch Screen 3) ── */}
       <section style={{ position: 'relative', width: '100%', minHeight: '420px', overflow: 'hidden' }}>
         <img
-          src={data.imageUrl || 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800'}
+          src={data.imageUrl || DEFAULT_DESTINATION_THUMB}
           alt={data.name}
           style={{ width: '100%', height: '440px', objectFit: 'cover' }}
-          onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800' }}
+          onError={(e) => { e.target.src = DEFAULT_DESTINATION_THUMB }}
         />
 
         {/* Gradient Overlay */}
@@ -463,9 +464,10 @@ export default function DestinationDetail() {
                     }}
                   >
                     <img
-                      src={dish.imageUrl || 'https://images.unsplash.com/photo-1544025162-d76694265947?w=400'}
+                      src={dish.imageUrl || DEFAULT_FOOD_THUMB}
                       alt={dish.name}
                       style={{ width: '56px', height: '56px', borderRadius: 'var(--radius-sm)', objectFit: 'cover' }}
+                      onError={(e) => { e.target.src = DEFAULT_FOOD_THUMB }}
                     />
                     <div style={{ flex: 1, minWidth: 0 }}>
                       <div style={{ fontWeight: 700, fontSize: '13px', color: 'var(--color-text)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
@@ -513,9 +515,10 @@ export default function DestinationDetail() {
                     }}
                   >
                     <img
-                      src={stay.imageUrl || 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400'}
+                      src={stay.imageUrl || DEFAULT_STAY_THUMB}
                       alt={stay.name}
                       style={{ width: '56px', height: '56px', borderRadius: 'var(--radius-sm)', objectFit: 'cover' }}
+                      onError={(e) => { e.target.src = DEFAULT_STAY_THUMB }}
                     />
                     <div style={{ flex: 1, minWidth: 0 }}>
                       <div style={{ fontWeight: 700, fontSize: '13px', color: 'var(--color-text)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>

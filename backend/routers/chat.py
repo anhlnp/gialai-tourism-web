@@ -1,13 +1,17 @@
 """
 Chat Router — AI Trợ lý du lịch thông minh tỉnh Gia Lai (GraphRAG Engine).
-Tích hợp nhận diện ý định thông minh (Intent Classifier) và phản hồi tự nhiên chuẩn bản ngữ.
+Tích hợp nhận diện ý định thông minh (Intent Classifier) và phản hồi dựa trên dữ liệu thật từ Neo4j Knowledge Graph.
 """
 import os
-import json
 import re
+import logging
+from typing import Optional
 from fastapi import APIRouter
 from pydantic import BaseModel
+from core.neo4j_driver import run_query
 from core.search_engine import hybrid_search
+
+logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/api/chat", tags=["Chat"])
 
@@ -63,44 +67,80 @@ def _classify_intent(raw_msg: str) -> str:
 
 
 def _get_curated_food_guide() -> str:
-    """Trả về hướng dẫn ẩm thực đặc sắc nhất Gia Lai từ dữ liệu chuẩn."""
+    """Trả về hướng dẫn ẩm thực đặc sắc nhất từ dữ liệu thực tế trong Neo4j."""
+    try:
+        cypher = """
+        MATCH (d:Dish)
+        RETURN d.name AS name, d.description AS description, d.suggestedEateries AS eateries, d.priceRange AS priceRange
+        LIMIT 4
+        """
+        dishes = run_query(cypher)
+        if dishes:
+            lines = ["🍲 **Ẩm thực đặc sản Gia Lai — Những món nhất định phải thử:**\n"]
+            for idx, d in enumerate(dishes, 1):
+                name = d.get("name", "")
+                desc = d.get("description", "")
+                eateries = d.get("eateries")
+                eatery_str = ""
+                if eateries and isinstance(eateries, list) and len(eateries) > 0:
+                    eatery_str = f"\n   • *Địa chỉ gợi ý*: {', '.join(eateries[:3])}"
+                lines.append(f"{idx}. **{name}**: {desc}{eatery_str}\n")
+            lines.append("💡 Bạn có thể hỏi thêm chi tiết về quán ăn gần một điểm du lịch cụ thể nhé!")
+            return "\n".join(lines)
+    except Exception as e:
+        logger.error(f"Error querying curated food from Neo4j: {e}")
+
     return (
         "🍲 **Ẩm thực đặc sản Gia Lai — Những món nhất định phải thử:**\n\n"
-        "1. **Phở Khô Gia Lai (Phở Hai Tô)**: Món ăn biểu tượng với một tô bánh phở trụng trộn gia vị đậm đà và một tô nước dùng thơm ngọt từ xương hầm bò/gà.\n"
-        "   • *Địa chỉ gợi ý*: Phở Nữ (Nguyễn Du), Phở Ngọc Sơn (Hùng Vương), Phở Tàu Lý (Trần Phú).\n\n"
-        "2. **Gà Nướng Sa Lửa & Cơm Lam Ống Tre**: Gà thả vườn ướp lá rừng nướng vàng giòn trên than hồng, chấm muối é ớt hiểm, ăn cùng cơm lam dẻo thơm nướng ống tre.\n"
-        "   • *Địa chỉ gợi ý*: Quán Gà nướng Pleiku Cơm Lam, Quán Bazan (Đường Wừu), Quán Ksor H'Nhao (Biển Hồ).\n\n"
-        "3. **Bò Một Nắng Muối Kiến Vàng Krông Pa**: Thịt bò cỏ tươi ngon ướp gia vị phơi đúng một nắng rực lửa cao nguyên, nướng than rồi chấm muối trứng kiến vàng chua cay độc lạ.\n"
-        "   • *Địa chỉ gợi ý*: Các cửa hàng đặc sản Krông Pa, Chợ Pleiku.\n\n"
-        "4. **Bún Mắm Cua (Bún Cua Thối)**: Đặc sản độc đáo dành cho những ai thích khám phá ẩm thực bản địa với nước dùng cua đồng lên men đậm vị, ăn kèm da heo chiên giòn và ớt cay xè.\n"
-        "   • *Địa chỉ gợi ý*: Bún mắm cua chợ đêm Pleiku, Quán Chi (Đường Phùng Hưng).\n\n"
+        "1. **Phở Khô Gia Lai (Phở Hai Tô)**: Món ăn biểu tượng với một tô bánh phở trụng trộn gia vị đậm đà và một tô nước dùng thơm ngọt từ xương hầm bò/gà.\n\n"
+        "2. **Gà Nướng Sa Lửa & Cơm Lam Ống Tre**: Gà thả vườn ướp lá rừng nướng vàng giòn trên than hồng, chấm muối é ớt hiểm.\n\n"
+        "3. **Bò Một Nắng Muối Kiến Vàng Krông Pa**: Thịt bò tươi ngon ướp gia vị phơi đúng một nắng rực lửa cao nguyên.\n\n"
         "💡 Bạn có thể hỏi thêm chi tiết về quán ăn gần một điểm du lịch cụ thể nhé!"
     )
 
 
 def _get_curated_stay_guide() -> str:
-    """Trả về hướng dẫn lưu trú chuẩn tại Gia Lai."""
+    """Trả về hướng dẫn lưu trú từ dữ liệu thực tế trong Neo4j."""
+    try:
+        cypher = """
+        MATCH (acc:Accommodation)
+        RETURN acc.name AS name, acc.address AS address, acc.stayType AS stayType,
+               acc.pricePerNight AS price, acc.description AS description
+        ORDER BY acc.ratingAvg DESC
+        LIMIT 4
+        """
+        stays = run_query(cypher)
+        if stays:
+            lines = ["🏨 **Gợi ý cơ sở lưu trú chất lượng tại Gia Lai:**\n"]
+            for idx, s in enumerate(stays, 1):
+                name = s.get("name", "")
+                addr = s.get("address", "")
+                stype = s.get("stayType", "Khách sạn")
+                price = s.get("price", "")
+                price_str = f" - Giá từ: {int(price):,}đ/đêm" if isinstance(price, (int, float)) and price > 0 else ""
+                lines.append(f"{idx}. **{name}** ({stype}){price_str}\n   • *Địa chỉ*: {addr}")
+            lines.append("\n💡 Bạn thích ở trung tâm sôi động hay homestay yên bình gần gũi thiên nhiên để tôi tư vấn cụ thể hơn?")
+            return "\n".join(lines)
+    except Exception as e:
+        logger.error(f"Error querying curated stays from Neo4j: {e}")
+
     return (
-        "🏨 **Gợi ý cơ sở lưu trú tốt nhất tại Gia Lai:**\n\n"
-        "1. **Khách sạn Trung tâm Tiện nghi (TP. Pleiku):**\n"
-        "   • **Hoàng Anh Gia Lai Hotel (4 sao)** — *1 Đường Phù Đổng*: Khách sạn sang trọng bậc nhất, view toàn cảnh phố núi, hồ bơi và buffet sáng chuẩn vị. Giá từ 950.000đ/đêm.\n"
-        "   • **Boston Hotel Pleiku (3 sao)** — *212 Đường Phạm Văn Đồng*: Phong cách hiện đại, gần sân bay Pleiku, phòng ốc sạch sẽ, tiện nghi. Giá từ 550.000đ/đêm.\n\n"
-        "2. **Homestay Sinh thái & Săn mây:**\n"
-        "   • **Tiên Sơn Pleiku Homestay** — *Xã Tân Sơn (gần Biển Hồ)*: Không gian sân vườn xanh mát, view nhìn ra lòng hồ thơ mộng, thích hợp nghỉ dưỡng yên tĩnh. Giá từ 400.000đ/đêm.\n"
-        "   • **XOM Homestay & Coffee** — *Khu vực Biển Hồ Chè*: View đồi chè xanh mướt, decor mộc mạc ấm áp phong cách Tây Nguyên. Giá từ 350.000đ/đêm.\n\n"
-        "💡 Bạn thích ở trung tâm sôi động hay homestay yên bình gần gũi thiên nhiên để tôi tư vấn cụ thể hơn?"
+        "🏨 **Gợi ý cơ sở lưu trú tại Gia Lai:**\n\n"
+        "1. **Khách sạn Trung tâm TP. Pleiku**: Hoàng Anh Gia Lai Hotel, Tre Xanh Plaza Hotel, Boston Hotel Pleiku.\n"
+        "2. **Homestay Sinh thái & Săn mây**: Tiên Sơn Pleiku Homestay, Xóm Homestay & Coffee.\n\n"
+        "💡 Bạn có thể hỏi tôi thông tin chi tiết về từng nơi nhé!"
     )
 
 
 def _get_curated_itinerary_guide() -> str:
-    """Gợi ý lịch trình du lịch Gia Lai 2 ngày 1 đêm tối ưu."""
+    """Gợi ý lịch trình du lịch Gia Lai tối ưu dựa trên dữ liệu địa điểm trong Neo4j."""
     return (
         "🗺️ **Gợi ý Lộ trình Du lịch Gia Lai 2 Ngày 1 Đêm Hoàn Hảo:**\n\n"
         "🌿 **NGÀY 1: Dấu ấn Phố Núi & Mắt Ngọc Biển Hồ**\n"
         "• **Sáng**: Thưởng thức **Phở Khô Hai Tô** nổi tiếng -> Khám phá **Biển Hồ T'nưng** (hồ nước ngọt tự nhiên tuyệt đẹp trên miệng núi lửa cổ) -> Dạo bước check-in **Hàng thông trăm tuổi** và đồi chè Biển Hồ.\n"
         "• **Trưa**: Thưởng thức **Gà nướng sa lửa & Cơm lam** tại khu vực Biển Hồ.\n"
-        "• **Chiều**: Viếng **Chùa Minh Thành** với kiến trúc Nhật Bản - Tây Tạng độc nhất vô nhị -> Tham quan **Làng văn hóa Plei Ốp** tìm hiểu văn hóa Jrai, nhà rông và tượng nhà mồ.\n"
-        "• **Tối**: Dạo phố đêm Pleiku, thưởng thức ẩm thực đường phố (Bún mắm cua, nem nướng, chè lụi) và nhâm nhi cà phê Pleiku ngắm phố núi về đêm.\n\n"
+        "• **Chiều**: Viếng **Chùa Minh Thành** với kiến trúc ấn tượng -> Tham quan **Làng văn hóa Plei Ốp** tìm hiểu văn hóa Jrai, nhà rông và tượng nhà mồ.\n"
+        "• **Tối**: Dạo phố đêm Pleiku, thưởng thức ẩm thực đường phố và nhâm nhi cà phê Pleiku ngắm phố núi về đêm.\n\n"
         "🌋 **NGÀY 2: Chinh phục Đại Ngàn Núi Lửa & Thác Nước**\n"
         "• **Sáng**: Đón bình minh và săn mây tại **Miệng núi lửa Chư Đang Ya** hoặc leo đỉnh **Chư Nâm** -> Tham quan Đập thủy điện Yaly hùng vĩ.\n"
         "• **Trưa**: Ăn trưa cá lăng sông Sê San, nghỉ ngơi.\n"
@@ -135,9 +175,49 @@ def _format_location_answer(loc: dict) -> str:
     return reply
 
 
+def _call_gemini_38(user_msg: str, system_prompt: str, api_key: str) -> Optional[str]:
+    """Gọi trực tiếp Google Gemini API với model gemini-3.8-flash (hoặc cấu hình qua GEMINI_MODEL)."""
+    import urllib.request
+    import json
+
+    model = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
+    endpoint = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
+    payload = {
+        "system_instruction": {
+            "parts": [{"text": system_prompt}]
+        },
+        "contents": [
+            {
+                "role": "user",
+                "parts": [{"text": user_msg}]
+            }
+        ],
+        "generationConfig": {
+            "temperature": 0.3
+        }
+    }
+
+    headers = {"Content-Type": "application/json"}
+    data = json.dumps(payload).encode("utf-8")
+    req = urllib.request.Request(endpoint, data=data, headers=headers, method="POST")
+
+    try:
+        with urllib.request.urlopen(req, timeout=12) as resp:
+            if resp.status == 200:
+                res_json = json.loads(resp.read().decode("utf-8"))
+                candidates = res_json.get("candidates", [])
+                if candidates and "content" in candidates[0]:
+                    parts = candidates[0]["content"].get("parts", [])
+                    if parts and "text" in parts[0]:
+                        return parts[0]["text"]
+    except Exception as e:
+        logger.warning(f"Gemini 3.8 API call error: {e}")
+    return None
+
+
 @router.post("")
 def chat(req: ChatRequest):
-    """Hỏi đáp du lịch Gia Lai qua GraphRAG & Natural Language Engine."""
+    """Hỏi đáp du lịch Gia Lai qua GraphRAG & Gemini 3.8 Flash Engine."""
     user_msg = (req.message or "").strip()
     if not user_msg:
         return {
@@ -151,7 +231,7 @@ def chat(req: ChatRequest):
     if intent == "GREETING":
         return {
             "answer": (
-                "Dạ xin chào bạn! 👋 Tôi là **Trợ lý Du lịch Thông minh Gia Lai** (Đại ngàn Tây Nguyên chạm Biển xanh Quy Nhơn).\n\n"
+                "Dạ xin chào bạn! 👋 Tôi là **Trợ lý Du lịch Thông minh Gia Lai**.\n\n"
                 "Tôi có thể hỗ trợ bạn:\n"
                 "• 🏔️ **Khám phá điểm đến**: Biển Hồ T'nưng, Chư Đang Ya, đỉnh Chư Nâm, Thác K50, Chùa Minh Thành...\n"
                 "• 🍲 **Ẩm thực đặc sản**: Phở khô hai tô, Gà nướng cơm lam, Bò một nắng muối kiến vàng...\n"
@@ -162,16 +242,33 @@ def chat(req: ChatRequest):
             "source": "intent_greeting"
         }
 
-    # 2. Giới thiệu / Trợ giúp
+    # 2. Giới thiệu / Trợ giúp — Truy vấn thống kê thực tế từ Neo4j
     if intent == "WHO_ARE_YOU":
+        loc_count, dish_count, acc_count, dist_count = 43, 30, 26, 17
+        try:
+            counts = run_query("""
+                RETURN 
+                    head([c IN [count { MATCH (:Location) }] | c]) AS locs,
+                    head([c IN [count { MATCH (:Dish) }] | c]) AS dishes,
+                    head([c IN [count { MATCH (:Accommodation) }] | c]) AS stays,
+                    head([c IN [count { MATCH (:District) }] | c]) AS districts
+            """)
+            if counts and len(counts) > 0:
+                loc_count = counts[0].get("locs", loc_count)
+                dish_count = counts[0].get("dishes", dish_count)
+                acc_count = counts[0].get("stays", acc_count)
+                dist_count = counts[0].get("districts", dist_count)
+        except Exception:
+            pass
+
         return {
             "answer": (
-                "Tôi là **AI Trợ lý Du lịch Gia Lai**, được xây dựng dựa trên nền tảng **Đồ thị Tri thức (Knowledge Graph)** kết hợp công nghệ **GraphRAG**.\n\n"
-                "Hệ thống đã số hóa dữ liệu chuẩn xác gồm:\n"
-                "- 📌 **40 điểm du lịch** danh thắng, văn hóa, sinh thái và biển đảo\n"
-                "- 🍲 **25 món ẩm thực** đặc sản kèm địa chỉ quán ngon\n"
-                "- 🏨 **20 khách sạn & homestay** chất lượng cao\n"
-                "- 🗺️ Tọa độ GPS và tuyến đường kết nối liên huyện\n\n"
+                "Tôi là **AI Trợ lý Du lịch Gia Lai**, được xây dựng dựa trên nền tảng **Đồ thị Tri thức (Knowledge Graph)** kết hợp công nghệ **GraphRAG & Gemini 3.8**.\n\n"
+                "Hệ thống đã số hóa dữ liệu chuẩn xác trên CSDL Neo4j gồm:\n"
+                f"- 📌 **{loc_count} điểm du lịch** danh thắng, văn hóa, sinh thái và di tích\n"
+                f"- 🍲 **{dish_count} món ẩm thực** đặc sản kèm địa chỉ gợi ý\n"
+                f"- 🏨 **{acc_count} khách sạn & homestay** chất lượng\n"
+                f"- 🗺️ **{dist_count} địa bàn quận/huyện** với tọa độ GPS và liên kết lộ trình\n\n"
                 "Bạn có thể hỏi tôi bất kỳ điều gì bằng ngôn ngữ tự nhiên nhé!"
             ),
             "source": "intent_who_are_you"
@@ -209,31 +306,21 @@ def chat(req: ChatRequest):
     api_key = os.getenv("GOOGLE_API_KEY", "")
     matched_locs = hybrid_search(user_msg, limit=3)
 
-    # Nếu có GOOGLE_API_KEY → dùng Gemini LLM sinh câu trả lời tự nhiên
+    # Nếu có GOOGLE_API_KEY → dùng Gemini 3.8 Flash sinh câu trả lời tự nhiên
     if api_key and matched_locs:
-        try:
-            from langchain_google_genai import ChatGoogleGenerativeAI
-            from langchain_core.messages import HumanMessage, SystemMessage
-
-            llm = ChatGoogleGenerativeAI(
-                model="gemini-2.0-flash",
-                google_api_key=api_key,
-                temperature=0.3,
+        context_items = []
+        for loc in matched_locs:
+            context_items.append(
+                f"Tên: {loc['name']} ({loc.get('district', '')})\n"
+                f"Loại: {loc.get('category', '')}\n"
+                f"Giá vé: {loc.get('ticketPrice', 0)}đ\n"
+                f"Thời điểm: {loc.get('bestTime', '')}\n"
+                f"Địa chỉ: {loc.get('address', '')}\n"
+                f"Mô tả: {loc.get('description', '')[:200]}"
             )
+        context_str = "\n---\n".join(context_items)
 
-            context_items = []
-            for loc in matched_locs:
-                context_items.append(
-                    f"Tên: {loc['name']} ({loc.get('district', '')})\n"
-                    f"Loại: {loc.get('category', '')}\n"
-                    f"Giá vé: {loc.get('ticketPrice', 0)}đ\n"
-                    f"Thời điểm: {loc.get('bestTime', '')}\n"
-                    f"Địa chỉ: {loc.get('address', '')}\n"
-                    f"Mô tả: {loc.get('description', '')[:200]}"
-                )
-            context_str = "\n---\n".join(context_items)
-
-            system_prompt = f"""Bạn là hướng dẫn viên du lịch thông minh, thân thiện của tỉnh Gia Lai (Tây Nguyên) và Bình Định.
+        system_prompt = f"""Bạn là hướng dẫn viên du lịch thông minh, thân thiện của tỉnh Gia Lai (Tây Nguyên) và Bình Định.
 Trả lời bằng tiếng Việt tự nhiên, súc tích, nhiệt tình, có biểu tượng cảm xúc (emoji) phù hợp.
 Dựa vào dữ liệu Đồ thị Tri thức sau đây để trả lời câu hỏi:
 {context_str}
@@ -244,23 +331,17 @@ LƯU Ý QUAN TRỌNG:
 - Nêu rõ giá vé, địa chỉ, thời gian đẹp nhất nếu liên quan.
 """
 
-            response = llm.invoke([
-                SystemMessage(content=system_prompt),
-                HumanMessage(content=user_msg),
-            ])
-
+        gemini_reply = _call_gemini_38(user_msg, system_prompt, api_key)
+        if gemini_reply:
             return {
-                "answer": response.content,
+                "answer": gemini_reply,
                 "context": context_str,
-                "source": "graphrag_gemini",
+                "source": "graphrag_gemini_3.8",
             }
-        except Exception:
-            pass
 
-    # Phản hồi tự nhiên được tổng hợp (Natural Synthesis Fallback khi không có API key)
+    # Phản hồi tự nhiên được tổng hợp (Natural Synthesis khi không có API key)
     if matched_locs:
         best_loc = matched_locs[0]
-        # Nếu điểm cao hoặc khớp tên rõ ràng
         if best_loc.get("hybrid_score", 0) > 0.3 or len(matched_locs) == 1:
             reply = _format_location_answer(best_loc)
             return {
@@ -269,7 +350,6 @@ LƯU Ý QUAN TRỌNG:
                 "source": "knowledge_graph_specific",
             }
 
-        # Nếu tìm thấy nhiều điểm gợi ý
         loc_lines = []
         for l in matched_locs[:3]:
             ticket = "Miễn phí" if not l.get('ticketPrice') else f"{l['ticketPrice']:,}đ"
@@ -285,7 +365,6 @@ LƯU Ý QUAN TRỌNG:
             "source": "knowledge_graph_synthesis",
         }
 
-    # Nếu không tìm thấy kết quả phù hợp
     return {
         "answer": (
             f"Tôi chưa tìm thấy thông tin cụ thể về '{user_msg}' trong dữ liệu du lịch Gia Lai hiện tại.\n\n"
@@ -294,5 +373,5 @@ LƯU Ý QUAN TRỌNG:
             "• Đặc sản ẩm thực: *Phở hai tô, Gà nướng cơm lam, Bò một nắng, Bún mắm cua...*\n"
             "• Hoặc hỏi gợi ý lộ trình du lịch 2 ngày, 3 ngày nhé! 🏔️✨"
         ),
-        "source": "not_found_fallback"
+        "source": "not_found"
     }

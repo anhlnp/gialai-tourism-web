@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Bookmark, Compass, Trash2, MapPin, Star, ArrowRight, Heart } from 'lucide-react'
+import { DEFAULT_DESTINATION_THUMB } from '../constants/placeholders'
 
 export default function Saved() {
   const [savedItems, setSavedItems] = useState([])
@@ -186,11 +187,11 @@ export default function Saved() {
               {/* Image Header */}
               <div style={{ height: '170px', position: 'relative', overflow: 'hidden' }}>
                 <img
-                  src={item.imageUrl || 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800'}
+                  src={item.imageUrl || DEFAULT_DESTINATION_THUMB}
                   alt={item.name}
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   onError={(e) => {
-                    e.target.src = 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800'
+                    e.target.src = DEFAULT_DESTINATION_THUMB
                   }}
                 />
                 <button

@@ -35,10 +35,9 @@
     "ticketPrice": 20000,
     "ratingAvg": 4.9,
     "bestTimeOfDay": "Sáng sớm hoặc Hoàng hôn",
-    "imageUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800",
+    "imageUrl": "https://cdn.xanhsm.com/2025/03/8d98d60d-bien-ho-pleiku-13.jpg",
     "imageUrls": [
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800",
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800"
+      "https://cdn.xanhsm.com/2025/03/8d98d60d-bien-ho-pleiku-13.jpg"
     ],
     "districtId": "D_PLEIKU",
     "district": "Thành phố Pleiku",
@@ -168,9 +167,9 @@
     "ticketPrice": 0,
     "ratingAvg": 4.9,
     "bestTimeOfDay": "Chiều tối (17h - 22h)",
-    "imageUrl": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=800",
+    "imageUrl": "https://dulichdemen.vn/wp-content/uploads/2023/01/quang-truong-dai-doan-ket-pleiku-gia-lai-du-lich-de-men-vn.jpg",
     "imageUrls": [
-      "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=800"
+      "https://dulichdemen.vn/wp-content/uploads/2023/01/quang-truong-dai-doan-ket-pleiku-gia-lai-du-lich-de-men-vn.jpg"
     ],
     "districtId": "D_PLEIKU",
     "district": "Thành phố Pleiku",
@@ -274,10 +273,8 @@
     "ticketPrice": 0,
     "ratingAvg": 4.8,
     "bestTimeOfDay": "Ban ngày",
-    "imageUrl": "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2025/7/3/b5661274536c4ba4b9999460477570e6",
-    "imageUrls": [
-      "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2025/7/3/b5661274536c4ba4b9999460477570e6"
-    ],
+    "imageUrl": "",
+    "imageUrls": [],
     "districtId": "D_ANKHE",
     "district": "Thị xã An Khê",
     "categoryId": "CAT_GL_HISTORY",
@@ -404,10 +401,8 @@
     "ticketPrice": 0,
     "ratingAvg": 4.8,
     "bestTimeOfDay": "Sáng 9h - 15h",
-    "imageUrl": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800",
-    "imageUrls": [
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800"
-    ],
+    "imageUrl": "",
+    "imageUrls": [],
     "districtId": "D_CHUPAH",
     "district": "Huyện Chư Păh",
     "categoryId": "CAT_GL_NATURE",
@@ -482,10 +477,8 @@
     "ticketPrice": 0,
     "ratingAvg": 4.8,
     "bestTimeOfDay": "Sáng sớm săn mây (5h - 7h)",
-    "imageUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800",
-    "imageUrls": [
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800"
-    ],
+    "imageUrl": "",
+    "imageUrls": [],
     "districtId": "D_CHUPAH",
     "district": "Huyện Chư Păh",
     "categoryId": "CAT_GL_NATURE",
@@ -587,10 +580,8 @@
     "ticketPrice": 0,
     "ratingAvg": 4.7,
     "bestTimeOfDay": "Ban ngày",
-    "imageUrl": "https://tungphuongfood.com.vn/wp-content/uploads/2023/05/thac-hang-doi-kbang-6.jpg",
-    "imageUrls": [
-      "https://tungphuongfood.com.vn/wp-content/uploads/2023/05/thac-hang-doi-kbang-6.jpg"
-    ],
+    "imageUrl": "",
+    "imageUrls": [],
     "districtId": "D_KBANG",
     "district": "Huyện K'Bang",
     "categoryId": "CAT_GL_HISTORY",
@@ -613,9 +604,9 @@
     "ticketPrice": 0,
     "ratingAvg": 4.7,
     "bestTimeOfDay": "Buổi chiều tối giao lưu cồng chiêng",
-    "imageUrl": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=800",
+    "imageUrl": "https://cdn.xanhsm.com/2025/03/1b3f9e9b-lang-plei-op-2.jpg",
     "imageUrls": [
-      "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=800"
+      "https://cdn.xanhsm.com/2025/03/1b3f9e9b-lang-plei-op-2.jpg"
     ],
     "districtId": "D_PLEIKU",
     "district": "Thành phố Pleiku",
@@ -639,10 +630,8 @@
     "ticketPrice": 0,
     "ratingAvg": 4.7,
     "bestTimeOfDay": "Ban ngày",
-    "imageUrl": "https://cdn.xanhsm.com/2025/03/1b3f9e9b-lang-plei-op-2.jpg",
-    "imageUrls": [
-      "https://cdn.xanhsm.com/2025/03/1b3f9e9b-lang-plei-op-2.jpg"
-    ],
+    "imageUrl": "",
+    "imageUrls": [],
     "districtId": "D_PLEIKU",
     "district": "Thành phố Pleiku",
     "categoryId": "CAT_GL_CULTURE",
@@ -719,9 +708,9 @@
     "ticketPrice": 25000,
     "ratingAvg": 4.7,
     "bestTimeOfDay": "Sáng 8h - 11h ngắm cầu vồng nước",
-    "imageUrl": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=800",
+    "imageUrl": "https://media.mia.vn/uploads/blog-du-lich/thac-phu-cuong-chiem-nguong-tuyet-tac-cua-nui-rung-gia-lai-04-1659179228.jpg",
     "imageUrls": [
-      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=800"
+      "https://media.mia.vn/uploads/blog-du-lich/thac-phu-cuong-chiem-nguong-tuyet-tac-cua-nui-rung-gia-lai-04-1659179228.jpg"
     ],
     "districtId": "D_CHUSE",
     "district": "Huyện Chư Sê",
@@ -797,10 +786,8 @@
     "ticketPrice": 0,
     "ratingAvg": 4.6,
     "bestTimeOfDay": "Sáng sớm hoặc Chiều mát",
-    "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
-    "imageUrls": [
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800"
-    ],
+    "imageUrl": "",
+    "imageUrls": [],
     "districtId": "D_PLEIKU",
     "district": "Thành phố Pleiku",
     "categoryId": "CAT_GL_PARK",
@@ -823,10 +810,8 @@
     "ticketPrice": 0,
     "ratingAvg": 4.6,
     "bestTimeOfDay": "Giờ hành chính (7h30 - 17h)",
-    "imageUrl": "https://cdn.xanhsm.com/2025/03/1b3f9e9b-lang-plei-op-2.jpg",
-    "imageUrls": [
-      "https://cdn.xanhsm.com/2025/03/1b3f9e9b-lang-plei-op-2.jpg"
-    ],
+    "imageUrl": "",
+    "imageUrls": [],
     "districtId": "D_PLEIKU",
     "district": "Thành phố Pleiku",
     "categoryId": "CAT_GL_HISTORY",
@@ -901,10 +886,8 @@
     "ticketPrice": 0,
     "ratingAvg": 4.6,
     "bestTimeOfDay": "Cuối tuần",
-    "imageUrl": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=800",
-    "imageUrls": [
-      "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=800"
-    ],
+    "imageUrl": "",
+    "imageUrls": [],
     "districtId": "D_DAKDOA",
     "district": "Huyện Đắk Đoa",
     "categoryId": "CAT_GL_CULTURE",
@@ -927,10 +910,8 @@
     "ticketPrice": 30000,
     "ratingAvg": 4.6,
     "bestTimeOfDay": "Buổi chiều ngắm hoàng hôn sông Sê San",
-    "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
-    "imageUrls": [
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800"
-    ],
+    "imageUrl": "",
+    "imageUrls": [],
     "districtId": "D_CHUPAH",
     "district": "Huyện Chư Păh",
     "categoryId": "CAT_GL_NATURE",
@@ -953,9 +934,9 @@
     "ticketPrice": 15000,
     "ratingAvg": 4.6,
     "bestTimeOfDay": "Buổi sáng",
-    "imageUrl": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=800",
+    "imageUrl": "https://tungphuongfood.com.vn/wp-content/uploads/2023/05/thac-hang-doi-kbang-6.jpg",
     "imageUrls": [
-      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=800"
+      "https://tungphuongfood.com.vn/wp-content/uploads/2023/05/thac-hang-doi-kbang-6.jpg"
     ],
     "districtId": "D_KBANG",
     "district": "Huyện K'Bang",
@@ -1006,10 +987,8 @@
     "ticketPrice": 0,
     "ratingAvg": 4.5,
     "bestTimeOfDay": "Ban ngày",
-    "imageUrl": "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2025/7/3/b5661274536c4ba4b9999460477570e6",
-    "imageUrls": [
-      "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2025/7/3/b5661274536c4ba4b9999460477570e6"
-    ],
+    "imageUrl": "",
+    "imageUrls": [],
     "districtId": "D_ANKHE",
     "district": "Thị xã An Khê",
     "categoryId": "CAT_GL_HISTORY",
@@ -1032,11 +1011,8 @@
     "ticketPrice": 0,
     "ratingAvg": 4.5,
     "bestTimeOfDay": "Mùa mưa hoặc đầu mùa khô",
-    "imageUrl": "https://media.mia.vn/uploads/blog-du-lich/thac-phu-cuong-chiem-nguong-tuyet-tac-cua-nui-rung-gia-lai-04-1659179228.jpg",
-    "imageUrls": [
-      "https://media.mia.vn/uploads/blog-du-lich/thac-phu-cuong-chiem-nguong-tuyet-tac-cua-nui-rung-gia-lai-04-1659179228.jpg",
-      "https://gialai.info/wp-content/uploads/2023/02/anh-3-3-3135.jpg"
-    ],
+    "imageUrl": "",
+    "imageUrls": [],
     "districtId": "D_CHUPRONG",
     "district": "Huyện Chư Prông",
     "categoryId": "CAT_GL_NATURE",
@@ -1059,10 +1035,8 @@
     "ticketPrice": 0,
     "ratingAvg": 4.5,
     "bestTimeOfDay": "Ban ngày",
-    "imageUrl": "https://tungphuongfood.com.vn/wp-content/uploads/2023/05/thac-hang-doi-kbang-6.jpg",
-    "imageUrls": [
-      "https://tungphuongfood.com.vn/wp-content/uploads/2023/05/thac-hang-doi-kbang-6.jpg"
-    ],
+    "imageUrl": "",
+    "imageUrls": [],
     "districtId": "D_DUCCO",
     "district": "Huyện Đức Cơ",
     "categoryId": "CAT_GL_NATURE",
@@ -1085,10 +1059,8 @@
     "ticketPrice": 0,
     "ratingAvg": 4.4,
     "bestTimeOfDay": "Ban ngày",
-    "imageUrl": "https://media.mia.vn/uploads/blog-du-lich/thac-phu-cuong-chiem-nguong-tuyet-tac-cua-nui-rung-gia-lai-04-1659179228.jpg",
-    "imageUrls": [
-      "https://media.mia.vn/uploads/blog-du-lich/thac-phu-cuong-chiem-nguong-tuyet-tac-cua-nui-rung-gia-lai-04-1659179228.jpg"
-    ],
+    "imageUrl": "",
+    "imageUrls": [],
     "districtId": "D_CHUPRONG",
     "district": "Huyện Chư Prông",
     "categoryId": "CAT_GL_HISTORY",
@@ -1111,10 +1083,8 @@
     "ticketPrice": 0,
     "ratingAvg": 4.4,
     "bestTimeOfDay": "Sáng mát",
-    "imageUrl": "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2025/7/3/b5661274536c4ba4b9999460477570e6",
-    "imageUrls": [
-      "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2025/7/3/b5661274536c4ba4b9999460477570e6"
-    ],
+    "imageUrl": "",
+    "imageUrls": [],
     "districtId": "D_KRONPA",
     "district": "Huyện Krông Pa",
     "categoryId": "CAT_GL_HISTORY",

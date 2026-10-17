@@ -7,6 +7,7 @@ import {
   Flame, Camera, Mountain, Map as MapIcon, Share2, BookmarkCheck, ChevronRight
 } from 'lucide-react'
 import { postApi, useApi } from '../hooks/useApi'
+import { DEFAULT_DESTINATION_THUMB } from '../constants/placeholders'
 
 export default function Planner() {
   const navigate = useNavigate()
@@ -479,7 +480,7 @@ export default function Planner() {
                                     alt={loc.name}
                                     className="w-full h-full object-cover"
                                     onError={e => {
-                                      e.target.src = 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&auto=format&fit=crop'
+                                      e.target.src = DEFAULT_DESTINATION_THUMB
                                     }}
                                   />
                                 </div>

@@ -16,6 +16,7 @@ import {
 } from 'lucide-react'
 import { useApi } from '../hooks/useApi'
 import ImageGalleryModal from '../components/ImageGalleryModal'
+import { DEFAULT_FOOD_THUMB } from '../constants/placeholders'
 
 function parseEatery(raw) {
   if (!raw) return { name: '', address: '', hours: '', query: '' }
@@ -243,11 +244,11 @@ export default function Food() {
                   {/* Card Image */}
                   <div style={{ height: '200px', position: 'relative', overflow: 'hidden' }}>
                     <img
-                      src={dish.imageUrl || 'https://images.unsplash.com/photo-1544025162-d76694265947?w=800'}
+                      src={dish.imageUrl || DEFAULT_FOOD_THUMB}
                       alt={dish.name}
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                       loading="lazy"
-                      onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1544025162-d76694265947?w=800' }}
+                      onError={(e) => { e.target.src = DEFAULT_FOOD_THUMB }}
                     />
 
                     {/* Bookmark Toggle */}

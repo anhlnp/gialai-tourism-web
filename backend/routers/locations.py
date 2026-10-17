@@ -129,10 +129,10 @@ def get_location_detail(location_id: str):
                    d.name AS district, cat.name AS category,
                    coalesce(loc.legacy_province, 'Gia Lai') AS legacyProvince,
                    coalesce(loc.geographic_region, 'Cao nguyên') AS geographicRegion,
-                   loc.sourceUrl AS sourceUrl,
-                   loc.sourceName AS sourceName,
-                   loc.licenseStatus AS licenseStatus,
-                   loc.attribution AS attribution,
+                   coalesce(loc.source_url, loc.sourceUrl, '') AS sourceUrl,
+                   coalesce(loc.source_name, loc.sourceName, '') AS sourceName,
+                   coalesce(loc.licenseStatus, 'Attributed/Fair Use') AS licenseStatus,
+                   coalesce(loc.attribution, loc.source_name, '') AS attribution,
                    coalesce(userRatingAvg, loc.ratingAvg, 4.8) AS avgRating,
                    reviewCount
         """, {"id": location_id})
@@ -176,7 +176,7 @@ def get_location_detail(location_id: str):
         corridors = run_query("""
             MATCH (loc:Location {locationId: $id})-[c:CONNECTS_TO]-(conn:Location)
             RETURN conn.locationId AS id, conn.name AS name, conn.imageUrl AS imageUrl,
-                   c.corridor AS corridor, c.distanceKm AS distanceKm, c.route AS route
+                   coalesce(c.corridor, '') AS corridor, c.distanceKm AS distanceKm, c.route AS route
         """, {"id": location_id}) or []
 
         return {

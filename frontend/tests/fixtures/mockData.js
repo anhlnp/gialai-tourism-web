@@ -197,10 +197,10 @@ export const MOCK_LOCATIONS = [
     "longitude": 108.61,
     "lat": 14.52,
     "lng": 108.61,
-    "imageUrl": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=800",
-    "image_url": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=800",
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/K50_Waterfall_Kon_Chu_Rang_Nature_Reserve_Gia_Lai_Vietnam.png/1280px-K50_Waterfall_Kon_Chu_Rang_Nature_Reserve_Gia_Lai_Vietnam.png",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/K50_Waterfall_Kon_Chu_Rang_Nature_Reserve_Gia_Lai_Vietnam.png/1280px-K50_Waterfall_Kon_Chu_Rang_Nature_Reserve_Gia_Lai_Vietnam.png",
     "imageUrls": [
-      "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=800"
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/K50_Waterfall_Kon_Chu_Rang_Nature_Reserve_Gia_Lai_Vietnam.png/1280px-K50_Waterfall_Kon_Chu_Rang_Nature_Reserve_Gia_Lai_Vietnam.png"
     ],
     "bestTime": "Mùa khô tháng 1 đến tháng 6",
     "bestTimeOfDay": "Mùa khô tháng 1 đến tháng 6",
@@ -349,10 +349,10 @@ export const MOCK_LOCATIONS = [
     "longitude": 108.0667,
     "lat": 14.15,
     "lng": 108.0667,
-    "imageUrl": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
-    "image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
+    "imageUrl": "https://mia.vn/media/uploads/blog-du-lich/nui-lua-chu-dang-ya-diem-den-tuyet-voi-tai-pho-nui-1659506911.jpg",
+    "image_url": "https://mia.vn/media/uploads/blog-du-lich/nui-lua-chu-dang-ya-diem-den-tuyet-voi-tai-pho-nui-1659506911.jpg",
     "imageUrls": [
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
+      "https://mia.vn/media/uploads/blog-du-lich/nui-lua-chu-dang-ya-diem-den-tuyet-voi-tai-pho-nui-1659506911.jpg",
       "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800"
     ],
     "bestTime": "Sáng sớm (mùa hoa dã quỳ tháng 10-12)",
@@ -440,11 +440,11 @@ export const MOCK_LOCATIONS = [
     "longitude": 108.02,
     "lat": 14.075,
     "lng": 108.02,
-    "imageUrl": "https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=800",
-    "image_url": "https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=800",
+    "imageUrl": "https://mia.vn/media/uploads/blog-du-lich/kham-pha-bien-ho-che-giua-long-cao-nguyen-rong-lon-01-1659459212.jpg",
+    "image_url": "https://mia.vn/media/uploads/blog-du-lich/kham-pha-bien-ho-che-giua-long-cao-nguyen-rong-lon-01-1659459212.jpg",
     "imageUrls": [
-      "https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=800",
-      "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800"
+      "https://mia.vn/media/uploads/blog-du-lich/kham-pha-bien-ho-che-giua-long-cao-nguyen-rong-lon-01-1659459212.jpg",
+      "https://mia.vn/media/uploads/blog-du-lich/kinh-nghiem-kham-pha-hang-thong-tram-tuoi-gia-lai-cho-hoi-me-xe-dich-03-1659969319.jpeg"
     ],
     "bestTime": "Bình minh hoặc Chiều tà",
     "bestTimeOfDay": "Bình minh hoặc Chiều tà",
@@ -893,10 +893,10 @@ export const MOCK_LOCATIONS = [
     "longitude": 108.01,
     "lat": 13.99,
     "lng": 108.01,
-    "imageUrl": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=800",
-    "image_url": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=800",
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/K50_Waterfall_Kon_Chu_Rang_Nature_Reserve_Gia_Lai_Vietnam.png/1280px-K50_Waterfall_Kon_Chu_Rang_Nature_Reserve_Gia_Lai_Vietnam.png",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/K50_Waterfall_Kon_Chu_Rang_Nature_Reserve_Gia_Lai_Vietnam.png/1280px-K50_Waterfall_Kon_Chu_Rang_Nature_Reserve_Gia_Lai_Vietnam.png",
     "imageUrls": [
-      "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=800"
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/K50_Waterfall_Kon_Chu_Rang_Nature_Reserve_Gia_Lai_Vietnam.png/1280px-K50_Waterfall_Kon_Chu_Rang_Nature_Reserve_Gia_Lai_Vietnam.png"
     ],
     "bestTime": "Buổi chiều tối giao lưu cồng chiêng",
     "bestTimeOfDay": "Buổi chiều tối giao lưu cồng chiêng",
@@ -1225,10 +1225,10 @@ export const MOCK_LOCATIONS = [
     "longitude": 108.2,
     "lat": 13.95,
     "lng": 108.2,
-    "imageUrl": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=800",
-    "image_url": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=800",
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/K50_Waterfall_Kon_Chu_Rang_Nature_Reserve_Gia_Lai_Vietnam.png/1280px-K50_Waterfall_Kon_Chu_Rang_Nature_Reserve_Gia_Lai_Vietnam.png",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/K50_Waterfall_Kon_Chu_Rang_Nature_Reserve_Gia_Lai_Vietnam.png/1280px-K50_Waterfall_Kon_Chu_Rang_Nature_Reserve_Gia_Lai_Vietnam.png",
     "imageUrls": [
-      "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=800"
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/K50_Waterfall_Kon_Chu_Rang_Nature_Reserve_Gia_Lai_Vietnam.png/1280px-K50_Waterfall_Kon_Chu_Rang_Nature_Reserve_Gia_Lai_Vietnam.png"
     ],
     "bestTime": "Cuối tuần",
     "bestTimeOfDay": "Cuối tuần",

@@ -6,7 +6,11 @@ from neo4j import GraphDatabase
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
+_env_path = os.path.join(os.path.dirname(__file__), "..", ".env")
+if os.path.exists(_env_path):
+    load_dotenv(_env_path)
+else:
+    load_dotenv()
 
 _URI = os.getenv("NEO4J_URI", "neo4j+ssc://localhost:7687")
 _USER = os.getenv("NEO4J_USERNAME", "neo4j")

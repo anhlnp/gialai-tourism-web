@@ -130,6 +130,7 @@ export default function DestinationDetail() {
         <img
           src={data.imageUrl || DEFAULT_DESTINATION_THUMB}
           alt={data.name}
+          referrerPolicy="no-referrer"
           style={{ width: '100%', height: '440px', objectFit: 'cover' }}
           onError={(e) => { e.target.src = DEFAULT_DESTINATION_THUMB }}
         />
@@ -409,8 +410,10 @@ export default function DestinationDetail() {
                   <img
                     src={imgUrl}
                     alt={`${data.name} - ảnh ${idx + 1}`}
+                    referrerPolicy="no-referrer"
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     loading="lazy"
+                    onError={(e) => { e.currentTarget.src = DEFAULT_DESTINATION_THUMB }}
                   />
                 </div>
               ))}

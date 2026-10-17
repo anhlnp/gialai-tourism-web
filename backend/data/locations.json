@@ -9,9 +9,11 @@
     "ticketPrice": 50000,
     "ratingAvg": 5.0,
     "bestTimeOfDay": "Mùa khô tháng 1 đến tháng 6",
-    "imageUrl": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=800",
+    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/K50_Waterfall_Kon_Chu_Rang_Nature_Reserve_Gia_Lai_Vietnam.png/1280px-K50_Waterfall_Kon_Chu_Rang_Nature_Reserve_Gia_Lai_Vietnam.png",
     "imageUrls": [
-      "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=800"
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/K50_Waterfall_Kon_Chu_Rang_Nature_Reserve_Gia_Lai_Vietnam.png/1280px-K50_Waterfall_Kon_Chu_Rang_Nature_Reserve_Gia_Lai_Vietnam.png",
+      "https://mia.vn/media/uploads/blog-du-lich/trekking-thac-k50-hanh-trinh-chinh-phuc-chon-tien-canh-giua-rung-gia-1659083868.jpg",
+      "https://mia.vn/media/uploads/blog-du-lich/kinh-nghiem-phuot-thac-k50-chi-tiet-cho-nguoi-di-lan-dau-1660061412.jpg"
     ],
     "districtId": "D_KBANG",
     "district": "Huyện K'Bang",
@@ -20,8 +22,8 @@
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
     "geographic_region": "Cao nguyên",
-    "source_url": "https://gialaitourism.gov.vn",
-    "source_name": "Cổng Thông tin Du lịch Tỉnh Gia Lai",
+    "source_url": "https://commons.wikimedia.org/wiki/File:K50_Waterfall_Kon_Chu_Rang_Nature_Reserve_Gia_Lai_Vietnam.png",
+    "source_name": "Wikimedia Commons (CC BY-SA) / Cẩm nang Du lịch Gia Lai",
     "verified_at": "2026-10-17",
     "verification_status": "VERIFIED"
   },
@@ -113,10 +115,12 @@
     "ticketPrice": 0,
     "ratingAvg": 4.9,
     "bestTimeOfDay": "Sáng 7h - 10h hoặc Hoàng hôn",
-    "imageUrl": "https://media.gody.vn/images/gia-lai/chua-minh-thanh/11-2016/20161101090033-chua-minh-thanh-gody(3).jpg",
+    "imageUrl": "https://media.gody.vn/images/gia-lai/chua-minh-thanh/11-2016/20161101090035-chua-minh-thanh-gody(11).jpg",
     "imageUrls": [
-      "https://media.gody.vn/images/gia-lai/chua-minh-thanh/11-2016/20161101090033-chua-minh-thanh-gody(3).jpg",
-      "https://cdn.xanhsm.com/2025/03/742405be-cho-dem-pleiku-gia-lai-8.jpg"
+      "https://media.gody.vn/images/gia-lai/chua-minh-thanh/11-2016/20161101090035-chua-minh-thanh-gody(11).jpg",
+      "https://mia.vn/media/uploads/blog-du-lich/kinh-nghiem-check-in-chua-minh-thanh-kien-truc-nhat-ban-dac-sac-tai-pleiku-07-1660041463.jpeg",
+      "https://gialai24h.vn/wp-content/uploads/2025/05/4e5da9fa-chua-minh-thanh-2.webp",
+      "https://media.gody.vn/images/gia-lai/chua-minh-thanh/11-2016/20161101090033-chua-minh-thanh-gody(3).jpg"
     ],
     "districtId": "D_PLEIKU",
     "district": "Thành phố Pleiku",
@@ -125,10 +129,10 @@
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
     "geographic_region": "Cao nguyên",
-    "source_url": "https://gialaitourism.gov.vn",
-    "source_name": "Cổng Thông tin Du lịch Tỉnh Gia Lai",
+    "source_url": "https://gody.vn/chau-a/viet-nam/gia-lai/chua-minh-thanh",
+    "source_name": "gody.vn",
     "verified_at": "2026-10-17",
-    "verification_status": "VERIFIED"
+    "verification_status": "VERIFIED_OK"
   },
   {
     "locationId": "LOC_CHUDANGYA",
@@ -140,10 +144,10 @@
     "ticketPrice": 0,
     "ratingAvg": 4.9,
     "bestTimeOfDay": "Sáng sớm (mùa hoa dã quỳ tháng 10-12)",
-    "imageUrl": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
+    "imageUrl": "https://mia.vn/media/uploads/blog-du-lich/nui-lua-chu-dang-ya-diem-den-tuyet-voi-tai-pho-nui-1659506911.jpg",
     "imageUrls": [
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
-      "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800"
+      "https://mia.vn/media/uploads/blog-du-lich/nui-lua-chu-dang-ya-diem-den-tuyet-voi-tai-pho-nui-1659506911.jpg",
+      "https://mia.vn/media/uploads/blog-du-lich/bat-mi-kinh-nghiem-kham-pha-nui-lua-chu-dang-ya-tron-ven-1660063009.jpg"
     ],
     "districtId": "D_CHUPAH",
     "district": "Huyện Chư Păh",
@@ -152,8 +156,8 @@
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
     "geographic_region": "Cao nguyên",
-    "source_url": "https://gialaitourism.gov.vn",
-    "source_name": "Cổng Thông tin Du lịch Tỉnh Gia Lai",
+    "source_url": "https://mia.vn/cam-nang-du-lich/kham-pha-nui-lua-chu-dang-ya-gia-lai-8597",
+    "source_name": "Cẩm nang Du lịch Gia Lai",
     "verified_at": "2026-10-17",
     "verification_status": "VERIFIED"
   },
@@ -167,9 +171,10 @@
     "ticketPrice": 0,
     "ratingAvg": 4.9,
     "bestTimeOfDay": "Chiều tối (17h - 22h)",
-    "imageUrl": "https://dulichdemen.vn/wp-content/uploads/2023/01/quang-truong-dai-doan-ket-pleiku-gia-lai-du-lich-de-men-vn.jpg",
+    "imageUrl": "https://mia.vn/media/uploads/blog-du-lich/quang-truong-dai-doan-ket-noi-ket-tinh-tu-tuong-dan-toc-1-1659083330.jpg",
     "imageUrls": [
-      "https://dulichdemen.vn/wp-content/uploads/2023/01/quang-truong-dai-doan-ket-pleiku-gia-lai-du-lich-de-men-vn.jpg"
+      "https://mia.vn/media/uploads/blog-du-lich/quang-truong-dai-doan-ket-noi-ket-tinh-tu-tuong-dan-toc-1-1659083330.jpg",
+      "https://mia.vn/media/uploads/blog-du-lich/quang-truong-dai-doan-ket-noi-ket-tinh-tu-tuong-dan-toc-2-1659085994.jpg"
     ],
     "districtId": "D_PLEIKU",
     "district": "Thành phố Pleiku",
@@ -178,8 +183,8 @@
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
     "geographic_region": "Cao nguyên",
-    "source_url": "https://gialaitourism.gov.vn",
-    "source_name": "Cổng Thông tin Du lịch Tỉnh Gia Lai",
+    "source_url": "https://mia.vn/cam-nang-du-lich/quang-truong-dai-doan-ket-noi-ket-tinh-tu-tuong-dan-toc-7960",
+    "source_name": "Cẩm nang Du lịch Gia Lai",
     "verified_at": "2026-10-17",
     "verification_status": "VERIFIED"
   },
@@ -219,10 +224,11 @@
     "ticketPrice": 0,
     "ratingAvg": 4.8,
     "bestTimeOfDay": "Bình minh hoặc Chiều tà",
-    "imageUrl": "https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=800",
+    "imageUrl": "https://mia.vn/media/uploads/blog-du-lich/kham-pha-bien-ho-che-giua-long-cao-nguyen-rong-lon-01-1659459212.jpg",
     "imageUrls": [
-      "https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=800",
-      "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800"
+      "https://mia.vn/media/uploads/blog-du-lich/kham-pha-bien-ho-che-giua-long-cao-nguyen-rong-lon-01-1659459212.jpg",
+      "https://mia.vn/media/uploads/blog-du-lich/kinh-nghiem-kham-pha-hang-thong-tram-tuoi-gia-lai-cho-hoi-me-xe-dich-03-1659969319.jpeg",
+      "https://mia.vn/media/uploads/blog-du-lich/kham-pha-bien-ho-che-giua-long-cao-nguyen-rong-lon-04-1659459220.jpg"
     ],
     "districtId": "D_CHUPAH",
     "district": "Huyện Chư Păh",
@@ -231,8 +237,8 @@
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
     "geographic_region": "Cao nguyên",
-    "source_url": "https://gialaitourism.gov.vn",
-    "source_name": "Cổng Thông tin Du lịch Tỉnh Gia Lai",
+    "source_url": "https://mia.vn/cam-nang-du-lich/kham-pha-bien-ho-che-giua-long-cao-nguyen-rong-lon-8140",
+    "source_name": "Cẩm nang Du lịch Gia Lai",
     "verified_at": "2026-10-17",
     "verification_status": "VERIFIED"
   },
@@ -246,10 +252,10 @@
     "ticketPrice": 0,
     "ratingAvg": 4.8,
     "bestTimeOfDay": "Buổi sáng thanh tịnh",
-    "imageUrl": "http://cotrang.org/dia-diem/images/gia-lai/dia-diem/chua-buu-minh/chua-buu-minh-gia-lai-bk-001.jpg",
+    "imageUrl": "https://cdn-i.vtcnews.vn/resize/ma/upload/2023/02/25/chua-buu-minh11-10324048.jpg",
     "imageUrls": [
-      "http://cotrang.org/dia-diem/images/gia-lai/dia-diem/chua-buu-minh/chua-buu-minh-gia-lai-bk-001.jpg",
-      "https://static.riviu.co/image/2022/12/18/b104c97c2f6b1f0aef14c3d82fb24982_output.jpeg"
+      "https://cdn-i.vtcnews.vn/resize/ma/upload/2023/02/25/chua-buu-minh11-10324048.jpg",
+      "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg9CRLGdLgzavX2P5YGQmSs0BdyUmoPtzXgt7ixolJaIwdNkLqMoDRcKQksD3G0QlgIht-LyaDMO1m6hP55z8LoGDSJbLdFZoR72hV5YpaELHXRjmGgT2JshvDAGrIKkO0qlfB2xAyTFx0/w1200-h630-p-k-no-nu/Chua+Bien+Ho+01.jpg"
     ],
     "districtId": "D_CHUPAH",
     "district": "Huyện Chư Păh",
@@ -258,10 +264,10 @@
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
     "geographic_region": "Cao nguyên",
-    "source_url": "https://gialaitourism.gov.vn",
-    "source_name": "Cổng Thông tin Du lịch Tỉnh Gia Lai",
+    "source_url": "https://thuvienphatquang.com/chiem-nguong-chua-buu-minh-va-net-dep-co-kinh-ton-tai-cung-thang-nam/",
+    "source_name": "thuvienphatquang.com",
     "verified_at": "2026-10-17",
-    "verification_status": "VERIFIED"
+    "verification_status": "VERIFIED_OK"
   },
   {
     "locationId": "LOC_ROCTUNG_GODA",
@@ -273,8 +279,12 @@
     "ticketPrice": 0,
     "ratingAvg": 4.8,
     "bestTimeOfDay": "Ban ngày",
-    "imageUrl": "",
-    "imageUrls": [],
+    "imageUrl": "https://cdn.tienphong.vn/images/814b5533c866dc3540018a126103e93543c5c4c60851f433dc75d16d9502dd10387798eaea90b5653801aecdafd26f7867cf253cb78716038612628dda3a9b0f/tien-phong-764.png",
+    "imageUrls": [
+      "https://cdn.tienphong.vn/images/814b5533c866dc3540018a126103e93543c5c4c60851f433dc75d16d9502dd10387798eaea90b5653801aecdafd26f7867cf253cb78716038612628dda3a9b0f/tien-phong-764.png",
+      "https://image.thanhnien.vn/Uploaded/hieutv/2022_12_30/hinh-khao-co-8898.jpg",
+      "https://cly.1cdn.vn/thumbs/1200x630/2022/12/30/anh-1-tin-ngay-30-12.jpg"
+    ],
     "districtId": "D_ANKHE",
     "district": "Thị xã An Khê",
     "categoryId": "CAT_GL_HISTORY",
@@ -282,10 +292,10 @@
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
     "geographic_region": "Cao nguyên",
-    "source_url": "https://gialaitourism.gov.vn",
-    "source_name": "Cổng Thông tin Du lịch Tỉnh Gia Lai",
+    "source_url": "https://tienphong.vn/gia-lai-bao-ve-di-tich-khao-co-roc-tung-go-da-the-nao-post1499993.tpo",
+    "source_name": "tienphong.vn",
     "verified_at": "2026-10-17",
-    "verification_status": "VERIFIED"
+    "verification_status": "VERIFIED_OK"
   },
   {
     "locationId": "LOC_BD_GHENH_RANG",
@@ -401,8 +411,12 @@
     "ticketPrice": 0,
     "ratingAvg": 4.8,
     "bestTimeOfDay": "Sáng 9h - 15h",
-    "imageUrl": "",
-    "imageUrls": [],
+    "imageUrl": "https://gialai.info/wp-content/uploads/2023/03/images3048148_3.jpg",
+    "imageUrls": [
+      "https://gialai.info/wp-content/uploads/2023/03/images3048148_3.jpg",
+      "https://imagevietnam.vnanet.vn/Upload/2021/6/22/22062021093521117vna_potal_gia_lai_phat_hien_suoi_da_co_tren_100_trieu_nam_tuoi_5511556.jpg",
+      "https://gialai.info/wp-content/uploads/2023/03/images3048146_2.jpg"
+    ],
     "districtId": "D_CHUPAH",
     "district": "Huyện Chư Păh",
     "categoryId": "CAT_GL_NATURE",
@@ -410,10 +424,10 @@
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
     "geographic_region": "Cao nguyên",
-    "source_url": "https://gialaitourism.gov.vn",
-    "source_name": "Cổng Thông tin Du lịch Tỉnh Gia Lai",
+    "source_url": "https://gialai.info/suoi-da-dia-lang-van/",
+    "source_name": "gialai.info",
     "verified_at": "2026-10-17",
-    "verification_status": "VERIFIED"
+    "verification_status": "VERIFIED_OK"
   },
   {
     "locationId": "LOC_VQG_KONKAKINH",
@@ -425,9 +439,9 @@
     "ticketPrice": 60000,
     "ratingAvg": 4.8,
     "bestTimeOfDay": "Mùa khô, thích hợp trekking",
-    "imageUrl": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=800",
+    "imageUrl": "https://mia.vn/media/uploads/blog-du-lich/tham-khao-kinh-nghiem-kham-pha-vuon-quoc-gia-kon-ka-kinh-1660058205.jpg",
     "imageUrls": [
-      "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=800"
+      "https://mia.vn/media/uploads/blog-du-lich/tham-khao-kinh-nghiem-kham-pha-vuon-quoc-gia-kon-ka-kinh-1660058205.jpg"
     ],
     "districtId": "D_MANGYANG",
     "district": "Huyện Mang Yang",
@@ -436,8 +450,8 @@
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
     "geographic_region": "Cao nguyên",
-    "source_url": "https://gialaitourism.gov.vn",
-    "source_name": "Cổng Thông tin Du lịch Tỉnh Gia Lai",
+    "source_url": "https://mia.vn/cam-nang-du-lich/tham-khao-kinh-nghiem-kham-pha-vuon-quoc-gia-kon-ka-kinh-1660058205.jpg",
+    "source_name": "Cẩm nang Du lịch Gia Lai",
     "verified_at": "2026-10-17",
     "verification_status": "VERIFIED"
   },
@@ -477,8 +491,11 @@
     "ticketPrice": 0,
     "ratingAvg": 4.8,
     "bestTimeOfDay": "Sáng sớm săn mây (5h - 7h)",
-    "imageUrl": "",
-    "imageUrls": [],
+    "imageUrl": "https://dulichgialai.vn/files/product/tour-kham-pha-dinh-nui-chu-nam-gia-lai-s0vst5kq.jpg",
+    "imageUrls": [
+      "https://dulichgialai.vn/files/product/tour-kham-pha-dinh-nui-chu-nam-gia-lai-s0vst5kq.jpg",
+      "https://dulichgialai.vn/files/product/tour-kham-pha-dinh-nui-chu-nam-gia-lai-kdtbgs88.jpg"
+    ],
     "districtId": "D_CHUPAH",
     "district": "Huyện Chư Păh",
     "categoryId": "CAT_GL_NATURE",
@@ -486,8 +503,8 @@
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
     "geographic_region": "Cao nguyên",
-    "source_url": "https://gialaitourism.gov.vn",
-    "source_name": "Cổng Thông tin Du lịch Tỉnh Gia Lai",
+    "source_url": "https://dulichgialai.vn/vi/du-lich-gia-lai/tour-kham-pha-noc-nha-pleiku-dinh-chu-nam-gia-lai-56",
+    "source_name": "dulichgialai.vn",
     "verified_at": "2026-10-17",
     "verification_status": "VERIFIED"
   },
@@ -553,10 +570,10 @@
     "ticketPrice": 0,
     "ratingAvg": 4.7,
     "bestTimeOfDay": "Buổi chiều lộng gió",
-    "imageUrl": "https://sacotravel.com/wp-content/uploads/2022/12/thuy-dien-yaly.jpg",
+    "imageUrl": "https://tinbds.com/images/place/2/tz.jpg",
     "imageUrls": [
-      "https://sacotravel.com/wp-content/uploads/2022/12/thuy-dien-yaly.jpg",
-      "https://nhahangvanlocphat.vn/images/News/ca-lang-nuong-muoi-ot2.jpg"
+      "https://tinbds.com/images/place/2/tz.jpg",
+      "https://mie.com.vn/upload/images/thuy-dien-se-san-4a-tinh-gia-lai0.jpg"
     ],
     "districtId": "D_IAGRAI",
     "district": "Huyện Ia Grai",
@@ -565,10 +582,10 @@
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
     "geographic_region": "Cao nguyên",
-    "source_url": "https://gialaitourism.gov.vn",
-    "source_name": "Cổng Thông tin Du lịch Tỉnh Gia Lai",
+    "source_url": "https://tinbds.com/gia-lai/ia-grai",
+    "source_name": "tinbds.com",
     "verified_at": "2026-10-17",
-    "verification_status": "VERIFIED"
+    "verification_status": "VERIFIED_OK"
   },
   {
     "locationId": "LOC_LANG_STOR",
@@ -580,8 +597,12 @@
     "ticketPrice": 0,
     "ratingAvg": 4.7,
     "bestTimeOfDay": "Ban ngày",
-    "imageUrl": "",
-    "imageUrls": [],
+    "imageUrl": "https://dulichkbang.com/wp-content/uploads/2021/01/nha-tuong-niem-anh-hung-nup-1-1024x768.jpg",
+    "imageUrls": [
+      "https://dulichkbang.com/wp-content/uploads/2021/01/nha-tuong-niem-anh-hung-nup-1-1024x768.jpg",
+      "https://special.nhandan.vn/lich-su-lau-doi/assets/LIXf0pr7FF/kha-ch-tham-quan-nha-luu-nie-m-anh-hung-nup-o-lang-khang-chien-s-tor-kbang-gia-lai-1200x800.jpg",
+      "https://cdn.baogialai.com.vn/images/1d924caea0e79738400b9cfabcb5949ce7b665775ddb9ef7f47f2cc964f986de641eee13313e7104ebc378cff9b74c38999b220f3dab8e818801afb3a5b271520698757742c6a18d49508dde9ce9e80dc2e4e7489a871ebbae2ab69c32bc7619/layscreenshot-2023-02-12-133636-8565.jpg"
+    ],
     "districtId": "D_KBANG",
     "district": "Huyện K'Bang",
     "categoryId": "CAT_GL_HISTORY",
@@ -589,10 +610,10 @@
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
     "geographic_region": "Cao nguyên",
-    "source_url": "https://gialaitourism.gov.vn",
-    "source_name": "Cổng Thông tin Du lịch Tỉnh Gia Lai",
+    "source_url": "https://dulichkbang.com/nha-tuong-niem-anh-hung-nup-lang-khang-chien-stor/",
+    "source_name": "dulichkbang.com",
     "verified_at": "2026-10-17",
-    "verification_status": "VERIFIED"
+    "verification_status": "VERIFIED_OK"
   },
   {
     "locationId": "LOC_LANGVOI",
@@ -630,8 +651,12 @@
     "ticketPrice": 0,
     "ratingAvg": 4.7,
     "bestTimeOfDay": "Ban ngày",
-    "imageUrl": "",
-    "imageUrls": [],
+    "imageUrl": "https://topgialai.net/wp-content/uploads/2023/09/nha-tho-pleichuet-1.jpg",
+    "imageUrls": [
+      "https://topgialai.net/wp-content/uploads/2023/09/nha-tho-pleichuet-1.jpg",
+      "https://luhanhvietnam.com.vn/du-lich/vnt_upload/news/12_2020/nha-tho-pleichoet-linh-dang.jpg",
+      "https://luhanhvietnam.com.vn/du-lich/vnt_upload/news/12_2020/nha-tho-pleichoet-HA-LONG.jpg"
+    ],
     "districtId": "D_PLEIKU",
     "district": "Thành phố Pleiku",
     "categoryId": "CAT_GL_CULTURE",
@@ -639,10 +664,10 @@
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
     "geographic_region": "Cao nguyên",
-    "source_url": "https://gialaitourism.gov.vn",
-    "source_name": "Cổng Thông tin Du lịch Tỉnh Gia Lai",
+    "source_url": "https://topgialai.net/nha-tho-pleichuet/",
+    "source_name": "topgialai.net",
     "verified_at": "2026-10-17",
-    "verification_status": "VERIFIED"
+    "verification_status": "VERIFIED_OK"
   },
   {
     "locationId": "LOC_TAYSON_THUONGDAO",
@@ -654,10 +679,12 @@
     "ticketPrice": 0,
     "ratingAvg": 4.7,
     "bestTimeOfDay": "Ban ngày",
-    "imageUrl": "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2025/7/3/b5661274536c4ba4b9999460477570e6",
+    "imageUrl": "https://vanhoavaphattrien.vn/uploads/images/2025/09/19/1-tay-son-thuong-dao-1758250629.jpg",
     "imageUrls": [
-      "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2025/7/3/b5661274536c4ba4b9999460477570e6",
-      "https://dulichdemen.vn/wp-content/uploads/2023/01/quang-truong-dai-doan-ket-pleiku-gia-lai-du-lich-de-men-vn.jpg"
+      "https://vanhoavaphattrien.vn/uploads/images/2025/09/19/1-tay-son-thuong-dao-1758250629.jpg",
+      "https://sacotravel.com/wp-content/uploads/2022/12/Khu-di-tich-Tay-Son-thuong-dao.jpg",
+      "https://cdn.kienthuc.net.vn/images/f8b2496297ad9610a73e8df05f33adfa60d49d8f798ef2f0cb13f037ef5bbf7d43354923a194fb2d1b4bc93663b0d753/01-1919.jpg",
+      "https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2025/7/3/b5661274536c4ba4b9999460477570e6"
     ],
     "districtId": "D_ANKHE",
     "district": "Thị xã An Khê",
@@ -666,10 +693,10 @@
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
     "geographic_region": "Cao nguyên",
-    "source_url": "https://gialaitourism.gov.vn",
-    "source_name": "Cổng Thông tin Du lịch Tỉnh Gia Lai",
+    "source_url": "https://vanhoavaphattrien.vn/gia-lai-to-chuc-trong-the-le-gio-hoang-de-quang-trung-nguyen-hue-lan-thu-233-1792-2025-a30220.html",
+    "source_name": "vanhoavaphattrien.vn",
     "verified_at": "2026-10-17",
-    "verification_status": "VERIFIED"
+    "verification_status": "VERIFIED_OK"
   },
   {
     "locationId": "LOC_RUNGCAOSU_CHUPAH",
@@ -760,9 +787,10 @@
     "ticketPrice": 0,
     "ratingAvg": 4.7,
     "bestTimeOfDay": "Sáng sớm bình minh tháng 11 - 12",
-    "imageUrl": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=800",
+    "imageUrl": "https://mia.vn/media/uploads/blog-du-lich/kham-pha-rung-thong-dak-doa-doi-co-hong-tho-mong-o-gia-lai-4-1659610056.jpg",
     "imageUrls": [
-      "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=800"
+      "https://mia.vn/media/uploads/blog-du-lich/kham-pha-rung-thong-dak-doa-doi-co-hong-tho-mong-o-gia-lai-4-1659610056.jpg",
+      "https://mia.vn/media/uploads/blog-du-lich/kham-pha-rung-thong-dak-doa-doi-co-hong-tho-mong-o-gia-lai-1-1659880071.jpg"
     ],
     "districtId": "D_DAKDOA",
     "district": "Huyện Đắk Đoa",
@@ -771,8 +799,8 @@
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
     "geographic_region": "Cao nguyên",
-    "source_url": "https://gialaitourism.gov.vn",
-    "source_name": "Cổng Thông tin Du lịch Tỉnh Gia Lai",
+    "source_url": "https://mia.vn/cam-nang-du-lich/kham-pha-rung-thong-dak-doa-doi-co-hong-tho-mong-o-gia-lai-7928",
+    "source_name": "Cẩm nang Du lịch Gia Lai",
     "verified_at": "2026-10-17",
     "verification_status": "VERIFIED"
   },
@@ -786,8 +814,12 @@
     "ticketPrice": 0,
     "ratingAvg": 4.6,
     "bestTimeOfDay": "Sáng sớm hoặc Chiều mát",
-    "imageUrl": "",
-    "imageUrls": [],
+    "imageUrl": "https://cdn.xanhsm.com/2025/03/742405be-cho-dem-pleiku-gia-lai-8.jpg",
+    "imageUrls": [
+      "https://cdn.xanhsm.com/2025/03/742405be-cho-dem-pleiku-gia-lai-8.jpg",
+      "https://cdn.xanhsm.com/2025/03/2e2f60f9-cong-vien-dien-hong-thumb.jpg",
+      "https://ngoique.com/wp-content/uploads/2021/06/cong-vien-dien-hong-800x450-1.png"
+    ],
     "districtId": "D_PLEIKU",
     "district": "Thành phố Pleiku",
     "categoryId": "CAT_GL_PARK",
@@ -795,10 +827,10 @@
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
     "geographic_region": "Cao nguyên",
-    "source_url": "https://gialaitourism.gov.vn",
-    "source_name": "Cổng Thông tin Du lịch Tỉnh Gia Lai",
+    "source_url": "https://www.greensm.com/vn-vi/news/cho-dem-pleiku-gia-lai",
+    "source_name": "www.greensm.com",
     "verified_at": "2026-10-17",
-    "verification_status": "VERIFIED"
+    "verification_status": "VERIFIED_OK"
   },
   {
     "locationId": "LOC_NHADAY_PLEIKU",
@@ -810,8 +842,12 @@
     "ticketPrice": 0,
     "ratingAvg": 4.6,
     "bestTimeOfDay": "Giờ hành chính (7h30 - 17h)",
-    "imageUrl": "",
-    "imageUrls": [],
+    "imageUrl": "https://images.travelviet.net/vietnam/s3/s3_amazon/2f87c5bc-cc98-4485-b7ff-d09b9a75f494-ipiccy-image-2024-10-29t162012322jpg20241029162030.jpg",
+    "imageUrls": [
+      "https://images.travelviet.net/vietnam/s3/s3_amazon/2f87c5bc-cc98-4485-b7ff-d09b9a75f494-ipiccy-image-2024-10-29t162012322jpg20241029162030.jpg",
+      "https://tintucgialai.com/wp-content/uploads/2024/02/Nha-tu-Pleiku.jpg",
+      "https://taximailinhgialai.com/wp-content/uploads/di-tich-lich-su-nha-tu-pleiku-o-gia-lai.jpg"
+    ],
     "districtId": "D_PLEIKU",
     "district": "Thành phố Pleiku",
     "categoryId": "CAT_GL_HISTORY",
@@ -819,10 +855,10 @@
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
     "geographic_region": "Cao nguyên",
-    "source_url": "https://gialaitourism.gov.vn",
-    "source_name": "Cổng Thông tin Du lịch Tỉnh Gia Lai",
+    "source_url": "https://travelviet.net/vn/review-du-lich/gia-lai/di-tich-lich-su-noi-tieng-o-gia-lai-nha-tu-pleiku",
+    "source_name": "travelviet.net",
     "verified_at": "2026-10-17",
-    "verification_status": "VERIFIED"
+    "verification_status": "VERIFIED_OK"
   },
   {
     "locationId": "LOC_BD_THANH_HOANG_DE",
@@ -886,8 +922,12 @@
     "ticketPrice": 0,
     "ratingAvg": 4.6,
     "bestTimeOfDay": "Cuối tuần",
-    "imageUrl": "",
-    "imageUrls": [],
+    "imageUrl": "https://dulichpleiku.gialai.gov.vn/getattachment/2cfbe223-de4e-4643-a471-3aee65c04d92/IMG_4975.JPG.aspx?width=700&height=466",
+    "imageUrls": [
+      "https://dulichpleiku.gialai.gov.vn/getattachment/2cfbe223-de4e-4643-a471-3aee65c04d92/IMG_4975.JPG.aspx?width=700&height=466",
+      "https://media.vov.vn/sites/default/files/styles/large_watermark/public/2025-02/cong_lang_du_lich_cong_dong_mo_hra_-_dap_voi_nhung_hoa_tiet_trang_tri_dam_dau_an_cua_nguoi_ba_na.jpg",
+      "https://cdn.baogialai.com.vn/images/18a0651672861ca66357657ae76bf436e942ac4ebac969fc60339b0b143ca155858b4d748134235b0581ee7a22f8fd8a7761fc0fb76b4e47115e0470144b5d7c4f39c1ad018863df937ad9f759131509813c26b04d8a4384f631c1ae5b44bfbd6041d05f1323e76a9340004f15e48fae50d39b57d2e79d72a1b6dc2dd7866221/8-9-2-cac-doi-cong-chieng-cua-lang-tham-gia-hoat-dong-phuc-dung-le-bo-ma-lay.jpg"
+    ],
     "districtId": "D_DAKDOA",
     "district": "Huyện Đắk Đoa",
     "categoryId": "CAT_GL_CULTURE",
@@ -895,10 +935,10 @@
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
     "geographic_region": "Cao nguyên",
-    "source_url": "https://gialaitourism.gov.vn",
-    "source_name": "Cổng Thông tin Du lịch Tỉnh Gia Lai",
+    "source_url": "https://nongthon.vietnamtourism.gov.vn/gia-lai-du-lich-van-hoa-cong-dong-o-lang-mo-hra-dapxa-kong-long-khong-huyen-kbang/",
+    "source_name": "nongthon.vietnamtourism.gov.vn",
     "verified_at": "2026-10-17",
-    "verification_status": "VERIFIED"
+    "verification_status": "VERIFIED_OK"
   },
   {
     "locationId": "LOC_THUYDIEN_IALY",
@@ -910,8 +950,12 @@
     "ticketPrice": 30000,
     "ratingAvg": 4.6,
     "bestTimeOfDay": "Buổi chiều ngắm hoàng hôn sông Sê San",
-    "imageUrl": "",
-    "imageUrls": [],
+    "imageUrl": "https://sacotravel.com/wp-content/uploads/2022/12/thuy-dien-yaly.jpg",
+    "imageUrls": [
+      "https://sacotravel.com/wp-content/uploads/2022/12/thuy-dien-yaly.jpg",
+      "https://vnanet.vn/Data/Articles/2024/11/29/7729653/vna_potal_thuy_dien_ialy_cung_cap_5_ty_310_trieu_kwhnam_stand.jpg",
+      "https://topgialai.net/wp-content/uploads/2024/02/Ho-thuy-dien-Yaly-jpg.webp"
+    ],
     "districtId": "D_CHUPAH",
     "district": "Huyện Chư Păh",
     "categoryId": "CAT_GL_NATURE",
@@ -919,10 +963,10 @@
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
     "geographic_region": "Cao nguyên",
-    "source_url": "https://gialaitourism.gov.vn",
-    "source_name": "Cổng Thông tin Du lịch Tỉnh Gia Lai",
+    "source_url": "https://caonguyentourist.com/nha-may-thuy-dien-ialy-bieu-tuong-hung-vi-cua-gia-lai",
+    "source_name": "caonguyentourist.com",
     "verified_at": "2026-10-17",
-    "verification_status": "VERIFIED"
+    "verification_status": "VERIFIED_OK"
   },
   {
     "locationId": "LOC_THAC_HANGDOI",
@@ -960,10 +1004,11 @@
     "ticketPrice": 40000,
     "ratingAvg": 4.5,
     "bestTimeOfDay": "Ban ngày cuối tuần",
-    "imageUrl": "https://cdn.xanhsm.com/2025/03/742405be-cho-dem-pleiku-gia-lai-8.jpg",
+    "imageUrl": "https://tinviettravel.com/uploads/tours/images/tay_nguyen/pleiku_kontum/cong-vien-van-hoa-dong-xanh.jpg",
     "imageUrls": [
-      "https://cdn.xanhsm.com/2025/03/742405be-cho-dem-pleiku-gia-lai-8.jpg",
-      "https://dulichdemen.vn/wp-content/uploads/2023/01/quang-truong-dai-doan-ket-pleiku-gia-lai-du-lich-de-men-vn.jpg"
+      "https://tinviettravel.com/uploads/tours/images/tay_nguyen/pleiku_kontum/cong-vien-van-hoa-dong-xanh.jpg",
+      "https://visitphudong.com/wp-content/uploads/2026/03/cong-vien-dong-xanh.jpg",
+      "https://lh5.googleusercontent.com/p/AF1QipMiptvynZW5ZR9-nAahFzjMibnG0r1t32JO3Zby"
     ],
     "districtId": "D_PLEIKU",
     "district": "Thành phố Pleiku",
@@ -972,10 +1017,10 @@
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
     "geographic_region": "Cao nguyên",
-    "source_url": "https://gialaitourism.gov.vn",
-    "source_name": "Cổng Thông tin Du lịch Tỉnh Gia Lai",
+    "source_url": "https://tinviettravel.com/du-lich-pleiku-kontum/tour-du-lich-pleiku-kon-tum-3-ngay-3-dem-nui-rung-tay-nguyen.html",
+    "source_name": "tinviettravel.com",
     "verified_at": "2026-10-17",
-    "verification_status": "VERIFIED"
+    "verification_status": "VERIFIED_OK"
   },
   {
     "locationId": "LOC_CHIENTHANG_DAKPO",
@@ -987,8 +1032,12 @@
     "ticketPrice": 0,
     "ratingAvg": 4.5,
     "bestTimeOfDay": "Ban ngày",
-    "imageUrl": "",
-    "imageUrls": [],
+    "imageUrl": "https://1.bp.blogspot.com/-1tcKywbLXOA/YJuQQnov2WI/AAAAAAAFOp0/E-4xXFWS2mcbqYfC6_5hZ53kNLRTnXU6ACLcBGAsYHQ/s1619/images3021050_Di_ti_ch_chie__n_tha__ng__ak_Po__la___ie__m_du__ung_cha_n_thu__vi__tre_n_cung__u_o__ng_du_li_ch_phi_a__o_ng.JPG",
+    "imageUrls": [
+      "https://1.bp.blogspot.com/-1tcKywbLXOA/YJuQQnov2WI/AAAAAAAFOp0/E-4xXFWS2mcbqYfC6_5hZ53kNLRTnXU6ACLcBGAsYHQ/s1619/images3021050_Di_ti_ch_chie__n_tha__ng__ak_Po__la___ie__m_du__ung_cha_n_thu__vi__tre_n_cung__u_o__ng_du_li_ch_phi_a__o_ng.JPG",
+      "https://images.vietnamtourism.gov.vn/vn/images/2024/thang_6/2106.gialai1.jpg",
+      "https://lh3.googleusercontent.com/p/AF1QipMi4xNFy6V1vQE_HXWYvPx-GPJzL6yWPfYmU_UN=s680-w680-h510"
+    ],
     "districtId": "D_ANKHE",
     "district": "Thị xã An Khê",
     "categoryId": "CAT_GL_HISTORY",
@@ -996,10 +1045,10 @@
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
     "geographic_region": "Cao nguyên",
-    "source_url": "https://gialaitourism.gov.vn",
-    "source_name": "Cổng Thông tin Du lịch Tỉnh Gia Lai",
+    "source_url": "https://www.amazingvietnam.vn/2021/05/du-lich-tren-chien-truong-xua.html",
+    "source_name": "www.amazingvietnam.vn",
     "verified_at": "2026-10-17",
-    "verification_status": "VERIFIED"
+    "verification_status": "VERIFIED_OK"
   },
   {
     "locationId": "LOC_THAC_BAUCAN",
@@ -1011,8 +1060,12 @@
     "ticketPrice": 0,
     "ratingAvg": 4.5,
     "bestTimeOfDay": "Mùa mưa hoặc đầu mùa khô",
-    "imageUrl": "",
-    "imageUrls": [],
+    "imageUrl": "https://i.ytimg.com/vi/jrUoSdz7VwU/maxresdefault.jpg",
+    "imageUrls": [
+      "https://i.ytimg.com/vi/jrUoSdz7VwU/maxresdefault.jpg",
+      "https://media.cungphuot.info/2020/03/27074/thac-bau-can.JPG",
+      "https://dulichdiaphuong.com/imgs/tinh-gia-lai/thac-bau-can.jpg"
+    ],
     "districtId": "D_CHUPRONG",
     "district": "Huyện Chư Prông",
     "categoryId": "CAT_GL_NATURE",
@@ -1020,10 +1073,10 @@
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
     "geographic_region": "Cao nguyên",
-    "source_url": "https://gialaitourism.gov.vn",
-    "source_name": "Cổng Thông tin Du lịch Tỉnh Gia Lai",
+    "source_url": "https://www.youtube.com/watch?v=jrUoSdz7VwU",
+    "source_name": "www.youtube.com",
     "verified_at": "2026-10-17",
-    "verification_status": "VERIFIED"
+    "verification_status": "VERIFIED_OK"
   },
   {
     "locationId": "LOC_THAC_IAKREL",
@@ -1035,8 +1088,11 @@
     "ticketPrice": 0,
     "ratingAvg": 4.5,
     "bestTimeOfDay": "Ban ngày",
-    "imageUrl": "",
-    "imageUrls": [],
+    "imageUrl": "https://topgialai.net/wp-content/uploads/2024/03/Thac-Ia-Krieng-1-jpg.webp",
+    "imageUrls": [
+      "https://topgialai.net/wp-content/uploads/2024/03/Thac-Ia-Krieng-1-jpg.webp",
+      "https://tinbds.com/images/place/0/ty.jpg"
+    ],
     "districtId": "D_DUCCO",
     "district": "Huyện Đức Cơ",
     "categoryId": "CAT_GL_NATURE",
@@ -1044,8 +1100,8 @@
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
     "geographic_region": "Cao nguyên",
-    "source_url": "https://gialaitourism.gov.vn",
-    "source_name": "Cổng Thông tin Du lịch Tỉnh Gia Lai",
+    "source_url": "https://topgialai.net/du-lich-duc-co/",
+    "source_name": "topgialai.net",
     "verified_at": "2026-10-17",
     "verification_status": "VERIFIED"
   },
@@ -1059,8 +1115,12 @@
     "ticketPrice": 0,
     "ratingAvg": 4.4,
     "bestTimeOfDay": "Ban ngày",
-    "imageUrl": "",
-    "imageUrls": [],
+    "imageUrl": "https://photo-baomoi.bmcdn.me/w700_r1/2025_03_14_425_51712908/e5f9e33af074192a4065.jpg",
+    "imageUrls": [
+      "https://photo-baomoi.bmcdn.me/w700_r1/2025_03_14_425_51712908/e5f9e33af074192a4065.jpg",
+      "https://bhd.1cdn.vn/2025/04/07/thung-lung-ia-drang.jpg",
+      "https://cdn.baogialai.com.vn/images/91b82faac17325fc4d0b19b2df02f0ff6ca8bd018ed884fc4edac1b48142ce7c14129a54119d286ff9fd1427d7263e8c469d58cd4074b05d096a5b2cf98e734656b4d0f66116b492c5fae99e85621cb650d39b57d2e79d72a1b6dc2dd7866221/z6072936902192-fde06c02dbb9752588d09432fb61805a.jpg"
+    ],
     "districtId": "D_CHUPRONG",
     "district": "Huyện Chư Prông",
     "categoryId": "CAT_GL_HISTORY",
@@ -1068,10 +1128,10 @@
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
     "geographic_region": "Cao nguyên",
-    "source_url": "https://gialaitourism.gov.vn",
-    "source_name": "Cổng Thông tin Du lịch Tỉnh Gia Lai",
+    "source_url": "https://baomoi.com/chien-thang-thung-lung-ia-drang-nam-1965-xung-dang-la-di-tich-lich-su-cap-tinh-c51712908.epi",
+    "source_name": "baomoi.com",
     "verified_at": "2026-10-17",
-    "verification_status": "VERIFIED"
+    "verification_status": "VERIFIED_OK"
   },
   {
     "locationId": "LOC_THAP_BANGKENG",
@@ -1083,8 +1143,10 @@
     "ticketPrice": 0,
     "ratingAvg": 4.4,
     "bestTimeOfDay": "Sáng mát",
-    "imageUrl": "",
-    "imageUrls": [],
+    "imageUrl": "https://luhanhvietnam.com.vn/du-lich/vnt_upload/news/06_2025/0_am_thuc_krongpa_gia_lai.jpg",
+    "imageUrls": [
+      "https://luhanhvietnam.com.vn/du-lich/vnt_upload/news/06_2025/0_am_thuc_krongpa_gia_lai.jpg"
+    ],
     "districtId": "D_KRONPA",
     "district": "Huyện Krông Pa",
     "categoryId": "CAT_GL_HISTORY",
@@ -1092,8 +1154,8 @@
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
     "geographic_region": "Cao nguyên",
-    "source_url": "https://gialaitourism.gov.vn",
-    "source_name": "Cổng Thông tin Du lịch Tỉnh Gia Lai",
+    "source_url": "https://luhanhvietnam.com.vn",
+    "source_name": "Lữ Hành Việt Nam (Krông Pa, Gia Lai)",
     "verified_at": "2026-10-17",
     "verification_status": "VERIFIED"
   }

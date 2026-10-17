@@ -120,6 +120,7 @@ export default function ImageGalleryModal({ isOpen, onClose, images = [], title 
               boxShadow: '0 20px 50px rgba(0,0,0,0.7)',
               border: '1px solid rgba(255,255,255,0.1)'
             }}
+            referrerPolicy="no-referrer"
             onError={(e) => {
               e.currentTarget.src = "data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect fill='%23174B36' width='800' height='500'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' fill='%23FAFAF7' font-size='20' font-family='sans-serif'%3EH%C3%ACnh %E1%BA%A3nh kh%C3%B4ng kh%E1%BA%A3 d%E1%BB%A5ng%3C/text%3E%3C/svg%3E"
             }}
@@ -220,7 +221,11 @@ export default function ImageGalleryModal({ isOpen, onClose, images = [], title 
                 <img
                   src={img}
                   alt={`thumb-${idx}`}
+                  referrerPolicy="no-referrer"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  onError={(e) => {
+                    e.currentTarget.src = "data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='60' viewBox='0 0 80 60'%3E%3Crect fill='%23174B36' width='80' height='60'/%3E%3C/svg%3E"
+                  }}
                 />
               </button>
             ))}

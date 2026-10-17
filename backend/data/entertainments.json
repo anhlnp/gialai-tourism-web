@@ -7,11 +7,19 @@
     "ticketPrice": 0,
     "entertainmentType": "Chợ đêm & Ẩm thực",
     "openHours": "17:00 - 23:30 hàng ngày",
-    "imageUrl": "",
+    "imageUrl": "https://touring.vn/wp-content/uploads/2023/05/cho-dem-quy-nhon2.jpg",
     "legacy_province": "Bình Định",
     "current_province": "Gia Lai",
     "geographic_region": "Duyên hải",
-    "imageUrls": []
+    "imageUrls": [
+      "https://touring.vn/wp-content/uploads/2023/05/cho-dem-quy-nhon2.jpg",
+      "https://vivuvietnam.net/wp-content/uploads/2024/03/pho-am-thuc-quy-nhon-100.png",
+      "https://bhd.1cdn.vn/2024/04/13/cdn-i.vtcnews.vn-upload-2024-04-10-_cho-dem-quy-nhon9-21283906.jpg"
+    ],
+    "source_url": "https://touring.vn/cho-dem-quy-nhon/",
+    "source_name": "touring.vn",
+    "verified_at": "2026-10-17",
+    "verification_status": "VERIFIED_OK"
   },
   {
     "entId": "ENT_TIENSON_CAMP",
@@ -21,10 +29,14 @@
     "ticketPrice": 100000,
     "entertainmentType": "Glamping & Tiệc nướng BBQ",
     "openHours": "Mở cửa 24/24 cho khách lưu trú cắm trại",
-    "imageUrl": "https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=800",
+    "imageUrl": "https://mia.vn/media/uploads/blog-du-lich/top-nhung-dia-diem-cam-trai-o-gia-lai-ly-tuong-nhat-1-1660053449.jpeg",
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
-    "geographic_region": "Cao nguyên"
+    "geographic_region": "Cao nguyên",
+    "imageUrls": [
+      "https://mia.vn/media/uploads/blog-du-lich/top-nhung-dia-diem-cam-trai-o-gia-lai-ly-tuong-nhat-1-1660053449.jpeg",
+      "https://mia.vn/media/uploads/blog-du-lich/top-nhung-dia-diem-cam-trai-o-gia-lai-ly-tuong-nhat-2-1660053450.jpg"
+    ]
   },
   {
     "entId": "ENT_VUCSAU_ECO",
@@ -34,11 +46,19 @@
     "ticketPrice": 30000,
     "entertainmentType": "Dã ngoại & Tắm suối sinh thái",
     "openHours": "8h00 - 18h00",
-    "imageUrl": "",
+    "imageUrl": "https://ik.imagekit.io/tvlk/blog/2021/09/kinh-nghiem-du-lich-pleiku-4.jpg?tr=dpr-2,w-675",
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
     "geographic_region": "Cao nguyên",
-    "imageUrls": []
+    "imageUrls": [
+      "https://ik.imagekit.io/tvlk/blog/2021/09/kinh-nghiem-du-lich-pleiku-4.jpg?tr=dpr-2,w-675",
+      "https://tuyhoago.com/wp-content/uploads/2021/07/cam-nang-kinh-nghiem-du-lich-pleiku-dia-diem-du-lich-hot-nhat-he-nay.jpg",
+      "https://caonguyentourist.com/upload/elfinder/tour-gia-lai-3-ngay-2-dem/tour-du-lich-pleiku-3-ngay-2-dem.jpg"
+    ],
+    "source_url": "https://xaydungso.vn/blog/kham-pha-canh-dep-pleiku-gia-lai-tuyet-dep-hoang-so-vi-cb.html",
+    "source_name": "xaydungso.vn",
+    "verified_at": "2026-10-17",
+    "verification_status": "VERIFIED_OK"
   },
   {
     "entId": "ENT_PHODIBO_PLEIKU",
@@ -48,11 +68,19 @@
     "ticketPrice": 0,
     "entertainmentType": "Chợ đêm & Ẩm thực đường phố",
     "openHours": "17h00 - 23h30 hàng ngày",
-    "imageUrl": "",
+    "imageUrl": "https://luhanhvietnam.com.vn/du-lich/vnt_upload/news/03_2020/am_thuc_cho_dem_pleiku_6.jpg",
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
     "geographic_region": "Cao nguyên",
-    "imageUrls": []
+    "imageUrls": [
+      "https://luhanhvietnam.com.vn/du-lich/vnt_upload/news/03_2020/am_thuc_cho_dem_pleiku_6.jpg",
+      "https://gialai24h.vn/wp-content/uploads/2025/04/cho-dem-pleiku-va-thien-duong-am-thuc-khong-the-bo-lo-4-1660047135.webp",
+      "https://gialai24h.vn/wp-content/uploads/2025/04/cho-dem-pleiku-va-thien-duong-am-thuc-khong-the-bo-lo-1-1660045848.webp"
+    ],
+    "source_url": "https://luhanhvietnam.com.vn/du-lich/thien-duong-am-thuc-cho-dem-pleiku.html",
+    "source_name": "luhanhvietnam.com.vn",
+    "verified_at": "2026-10-17",
+    "verification_status": "VERIFIED_OK"
   },
   {
     "entId": "ENT_CAFE_HONG_IADER",
@@ -62,9 +90,18 @@
     "ticketPrice": 0,
     "entertainmentType": "Quán cafe ngắm cảnh & Sunset check-in",
     "openHours": "6h30 - 22h00",
-    "imageUrl": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800",
+    "imageUrl": "https://media.mia.vn/uploads/blog-du-lich/check-in-pleiku-cung-ve-dep-thanh-tao-cua-xu-so-cao-nguyen-3-1664319548.jpg",
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
-    "geographic_region": "Cao nguyên"
+    "geographic_region": "Cao nguyên",
+    "imageUrls": [
+      "https://media.mia.vn/uploads/blog-du-lich/check-in-pleiku-cung-ve-dep-thanh-tao-cua-xu-so-cao-nguyen-3-1664319548.jpg",
+      "https://3vi.vn/wp-content/uploads/2023/01/check-in-pleiku-cung-ve-dep-thanh-tao-cua-xu-so-cao-nguyen-4-1664319548.jpg",
+      "https://media2.gody.vn/public/mytravelmap/images/2022/11/17/nguyenlamdl5569/9886726395ed0d0703868486c6c2297b.jpeg"
+    ],
+    "source_url": "https://mia.vn/cam-nang-du-lich/check-in-pleiku-cung-ve-dep-thanh-tao-cua-xu-so-cao-nguyen-10390",
+    "source_name": "mia.vn",
+    "verified_at": "2026-10-17",
+    "verification_status": "VERIFIED_OK"
   }
 ]

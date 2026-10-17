@@ -322,7 +322,12 @@ export default function Home() {
           <div className="region-cards" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))', gap: '16px' }}>
             <motion.div className="region-card mountain" whileHover={{ scale: 1.02 }}
               onClick={() => navigate('/explore?category=Điểm du lịch sinh thái, danh lam thắng cảnh tự nhiên')}>
-              <img src="https://gialai.info/wp-content/uploads/2023/02/anh-3-3-3135.jpg" alt="Sinh thái tự nhiên" />
+              <img 
+                src="https://gialai.info/wp-content/uploads/2023/02/anh-3-3-3135.jpg" 
+                alt="Sinh thái tự nhiên" 
+                referrerPolicy="no-referrer"
+                onError={(e) => { e.currentTarget.src = DEFAULT_DESTINATION_THUMB }}
+              />
               <div className="overlay">
                 <Trees size={22} style={{ marginBottom: 4 }} />
                 <div style={{ fontWeight: 700 }}>Sinh thái & Núi lửa</div>
@@ -332,7 +337,12 @@ export default function Home() {
 
             <motion.div className="region-card transition" whileHover={{ scale: 1.02 }}
               onClick={() => navigate('/explore?category=Di tích Lịch sử - Văn hóa - Khảo cổ')}>
-              <img src="https://dulichkbang.com/wp-content/uploads/2022/02/cong-khu-di-tich-tay-son-thuong-dao-an-khe-gia-lai-800x400.jpg" alt="Di tích Lịch sử" />
+              <img 
+                src="https://dulichkbang.com/wp-content/uploads/2022/02/cong-khu-di-tich-tay-son-thuong-dao-an-khe-gia-lai-800x400.jpg" 
+                alt="Di tích Lịch sử" 
+                referrerPolicy="no-referrer"
+                onError={(e) => { e.currentTarget.src = DEFAULT_DESTINATION_THUMB }}
+              />
               <div className="overlay">
                 <Landmark size={22} style={{ marginBottom: 4 }} />
                 <div style={{ fontWeight: 700 }}>Di tích Lịch sử - Khảo cổ</div>
@@ -342,7 +352,12 @@ export default function Home() {
 
             <motion.div className="region-card culture" whileHover={{ scale: 1.02 }}
               onClick={() => navigate('/explore?category=Văn hóa Dân tộc, Làng nghề & Lễ hội truyền thống')}>
-              <img src="https://media.gody.vn/images/gia-lai/chua-minh-thanh/11-2016/20161101090033-chua-minh-thanh-gody(3).jpg" alt="Văn hóa Dân tộc" />
+              <img 
+                src="https://media.gody.vn/images/gia-lai/chua-minh-thanh/11-2016/20161101090033-chua-minh-thanh-gody(3).jpg" 
+                alt="Văn hóa Dân tộc" 
+                referrerPolicy="no-referrer"
+                onError={(e) => { e.currentTarget.src = DEFAULT_DESTINATION_THUMB }}
+              />
               <div className="overlay">
                 <Users size={22} style={{ marginBottom: 4 }} />
                 <div style={{ fontWeight: 700 }}>Bản sắc Dân tộc & Lễ hội</div>
@@ -352,7 +367,12 @@ export default function Home() {
 
             <motion.div className="region-card park" whileHover={{ scale: 1.02 }}
               onClick={() => navigate('/explore?category=Công viên & Không gian cảnh quan công cộng')}>
-              <img src="https://dulichdemen.vn/wp-content/uploads/2023/01/quang-truong-dai-doan-ket-pleiku-gia-lai-du-lich-de-men-vn.jpg" alt="Công viên cảnh quan" />
+              <img 
+                src="https://mia.vn/media/uploads/blog-du-lich/quang-truong-dai-doan-ket-noi-ket-tinh-tu-tuong-dan-toc-1-1659083330.jpg" 
+                alt="Công viên cảnh quan" 
+                referrerPolicy="no-referrer"
+                onError={(e) => { e.currentTarget.src = DEFAULT_DESTINATION_THUMB }}
+              />
               <div className="overlay">
                 <Sun size={22} style={{ marginBottom: 4 }} />
                 <div style={{ fontWeight: 700 }}>Công viên & Không gian đô thị</div>

@@ -8,7 +8,7 @@
     "priceMax": 45000,
     "mealTime": "Buổi sáng / Đêm",
     "tasteType": "TRADITIONAL",
-    "imageUrl": "",
+    "imageUrl": "https://alltop.vn/backend/media/images/posts/3271/Banh_canh_Ca_Loc_O_Be-277988.png",
     "suggestedEateries": [
       "Bánh canh cá lóc A Mập (04 Lê Hồng Phong, P. Diên Hồng, TP. Pleiku, Gia Lai - 06:00 - 22:00)",
       "Bánh canh cá lóc Đồng Nhi (135 Hùng Vương, P. Hội Thương, TP. Pleiku, Gia Lai - 06:00 - 21:00)",
@@ -17,7 +17,15 @@
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
     "geographic_region": "Cao nguyên",
-    "imageUrls": []
+    "imageUrls": [
+      "https://alltop.vn/backend/media/images/posts/3271/Banh_canh_Ca_Loc_O_Be-277988.png",
+      "https://alltop.vn/backend/media/images/posts/690/Banh_canh_Ca_Loc_O_Be-278653.png",
+      "https://alltop.vn/backend/media/images/posts/3271/Banh_canh_ca_loc_Nam_Giao-277992.jpg"
+    ],
+    "source_url": "https://alltop.vn/all-top/quan-banh-canh-ngon-nhat-tai-tp-pleiku-gia-lai-18475",
+    "source_name": "alltop.vn",
+    "verified_at": "2026-10-17",
+    "verification_status": "VERIFIED_OK"
   },
   {
     "dishId": "DISH_BANHHOILONGHEO_TS",
@@ -257,7 +265,7 @@
     "priceMax": 70000,
     "mealTime": "Buổi chiều / Buổi tối",
     "tasteType": "HOT_TREND",
-    "imageUrl": "",
+    "imageUrl": "https://banhtrangsachi.com/wp-content/uploads/2022/09/cha-ram-tom-dat-binh-dinh.jpg",
     "suggestedEateries": [
       "Chả ram tôm đất Bé Di (130 Tây Sơn, P. Quang Trung, TP. Quy Nhơn - 07:30 - 21:30)",
       "Chả ram tôm đất Cô Hiền (218 Diên Hồng, P. Ngô Mây, TP. Quy Nhơn - 08:00 - 21:00)",
@@ -266,7 +274,15 @@
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
     "geographic_region": "Cao nguyên",
-    "imageUrls": []
+    "imageUrls": [
+      "https://banhtrangsachi.com/wp-content/uploads/2022/09/cha-ram-tom-dat-binh-dinh.jpg",
+      "https://dacsanbinhdinhonline.com/wp-content/uploads/2023/06/cha-ram-tom-dat-dac-san-binh-dinh-ngon-sp2.png",
+      "https://monngonquynhon.com/wp-content/uploads/2024/02/cha-ram-tom-dat-binh-dinh-3.jpg"
+    ],
+    "source_url": "https://banhtrangsachi.com/tin-tuc/cach-lam-cha-ram-tom-dat-binh-dinh/",
+    "source_name": "banhtrangsachi.com",
+    "verified_at": "2026-10-17",
+    "verification_status": "VERIFIED_OK"
   },
   {
     "dishId": "DISH_CUAHUYNHDE",
@@ -296,11 +312,20 @@
     "priceMax": null,
     "mealTime": "Cả ngày",
     "tasteType": "Văn hóa Thức uống",
-    "imageUrl": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800",
+    "imageUrl": "https://taynguyenharvest.com/wp-content/uploads/2023/05/ca-phe-pha-phin-2.jpg",
     "suggestedEateries": null,
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
-    "geographic_region": "Cao nguyên"
+    "geographic_region": "Cao nguyên",
+    "imageUrls": [
+      "https://taynguyenharvest.com/wp-content/uploads/2023/05/ca-phe-pha-phin-2.jpg",
+      "https://taynguyenharvest.com/wp-content/uploads/2023/05/Ca-phe-pha-phin-1-600x600.jpg",
+      "https://bizweb.dktcdn.net/100/458/914/files/cafe-nguyen-chat-3.jpg?v=1689742101530"
+    ],
+    "source_url": "https://taynguyenharvest.com/ca-phe-nguyen-chat-pha-phin-2/",
+    "source_name": "taynguyenharvest.com",
+    "verified_at": "2026-10-17",
+    "verification_status": "VERIFIED_OK"
   },
   {
     "dishId": "DISH_CALANG_SESAN",
@@ -330,7 +355,7 @@
     "priceMax": 350000,
     "mealTime": "Buổi trưa / Buổi tối",
     "tasteType": "HOT_TREND",
-    "imageUrl": "https://cdnphoto.dantri.com.vn/rIP6Z8lrRaFN1UzPs3uIKZTrLVw=/thumb_w/990/2021/09/09/anh-10-1631155392885.jpeg",
+    "imageUrl": "https://mia.vn/media/uploads/blog-du-lich/ga-nuong-com-lam-pleiku-dac-san-dan-da-giua-chon-dai-ngan-01-1659364982.jpeg",
     "suggestedEateries": [
       "Quán Gà nướng Bazan (Hẻm 480 Lê Duẩn, P. Thắng Lợi, TP. Pleiku, Gia Lai - 09:00 - 21:30)",
       "Gà nướng Plơi Roh (Làng Kép, xã Ia Mơ Nông, huyện Chư Păh, Gia Lai - 09:00 - 20:00)",
@@ -339,7 +364,12 @@
     ],
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
-    "geographic_region": "Cao nguyên"
+    "geographic_region": "Cao nguyên",
+    "imageUrls": [
+      "https://mia.vn/media/uploads/blog-du-lich/ga-nuong-com-lam-pleiku-dac-san-dan-da-giua-chon-dai-ngan-01-1659364982.jpeg",
+      "https://mia.vn/media/uploads/blog-du-lich/ga-nuong-com-lam-pleiku-dac-san-dan-da-giua-chon-dai-ngan-03-1659364982.jpg",
+      "https://mia.vn/media/uploads/blog-du-lich/ga-nuong-com-lam-pleiku-dac-san-dan-da-giua-chon-dai-ngan-04-1659364982.jpg"
+    ]
   },
   {
     "dishId": "DISH_GOISUA_QN",
@@ -350,7 +380,7 @@
     "priceMax": 100000,
     "mealTime": "Buổi chiều / Buổi tối",
     "tasteType": "HOT_TREND",
-    "imageUrl": "",
+    "imageUrl": "https://cdn.24h.com.vn/upload/2-2024/images/2024-05-05/Nom-tai-1-1714867455-696-width1536height2048.jpg",
     "suggestedEateries": [
       "Nhà hàng Tàu Hoa Hoa (03-05 Phan Chu Trinh, P. Hải Cảng, TP. Quy Nhơn - 10:00 - 22:00)",
       "Quán hải sản Cây Dừa (124 Phan Chu Trinh, P. Hải Cảng, TP. Quy Nhơn - 10:00 - 22:30)",
@@ -359,7 +389,15 @@
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
     "geographic_region": "Cao nguyên",
-    "imageUrls": []
+    "imageUrls": [
+      "https://cdn.24h.com.vn/upload/2-2024/images/2024-05-05/Nom-tai-1-1714867455-696-width1536height2048.jpg",
+      "https://bangladeshembassy.vn/wp-content/uploads/2023/07/chua-o-quy-nhon-4.png",
+      "https://batron.vn/wp-content/uploads/2023/12/SUA-NGAM-CHUA-NGOT-1.png"
+    ],
+    "source_url": "https://www.24h.com.vn/am-thuc/cong-thuc-nom-tai-chua-ngot-de-lam-de-nghien-c460a1565205.html",
+    "source_name": "www.24h.com.vn",
+    "verified_at": "2026-10-17",
+    "verification_status": "VERIFIED_OK"
   },
   {
     "dishId": "DISH_HEOSOC_GL",
@@ -408,7 +446,7 @@
     "priceMax": 150000,
     "mealTime": "Gia vị chấm đặc sản",
     "tasteType": "TRADITIONAL",
-    "imageUrl": "https://www.cotrang.org/public/images/tin_dang/6/160_muoi-kien-vang-gia-lai-bk-9.jpg",
+    "imageUrl": "https://dacsanmientay.vn/wp-content/uploads/2021/05/muoi-kien-vang-1-min.jpg",
     "suggestedEateries": [
       "Cửa hàng Đặc sản Tây Nguyên Yang Ly (38 Nguyễn Thiếp, P. Diên Hồng, TP. Pleiku, Gia Lai - 07:30 - 21:00)",
       "Hợp tác xã Nông nghiệp Muối Kiến Krông Pa (Thôn Thắng Lợi, TT. Phú Túc, huyện Krông Pa, Gia Lai - 07:00 - 18:00)",
@@ -416,7 +454,15 @@
     ],
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
-    "geographic_region": "Cao nguyên"
+    "geographic_region": "Cao nguyên",
+    "imageUrls": [
+      "https://dacsanmientay.vn/wp-content/uploads/2021/05/muoi-kien-vang-1-min.jpg",
+      "https://cdn2.fptshop.com.vn/unsafe/Uploads/images/tin-tuc/187532/Originals/muoi-kien-vang-09.jpg"
+    ],
+    "source_url": "https://www.cotrang.org/muoi-kien-vang-gia-lai-dac-san-noi-tieng-cua-dong-bao-krongpa-gia-lai-n771.html",
+    "source_name": "www.cotrang.org",
+    "verified_at": "2026-10-17",
+    "verification_status": "VERIFIED_OK"
   },
   {
     "dishId": "DISH_MUC_NGAO_BD",
@@ -541,7 +587,7 @@
     "priceMax": 65000,
     "mealTime": "Ăn vặt / Mua làm quà",
     "tasteType": "TRADITIONAL",
-    "imageUrl": "https://quangnamfood.com/wp-content/uploads/2022/04/tre-rom-binh-dinh-tai-hcm_005-trung-binh.jpeg",
+    "imageUrl": "https://quangnamfood.com/wp-content/uploads/2022/04/tre-rom-binh-dinh-tai-quang-nam-food-768x1024.jpg",
     "suggestedEateries": [
       "Đặc sản Tré Năm Thu (159 Nguyễn Huệ, P. Trần Phú, TP. Quy Nhơn - 07:00 - 21:30)",
       "Tré rơm Bà Đệ Phước Lộc (Quốc lộ 1A, TT. Diêu Trì, huyện Tuy Phước - 06:30 - 20:00)",
@@ -549,7 +595,16 @@
     ],
     "legacy_province": "Gia Lai",
     "current_province": "Gia Lai",
-    "geographic_region": "Cao nguyên"
+    "geographic_region": "Cao nguyên",
+    "imageUrls": [
+      "https://quangnamfood.com/wp-content/uploads/2022/04/tre-rom-binh-dinh-tai-quang-nam-food-768x1024.jpg",
+      "https://static.vinwonders.com/production/tre-binh-dinh-banner.jpg",
+      "https://quangnamfood.com/wp-content/uploads/2022/04/tre_binh_dinh4.jpeg"
+    ],
+    "source_url": "https://quangnamfood.com/san-pham/tre-rom-binh-dinh/",
+    "source_name": "quangnamfood.com",
+    "verified_at": "2026-10-17",
+    "verification_status": "VERIFIED_OK"
   },
   {
     "dishId": "DISH_OC_MAIXUANTHUONG",

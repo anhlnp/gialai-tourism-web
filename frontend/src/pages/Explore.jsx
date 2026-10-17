@@ -393,6 +393,7 @@ export default function Explore() {
                     <img
                       src={cardImage}
                       alt={loc.name}
+                      referrerPolicy="no-referrer"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       onError={e => {
                         e.target.src = DEFAULT_DESTINATION_THUMB

@@ -106,32 +106,32 @@ export default function Explore() {
   const loading = defaultLoading || searching
 
   return (
-    <div className="min-h-screen bg-[#FAFAF7] pb-24 md:pb-12 text-[#1A1D1A]">
-      {/* Top Filter & Search Header */}
-      <header className="sticky top-[68px] z-30 bg-[#FAFAF7]/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-[#E8EBE5] dark:border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-3 pb-3">
+    <div className="min-h-screen bg-[#FAFAF7] dark:bg-slate-950 pb-28 lg:pb-16 text-[#1A1D1A] dark:text-slate-100 transition-colors">
+      {/* Top Filter & Search Header (Non-sticky to prevent covering cards) */}
+      <div className="border-b border-[#E8EBE5] dark:border-slate-800 bg-[#FAFAF7] dark:bg-slate-900/60 transition-colors">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-4">
           <div className="flex items-center justify-between gap-3 mb-3">
             <div className="flex items-center gap-2">
               <button 
                 onClick={() => navigate(-1)}
-                className="w-9 h-9 rounded-full flex items-center justify-center text-[#1A1D1A] hover:bg-[#E8EBE5]/60 active:scale-95 transition-all"
+                className="w-9 h-9 rounded-full flex items-center justify-center text-[#1A1D1A] dark:text-slate-200 hover:bg-[#E8EBE5]/60 dark:hover:bg-slate-800 active:scale-95 transition-all"
                 title="Quay lại"
               >
                 <ArrowLeft size={20} />
               </button>
               <div>
-                <h1 className="font-editorial text-2xl font-bold text-[#1A1D1A] leading-tight">
+                <h1 className="font-editorial text-2xl font-bold text-[#1A1D1A] dark:text-slate-100 leading-tight">
                   Điểm du lịch
                 </h1>
-                <p className="text-xs text-[#5A635B]">
-                  Khám phá 43 danh lam, di tích và cảnh quan hành lang Rừng & Biển Gia Lai Mới
+                <p className="text-xs text-[#5A635B] dark:text-slate-400">
+                  Khám phá 43 danh lam, di tích và cảnh quan hành lang Rừng &amp; Biển Gia Lai Mới
                 </p>
               </div>
             </div>
 
             <Link
               to="/map"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-[#E8EBE5] text-[#246B4A] hover:bg-[#F2FCF2] text-xs font-semibold shadow-xs active:scale-95 transition-all"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white dark:bg-slate-800 border border-[#E8EBE5] dark:border-slate-700 text-[#246B4A] dark:text-emerald-400 hover:bg-[#F2FCF2] dark:hover:bg-slate-700 text-xs font-semibold shadow-xs active:scale-95 transition-all shrink-0"
             >
               <MapIcon size={15} />
               <span>Bản đồ</span>
@@ -140,7 +140,7 @@ export default function Explore() {
 
           {/* Search Bar Input */}
           <div className="relative mb-3">
-            <div className="w-full h-11 bg-white border border-[#E8EBE5] focus-within:border-[#246B4A] focus-within:ring-2 focus-within:ring-[#246B4A]/10 rounded-2xl px-3.5 flex items-center gap-2.5 shadow-xs transition-all">
+            <div className="w-full h-11 bg-white dark:bg-slate-800 border border-[#E8EBE5] dark:border-slate-700 focus-within:border-[#246B4A] focus-within:ring-2 focus-within:ring-[#246B4A]/10 rounded-2xl px-3.5 flex items-center gap-2.5 shadow-xs transition-all">
               <Search size={18} className="text-[#246B4A] shrink-0" />
               <input
                 type="text"
@@ -155,12 +155,12 @@ export default function Explore() {
                 }
                 value={search}
                 onChange={e => setSearch(e.target.value)}
-                className="w-full bg-transparent border-none text-sm text-[#1A1D1A] placeholder:text-[#8A948C] focus:outline-none"
+                className="w-full bg-transparent border-none text-sm text-[#1A1D1A] dark:text-slate-100 placeholder:text-[#8A948C] dark:placeholder:text-slate-400 focus:outline-none"
               />
               {search && (
                 <button 
                   onClick={() => setSearch('')}
-                  className="text-[#8A948C] hover:text-[#1A1D1A] p-1"
+                  className="text-[#8A948C] hover:text-[#1A1D1A] dark:hover:text-slate-200 p-1"
                 >
                   <X size={16} />
                 </button>
@@ -175,7 +175,7 @@ export default function Explore() {
               className={`shrink-0 inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium transition-all ${
                 searchMode === 'filter'
                   ? 'bg-[#246B4A] text-white shadow-xs'
-                  : 'bg-white border border-[#E8EBE5] text-[#5A635B] hover:bg-[#F0F4EC]'
+                  : 'bg-white dark:bg-slate-800 border border-[#E8EBE5] dark:border-slate-700 text-[#5A635B] dark:text-slate-300 hover:bg-[#F0F4EC] dark:hover:bg-slate-700'
               }`}
             >
               <Layers size={13} /> Lọc chuẩn
@@ -185,7 +185,7 @@ export default function Explore() {
               className={`shrink-0 inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium transition-all ${
                 searchMode === 'fulltext'
                   ? 'bg-[#246B4A] text-white shadow-xs'
-                  : 'bg-white border border-[#E8EBE5] text-[#5A635B] hover:bg-[#F0F4EC]'
+                  : 'bg-white dark:bg-slate-800 border border-[#E8EBE5] dark:border-slate-700 text-[#5A635B] dark:text-slate-300 hover:bg-[#F0F4EC] dark:hover:bg-slate-700'
               }`}
             >
               <BookOpen size={13} /> Fulltext BM25
@@ -195,7 +195,7 @@ export default function Explore() {
               className={`shrink-0 inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium transition-all ${
                 searchMode === 'semantic'
                   ? 'bg-[#246B4A] text-white shadow-xs'
-                  : 'bg-white border border-[#E8EBE5] text-[#5A635B] hover:bg-[#F0F4EC]'
+                  : 'bg-white dark:bg-slate-800 border border-[#E8EBE5] dark:border-slate-700 text-[#5A635B] dark:text-slate-300 hover:bg-[#F0F4EC] dark:hover:bg-slate-700'
               }`}
             >
               <Sparkles size={13} /> Semantic AI
@@ -205,7 +205,7 @@ export default function Explore() {
               className={`shrink-0 inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium transition-all ${
                 searchMode === 'hybrid'
                   ? 'bg-[#246B4A] text-white shadow-xs'
-                  : 'bg-white border border-[#E8EBE5] text-[#5A635B] hover:bg-[#F0F4EC]'
+                  : 'bg-white dark:bg-slate-800 border border-[#E8EBE5] dark:border-slate-700 text-[#5A635B] dark:text-slate-300 hover:bg-[#F0F4EC] dark:hover:bg-slate-700'
               }`}
             >
               <Search size={13} /> Hybrid
@@ -218,8 +218,8 @@ export default function Explore() {
               onClick={() => { setSelectedRegion(''); setSelectedDistrict(''); }}
               className={`shrink-0 px-3 py-1 rounded-full text-xs font-semibold transition-all ${
                 !selectedRegion && !selectedDistrict
-                  ? 'bg-[#1A1D1A] text-white shadow-xs'
-                  : 'bg-white border border-[#E8EBE5] text-[#5A635B] hover:bg-[#F0F4EC]'
+                  ? 'bg-[#1A1D1A] dark:bg-slate-100 text-white dark:text-slate-900 shadow-xs'
+                  : 'bg-white dark:bg-slate-800 border border-[#E8EBE5] dark:border-slate-700 text-[#5A635B] dark:text-slate-300 hover:bg-[#F0F4EC] dark:hover:bg-slate-700'
               }`}
             >
               Toàn tỉnh mới (43)
@@ -229,7 +229,7 @@ export default function Explore() {
               className={`shrink-0 px-3 py-1 rounded-full text-xs font-semibold transition-all ${
                 selectedRegion === 'Cao nguyên'
                   ? 'bg-[#246B4A] text-white shadow-xs'
-                  : 'bg-white border border-[#E8EBE5] text-[#246B4A] hover:bg-[#F0F4EC]'
+                  : 'bg-white dark:bg-slate-800 border border-[#E8EBE5] dark:border-slate-700 text-[#246B4A] dark:text-emerald-400 hover:bg-[#F0F4EC] dark:hover:bg-slate-700'
               }`}
             >
               Cao nguyên Gia Lai (30)
@@ -239,7 +239,7 @@ export default function Explore() {
               className={`shrink-0 px-3 py-1 rounded-full text-xs font-semibold transition-all ${
                 selectedRegion === 'Duyên hải'
                   ? 'bg-[#1E40AF] text-white shadow-xs'
-                  : 'bg-white border border-[#E8EBE5] text-[#1E40AF] hover:bg-[#F0F4EC]'
+                  : 'bg-white dark:bg-slate-800 border border-[#E8EBE5] dark:border-slate-700 text-[#1E40AF] dark:text-blue-400 hover:bg-[#F0F4EC] dark:hover:bg-slate-700'
               }`}
             >
               Duyên hải Bình Định (13)
@@ -252,8 +252,8 @@ export default function Explore() {
               onClick={() => setSelectedCategory('')}
               className={`shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${
                 !selectedCategory
-                  ? 'bg-[#C26D38] text-white'
-                  : 'bg-white border border-[#E8EBE5] text-[#5A635B] hover:bg-[#F0F4EC]'
+                  ? 'bg-[#C26D38] text-white shadow-xs'
+                  : 'bg-white dark:bg-slate-800 border border-[#E8EBE5] dark:border-slate-700 text-[#5A635B] dark:text-slate-300 hover:bg-[#F0F4EC] dark:hover:bg-slate-700'
               }`}
             >
               Tất cả danh mục
@@ -264,8 +264,8 @@ export default function Explore() {
                 onClick={() => setSelectedCategory(selectedCategory === c.name ? '' : c.name)}
                 className={`shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${
                   selectedCategory === c.name
-                    ? 'bg-[#C26D38] text-white'
-                    : 'bg-white border border-[#E8EBE5] text-[#5A635B] hover:bg-[#F0F4EC]'
+                    ? 'bg-[#C26D38] text-white shadow-xs'
+                    : 'bg-white dark:bg-slate-800 border border-[#E8EBE5] dark:border-slate-700 text-[#5A635B] dark:text-slate-300 hover:bg-[#F0F4EC] dark:hover:bg-slate-700'
                 }`}
               >
                 {c.name}
@@ -274,7 +274,7 @@ export default function Explore() {
           </div>
 
           {/* Secondary District & Sort Filters */}
-          <div className="flex items-center justify-between gap-2 pt-2 border-t border-[#E8EBE5]/80 text-xs">
+          <div className="flex items-center justify-between gap-2 pt-2.5 border-t border-[#E8EBE5]/80 dark:border-slate-800 text-xs">
             <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
               <select
                 value={selectedDistrict}
@@ -282,7 +282,7 @@ export default function Explore() {
                   setSelectedDistrict(e.target.value)
                   if (e.target.value) setSelectedRegion('')
                 }}
-                className="bg-white border border-[#E8EBE5] rounded-full px-3 py-1 text-xs text-[#5A635B] focus:outline-none focus:border-[#246B4A]"
+                className="bg-white dark:bg-slate-800 border border-[#E8EBE5] dark:border-slate-700 rounded-full px-3 py-1.5 text-xs text-[#5A635B] dark:text-slate-200 focus:outline-none focus:border-[#246B4A]"
               >
                 <option value="">Quận/Huyện: Tất cả</option>
                 <optgroup label="Cao nguyên Gia Lai">
@@ -304,22 +304,22 @@ export default function Explore() {
               <select
                 value={sortBy}
                 onChange={e => setSortBy(e.target.value)}
-                className="bg-white border border-[#E8EBE5] rounded-full px-3 py-1 text-xs text-[#5A635B] focus:outline-none focus:border-[#246B4A]"
+                className="bg-white dark:bg-slate-800 border border-[#E8EBE5] dark:border-slate-700 rounded-full px-3 py-1.5 text-xs text-[#5A635B] dark:text-slate-200 focus:outline-none focus:border-[#246B4A]"
               >
                 <option value="rating">Sắp xếp: Đánh giá cao nhất</option>
                 <option value="name">Sắp xếp: Tên A-Z</option>
               </select>
             </div>
 
-            <span className="text-[11px] text-[#8A948C] shrink-0 font-medium">
+            <span className="text-[11px] text-[#8A948C] dark:text-slate-400 shrink-0 font-medium">
               {displayLocations.length} địa điểm
             </span>
           </div>
         </div>
-      </header>
+      </div>
 
       {/* Main Content List */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-5">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         {loading ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {[1, 2, 3, 4, 5, 6, 7, 8].map(n => (
@@ -386,14 +386,15 @@ export default function Explore() {
               return (
                 <article
                   key={loc.id}
-                  className="bg-white rounded-2xl border border-[#E8EBE5] overflow-hidden flex flex-col hover:border-[#246B4A]/40 transition-all shadow-xs group"
+                  className="bg-white dark:bg-slate-900 rounded-2xl border border-[#E8EBE5] dark:border-slate-800 overflow-hidden flex flex-col hover:border-[#246B4A]/40 transition-all shadow-xs group"
                 >
                   {/* Card Image Thumbnail */}
-                  <div className="relative w-full aspect-[16/10] bg-[#E8EBE5] overflow-hidden">
+                  <div className="relative w-full aspect-[16/10] bg-[#E8EBE5] dark:bg-slate-800 overflow-hidden">
                     <img
                       src={cardImage}
                       alt={loc.name}
                       referrerPolicy="no-referrer"
+                      loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       onError={e => {
                         e.target.src = DEFAULT_DESTINATION_THUMB
@@ -402,7 +403,7 @@ export default function Explore() {
                     
                     {/* Top Badges */}
                     <div className="absolute top-3 left-3 flex flex-wrap gap-1.5 items-center">
-                      <span className="px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md text-[#1A1D1A] text-[11px] font-semibold border border-white/60 shadow-xs">
+                      <span className="px-2.5 py-1 rounded-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-md text-[#1A1D1A] dark:text-slate-100 text-[11px] font-semibold border border-white/60 dark:border-slate-700/60 shadow-xs">
                         {loc.category || 'Điểm đến'}
                       </span>
                       {loc.geographicRegion === 'Duyên hải' || loc.legacyProvince === 'Bình Định' || ['Thành phố Quy Nhơn', 'Huyện Tây Sơn', 'Huyện Tuy Phước', 'Huyện Phù Cát', 'Thị xã An Nhơn', 'Huyện Phù Mỹ'].includes(loc.district) ? (
@@ -424,7 +425,7 @@ export default function Explore() {
                     {/* Bookmark Button */}
                     <button
                       onClick={e => toggleSave(loc, e)}
-                      className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-[#246B4A] border border-white/60 active:scale-90 transition-transform shadow-sm"
+                      className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/90 dark:bg-slate-800/90 backdrop-blur-md flex items-center justify-center text-[#246B4A] dark:text-emerald-400 border border-white/60 dark:border-slate-700 active:scale-90 transition-transform shadow-sm"
                       title={isSaved ? 'Bỏ lưu' : 'Lưu địa điểm'}
                     >
                       <Bookmark size={18} fill={isSaved ? '#246B4A' : 'none'} />
@@ -437,34 +438,34 @@ export default function Explore() {
                       <div className="flex items-start justify-between gap-2 mb-1">
                         <Link
                           to={`/destinations/${loc.id}`}
-                          className="font-editorial text-lg font-bold text-[#1A1D1A] group-hover:text-[#246B4A] transition-colors leading-snug line-clamp-1"
+                          className="font-editorial text-lg font-bold text-[#1A1D1A] dark:text-slate-100 group-hover:text-[#246B4A] dark:group-hover:text-emerald-400 transition-colors leading-snug line-clamp-1"
                         >
                           {loc.name}
                         </Link>
-                        <div className="flex items-center gap-1 shrink-0 text-[#C26D38] font-bold text-xs">
+                        <div className="flex items-center gap-1 shrink-0 text-[#C26D38] dark:text-amber-400 font-bold text-xs">
                           <Star size={14} fill="#C26D38" />
                           <span>{ratingDisplay}</span>
                         </div>
                       </div>
 
-                      <div className="flex items-center gap-1.5 text-xs text-[#5A635B] mb-2">
+                      <div className="flex items-center gap-1.5 text-xs text-[#5A635B] dark:text-slate-400 mb-2">
                         <MapPin size={13} className="text-[#246B4A] shrink-0" />
                         <span className="line-clamp-1">{loc.district || loc.address || 'Gia Lai'}</span>
                       </div>
 
-                      <p className="text-xs text-[#5A635B] line-clamp-2 leading-relaxed">
+                      <p className="text-xs text-[#5A635B] dark:text-slate-300 line-clamp-2 leading-relaxed">
                         {loc.description || 'Thắng cảnh thiên nhiên và di sản văn hóa đặc sắc tại vùng đất đại ngàn Gia Lai.'}
                       </p>
                     </div>
 
-                    <div className="pt-3 border-t border-[#E8EBE5] flex items-center justify-between text-xs">
-                      <span className="inline-flex items-center gap-1 text-[#8A948C]">
+                    <div className="pt-3 border-t border-[#E8EBE5] dark:border-slate-800 flex items-center justify-between text-xs">
+                      <span className="inline-flex items-center gap-1 text-[#8A948C] dark:text-slate-400">
                         <Clock size={13} />
                         {timeDisplay}
                       </span>
                       <Link
                         to={`/destinations/${loc.id}`}
-                        className="inline-flex items-center gap-1 text-[#246B4A] font-semibold hover:underline"
+                        className="inline-flex items-center gap-1 text-[#246B4A] dark:text-emerald-400 font-semibold hover:underline"
                       >
                         <span>Xem chi tiết</span>
                         <ArrowRight size={14} />

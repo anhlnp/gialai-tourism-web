@@ -937,6 +937,11 @@ a:hover {
   box-shadow: 0 -4px 16px rgba(26, 29, 26, 0.03);
 }
 
+[data-theme='dark'] .stitch-bottom-nav {
+  background: rgba(15, 23, 42, 0.94);
+  border-top-color: #1e293b;
+}
+
 @media (min-width: 1024px) {
   .stitch-bottom-nav {
     display: none !important;

@@ -106,10 +106,10 @@ export default function Planner() {
   }
 
   return (
-    <div className="min-h-screen bg-[#FAFAF7] pb-24 md:pb-12 text-[#1A1D1A]">
-      {/* Top Header */}
-      <header className="sticky top-[68px] z-30 bg-[#FAFAF7]/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-[#E8EBE5] dark:border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+    <div className="min-h-screen bg-[#FAFAF7] dark:bg-slate-950 pb-28 lg:pb-16 text-[#1A1D1A] dark:text-slate-100 transition-colors">
+      {/* Top Header (Non-sticky) */}
+      <div className="border-b border-[#E8EBE5] dark:border-slate-800 bg-[#FAFAF7] dark:bg-slate-900/60 transition-colors">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <button
               onClick={() => navigate(-1)}
@@ -156,7 +156,7 @@ export default function Planner() {
             )}
           </div>
         </div>
-      </header>
+      </div>
 
       {/* Main Content Area */}
       <main className={plan ? "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-5" : "max-w-3xl mx-auto px-4 sm:px-6 pt-5"}>
